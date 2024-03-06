@@ -50,8 +50,8 @@ public class GradeMaterialModifier implements IMaterialModifier {
 
     @Override
     public void appendTooltip(List<Component> tooltip) {
-        Component text = TextUtil.withColor(grade.getDisplayName(), Color.DEEPSKYBLUE);
-        tooltip.add(new TranslatableComponent("part.silentgear.gradeOnPart", text));
+        // Component text = TextUtil.withColor(grade.getDisplayName(), Color.DEEPSKYBLUE);
+        // tooltip.add(new TranslatableComponent("part.silentgear.gradeOnPart", text));
     }
 
     @Override
