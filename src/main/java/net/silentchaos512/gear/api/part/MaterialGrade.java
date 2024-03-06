@@ -35,6 +35,10 @@ public enum MaterialGrade {
         return values()[values().length - 1];
     }
 
+    public MaterialGrade next() {
+        return this.ordinal() + 1 < values().length ? values()[this.ordinal() + 1] : values()[this.ordinal()];
+    }
+
     public static MaterialGrade fromStack(ItemStack stack) {
         if (!stack.isEmpty() && stack.hasTag() && stack.getOrCreateTag().contains(NBT_KEY)) {
             String str = stack.getOrCreateTag().getString(NBT_KEY);

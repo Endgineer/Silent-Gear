@@ -15,6 +15,7 @@ import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.GearType;
 import net.silentchaos512.gear.api.material.IMaterialInstance;
 import net.silentchaos512.gear.api.material.MaterialList;
+import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.client.util.ColorUtils;
 import net.silentchaos512.gear.client.util.TextListBuilder;
@@ -85,6 +86,10 @@ public class CompoundPartItem extends Item {
 
     public ItemStack create(MaterialList materials) {
         return create(materials, -1);
+    }
+
+    public ItemStack createOne(Collection<? extends IMaterialInstance> materials) {
+        return create(MaterialList.of(materials), 1);
     }
 
     public ItemStack create(MaterialList materials, int craftedCount) {
