@@ -15,13 +15,13 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 public enum MaterialGrade {
-    NONE(0), E(1), D(2), C(3), B(4), A(5), S(10), SS(15), SSS(25), MAX(30);
+    NONE(0.0f), E(2.5f), D(5.0f), C(7.5f), B(10.0f), A(12.5f);
 
     private static final String NBT_KEY = "SGear_Grade";
 
-    public final int bonusPercent;
+    public final float bonusPercent;
 
-    MaterialGrade(int bonusPercent) {
+    MaterialGrade(float bonusPercent) {
         this.bonusPercent = bonusPercent;
     }
 
