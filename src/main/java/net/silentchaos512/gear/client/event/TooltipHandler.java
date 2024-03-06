@@ -20,7 +20,6 @@ import net.silentchaos512.gear.api.stats.StatModifierMap;
 import net.silentchaos512.gear.api.traits.TraitInstance;
 import net.silentchaos512.gear.api.util.StatGearKey;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
-import net.silentchaos512.gear.block.grader.GraderTileEntity;
 import net.silentchaos512.gear.client.KeyTracker;
 import net.silentchaos512.gear.client.util.TextListBuilder;
 import net.silentchaos512.gear.config.Config;
@@ -67,9 +66,6 @@ public final class TooltipHandler {
 
         ItemStack stack = event.getItemStack();
 
-        if (TagUtils.contains(ModTags.Items.GRADER_CATALYSTS, stack)) {
-            onGraderCatalystTooltip(event);
-        }
         if (TagUtils.contains(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS, stack)) {
             onStarlightChargerCatalystTooltip(event);
         }
@@ -91,11 +87,6 @@ public final class TooltipHandler {
             List<Component> toolTip = event.getToolTip();
             toolTip.add(Math.min(1, toolTip.size()), new TranslatableComponent("misc.silentgear.poorlyMade").withStyle(ChatFormatting.RED));
         }
-    }
-
-    private static void onGraderCatalystTooltip(ItemTooltipEvent event) {
-        int tier = GraderTileEntity.getCatalystTier(event.getItemStack());
-        event.getToolTip().add(TextUtil.withColor(TextUtil.misc("graderCatalyst", tier), Color.DARKORANGE));
     }
 
     private static void onStarlightChargerCatalystTooltip(ItemTooltipEvent event) {

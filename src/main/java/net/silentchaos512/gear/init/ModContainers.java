@@ -15,8 +15,6 @@ import net.silentchaos512.gear.block.compounder.CompounderContainer;
 import net.silentchaos512.gear.block.compounder.MetalAlloyerScreen;
 import net.silentchaos512.gear.block.compounder.RecrystallizerScreen;
 import net.silentchaos512.gear.block.compounder.RefabricatorScreen;
-import net.silentchaos512.gear.block.grader.GraderContainer;
-import net.silentchaos512.gear.block.grader.GraderScreen;
 import net.silentchaos512.gear.block.press.MetalPressContainer;
 import net.silentchaos512.gear.block.press.MetalPressScreen;
 import net.silentchaos512.gear.block.salvager.SalvagerContainer;
@@ -25,9 +23,6 @@ import net.silentchaos512.gear.item.blueprint.book.BlueprintBookContainer;
 import net.silentchaos512.gear.item.blueprint.book.BlueprintBookContainerScreen;
 
 public final class ModContainers {
-    public static final RegistryObject<MenuType<GraderContainer>> MATERIAL_GRADER = register("material_grader",
-            GraderContainer::new);
-
     public static final RegistryObject<MenuType<MetalPressContainer>> METAL_PRESS = register("metal_press",
             MetalPressContainer::new);
 
@@ -67,7 +62,6 @@ public final class ModContainers {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerScreens(FMLClientSetupEvent event) {
-        MenuScreens.register(MATERIAL_GRADER.get(), GraderScreen::new);
         MenuScreens.register(METAL_ALLOYER.get(), MetalAlloyerScreen::new);
         MenuScreens.register(METAL_PRESS.get(), MetalPressScreen::new);
         MenuScreens.register(RECRYSTALLIZER.get(), RecrystallizerScreen::new);

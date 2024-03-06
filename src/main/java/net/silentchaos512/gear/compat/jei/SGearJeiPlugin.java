@@ -23,7 +23,6 @@ import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.block.compounder.MetalAlloyerScreen;
 import net.silentchaos512.gear.block.compounder.RecrystallizerScreen;
 import net.silentchaos512.gear.block.compounder.RefabricatorScreen;
-import net.silentchaos512.gear.block.grader.GraderScreen;
 import net.silentchaos512.gear.block.salvager.SalvagerScreen;
 import net.silentchaos512.gear.crafting.ingredient.PartMaterialIngredient;
 import net.silentchaos512.gear.crafting.recipe.compounder.CompoundingRecipe;
@@ -66,7 +65,6 @@ public class SGearJeiPlugin implements IModPlugin {
         reg.addRecipeCategories(new CompoundingRecipeCategory<>(Const.FABRIC_COMPOUNDER_INFO, "fabric", guiHelper));
         reg.addRecipeCategories(new CompoundingRecipeCategory<>(Const.GEM_COMPOUNDER_INFO, "gem", guiHelper));
         reg.addRecipeCategories(new CompoundingRecipeCategory<>(Const.METAL_COMPOUNDER_INFO, "metal", guiHelper));
-        reg.addRecipeCategories(new MaterialGraderRecipeCategory(guiHelper));
         reg.addRecipeCategories(new SalvagingRecipeCategoryJei(guiHelper));
     }
 
@@ -122,9 +120,6 @@ public class SGearJeiPlugin implements IModPlugin {
                     i, new MetalCompoundingRecipe(SilentGear.getId("metal_example_" + i)))), Const.COMPOUNDING_METAL);
         }
 
-        // Grading
-        reg.addRecipes(Collections.singleton(new MaterialGraderRecipeCategory.GraderRecipe()), Const.GRADING);
-
         // Salvaging
         reg.addRecipes(recipeManager.getRecipes().stream()
                 .filter(r -> r.getType() == SalvagingRecipe.SALVAGING_TYPE)
@@ -148,7 +143,6 @@ public class SGearJeiPlugin implements IModPlugin {
         reg.addRecipeCatalyst(new ItemStack(ModBlocks.REFABRICATOR), Const.COMPOUNDING_FABRIC);
         reg.addRecipeCatalyst(new ItemStack(ModBlocks.RECRYSTALLIZER), Const.COMPOUNDING_GEM);
         reg.addRecipeCatalyst(new ItemStack(ModBlocks.METAL_ALLOYER), Const.COMPOUNDING_METAL);
-        reg.addRecipeCatalyst(new ItemStack(ModBlocks.MATERIAL_GRADER), Const.GRADING);
         reg.addRecipeCatalyst(new ItemStack(ModBlocks.SALVAGER), Const.SALVAGING);
     }
 
@@ -157,7 +151,6 @@ public class SGearJeiPlugin implements IModPlugin {
         reg.addRecipeClickArea(RefabricatorScreen.class, 90, 30, 28, 23, Const.COMPOUNDING_FABRIC);
         reg.addRecipeClickArea(RecrystallizerScreen.class, 90, 30, 28, 23, Const.COMPOUNDING_GEM);
         reg.addRecipeClickArea(MetalAlloyerScreen.class, 90, 30, 28, 23, Const.COMPOUNDING_METAL);
-        reg.addRecipeClickArea(GraderScreen.class, 48, 30, 28, 23, Const.GRADING);
         reg.addRecipeClickArea(SalvagerScreen.class, 30, 30, 28, 23, Const.SALVAGING);
     }
 

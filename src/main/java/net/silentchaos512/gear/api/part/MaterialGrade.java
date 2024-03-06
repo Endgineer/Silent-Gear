@@ -59,20 +59,6 @@ public enum MaterialGrade {
     }
 
     /**
-     * Select a random grade, with median based on the catalyst tier. Standard median is C at
-     * catalyst tier 1, each catalyst tier adds one to the median.
-     *
-     * @param random       A {@link Random} object to use
-     * @param catalystTier The catalyst tier (or zero if there is no catalyst)
-     * @return A random grade that is not NONE
-     */
-    public static MaterialGrade selectWithCatalyst(Random random, @Nonnegative int catalystTier) {
-        int ordinal = Config.Common.graderMedianGrade.get().ordinal() + catalystTier - 1;
-        MaterialGrade median = EnumUtils.byOrdinal(ordinal, getMax());
-        return selectRandom(random, median, Config.Common.graderStandardDeviation.get(), getMax());
-    }
-
-    /**
      * Select a random grade with the given parameters. Grades are normally distributed. That means
      * the median is most common, and each grade above/below is rarer.
      *

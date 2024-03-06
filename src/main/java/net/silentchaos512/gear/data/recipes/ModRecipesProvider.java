@@ -1050,17 +1050,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(Items.LEATHER)
                 .unlockedBy("has_item", has(CraftingItems.LEATHER_SCRAP))
                 .save(consumer);
-        // M
-        ShapedRecipeBuilder.shaped(ModBlocks.MATERIAL_GRADER)
-                .define('Q', Tags.Items.GEMS_QUARTZ)
-                .define('I', Tags.Items.INGOTS_IRON)
-                .define('#', CraftingItems.ADVANCED_UPGRADE_BASE)
-                .define('G', ModTags.Items.INGOTS_BLAZE_GOLD)
-                .pattern("QIQ")
-                .pattern("I#I")
-                .pattern("GGG")
-                .unlockedBy("has_item", has(ModTags.Items.INGOTS_BLAZE_GOLD))
-                .save(consumer);
         // N
         ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_DOOR, 3)
                 .define('#', ModBlocks.NETHERWOOD_PLANKS)

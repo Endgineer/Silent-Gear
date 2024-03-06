@@ -59,7 +59,6 @@ public class ModBlockLootTables extends BlockLoot {
         dropSelf(ModBlocks.AZURE_SILVER_BLOCK.get());
         dropSelf(ModBlocks.AZURE_ELECTRUM_BLOCK.get());
         dropSelf(ModBlocks.TYRIAN_STEEL_BLOCK.get());
-        dropSelf(ModBlocks.MATERIAL_GRADER.get());
         dropSelf(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
         dropSelf(ModBlocks.NETHERWOOD_FENCE.get());
         dropSelf(ModBlocks.NETHERWOOD_FENCE_GATE.get());

@@ -244,32 +244,14 @@ public class ModAdvancementProvider implements DataProvider {
                     .addCriterion("get_ingot", getItem(CraftingItems.CRIMSON_IRON_INGOT))
                     .save(consumer, id("crimson_iron"));
 
-            Advancement materialGrader = Advancement.Builder.advancement()
-                    .parent(blazeGold)
-                    .display(ModBlocks.MATERIAL_GRADER, title("material_grader"), description("material_grader"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_grader", getItem(ModBlocks.MATERIAL_GRADER))
-                    .addCriterion("get_catalyst", getItem(ModTags.Items.GRADER_CATALYSTS_TIER_1))
-                    .save(consumer, id("material_grader"));
-
             Advancement crimsonSteel = simpleGetItem(consumer, CraftingItems.CRIMSON_STEEL_INGOT, crimsonIron, "crimson_steel");
             Advancement salvager = simpleGetItem(consumer, ModBlocks.SALVAGER, crimsonIron);
 
             Advancement highDurability = Advancement.Builder.advancement()
-                    .parent(materialGrader)
+                    .parent(blazeGold)
                     .display(ModItems.TIP.get().create(LazyMaterialInstance.of(Const.Materials.EMERALD)), title("high_durability"), description("high_durability"), null, FrameType.TASK, true, true, false)
                     .addCriterion("durability", genericInt(GearEvents.MAX_DURABILITY, 16_000))
                     .save(consumer, id("high_durability"));
-            Advancement graderCatalyst2 = Advancement.Builder.advancement()
-                    .parent(materialGrader)
-                    .display(CraftingItems.BLAZING_DUST, title("grader_catalyst_2"), description("grader_catalyst_2"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_item", getItem(ModTags.Items.GRADER_CATALYSTS_TIER_2))
-                    .save(consumer, id("grader_catalyst_2"));
-
-            Advancement graderCatalyst3 = Advancement.Builder.advancement()
-                    .parent(graderCatalyst2)
-                    .display(CraftingItems.GLITTERY_DUST, title("grader_catalyst_3"), description("grader_catalyst_3"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_item", getItem(ModTags.Items.GRADER_CATALYSTS_TIER_3))
-                    .save(consumer, id("grader_catalyst_3"));
 
             //endregion
 

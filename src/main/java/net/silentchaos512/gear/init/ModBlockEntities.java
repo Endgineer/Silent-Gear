@@ -9,7 +9,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.RegistryObject;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
 import net.silentchaos512.gear.block.compounder.CompounderTileEntity;
-import net.silentchaos512.gear.block.grader.GraderTileEntity;
 import net.silentchaos512.gear.block.press.MetalPressTileEntity;
 import net.silentchaos512.gear.block.salvager.SalvagerTileEntity;
 import net.silentchaos512.gear.crafting.recipe.compounder.FabricCompoundingRecipe;
@@ -21,10 +20,6 @@ import net.silentchaos512.lib.block.IBlockProvider;
 import java.util.Arrays;
 
 public final class ModBlockEntities {
-    public static final RegistryObject<BlockEntityType<GraderTileEntity>> MATERIAL_GRADER = register("material_grader",
-            GraderTileEntity::new,
-            ModBlocks.MATERIAL_GRADER);
-
     public static final RegistryObject<BlockEntityType<CompounderTileEntity<MetalCompoundingRecipe>>> METAL_ALLOYER = register("metal_alloyer",
             (pos, state) -> new CompounderTileEntity<>(Const.METAL_COMPOUNDER_INFO, pos, state),
             ModBlocks.METAL_ALLOYER);

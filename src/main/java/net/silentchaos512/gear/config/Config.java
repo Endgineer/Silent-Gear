@@ -50,8 +50,6 @@ public final class Config {
         public static final ForgeConfigSpec.BooleanValue gearBreaksPermanently;
         public static final ForgeConfigSpec.ConfigValue<Tiers> dummyToolTier;
         public static final ForgeConfigSpec.ConfigValue<ArmorMaterials> dummyArmorMaterial;
-        public static final ForgeConfigSpec.EnumValue<MaterialGrade> graderMedianGrade;
-        public static final ForgeConfigSpec.DoubleValue graderStandardDeviation;
         public static final ForgeConfigSpec.IntValue prospectorHammerRange;
         public static final ForgeConfigSpec.DoubleValue repairFactorAnvil;
         public static final ForgeConfigSpec.DoubleValue repairFactorQuick;
@@ -310,22 +308,6 @@ public final class Config {
                     });*/
                     builder.pop();
                 }
-                builder.pop();
-            }
-
-            {
-                builder.comment("Settings for the material grader");
-                builder.push("materialGrader");
-                graderMedianGrade = builder
-                        .comment("The median (most common, average) grade that a material grader with tier 1 catalyst will produce.",
-                                "Higher tier catalysts will increase the median by one grade per tier past 1 (if 1 = C, 2 = B, etc.)")
-                        .defineEnum("median_grade", MaterialGrade.C);
-                graderStandardDeviation = builder
-                        .comment("The standard deviation of grades the material grader will produce.",
-                                "Grades are normally distributed, with the median grade being at the center of the bell curve.",
-                                "Larger numbers will make both higher and lower grades more common.",
-                                "Extremely large values may completely break the curve, yielding mostly the lowest and highest grades.")
-                        .defineInRange("standardDeviation", 1.5, 0.0, 100.0);
                 builder.pop();
             }
 

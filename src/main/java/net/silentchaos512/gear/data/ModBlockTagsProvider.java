@@ -65,7 +65,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_CRIMSON_IRON)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_CRIMSON_STEEL)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL)
-                .add(ModBlocks.MATERIAL_GRADER.get())
                 .add(ModBlocks.SALVAGER.get())
                 .add(ModBlocks.STARLIGHT_CHARGER.get())
                 .add(ModBlocks.METAL_ALLOYER.get())

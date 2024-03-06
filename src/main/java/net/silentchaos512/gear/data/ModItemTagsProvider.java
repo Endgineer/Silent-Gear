@@ -183,18 +183,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.FLUFFY_BLOCKS, ModTags.Items.FLUFFY_BLOCKS);
         copy(ModTags.Blocks.NETHERWOOD_LOGS, ModTags.Items.NETHERWOOD_LOGS);
 
-        getBuilder(ModTags.Items.GRADER_CATALYSTS_TIER_1).add(CraftingItems.GLOWING_DUST.asItem());
-        getBuilder(ModTags.Items.GRADER_CATALYSTS_TIER_2).add(CraftingItems.BLAZING_DUST.asItem());
-        getBuilder(ModTags.Items.GRADER_CATALYSTS_TIER_3).add(CraftingItems.GLITTERY_DUST.asItem());
-        getBuilder(ModTags.Items.GRADER_CATALYSTS_TIER_4);
-        getBuilder(ModTags.Items.GRADER_CATALYSTS_TIER_5);
-        getBuilder(ModTags.Items.GRADER_CATALYSTS)
-                .addTag(ModTags.Items.GRADER_CATALYSTS_TIER_1)
-                .addTag(ModTags.Items.GRADER_CATALYSTS_TIER_2)
-                .addTag(ModTags.Items.GRADER_CATALYSTS_TIER_3)
-                .addTag(ModTags.Items.GRADER_CATALYSTS_TIER_4)
-                .addTag(ModTags.Items.GRADER_CATALYSTS_TIER_5);
-
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1).addTag(ModTags.Items.DUSTS_BLAZE_GOLD);
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_2).addTag(ModTags.Items.DUSTS_AZURE_SILVER);
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_3).addTag(ModTags.Items.DUSTS_STARMETAL);

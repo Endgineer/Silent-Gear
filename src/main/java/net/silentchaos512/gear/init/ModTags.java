@@ -127,14 +127,6 @@ public final class ModTags {
 
         public static final TagKey<Item> BLUEPRINTS = mod("blueprints");
 
-        public static final TagKey<Item> GRADER_CATALYSTS = mod("grader_catalysts");
-        public static final TagKey<Item> GRADER_CATALYSTS_TIER_1 = mod("grader_catalysts/tier1");
-        public static final TagKey<Item> GRADER_CATALYSTS_TIER_2 = mod("grader_catalysts/tier2");
-        public static final TagKey<Item> GRADER_CATALYSTS_TIER_3 = mod("grader_catalysts/tier3");
-        public static final TagKey<Item> GRADER_CATALYSTS_TIER_4 = mod("grader_catalysts/tier4");
-        public static final TagKey<Item> GRADER_CATALYSTS_TIER_5 = mod("grader_catalysts/tier5");
-        public static final List<TagKey<Item>> GRADER_CATALYSTS_TIERS = ImmutableList.of(GRADER_CATALYSTS_TIER_1, GRADER_CATALYSTS_TIER_2, GRADER_CATALYSTS_TIER_3, GRADER_CATALYSTS_TIER_4, GRADER_CATALYSTS_TIER_5);
-
         public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS = mod("starlight_charger_catalysts");
         public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS_TIER_1 = mod("starlight_charger_catalysts/tier1");
         public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS_TIER_2 = mod("starlight_charger_catalysts/tier2");

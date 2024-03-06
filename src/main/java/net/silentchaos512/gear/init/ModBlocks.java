@@ -20,7 +20,6 @@ import net.silentchaos512.gear.block.*;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
 import net.silentchaos512.gear.block.charger.StarlightChargerBlock;
 import net.silentchaos512.gear.block.compounder.CompounderBlock;
-import net.silentchaos512.gear.block.grader.GraderBlock;
 import net.silentchaos512.gear.block.press.MetalPressBlock;
 import net.silentchaos512.gear.block.salvager.SalvagerBlock;
 import net.silentchaos512.gear.config.Config;
@@ -74,10 +73,6 @@ public final class ModBlocks {
             new GearSmithingTableBlock(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(2.5F)
                     .sound(SoundType.WOOD)));
-
-    public static final BlockRegistryObject<GraderBlock> MATERIAL_GRADER = register("material_grader", () ->
-            new GraderBlock(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(5, 30)));
 
     public static final BlockRegistryObject<SalvagerBlock> SALVAGER = register("salvager", () ->
             new SalvagerBlock(BlockBehaviour.Properties.of(Material.METAL)
@@ -228,7 +223,6 @@ public final class ModBlocks {
     public static void registerRenderTypes(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(FLAX_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FLUFFY_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(MATERIAL_GRADER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(METAL_ALLOYER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(METAL_PRESS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_DOOR.get(), RenderType.cutout());
