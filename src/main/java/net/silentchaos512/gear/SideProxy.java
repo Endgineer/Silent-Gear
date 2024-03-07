@@ -36,7 +36,6 @@ import net.silentchaos512.gear.client.model.part.CompoundPartModelLoader;
 import net.silentchaos512.gear.client.util.ModItemModelProperties;
 import net.silentchaos512.gear.compat.curios.CurioGearItemCapability;
 import net.silentchaos512.gear.compat.curios.CuriosCompat;
-import net.silentchaos512.gear.compat.gamestages.GameStagesCompat;
 import net.silentchaos512.gear.config.Config;
 import net.silentchaos512.gear.data.DataGenerators;
 import net.silentchaos512.gear.gear.material.MaterialManager;
@@ -123,10 +122,6 @@ class SideProxy implements IProxy {
         event.addListener(TraitManager.INSTANCE);
         event.addListener(PartManager.INSTANCE);
         event.addListener(MaterialManager.INSTANCE);
-
-        if (ModList.get().isLoaded("gamestages")) {
-            event.addListener(GameStagesCompat.INSTANCE);
-        }
     }
 
     private static void serverStarted(ServerStartedEvent event) {
