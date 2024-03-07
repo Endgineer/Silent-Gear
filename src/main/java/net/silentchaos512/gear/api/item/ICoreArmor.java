@@ -12,7 +12,6 @@ import java.util.Set;
 public interface ICoreArmor extends ICoreItem {
     Set<ItemStat> RELEVANT_STATS = ImmutableSet.of(
             ItemStats.DURABILITY,
-            ItemStats.REPAIR_EFFICIENCY,
             ItemStats.ENCHANTABILITY,
             ItemStats.ARMOR,
             ItemStats.MAGIC_ARMOR,
@@ -21,7 +20,6 @@ public interface ICoreArmor extends ICoreItem {
     );
 
     Set<ItemStat> EXCLUDED_STATS = ImmutableSet.of(
-            ItemStats.REPAIR_VALUE,
             ItemStats.HARVEST_LEVEL,
             ItemStats.HARVEST_SPEED,
             ItemStats.REACH_DISTANCE,

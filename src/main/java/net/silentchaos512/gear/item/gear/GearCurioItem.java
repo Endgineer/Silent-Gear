@@ -113,7 +113,7 @@ public class GearCurioItem extends Item implements ICoreItem {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

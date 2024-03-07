@@ -19,7 +19,6 @@ import java.util.Set;
 public interface ICoreRangedWeapon extends ICoreTool {
     Set<ItemStat> RELEVANT_STATS = ImmutableSet.of(
             ItemStats.DURABILITY,
-            ItemStats.REPAIR_EFFICIENCY,
             ItemStats.ENCHANTABILITY,
             ItemStats.RANGED_DAMAGE,
             ItemStats.RANGED_SPEED
@@ -27,7 +26,6 @@ public interface ICoreRangedWeapon extends ICoreTool {
 
     Set<ItemStat> EXCLUDED_STATS = ImmutableSet.of(
             ItemStats.ARMOR_DURABILITY,
-            ItemStats.REPAIR_VALUE,
             ItemStats.HARVEST_LEVEL,
             ItemStats.HARVEST_SPEED,
             ItemStats.REACH_DISTANCE,

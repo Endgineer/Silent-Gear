@@ -212,13 +212,11 @@ public final class GearHelper {
     //region Damage and repair
 
     public static boolean getIsRepairable(ItemStack stack, ItemStack materialItem) {
-        MaterialInstance material = MaterialInstance.from(materialItem);
-        return material != null && getIsRepairable(stack, material);
+        return false;
     }
 
     public static boolean getIsRepairable(ItemStack gear, MaterialInstance material) {
-        PartData part = GearData.getPrimaryPart(gear);
-        return part != null && material.getTier(PartType.MAIN) >= part.getTier() && material.getRepairValue(gear) > 0;
+        return false;
     }
 
     public static ItemStat getDurabilityStat(ItemStack gear) {

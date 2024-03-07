@@ -51,19 +51,6 @@ public final class Config {
         public static final ForgeConfigSpec.ConfigValue<Tiers> dummyToolTier;
         public static final ForgeConfigSpec.ConfigValue<ArmorMaterials> dummyArmorMaterial;
         public static final ForgeConfigSpec.IntValue prospectorHammerRange;
-        public static final ForgeConfigSpec.DoubleValue repairFactorAnvil;
-        public static final ForgeConfigSpec.DoubleValue repairFactorQuick;
-        public static final ForgeConfigSpec.IntValue repairKitVeryCrudeCapacity;
-        public static final ForgeConfigSpec.IntValue repairKitCrudeCapacity;
-        public static final ForgeConfigSpec.IntValue repairKitSturdyCapacity;
-        public static final ForgeConfigSpec.IntValue repairKitCrimsonCapacity;
-        public static final ForgeConfigSpec.IntValue repairKitAzureCapacity;
-        public static final ForgeConfigSpec.DoubleValue repairKitVeryCrudeEfficiency;
-        public static final ForgeConfigSpec.DoubleValue repairKitCrudeEfficiency;
-        public static final ForgeConfigSpec.DoubleValue repairKitSturdyEfficiency;
-        public static final ForgeConfigSpec.DoubleValue repairKitCrimsonEfficiency;
-        public static final ForgeConfigSpec.DoubleValue repairKitAzureEfficiency;
-        public static final ForgeConfigSpec.DoubleValue missingRepairKitEfficiency;
         public static final ForgeConfigSpec.IntValue sawRecursionDepth;
         public static final ForgeConfigSpec.BooleanValue upgradesInAnvilOnly;
         public static final ForgeConfigSpec.BooleanValue destroySwappedParts;
@@ -109,39 +96,6 @@ public final class Config {
                                     "The blueprint package gives some blueprints when used (right-click).",
                                     "To change what is given, override the starter_blueprints loot table.")
                             .define("spawnWithStarterBlueprints", true);
-                    builder.pop();
-                }
-                {
-                    builder.comment("Repair kit configs.");
-                    builder.push("repairKits");
-
-                    {
-                        builder.comment("Capacity is the number of materials that can be stored (all types combined)",
-                                "Setting to zero would make the repair kit unusable.");
-                        builder.push("capacity");
-                        repairKitVeryCrudeCapacity = builder.defineInRange("very_crude", 8, 0, Integer.MAX_VALUE);
-                        repairKitCrudeCapacity = builder.defineInRange("crude", 16, 0, Integer.MAX_VALUE);
-                        repairKitSturdyCapacity = builder.defineInRange("sturdy", 32, 0, Integer.MAX_VALUE);
-                        repairKitCrimsonCapacity = builder.defineInRange("crimson", 48, 0, Integer.MAX_VALUE);
-                        repairKitAzureCapacity = builder.defineInRange("azure", 64, 0, Integer.MAX_VALUE);
-                        builder.pop();
-                    }
-                    {
-                        builder.comment("Efficiency is the percentage of the repair value used. Higher values mean less materials used.",
-                                "Setting to zero would make the repair kit unusable.");
-                        builder.push("efficiency");
-                        repairKitVeryCrudeEfficiency = builder.defineInRange("very_crude", 0.3f, 0f, 10f);
-                        repairKitCrudeEfficiency = builder.defineInRange("crude", 0.35f, 0f, 10f);
-                        repairKitSturdyEfficiency = builder.defineInRange("sturdy", 0.4f, 0f, 10f);
-                        repairKitCrimsonEfficiency = builder.defineInRange("crimson", 0.45f, 0f, 10f);
-                        repairKitAzureEfficiency = builder.defineInRange("azure", 0.5f, 0f, 10f);
-                        missingRepairKitEfficiency = builder
-                                .comment("Repair efficiency with loose materials if no repair kit is used.",
-                                        "Setting a value greater than zero makes repair kits optional.")
-                                .defineInRange("missing", 0.0f, 0f, 10f);
-                        builder.pop();
-                    }
-
                     builder.pop();
                 }
 
@@ -204,7 +158,7 @@ public final class Config {
                         .define("allowConversionRecipes", true);
 
                 sendGearBrokenMessage = builder
-                        .comment("Displays a message in chat, notifying the player that an item broke and hinting that it can be repaired")
+                        .comment("Displays a message in chat, notifying the player that an item broke and hinting that its parts can be replaced")
                         .define("sendBrokenMessage", true);
 
                 damageFactorLevels = builder
@@ -269,17 +223,6 @@ public final class Config {
                     matchModeOres = builder
                             .comment("Match mode for ore blocks (anything in the forge:ores block tag)")
                             .defineEnum("matchMode.ores", IAoeTool.MatchMode.STRICT);
-                    builder.pop();
-                }
-                {
-                    builder.push("repairs");
-                    repairFactorAnvil = builder
-                            .comment("Effectiveness of gear repairs done in an anvil. Set to 0 to disable anvil repairs.")
-                            .defineInRange("anvilEffectiveness", 0.5, 0, 1);
-                    repairFactorQuick = builder
-                            .comment("DEPRECATED! Use repair kit configs instead.")
-                            .defineInRange("quickEffectiveness", 0.35, 0, 1);
-
                     builder.pop();
                 }
                 {

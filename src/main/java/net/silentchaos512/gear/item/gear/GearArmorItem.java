@@ -175,7 +175,7 @@ public class GearArmorItem extends DyeableArmorItem implements ICoreArmor {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

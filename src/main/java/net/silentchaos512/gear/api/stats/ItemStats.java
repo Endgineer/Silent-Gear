@@ -41,14 +41,6 @@ public final class ItemStats {
             .affectedByGrades(true)
             .synergyApplies()
     );
-    public static final ItemStat REPAIR_EFFICIENCY = new ItemStat(1f, 0f, 1000f, Color.STEELBLUE, new ItemStat.Properties()
-            .displayFormat(ItemStat.DisplayFormat.PERCENTAGE)
-            .affectedByGrades(false)
-    );
-    public static final ItemStat REPAIR_VALUE = new ItemStat(1f, 0f, 1000f, Color.STEELBLUE, new ItemStat.Properties()
-            .displayFormat(ItemStat.DisplayFormat.PERCENTAGE)
-            .affectedByGrades(false)
-    );
     public static final ItemStat ENCHANTABILITY = new ItemStat(0f, 0f, Integer.MAX_VALUE, Color.STEELBLUE, new ItemStat.Properties()
             .displayAsInt()
             .affectedByGrades(true)
@@ -201,8 +193,6 @@ public final class ItemStats {
         // TODO: Replace with DeferredRegister?
         register(event.getRegistry(), DURABILITY, "durability");
         register(event.getRegistry(), ARMOR_DURABILITY, "armor_durability");
-        register(event.getRegistry(), REPAIR_EFFICIENCY, "repair_efficiency");
-        register(event.getRegistry(), REPAIR_VALUE, "repair_value");
         register(event.getRegistry(), ENCHANTABILITY, "enchantability");
         register(event.getRegistry(), CHARGEABILITY, "chargeability");
         register(event.getRegistry(), RARITY, "rarity");

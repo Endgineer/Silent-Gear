@@ -111,7 +111,7 @@ public class GearShieldItem extends ShieldItem implements ICoreItem {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

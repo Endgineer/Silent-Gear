@@ -97,7 +97,6 @@ public final class ModTags {
 
         public static final TagKey<Item> PAPER = forge("paper");
         public static final TagKey<Item> BLUEPRINT_PAPER = mod("blueprint_paper");
-        public static final TagKey<Item> REPAIR_KITS = mod("repair_kits");
         public static final TagKey<Item> TEMPLATE_BOARDS = mod("template_boards");
 
         public static final TagKey<Item> RODS_IRON = forge("rods/iron");

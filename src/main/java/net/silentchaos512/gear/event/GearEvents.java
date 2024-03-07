@@ -85,7 +85,6 @@ public final class GearEvents {
     public static final ResourceLocation APPLY_TIP_UPGRADE = SilentGear.getId("apply_tip_upgrade");
     public static final ResourceLocation CRAFTED_WITH_ROUGH_ROD = SilentGear.getId("crafted_with_rough_rod");
     public static final ResourceLocation MAX_DURABILITY = SilentGear.getId("max_durability");
-    public static final ResourceLocation REPAIR_FROM_BROKEN = SilentGear.getId("repair_from_broken");
     public static final ResourceLocation UNIQUE_MAIN_PARTS = SilentGear.getId("unique_main_parts");
     public static final ResourceLocation FALL_WITH_MOONWALKER = SilentGear.getId("fall_with_moonwalker");
 
@@ -317,13 +316,6 @@ public final class GearEvents {
             // Crude tool
             if (GearData.hasPart(result, PartType.ROD, p -> p.containsMaterial(Const.Materials.WOOD_ROUGH))) {
                 LibTriggers.GENERIC_INT.trigger(player, CRAFTED_WITH_ROUGH_ROD, 1);
-            }
-
-            // Repair from broken
-            int brokenCount = GearData.getBrokenCount(result);
-            int repairCount = GearData.getRepairCount(result);
-            if (brokenCount > 0 && repairCount > 0) {
-                LibTriggers.GENERIC_INT.trigger(player, REPAIR_FROM_BROKEN, brokenCount);
             }
 
             // High durability

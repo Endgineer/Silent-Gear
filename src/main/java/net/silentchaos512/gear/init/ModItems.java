@@ -35,28 +35,6 @@ public final class ModItems {
     public static final ItemRegistryObject<Item> MOD_KIT = register("mod_kit", () ->
             new ModKitItem(unstackableProps().rarity(Rarity.UNCOMMON)));
 
-    // Repair Kits
-    public static final ItemRegistryObject<Item> VERY_CRUDE_REPAIR_KIT = register("very_crude_repair_kit", () -> new RepairKitItem(
-            Config.Common.repairKitVeryCrudeCapacity::get,
-            Config.Common.repairKitVeryCrudeEfficiency::get,
-            unstackableProps().rarity(Rarity.COMMON)));
-    public static final ItemRegistryObject<Item> CRUDE_REPAIR_KIT = register("crude_repair_kit", () -> new RepairKitItem(
-            Config.Common.repairKitCrudeCapacity::get,
-            Config.Common.repairKitCrudeEfficiency::get,
-            unstackableProps().rarity(Rarity.COMMON)));
-    public static final ItemRegistryObject<Item> STURDY_REPAIR_KIT = register("sturdy_repair_kit", () -> new RepairKitItem(
-            Config.Common.repairKitSturdyCapacity::get,
-            Config.Common.repairKitSturdyEfficiency::get,
-            unstackableProps().rarity(Rarity.UNCOMMON)));
-    public static final ItemRegistryObject<Item> CRIMSON_REPAIR_KIT = register("crimson_repair_kit", () -> new RepairKitItem(
-            Config.Common.repairKitCrimsonCapacity::get,
-            Config.Common.repairKitCrimsonEfficiency::get,
-            unstackableProps().rarity(Rarity.RARE)));
-    public static final ItemRegistryObject<Item> AZURE_REPAIR_KIT = register("azure_repair_kit", () -> new RepairKitItem(
-            Config.Common.repairKitAzureCapacity::get,
-            Config.Common.repairKitAzureEfficiency::get,
-            unstackableProps().rarity(Rarity.EPIC)));
-
     //region Blueprints and templates
     public static final ItemRegistryObject<BlueprintBookItem> BLUEPRINT_BOOK = register("blueprint_book", () ->
             new BlueprintBookItem(unstackableProps().rarity(Rarity.UNCOMMON)));

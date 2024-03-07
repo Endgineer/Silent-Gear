@@ -127,7 +127,7 @@ public class GearPickaxeItem extends PickaxeItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

@@ -31,12 +31,10 @@ public final class Const {
     public static final ResourceLocation COMPOUNDING_GEM = modId("compounding/gem");
     public static final ResourceLocation COMPOUNDING_METAL = modId("compounding/metal");
     public static final ResourceLocation DAMAGE_ITEM = modId("damage_item");
-    public static final ResourceLocation FILL_REPAIR_KIT = modId("fill_repair_kit");
     public static final ResourceLocation GRADING = modId("grading");
     public static final ResourceLocation MOD_KIT_REMOVE_PART = modId("mod_kit_remove_part");
     public static final ResourceLocation PRESSING = modId("pressing");
     public static final ResourceLocation PRESSING_MATERIAL = modId("pressing/material");
-    public static final ResourceLocation QUICK_REPAIR = modId("quick_repair");
     public static final ResourceLocation SALVAGING = modId("salvaging");
     public static final ResourceLocation SALVAGING_COMPOUND_PART = modId("salvaging/compound_part");
     public static final ResourceLocation SALVAGING_GEAR = modId("salvaging/gear");
@@ -190,7 +188,6 @@ public final class Const {
         public static final DataResource<ITrait> SNOW_WALKER = DataResource.trait("snow_walker");
         public static final DataResource<ITrait> SOFT = DataResource.trait("soft");
         public static final DataResource<ITrait> SPOON = DataResource.trait("spoon");
-        public static final DataResource<ITrait> STELLAR = DataResource.trait("stellar");
         public static final DataResource<ITrait> STURDY = DataResource.trait("sturdy");
         public static final DataResource<ITrait> SYNERGISTIC = DataResource.trait("synergistic");
         public static final DataResource<ITrait> TERMINUS = DataResource.trait("terminus");
@@ -203,7 +200,6 @@ public final class Const {
         // Misc constants
         public static final float ANCIENT_XP_BOOST = 0.25f;
         public static final float MOONWALKER_GRAVITY_MOD = -0.15f;
-        public static final float STELLAR_REPAIR_CHANCE = 0.02f;
         @Deprecated
         public static final float SYNERGY_BOOST_MULTI = 0.04f;
 

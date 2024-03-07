@@ -110,7 +110,7 @@ public class GearAxeItem extends AxeItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

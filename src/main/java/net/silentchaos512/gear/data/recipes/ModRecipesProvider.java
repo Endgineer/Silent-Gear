@@ -26,7 +26,6 @@ import net.silentchaos512.gear.gear.material.LazyMaterialInstance;
 import net.silentchaos512.gear.gear.material.MaterialCategories;
 import net.silentchaos512.gear.init.*;
 import net.silentchaos512.gear.item.CraftingItems;
-import net.silentchaos512.gear.item.RepairKitItem;
 import net.silentchaos512.gear.item.blueprint.GearBlueprintItem;
 import net.silentchaos512.gear.item.gear.GearArmorItem;
 import net.silentchaos512.gear.util.Const;
@@ -116,9 +115,7 @@ public class ModRecipesProvider extends LibRecipeProvider {
     }
 
     private void registerSpecialRecipes(Consumer<FinishedRecipe> consumer) {
-        special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.FILL_REPAIR_KIT.get());
         special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.SWAP_GEAR_PART.get());
-        special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.QUICK_REPAIR.get());
         special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.COMBINE_FRAGMENTS.get());
         special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.MOD_KIT_REMOVE_PART.get());
     }
@@ -614,64 +611,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("##/")
                 .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
                 .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModItems.VERY_CRUDE_REPAIR_KIT)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .define('o', Tags.Items.STONE)
-                .pattern(" / ")
-                .pattern("#o#")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModItems.CRUDE_REPAIR_KIT)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .define('o', Tags.Items.INGOTS_IRON)
-                .pattern(" / ")
-                .pattern("#o#")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModItems.STURDY_REPAIR_KIT)
-                .define('#', Tags.Items.INGOTS_IRON)
-                .define('/', ModTags.Items.RODS_IRON)
-                .define('o', Tags.Items.GEMS_DIAMOND)
-                .pattern(" / ")
-                .pattern("#o#")
-                .pattern("###")
-                .unlockedBy("has_item", has(Tags.Items.INGOTS_IRON))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModItems.CRIMSON_REPAIR_KIT)
-                .define('#', ModTags.Items.INGOTS_CRIMSON_STEEL)
-                .define('/', Tags.Items.RODS_BLAZE)
-                .define('o', ModTags.Items.INGOTS_BLAZE_GOLD)
-                .pattern(" / ")
-                .pattern("#o#")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModTags.Items.INGOTS_CRIMSON_STEEL))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModItems.AZURE_REPAIR_KIT)
-                .define('#', ModTags.Items.INGOTS_AZURE_ELECTRUM)
-                .define('/', Items.END_ROD)
-                .define('o', Tags.Items.GEMS_EMERALD)
-                .pattern(" / ")
-                .pattern("#o#")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModTags.Items.INGOTS_AZURE_ELECTRUM))
-                .save(consumer);
-
-        for (RepairKitItem item : Registration.getItems(RepairKitItem.class)) {
-            // Empty repair kit recipes
-            ExtendedShapelessRecipeBuilder.vanillaBuilder(item)
-                    .addIngredient(item)
-                    .addIngredient(Tags.Items.RODS_WOODEN)
-                    .build(consumer, SilentGear.getId(NameUtils.from(item).getPath() + "_empty"));
-        }
     }
 
     private void registerMachines(Consumer<FinishedRecipe> consumer) {

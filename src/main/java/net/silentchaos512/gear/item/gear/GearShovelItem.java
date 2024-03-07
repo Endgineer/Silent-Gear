@@ -92,7 +92,7 @@ public class GearShovelItem extends ShovelItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

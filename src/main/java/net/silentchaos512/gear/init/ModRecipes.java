@@ -47,16 +47,12 @@ public final class ModRecipes {
             ConversionRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> DAMAGE_ITEM = register(Const.DAMAGE_ITEM,
             SGearDamageItemRecipe.Serializer::new);
-    public static final RegistryObject<RecipeSerializer<?>> FILL_REPAIR_KIT = register(Const.FILL_REPAIR_KIT, () ->
-            new SimpleRecipeSerializer<>(FillRepairKitRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> MOD_KIT_REMOVE_PART = register(Const.MOD_KIT_REMOVE_PART, () ->
             new SimpleRecipeSerializer<>(ModKitRemovePartRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> PRESSING = register(Const.PRESSING, () ->
             ExtendedSingleItemRecipe.Serializer.basic(PressingRecipe.PRESSING_TYPE, PressingRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> PRESSING_MATERIAL = register(Const.PRESSING_MATERIAL, () ->
             ExtendedSingleItemRecipe.Serializer.basic(PressingRecipe.PRESSING_TYPE, MaterialPressingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> QUICK_REPAIR = register(Const.QUICK_REPAIR, () ->
-            new SimpleRecipeSerializer<>(QuickRepairRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> SALVAGING = register(Const.SALVAGING,
             SalvagingRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> SALVAGING_GEAR = register(Const.SALVAGING_GEAR,
@@ -103,11 +99,6 @@ public final class ModRecipes {
     }
 
     public static boolean isRepairMaterial(ItemStack gear, ItemStack materialItem) {
-        MaterialInstance mat = MaterialInstance.from(materialItem);
-        if (mat != null) {
-            return mat.getRepairValue(gear) > 0;
-        }
-
         return false;
     }
 

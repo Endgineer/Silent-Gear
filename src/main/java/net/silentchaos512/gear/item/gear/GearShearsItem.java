@@ -40,7 +40,6 @@ import java.util.function.Consumer;
 public class GearShearsItem extends ShearsItem implements ICoreTool {
     public static final Set<ItemStat> RELEVANT_STATS = ImmutableSet.of(
             ItemStats.DURABILITY,
-            ItemStats.REPAIR_EFFICIENCY,
             ItemStats.ENCHANTABILITY,
             ItemStats.HARVEST_SPEED
     );
@@ -102,7 +101,7 @@ public class GearShearsItem extends ShearsItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

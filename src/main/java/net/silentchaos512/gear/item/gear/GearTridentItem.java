@@ -49,7 +49,7 @@ public class GearTridentItem extends TridentItem implements ICoreWeapon {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

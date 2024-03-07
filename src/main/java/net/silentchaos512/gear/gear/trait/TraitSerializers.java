@@ -46,8 +46,6 @@ public final class TraitSerializers {
         register(TargetEffectTrait.SERIALIZER);
         register(BonusDropsTrait.SERIALIZER);
         register(CancelEffectsTrait.SERIALIZER);
-        register(SelfRepairTrait.SERIALIZER);
-        register(StellarTrait.SERIALIZER);
         register(BlockMiningSpeedTrait.SERIALIZER);
     }
 

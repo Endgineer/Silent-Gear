@@ -31,7 +31,6 @@ import net.silentchaos512.gear.init.ModItems;
 import net.silentchaos512.gear.init.ModTags;
 import net.silentchaos512.gear.init.Registration;
 import net.silentchaos512.gear.item.CraftingItems;
-import net.silentchaos512.gear.item.RepairKitItem;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.util.GearData;
 import net.silentchaos512.gear.util.GearHelper;
@@ -140,24 +139,6 @@ public class ModAdvancementProvider implements DataProvider {
 
             Advancement blueprintPaper = simpleGetItem(consumer, CraftingItems.BLUEPRINT_PAPER, templateBoard);
             Advancement upgradeBase = simpleGetItem(consumer, CraftingItems.UPGRADE_BASE, templateBoard);
-            Advancement repairKit;
-            {
-                Advancement.Builder builder = Advancement.Builder.advancement()
-                        .parent(templateBoard)
-                        .display(ModItems.CRUDE_REPAIR_KIT, title("repair_kit"), description("repair_kit"), null, FrameType.TASK, true, true, false)
-                        .requirements(RequirementsStrategy.OR);
-                Registration.getItems(RepairKitItem.class).forEach(item ->
-                        builder.addCriterion(NameUtils.fromItem(item).getPath(), getItem(item)));
-                repairKit = builder.save(consumer, id("repair_kit"));
-            }
-
-            Advancement crimsonRepairKit = simpleGetItem(consumer, ModItems.CRIMSON_REPAIR_KIT, repairKit);
-            Advancement azureRepairKit = simpleGetItem(consumer, ModItems.AZURE_REPAIR_KIT, crimsonRepairKit);
-            Advancement repairFromBroken = Advancement.Builder.advancement()
-                    .parent(repairKit)
-                    .display(Items.FLINT, title("repair_from_broken"), description("repair_from_broken"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("repair", genericInt(GearEvents.REPAIR_FROM_BROKEN, 1))
-                    .save(consumer, id("repair_from_broken"));
 
             Advancement blueprintBook = simpleGetItem(consumer, ModItems.BLUEPRINT_BOOK, blueprintPaper);
 

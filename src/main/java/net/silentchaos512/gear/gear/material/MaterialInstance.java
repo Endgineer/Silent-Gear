@@ -25,10 +25,7 @@ import net.silentchaos512.gear.api.stats.StatInstance;
 import net.silentchaos512.gear.api.traits.TraitInstance;
 import net.silentchaos512.gear.api.util.PartGearKey;
 import net.silentchaos512.gear.api.util.StatGearKey;
-import net.silentchaos512.gear.gear.part.RepairContext;
 import net.silentchaos512.gear.util.DataResource;
-import net.silentchaos512.gear.util.GearData;
-import net.silentchaos512.gear.util.GearHelper;
 import net.silentchaos512.lib.util.InventoryUtils;
 import net.silentchaos512.utils.Color;
 
@@ -212,21 +209,10 @@ public final class MaterialInstance implements IMaterialInstance {
     }
 
     public boolean canRepair(ItemStack gear) {
-        return material.allowedInPart(this, PartType.MAIN) && GearData.getTier(gear) <= this.getTier(PartType.MAIN);
+        return false;
     }
 
     public int getRepairValue(ItemStack gear) {
-        return this.getRepairValue(gear, RepairContext.Type.QUICK);
-    }
-
-    public int getRepairValue(ItemStack gear, RepairContext.Type type) {
-        if (this.canRepair(gear)) {
-            float durability = getStat(PartType.MAIN, GearHelper.getDurabilityStat(gear));
-            float repairValueMulti = getStat(PartType.MAIN, ItemStats.REPAIR_VALUE);
-            float itemRepairModifier = GearHelper.getRepairModifier(gear);
-            float typeBonus = 1f + type.getBonusEfficiency();
-            return Math.round(durability * repairValueMulti * itemRepairModifier * typeBonus) + 1;
-        }
         return 0;
     }
 

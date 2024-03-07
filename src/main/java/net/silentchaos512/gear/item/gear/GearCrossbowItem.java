@@ -393,7 +393,7 @@ public class GearCrossbowItem extends CrossbowItem implements ICoreRangedWeapon 
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

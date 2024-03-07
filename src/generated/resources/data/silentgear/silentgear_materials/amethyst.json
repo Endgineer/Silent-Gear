@@ -49,18 +49,7 @@
     "adornment": {}
   },
   "traits": {
-    "main": [
-      {
-        "name": "silentgear:renew",
-        "level": 1,
-        "conditions": [
-          {
-            "type": "silentgear:material_ratio",
-            "ratio": 0.7
-          }
-        ]
-      }
-    ],
+    "main": [],
     "tip": [
       {
         "name": "silentgear:silky",

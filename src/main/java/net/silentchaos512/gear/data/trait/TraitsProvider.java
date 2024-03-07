@@ -67,8 +67,7 @@ public class TraitsProvider implements DataProvider {
                 .extraWikiLines("  - The item cannot be destroyed by fire or lava"));
         ret.add(TraitBuilder.simple(Const.Traits.FLAMMABLE, 1));
         ret.add(TraitBuilder.simple(Const.Traits.INDESTRUCTIBLE, 1)
-                .extraWikiLines("  - The damage (durability lost) of the item will remain the same as when the trait was added",
-                        "  - The item can still be repaired if desired"));
+                .extraWikiLines("  - The damage (durability lost) of the item will remain the same as when the trait was added"));
         ret.add(TraitBuilder.simple(Const.Traits.JABBERWOCKY, 1)
                 .withGearTypeCondition(GearType.HARVEST_TOOL)
                 .extraWikiLines("Something may happen if you mine certain blocks with this"));
@@ -122,10 +121,6 @@ public class TraitsProvider implements DataProvider {
                 .cancelsWith(Const.Traits.BRITTLE));
         ret.add(new DurabilityTraitBuilder(Const.Traits.STURDY, 5, -1, 0.175f)
                 .cancelsWith(Const.Traits.BRITTLE));
-
-        // Self Repair
-
-        ret.add(selfRepairTrait(Const.Traits.RENEW, 5, 0.018f, 1));
 
         // Attribute
 
@@ -231,12 +226,6 @@ public class TraitsProvider implements DataProvider {
                 .addEffect(GearType.TOOL, WielderEffectTrait.LevelType.TRAIT_LEVEL, MobEffects.DIG_SPEED, 1, 1, 1, 2, 3)
                 .addEffect(GearType.CURIO, WielderEffectTrait.LevelType.TRAIT_LEVEL, MobEffects.DIG_SPEED, 1, 1, 2, 2, 3)
                 .withGearTypeCondition(GearType.TOOL, GearType.CURIO)
-        );
-        ret.add(new PotionTraitBuilder(Const.Traits.STELLAR, 5, StellarTrait.SERIALIZER)
-                .addEffect(GearType.ARMOR, WielderEffectTrait.LevelType.PIECE_COUNT, MobEffects.MOVEMENT_SPEED, 0, 1, 2, 3)
-                .addEffect(GearType.ARMOR, WielderEffectTrait.LevelType.PIECE_COUNT, MobEffects.JUMP, 1, 2, 3, 4)
-                .extraWikiLines(String.format("  - Has a %d%% chance per level to restore 1 durability each second",
-                        (int) (100 * Const.Traits.STELLAR_REPAIR_CHANCE)))
         );
 
         // Target Effect
@@ -373,14 +362,6 @@ public class TraitsProvider implements DataProvider {
                 .extraData(json -> {
                     json.addProperty("damage_type", damageType);
                     json.addProperty("damage_bonus", damageBonus);
-                });
-    }
-
-    protected static TraitBuilder selfRepairTrait(DataResource<ITrait> trait, int maxLevel, float activationChance, int repairAmount) {
-        return new TraitBuilder(trait, maxLevel, SelfRepairTrait.SERIALIZER)
-                .extraData(json -> {
-                    json.addProperty("activation_chance", activationChance);
-                    json.addProperty("repair_amount", repairAmount);
                 });
     }
 

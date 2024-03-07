@@ -191,8 +191,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_2)
                 .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_3);
 
-        builder(ModTags.Items.REPAIR_KITS, ModItems.CRUDE_REPAIR_KIT);
-
         // Blueprints
         Multimap<ResourceLocation, AbstractBlueprintItem> blueprints = MultimapBuilder.linkedHashKeys().arrayListValues().build();
         ForgeRegistries.ITEMS.getValues().stream()

@@ -37,7 +37,6 @@ import net.silentchaos512.gear.init.Registration;
 import net.silentchaos512.gear.item.CraftingItems;
 import net.silentchaos512.gear.item.CustomMaterialItem;
 import net.silentchaos512.gear.item.FragmentItem;
-import net.silentchaos512.gear.item.RepairKitItem;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.util.NameUtils;
 
@@ -72,29 +71,6 @@ public class SGearJeiPlugin implements IModPlugin {
     public void registerRecipes(IRecipeRegistration reg) {
         assert Minecraft.getInstance().level != null;
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
-
-        // Repair kit hints
-        for (RepairKitItem item : Registration.getItems(RepairKitItem.class)) {
-            String itemName = NameUtils.fromItem(item).getPath();
-            reg.addRecipes(Collections.singleton(new ShapelessRecipe(SilentGear.getId(itemName + "_fill_hint"), "",
-                            new ItemStack(item),
-                            NonNullList.of(Ingredient.EMPTY,
-                                    Ingredient.of(item),
-                                    PartMaterialIngredient.of(PartType.MAIN),
-                                    PartMaterialIngredient.of(PartType.MAIN),
-                                    PartMaterialIngredient.of(PartType.MAIN)
-                            ))),
-                    VanillaRecipeCategoryUid.CRAFTING);
-            reg.addRecipes(Collections.singleton(new ShapelessRecipe(SilentGear.getId(itemName + "_fill_hint_frag"), "",
-                            new ItemStack(item),
-                            NonNullList.of(Ingredient.EMPTY,
-                                    Ingredient.of(item),
-                                    Ingredient.of(ModItems.FRAGMENT),
-                                    Ingredient.of(ModItems.FRAGMENT),
-                                    Ingredient.of(ModItems.FRAGMENT)
-                            ))),
-                    VanillaRecipeCategoryUid.CRAFTING);
-        }
 
         reg.addRecipes(recipeManager.getRecipes().stream()
                 .filter(SGearJeiPlugin::isGearCraftingRecipe)

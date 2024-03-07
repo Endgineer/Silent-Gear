@@ -78,7 +78,6 @@ public class GearVillages {
                 trades.get(2).add(new SellingItemTrade(ModItems.PROSPECTOR_HAMMER_BLUEPRINT, 5, 1, 2, 12));
                 trades.get(2).add(new SellingItemTrade(ModItems.SAW_BLUEPRINT, 7, 1, 4, 12));
                 trades.get(2).add(new SellingItemTrade(ModItems.TIP_BLUEPRINT, 4, 1, 4, 7));
-                trades.get(2).add(new SellingItemTrade(ModItems.STURDY_REPAIR_KIT, 8, 1, 3, 10));
 
                 trades.get(2).add(new BuyingItemTrade(CraftingItems.CRIMSON_IRON_INGOT, 3, 12, 10));
             }

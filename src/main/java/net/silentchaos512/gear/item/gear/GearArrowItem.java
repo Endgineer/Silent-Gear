@@ -43,7 +43,6 @@ import java.util.function.Consumer;
 public class GearArrowItem extends ArrowItem implements ICoreItem {
     private static final Set<ItemStat> RELEVANT_STATS = ImmutableSet.of(
             ItemStats.DURABILITY,
-            ItemStats.REPAIR_EFFICIENCY,
             ItemStats.RANGED_DAMAGE,
             ItemStats.PROJECTILE_SPEED,
             ItemStats.PROJECTILE_ACCURACY
@@ -51,7 +50,6 @@ public class GearArrowItem extends ArrowItem implements ICoreItem {
 
     private static final Set<ItemStat> EXCLUDED_STATS = ImmutableSet.of(
             ItemStats.ARMOR_DURABILITY,
-            ItemStats.REPAIR_VALUE,
             ItemStats.MELEE_DAMAGE,
             ItemStats.ATTACK_SPEED,
             ItemStats.ATTACK_REACH,

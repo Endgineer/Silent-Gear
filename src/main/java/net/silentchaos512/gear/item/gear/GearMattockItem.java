@@ -99,7 +99,7 @@ public class GearMattockItem extends HoeItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override

@@ -43,7 +43,6 @@ import java.util.function.Consumer;
 public class GearFishingRodItem extends FishingRodItem implements ICoreTool {
     private static final Set<ItemStat> RELEVANT_STATS = ImmutableSet.of(
             ItemStats.DURABILITY,
-            ItemStats.REPAIR_EFFICIENCY,
             ItemStats.ENCHANTABILITY
     );
 
@@ -61,7 +60,6 @@ public class GearFishingRodItem extends FishingRodItem implements ICoreTool {
 
     private static final Set<ItemStat> EXCLUDED_STATS = ImmutableSet.of(
             ItemStats.ARMOR_DURABILITY,
-            ItemStats.REPAIR_VALUE,
             ItemStats.HARVEST_LEVEL,
             ItemStats.HARVEST_SPEED,
             ItemStats.RANGED_DAMAGE,
@@ -162,7 +160,7 @@ public class GearFishingRodItem extends FishingRodItem implements ICoreTool {
 
     @Override
     public boolean isValidRepairItem(ItemStack toRepair, ItemStack repair) {
-        return GearHelper.getIsRepairable(toRepair, repair);
+        return false;
     }
 
     @Override
