@@ -4,11 +4,13 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -38,6 +40,15 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModBlocks {
+    public static final BlockRegistryObject<Block> DEEPSLATE_TITANITE_ORE = register("deepslate_titanite_ore", () -> new TwinklingOreBlock(
+        BlockBehaviour.Properties.of(Material.STONE)
+            .requiresCorrectToolForDrops()
+            .color(MaterialColor.DEEPSLATE)
+            .strength(4.5F, 1200.0F)
+            .sound(SoundType.DEEPSLATE)
+            .lightLevel((state) -> state.getValue(TwinklingOreBlock.CHARGE)), UniformInt.of(3, 7)
+    ));
+
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 
     public static final BlockRegistryObject<OreBlock> BORT_ORE = register("bort_ore", () ->

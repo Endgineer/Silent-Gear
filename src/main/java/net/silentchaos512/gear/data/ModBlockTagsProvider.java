@@ -35,7 +35,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.ORES_AZURE_SILVER);
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .addTag(ModTags.Blocks.ORES_BORT)
-                .addTag(ModTags.Blocks.ORES_CRIMSON_IRON);
+                .addTag(ModTags.Blocks.ORES_CRIMSON_IRON)
+                .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get());
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.RAW_AZURE_SILVER_BLOCK.get())
                 .add(ModBlocks.RAW_CRIMSON_IRON_BLOCK.get());
@@ -71,7 +72,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.RECRYSTALLIZER.get())
                 .add(ModBlocks.REFABRICATOR.get())
                 .add(ModBlocks.METAL_PRESS.get())
-                .add(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
+                .add(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get())
+                .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get());
 
         // Silent Gear
         getBuilder(ModTags.Blocks.FLUFFY_BLOCKS)

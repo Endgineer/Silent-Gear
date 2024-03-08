@@ -26,6 +26,8 @@ import java.util.function.Supplier;
 
 @SuppressWarnings({"unused", "OverlyCoupledClass"})
 public final class ModItems {
+    public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD = register("titanite_shard", () -> new TitaniteShardItem());
+
     public static final ItemRegistryObject<GuideBookItem> GUIDE_BOOK = register("guide_book", () ->
             new GuideBookItem(unstackableProps()));
 

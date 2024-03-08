@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#forge:ores/bort",
-    "#forge:ores/crimson_iron"
+    "#forge:ores/crimson_iron",
+    "silentgear:deepslate_titanite_ore"
   ]
 }
