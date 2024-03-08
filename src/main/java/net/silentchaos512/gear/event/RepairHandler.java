@@ -7,9 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.ICoreItem;
-import net.silentchaos512.gear.gear.material.MaterialInstance;
 import net.silentchaos512.gear.gear.part.PartData;
-import net.silentchaos512.gear.gear.part.UpgradePart;
 import net.silentchaos512.gear.util.GearData;
 
 @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID)
@@ -19,14 +17,7 @@ public final class RepairHandler {
     @SubscribeEvent
     public static void onAnvilUpdate(AnvilUpdateEvent event) {
         if (event.getLeft().getItem() instanceof ICoreItem) {
-            MaterialInstance material = MaterialInstance.from(event.getRight());
-            PartData part = PartData.from(event.getRight());
-
-            if (material != null) {
-                return;
-            } else if (part != null && part.get() instanceof UpgradePart) {
-                handleUpgradeApplication(event, part);
-            }
+            event.setCanceled(true);
         }
     }
 

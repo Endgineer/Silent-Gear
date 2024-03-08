@@ -653,9 +653,9 @@ public final class GearHelper {
     }
 
     public static int getEnchantability(ItemStack stack) {
-        if (Config.Common.allowEnchanting.get()) {
-            return GearData.getStatInt(stack, ItemStats.ENCHANTABILITY);
-        }
+        // if (Config.Common.allowEnchanting.get()) {
+        //     return GearData.getStatInt(stack, ItemStats.ENCHANTABILITY);
+        // }
         return 0;
     }
 
