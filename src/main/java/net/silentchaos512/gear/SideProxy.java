@@ -45,6 +45,7 @@ import net.silentchaos512.gear.gear.part.PartManager;
 import net.silentchaos512.gear.gear.trait.TraitManager;
 import net.silentchaos512.gear.init.*;
 import net.silentchaos512.gear.item.CraftingItems;
+import net.silentchaos512.gear.metallurgy.MetallurgyManager;
 import net.silentchaos512.gear.network.Network;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.world.ModWorldFeatures;
@@ -122,6 +123,7 @@ class SideProxy implements IProxy {
         event.addListener(TraitManager.INSTANCE);
         event.addListener(PartManager.INSTANCE);
         event.addListener(MaterialManager.INSTANCE);
+		event.addListener(new MetallurgyManager());
     }
 
     private static void serverStarted(ServerStartedEvent event) {

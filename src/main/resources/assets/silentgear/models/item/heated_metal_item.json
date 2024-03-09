@@ -1,0 +1,12 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "silentgear:item/heated_metal_item_0"
+    },
+    "overrides": [
+        { "predicate": { "custom_model_data": 1}, "model": "silentgear:item/heated_metal_item/1" },
+        { "predicate": { "custom_model_data": 2}, "model": "silentgear:item/heated_metal_item/2" },
+        { "predicate": { "custom_model_data": 3}, "model": "silentgear:item/heated_metal_item/3" },
+        { "predicate": { "custom_model_data": 4}, "model": "silentgear:item/heated_metal_item/4" }
+    ]
+}
