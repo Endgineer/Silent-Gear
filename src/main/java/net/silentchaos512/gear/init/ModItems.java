@@ -28,6 +28,10 @@ import java.util.function.Supplier;
 public final class ModItems {
     public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD = register("titanite_shard", () -> new TitaniteShardItem());
 
+    public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD_SMOLDERING = register("titanite_shard_smoldering", () -> new TitaniteShardSmolderingItem());
+    public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD_FROSTY = register("titanite_shard_frosty", () -> new TitaniteShardFrostyItem());
+    public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD_CHARGED = register("titanite_shard_charged", () -> new TitaniteShardChargedItem());
+
     public static final ItemRegistryObject<GuideBookItem> GUIDE_BOOK = register("guide_book", () ->
             new GuideBookItem(unstackableProps()));
 

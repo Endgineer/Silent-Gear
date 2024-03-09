@@ -1,0 +1,16 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "silentgear:item/titanite_shard"
+    },
+    "overrides": [
+        { "predicate": { "custom_model_data": 1}, "model": "silentgear:item/titanite_shard_frosty/0" },
+        { "predicate": { "custom_model_data": 2}, "model": "silentgear:item/titanite_shard_frosty/1" },
+        { "predicate": { "custom_model_data": 3}, "model": "silentgear:item/titanite_shard_frosty/2" },
+        { "predicate": { "custom_model_data": 4}, "model": "silentgear:item/titanite_shard_frosty/3" },
+        { "predicate": { "custom_model_data": 5}, "model": "silentgear:item/titanite_shard_frosty/4" },
+        { "predicate": { "custom_model_data": 6}, "model": "silentgear:item/titanite_shard_frosty/5" },
+        { "predicate": { "custom_model_data": 7}, "model": "silentgear:item/titanite_shard_frosty/6" },
+        { "predicate": { "custom_model_data": 8}, "model": "silentgear:item/titanite_shard_frosty/7" }
+    ]
+}
