@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fml.ModList;
+import net.endgineer.curseoftheabyss.common.Abyss;
 
 public class TwinklingOreBlock extends Block {
     public static final Vector3f TWINKLE_PARTICLE_COLOR = new Vector3f(Vec3.fromRGB24(16777215));
@@ -53,13 +54,13 @@ public class TwinklingOreBlock extends Block {
     }
 
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random rng) {
-        // double field = Abyss.field(Abyss.get(level.getServer()).getOrigin(), pos.getX(), pos.getY(), pos.getZ(), level.getGameTime());
-        // if(Math.random() <= field) {
-        //     int ambient = (int) Math.floor(field * 15);
-        //     int charge = state.getValue(TwinklingOreBlock.CHARGE);
-        //     charge = charge < ambient ? charge+1 : (charge > ambient ? charge-1 : charge);
-        //     level.setBlock(pos, state.setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(charge)), 3);
-        // }
+        double field = Abyss.field(Abyss.get(level.getServer()).getOrigin(), pos.getX(), pos.getY(), pos.getZ(), level.getGameTime());
+        if(Math.random() <= field) {
+            int ambient = (int) Math.floor(field * 15);
+            int charge = state.getValue(TwinklingOreBlock.CHARGE);
+            charge = charge < ambient ? charge+1 : (charge > ambient ? charge-1 : charge);
+            level.setBlock(pos, state.setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(charge)), 3);
+        }
     }
 
     @Override

@@ -114,6 +114,10 @@ sourceSets.main.resources {
 }
 
 repositories {
+    flatDir {
+        dir 'libs'
+    }
+    
     mavenLocal()
     maven {
         url = uri("https://maven.pkg.github.com/silentchaos512/silentlib")
@@ -150,6 +154,13 @@ repositories {
     }
     maven {
         url 'https://maven.blamejared.com'
+    }
+
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 }
 
@@ -217,6 +228,11 @@ dependencies {
         compileOnly fg.deobf("vazkii.patchouli:Patchouli:${project.patchouli_version}:api")
         runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${project.patchouli_version}")
     }
+    
+    implementation fg.deobf("curse.maven:citadel-331936:3783096")
+    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:4614465")
+
+    implementation fg.deobf("net.engineer.curseoftheabyss:curseoftheabyss-1.18.2:2.0.4")
 }
 
 jar {

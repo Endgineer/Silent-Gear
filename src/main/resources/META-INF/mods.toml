@@ -34,3 +34,15 @@ authors="SilentChaos512"
     versionRange="[6.2,7)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.silentgear]]
+    modId="iceandfire"
+    mandatory=true
+    versionRange="[2.1.12,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.silentgear]]
+    modId="curseoftheabyss"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="NONE"
+    side="BOTH"
