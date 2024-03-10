@@ -3,6 +3,7 @@
   "values": [
     "#forge:ores/bort",
     "#forge:ores/crimson_iron",
-    "silentgear:deepslate_titanite_ore"
+    "silentgear:deepslate_titanite_ore",
+	  "silentgear:titanite_anvil"
   ]
 }
