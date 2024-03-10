@@ -1,12 +1,25 @@
 package net.silentchaos512.gear.item;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.GearType;
+import net.silentchaos512.gear.api.material.MaterialList;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.api.util.StatGearKey;
 import net.silentchaos512.gear.gear.part.PartData;
@@ -57,5 +70,34 @@ public class MainPartItem extends CompoundPartItem {
         }
 
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemstack = player.getMainHandItem();
+        MaterialList materials = MainPartItem.getMaterials(itemstack);
+
+        final HitResult hitresult = player.pick(2.0D, 0.0F, true);
+        BlockPos pos = ((BlockHitResult) hitresult).getBlockPos();
+
+        if(hitresult.getType() == HitResult.Type.BLOCK && player.level.getFluidState(pos).getType() == Fluids.LAVA && materials.get(0).getGrade().isNotMax()) {
+            CompoundTag tag = new CompoundTag();
+            tag.putString(HeatedMetalItem.METAL, materials.get(0).getId().getPath());
+            tag.putInt(HeatedMetalItem.COUNT, materials.size());
+            tag.putInt(HeatedMetalItem.REINFORCE, materials.get(0).getGrade().next().ordinal());
+            tag.putDouble(HeatedMetalItem.HEAT, 0);
+            tag.putInt(HeatedMetalItem.PROGRESS, 0);
+            tag.putDouble(HeatedMetalItem.EXPERIENCE, 0);
+            tag.putInt("CustomModelData", 0);
+            tag.put(HeatedMetalItem.PART, itemstack.save(new CompoundTag()));
+            
+            ItemStack result = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(SilentGear.MOD_ID+":heated_metal_item")));
+            result.setTag(tag);
+            player.setItemInHand(hand, result);
+            
+            player.playSound(SoundEvents.BUCKET_EMPTY_LAVA, 1.0F, 1.0F);
+        }
+
+        return super.use(level, player, hand);
     }
 }

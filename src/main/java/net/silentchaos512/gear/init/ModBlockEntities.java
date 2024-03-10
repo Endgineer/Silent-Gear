@@ -5,12 +5,17 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
+import net.silentchaos512.gear.SilentGear;
+import net.silentchaos512.gear.block.anvil.TitaniteAnvilBlockEntity;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
 import net.silentchaos512.gear.block.compounder.CompounderTileEntity;
 import net.silentchaos512.gear.block.press.MetalPressTileEntity;
 import net.silentchaos512.gear.block.salvager.SalvagerTileEntity;
+import net.silentchaos512.gear.client.renderer.TitaniteAnvilBlockEntityRenderer;
 import net.silentchaos512.gear.crafting.recipe.compounder.FabricCompoundingRecipe;
 import net.silentchaos512.gear.crafting.recipe.compounder.GemCompoundingRecipe;
 import net.silentchaos512.gear.crafting.recipe.compounder.MetalCompoundingRecipe;
@@ -20,6 +25,14 @@ import net.silentchaos512.lib.block.IBlockProvider;
 import java.util.Arrays;
 
 public final class ModBlockEntities {
+    public static final RegistryObject<BlockEntityType<TitaniteAnvilBlockEntity>> TITANITE_ANVIL_BLOCK_ENTITY = Registration.BLOCK_ENTITIES.register(
+        "titanite_anvil_block_entity",
+        () -> BlockEntityType.Builder.of(
+            TitaniteAnvilBlockEntity::new,
+            ModBlocks.TITANITE_ANVIL.get()
+        ).build(null)
+    );
+
     public static final RegistryObject<BlockEntityType<CompounderTileEntity<MetalCompoundingRecipe>>> METAL_ALLOYER = register("metal_alloyer",
             (pos, state) -> new CompounderTileEntity<>(Const.METAL_COMPOUNDER_INFO, pos, state),
             ModBlocks.METAL_ALLOYER);
@@ -47,9 +60,14 @@ public final class ModBlockEntities {
     private ModBlockEntities() {}
 
     static void register() {}
-
-    @OnlyIn(Dist.CLIENT)
-    public static void registerRenderers(FMLClientSetupEvent event) {
+    
+    @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class Events {
+        @OnlyIn(Dist.CLIENT)
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.TITANITE_ANVIL_BLOCK_ENTITY.get(), TitaniteAnvilBlockEntityRenderer::new);
+        }
     }
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, IBlockProvider... blocks) {

@@ -40,7 +40,7 @@ public final class GradeCommand {
         if (stack.getItem() instanceof MainPartItem) {
             MaterialList materials = MainPartItem.getMaterials(stack);
             for(IMaterialInstance material : materials) {
-                material.getGrade().next().setGradeOnStack(material.getItem());
+                grade.setGradeOnStack(material.getItem());
             }
             
             MainPartItem part = (MainPartItem) stack.getItem();

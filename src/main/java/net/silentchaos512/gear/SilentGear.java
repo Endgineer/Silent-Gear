@@ -8,6 +8,7 @@ import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.FMLLoader;
+import net.silentchaos512.gear.crafting.recipe.SpoutDrenching;
 import net.silentchaos512.gear.item.CraftingItems;
 import net.silentchaos512.gear.util.ModResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -33,6 +34,8 @@ public final class SilentGear {
     public SilentGear() {
         INSTANCE = this;
         PROXY = DistExecutor.unsafeRunForDist(() -> SideProxy.Client::new, () -> SideProxy.Server::new);
+
+        SpoutDrenching.registerRecipes();
     }
 
     public static String getVersion() {

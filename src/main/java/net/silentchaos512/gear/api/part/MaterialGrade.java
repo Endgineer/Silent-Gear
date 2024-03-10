@@ -35,8 +35,12 @@ public enum MaterialGrade {
         return values()[values().length - 1];
     }
 
+    public boolean isNotMax() {
+        return this.ordinal() < values().length - 1;
+    }
+
     public MaterialGrade next() {
-        return this.ordinal() + 1 < values().length ? values()[this.ordinal() + 1] : values()[this.ordinal()];
+        return values()[(this.ordinal() + 1) % values().length];
     }
 
     public static MaterialGrade fromStack(ItemStack stack) {

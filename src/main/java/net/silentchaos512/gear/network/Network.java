@@ -10,6 +10,7 @@ import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.gear.material.MaterialManager;
 import net.silentchaos512.gear.gear.part.PartManager;
 import net.silentchaos512.gear.gear.trait.TraitManager;
+import net.silentchaos512.gear.helper.slimeknights.network.InventorySlotSyncPacket;
 import net.silentchaos512.gear.util.MismatchedVersionsException;
 
 import java.util.Objects;
@@ -126,7 +127,9 @@ public final class Network {
 
     private Network() {}
 
-    public static void init() {}
+    public static void init() {
+        channel.registerMessage(0, InventorySlotSyncPacket.class, InventorySlotSyncPacket::encode, InventorySlotSyncPacket::new, InventorySlotSyncPacket::handle);
+    }
 
     static void writeModVersionInfoToNetwork(FriendlyByteBuf buffer) {
         buffer.writeUtf(Network.VERSION); // Change to test error message (dedicated server only)

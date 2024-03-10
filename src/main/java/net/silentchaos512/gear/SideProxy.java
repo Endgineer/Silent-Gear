@@ -1,6 +1,8 @@
 package net.silentchaos512.gear;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.MinecraftServer;
@@ -204,9 +206,9 @@ class SideProxy implements IProxy {
         private static void clientSetup(FMLClientSetupEvent event) {
             KeyTracker.register(event);
             ModBlocks.registerRenderTypes(event);
-            ModBlockEntities.registerRenderers(event);
             ModContainers.registerScreens(event);
             ModItemModelProperties.register(event);
+			ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANITE_ANVIL.get(), RenderType.translucent());
         }
 
         private static void postSetup(FMLLoadCompleteEvent event) {

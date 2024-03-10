@@ -1,5 +1,6 @@
 package net.silentchaos512.gear.init;
 
+import net.silentchaos512.gear.block.TitaniteAnvilBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.particles.ParticleTypes;
@@ -32,6 +33,9 @@ import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
 import javax.annotation.Nullable;
+
+import com.simibubi.create.AllBlocks;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -47,6 +51,10 @@ public final class ModBlocks {
             .strength(4.5F, 1200.0F)
             .sound(SoundType.DEEPSLATE)
             .lightLevel((state) -> state.getValue(TwinklingOreBlock.CHARGE)), UniformInt.of(3, 7)
+    ));
+	
+    public static final BlockRegistryObject<TitaniteAnvilBlock> TITANITE_ANVIL = register("titanite_anvil", () -> new TitaniteAnvilBlock(
+        BlockBehaviour.Properties.copy(AllBlocks.RAILWAY_CASING.get()).noOcclusion()
     ));
 
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();

@@ -1,0 +1,27 @@
+{
+    "type": "create:mechanical_crafting",
+    "pattern": [
+        " CCC ",
+        " ITI ",
+        " BBB "
+    ],
+    "key": {
+        "C": {
+            "item": "create:railway_casing"
+        },
+        "I": {
+            "tag": "forge:ingots/brass"
+        },
+        "T": {
+            "item": "silentgear:titanite_shard"
+        },
+        "B": {
+            "tag": "forge:storage_blocks/brass"
+        }
+    },
+    "result": {
+        "item": "silentgear:titanite_anvil",
+        "count": 1
+    },
+    "acceptMirrored": false
+}

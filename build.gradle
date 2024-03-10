@@ -155,6 +155,11 @@ repositories {
     maven {
         url 'https://maven.blamejared.com'
     }
+	
+	maven {
+        name = 'tterrag maven'
+        url = 'https://maven.tterrag.com/'
+    }
 
     maven {
         url "https://cursemaven.com"
@@ -228,6 +233,10 @@ dependencies {
         compileOnly fg.deobf("vazkii.patchouli:Patchouli:${project.patchouli_version}:api")
         runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${project.patchouli_version}")
     }
+	
+	implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
     
     implementation fg.deobf("curse.maven:citadel-331936:3783096")
     implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:4614465")

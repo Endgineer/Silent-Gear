@@ -35,6 +35,12 @@ authors="SilentChaos512"
     ordering="NONE"
     side="BOTH"
 [[dependencies.silentgear]]
+    modId="create"
+    mandatory=true
+    versionRange="[0.5.1.c,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.silentgear]]
     modId="iceandfire"
     mandatory=true
     versionRange="[2.1.12,)"

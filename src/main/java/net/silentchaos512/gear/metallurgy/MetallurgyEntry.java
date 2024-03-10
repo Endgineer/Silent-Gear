@@ -25,12 +25,14 @@ public class MetallurgyEntry {
             JsonObject reinforce = reinforces.get(i).getAsJsonObject();
             JsonObject xp_gain = reinforce.getAsJsonObject("xp_gain");
             JsonObject heat_loss = reinforce.getAsJsonObject("heat_loss");
+            JsonObject folding_range = reinforce.getAsJsonObject("folding_range");
             this.reinforces[i] = new Reinforce(
                 i,
                 reinforce.get("xp_trip").getAsInt(),
                 reinforce.get("heat_capacity").getAsInt(),
+                folding_range.get("min").getAsInt(),
+                folding_range.get("max").getAsInt(),
                 reinforce.get("malleability_midpoint").getAsInt(),
-                reinforce.get("folding_point").getAsInt(),
                 xp_gain.get("min").getAsDouble(),
                 xp_gain.get("max").getAsDouble(),
                 reinforce.get("malleability_slope").getAsDouble(),
@@ -51,8 +53,9 @@ public class MetallurgyEntry {
         private int xp_total;
         private int xp_trip;
         private int heat_capacity;
+        private int folding_range_min;
+        private int folding_range_max;
         private int malleability_midpoint;
-        private int folding_point;
         private double xp_gain_min;
         private double xp_gain_max;
         private double malleability_slope;
@@ -65,12 +68,13 @@ public class MetallurgyEntry {
         private double cooling_error_slope;
         private double cooling_error_intercept;
 
-        public Reinforce(int index, int xp_trip, int heat_capacity, int malleability_midpoint, int folding_point, double xp_gain_min, double xp_gain_max, double malleability_slope, double heat_loss_min, double heat_loss_max, double cooling_slope) {
+        public Reinforce(int index, int xp_trip, int heat_capacity, int folding_range_min, int folding_range_max, int malleability_midpoint, double xp_gain_min, double xp_gain_max, double malleability_slope, double heat_loss_min, double heat_loss_max, double cooling_slope) {
             this.xp_total = (int) Math.pow(2, index) * xp_trip;
             this.xp_trip = xp_trip;
             this.heat_capacity = heat_capacity;
+            this.folding_range_min = folding_range_min;
+            this.folding_range_max = folding_range_max;
             this.malleability_midpoint = malleability_midpoint;
-            this.folding_point = folding_point;
             this.xp_gain_min = xp_gain_min;
             this.xp_gain_max = xp_gain_max+1;
             this.malleability_slope = malleability_slope;
@@ -120,6 +124,6 @@ public class MetallurgyEntry {
 
         public double getMalleability(double heat) { return this.malleabilityNormalized(heat); }
 
-        public int getFoldingPoint() { return this.folding_point; }
+        public int compareFoldingRange(double heat) { return heat < this.folding_range_min ? -1 : (heat > this.folding_range_max ? 1 : 0); }
     }
 }
