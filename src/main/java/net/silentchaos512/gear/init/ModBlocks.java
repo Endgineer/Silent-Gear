@@ -22,13 +22,9 @@ import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.*;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
 import net.silentchaos512.gear.block.charger.StarlightChargerBlock;
-import net.silentchaos512.gear.block.compounder.CompounderBlock;
 import net.silentchaos512.gear.block.press.MetalPressBlock;
 import net.silentchaos512.gear.block.salvager.SalvagerBlock;
 import net.silentchaos512.gear.config.Config;
-import net.silentchaos512.gear.crafting.recipe.compounder.FabricCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.GemCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.MetalCompoundingRecipe;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
@@ -101,24 +97,6 @@ public final class ModBlocks {
             new StarlightChargerBlock(ChargerTileEntity::createStarlightCharger,
                     BlockBehaviour.Properties.of(Material.METAL)
                             .strength(5, 30)));
-
-    public static final BlockRegistryObject<CompounderBlock<MetalCompoundingRecipe>> METAL_ALLOYER = register("metal_alloyer", () ->
-            new CompounderBlock<>(Const.METAL_COMPOUNDER_INFO,
-                    BlockBehaviour.Properties.of(Material.METAL)
-                            .strength(4, 20)
-                            .sound(SoundType.METAL)));
-
-    public static final BlockRegistryObject<CompounderBlock<GemCompoundingRecipe>> RECRYSTALLIZER = register("recrystallizer", () ->
-            new CompounderBlock<>(Const.GEM_COMPOUNDER_INFO,
-                    BlockBehaviour.Properties.of(Material.METAL)
-                            .strength(4, 20)
-                            .sound(SoundType.METAL)));
-
-    public static final BlockRegistryObject<CompounderBlock<FabricCompoundingRecipe>> REFABRICATOR = register("refabricator", () ->
-            new CompounderBlock<>(Const.FABRIC_COMPOUNDER_INFO,
-                    BlockBehaviour.Properties.of(Material.METAL)
-                            .strength(4, 20)
-                            .sound(SoundType.METAL)));
 
     public static final BlockRegistryObject<MetalPressBlock> METAL_PRESS = register("metal_press", () ->
             new MetalPressBlock(BlockBehaviour.Properties.of(Material.METAL)
@@ -242,13 +220,11 @@ public final class ModBlocks {
     public static void registerRenderTypes(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(FLAX_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FLUFFY_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(METAL_ALLOYER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(METAL_PRESS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(POTTED_NETHERWOOD_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(RECRYSTALLIZER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SALVAGER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(STARLIGHT_CHARGER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(STONE_TORCH.get(), RenderType.cutout());

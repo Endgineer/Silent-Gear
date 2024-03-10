@@ -6,11 +6,6 @@ import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.material.IMaterial;
 import net.silentchaos512.gear.api.part.IGearPart;
 import net.silentchaos512.gear.api.traits.ITrait;
-import net.silentchaos512.gear.block.compounder.CompounderInfo;
-import net.silentchaos512.gear.crafting.recipe.compounder.CompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.FabricCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.GemCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.MetalCompoundingRecipe;
 import net.silentchaos512.gear.gear.material.MaterialCategories;
 import net.silentchaos512.gear.init.*;
 
@@ -26,10 +21,6 @@ public final class Const {
     // Recipe types and categories
     public static final ResourceLocation COMBINE_FRAGMENTS = modId("combine_fragments");
     public static final ResourceLocation COMPOUND_PART = modId("compound_part");
-    public static final ResourceLocation COMPOUNDING = modId("compounding");
-    public static final ResourceLocation COMPOUNDING_FABRIC = modId("compounding/fabric");
-    public static final ResourceLocation COMPOUNDING_GEM = modId("compounding/gem");
-    public static final ResourceLocation COMPOUNDING_METAL = modId("compounding/metal");
     public static final ResourceLocation DAMAGE_ITEM = modId("damage_item");
     public static final ResourceLocation GRADING = modId("grading");
     public static final ResourceLocation MOD_KIT_REMOVE_PART = modId("mod_kit_remove_part");
@@ -51,48 +42,6 @@ public final class Const {
     // Random
     public static final ResourceLocation NULL_ID = new ResourceLocation("null");
     public static final String NBT_IS_FOIL = "SG_IsFoil";
-
-    // Compound-crafting block info
-    public static final CompounderInfo<MetalCompoundingRecipe> METAL_COMPOUNDER_INFO = new CompounderInfo<>(
-            ImmutableList.of(
-                    MaterialCategories.METAL,
-                    MaterialCategories.DUST
-            ),
-            4,
-            () -> ModItems.ALLOY_INGOT.get(),
-            () -> ModBlocks.METAL_ALLOYER.get(),
-            () -> ModBlockEntities.METAL_ALLOYER.get(),
-            () -> ModContainers.METAL_ALLOYER.get(),
-            () -> ModRecipes.COMPOUNDING_METAL.get(),
-            () -> CompoundingRecipe.COMPOUNDING_METAL_TYPE,
-            MetalCompoundingRecipe.class);
-    public static final CompounderInfo<GemCompoundingRecipe> GEM_COMPOUNDER_INFO = new CompounderInfo<>(
-            ImmutableList.of(
-                    MaterialCategories.GEM,
-                    MaterialCategories.DUST
-            ),
-            4,
-            () -> ModItems.HYBRID_GEM.get(),
-            () -> ModBlocks.RECRYSTALLIZER.get(),
-            () -> ModBlockEntities.RECRYSTALLIZER.get(),
-            () -> ModContainers.RECRYSTALLIZER.get(),
-            () -> ModRecipes.COMPOUNDING_GEM.get(),
-            () -> CompoundingRecipe.COMPOUNDING_GEM_TYPE,
-            GemCompoundingRecipe.class);
-    public static final CompounderInfo<FabricCompoundingRecipe> FABRIC_COMPOUNDER_INFO = new CompounderInfo<>(
-            ImmutableList.of(
-                    MaterialCategories.CLOTH,
-                    MaterialCategories.FIBER,
-                    MaterialCategories.SLIME
-            ),
-            4,
-            () -> ModItems.MIXED_FABRIC.get(),
-            () -> ModBlocks.REFABRICATOR.get(),
-            () -> ModBlockEntities.REFABRICATOR.get(),
-            () -> ModContainers.REFABRICATOR.get(),
-            () -> ModRecipes.COMPOUNDING_FABRIC.get(),
-            () -> CompoundingRecipe.COMPOUNDING_FABRIC_TYPE,
-            FabricCompoundingRecipe.class);
 
     private Const() {}
 

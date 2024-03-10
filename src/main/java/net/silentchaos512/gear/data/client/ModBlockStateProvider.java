@@ -98,11 +98,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         orientableMachineBlock(ModBlocks.METAL_PRESS, "metal_press");
         orientableMachineBlock(ModBlocks.SALVAGER, "salvager");
 
-        // Compounders
-        orientableMachineBlock(ModBlocks.METAL_ALLOYER, "metal_alloyer");
-        orientableMachineBlock(ModBlocks.RECRYSTALLIZER, "recrystallizer");
-        orientableMachineBlock(ModBlocks.REFABRICATOR, "refabricator");
-
         // Plants
         getVariantBuilder(ModBlocks.FLAX_PLANT.get()).forAllStates(state -> {
             int i = cropAgeToIndex(state.getValue(ModCropBlock.AGE));

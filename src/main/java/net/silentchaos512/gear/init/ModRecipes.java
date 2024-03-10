@@ -12,9 +12,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.crafting.ingredient.*;
 import net.silentchaos512.gear.crafting.recipe.*;
-import net.silentchaos512.gear.crafting.recipe.compounder.CompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.GemCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.MetalCompoundingRecipe;
 import net.silentchaos512.gear.crafting.recipe.press.MaterialPressingRecipe;
 import net.silentchaos512.gear.crafting.recipe.press.PressingRecipe;
 import net.silentchaos512.gear.crafting.recipe.salvage.CompoundPartSalvagingRecipe;
@@ -35,14 +32,6 @@ public final class ModRecipes {
             new SimpleRecipeSerializer<>(CombineFragmentsRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> COMPOUND_PART = register(Const.COMPOUND_PART, () ->
             ExtendedShapelessRecipe.Serializer.basic(ShapelessCompoundPartRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> COMPOUNDING = register(Const.COMPOUNDING, () ->
-            new CompoundingRecipe.Serializer<>(CompoundingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> COMPOUNDING_FABRIC = register(Const.COMPOUNDING_FABRIC, () ->
-            new CompoundingRecipe.Serializer<>(GemCompoundingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> COMPOUNDING_GEM = register(Const.COMPOUNDING_GEM, () ->
-            new CompoundingRecipe.Serializer<>(GemCompoundingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> COMPOUNDING_METAL = register(Const.COMPOUNDING_METAL, () ->
-            new CompoundingRecipe.Serializer<>(MetalCompoundingRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> CONVERSION = register("conversion",
             ConversionRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> DAMAGE_ITEM = register(Const.DAMAGE_ITEM,
@@ -83,7 +72,6 @@ public final class ModRecipes {
         CraftingHelper.register(GearPartIngredient.Serializer.NAME, GearPartIngredient.Serializer.INSTANCE);
         CraftingHelper.register(GearTypeIngredient.Serializer.NAME, GearTypeIngredient.Serializer.INSTANCE);
         CraftingHelper.register(PartMaterialIngredient.Serializer.NAME, PartMaterialIngredient.Serializer.INSTANCE);
-        CraftingHelper.register(CustomCompoundIngredient.Serializer.NAME, CustomCompoundIngredient.Serializer.INSTANCE);
     }
 
     private static RegistryObject<RecipeSerializer<?>> register(String name, Supplier<RecipeSerializer<?>> serializer) {
@@ -105,10 +93,6 @@ public final class ModRecipes {
     public static void registerTypes(RegistryEvent.Register<RecipeSerializer<?>> event) {
         // FIXME...
         SilentGear.LOGGER.debug("This is a nasty fix to update to 1.18.2! Please excuse the next few lines of the log file...");
-        SilentGear.LOGGER.debug(CompoundingRecipe.COMPOUNDING_TYPE);
-        SilentGear.LOGGER.debug(CompoundingRecipe.COMPOUNDING_FABRIC_TYPE);
-        SilentGear.LOGGER.debug(CompoundingRecipe.COMPOUNDING_GEM_TYPE);
-        SilentGear.LOGGER.debug(CompoundingRecipe.COMPOUNDING_METAL_TYPE);
         SilentGear.LOGGER.debug(PressingRecipe.PRESSING_TYPE);
         SilentGear.LOGGER.debug(SalvagingRecipe.SALVAGING_TYPE);
     }

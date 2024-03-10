@@ -108,11 +108,11 @@ public final class Network {
                 .decoder(ClientOutputCommandPacket::decode)
                 .consumer(ClientOutputCommandPacket::handle)
                 .add();
-        channel.messageBuilder(CompounderUpdatePacket.class, 14, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(CompounderUpdatePacket::encode)
-                .decoder(CompounderUpdatePacket::decode)
-                .consumer(CompounderUpdatePacket::handle)
-                .add();
+        // channel.messageBuilder(CompounderUpdatePacket.class, 14, NetworkDirection.PLAY_TO_SERVER)
+        //         .encoder(CompounderUpdatePacket::encode)
+        //         .decoder(CompounderUpdatePacket::decode)
+        //         .consumer(CompounderUpdatePacket::handle)
+        //         .add();
         channel.messageBuilder(OpenGuideBookPacket.class, 15, NetworkDirection.PLAY_TO_CLIENT)
                 .encoder((pkt, buf) -> {})
                 .decoder(buf -> new OpenGuideBookPacket())

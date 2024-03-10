@@ -12,14 +12,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.anvil.TitaniteAnvilBlockEntity;
 import net.silentchaos512.gear.block.charger.ChargerTileEntity;
-import net.silentchaos512.gear.block.compounder.CompounderTileEntity;
 import net.silentchaos512.gear.block.press.MetalPressTileEntity;
 import net.silentchaos512.gear.block.salvager.SalvagerTileEntity;
 import net.silentchaos512.gear.client.renderer.TitaniteAnvilBlockEntityRenderer;
-import net.silentchaos512.gear.crafting.recipe.compounder.FabricCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.GemCompoundingRecipe;
-import net.silentchaos512.gear.crafting.recipe.compounder.MetalCompoundingRecipe;
-import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.block.IBlockProvider;
 
 import java.util.Arrays;
@@ -33,21 +28,9 @@ public final class ModBlockEntities {
         ).build(null)
     );
 
-    public static final RegistryObject<BlockEntityType<CompounderTileEntity<MetalCompoundingRecipe>>> METAL_ALLOYER = register("metal_alloyer",
-            (pos, state) -> new CompounderTileEntity<>(Const.METAL_COMPOUNDER_INFO, pos, state),
-            ModBlocks.METAL_ALLOYER);
-
     public static final RegistryObject<BlockEntityType<MetalPressTileEntity>> METAL_PRESS = register("metal_press",
             MetalPressTileEntity::new,
             ModBlocks.METAL_PRESS);
-
-    public static final RegistryObject<BlockEntityType<CompounderTileEntity<GemCompoundingRecipe>>> RECRYSTALLIZER = register("recrystallizer",
-            (pos, state) -> new CompounderTileEntity<>(Const.GEM_COMPOUNDER_INFO, pos, state),
-            ModBlocks.RECRYSTALLIZER);
-
-    public static final RegistryObject<BlockEntityType<CompounderTileEntity<FabricCompoundingRecipe>>> REFABRICATOR = register("refabricator",
-            (pos, state) -> new CompounderTileEntity<>(Const.FABRIC_COMPOUNDER_INFO, pos, state),
-            ModBlocks.REFABRICATOR);
 
     public static final RegistryObject<BlockEntityType<SalvagerTileEntity>> SALVAGER = register("salvager",
             SalvagerTileEntity::new,

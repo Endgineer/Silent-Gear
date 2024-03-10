@@ -93,7 +93,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
         registerGear(consumer);
         registerModifierKits(consumer);
         registerMachines(consumer);
-        registerCompounding(consumer);
         registerPressing(consumer);
         registerSmithing(consumer);
         registerSalvaging(consumer);
@@ -614,37 +613,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
     }
 
     private void registerMachines(Consumer<FinishedRecipe> consumer) {
-        ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.METAL_ALLOYER)
-                .key('/', ModTags.Items.INGOTS_CRIMSON_STEEL)
-                .key('i', Tags.Items.STORAGE_BLOCKS_IRON)
-                .key('#', Blocks.BLACKSTONE)
-                .patternLine("/#/")
-                .patternLine("/ /")
-                .patternLine("#i#")
-                .build(consumer);
-
-        ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.RECRYSTALLIZER)
-                .key('/', ModTags.Items.INGOTS_AZURE_ELECTRUM)
-                .key('g', Tags.Items.STORAGE_BLOCKS_GOLD)
-                .key('d', Tags.Items.GEMS_DIAMOND)
-                .key('e', Tags.Items.GEMS_EMERALD)
-                .key('#', Blocks.PURPUR_BLOCK)
-                .patternLine("/e/")
-                .patternLine("/d/")
-                .patternLine("#g#")
-                .build(consumer);
-
-        ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.REFABRICATOR)
-                .key('/', Tags.Items.INGOTS_IRON)
-                .key('i', Tags.Items.STORAGE_BLOCKS_IRON)
-                .key('d', Tags.Items.GEMS_DIAMOND)
-                .key('b', ModTags.Items.GEMS_BORT)
-                .key('#', ItemTags.PLANKS)
-                .patternLine("/ /")
-                .patternLine("dbd")
-                .patternLine("#i#")
-                .build(consumer);
-
         ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.METAL_PRESS)
                 .key('#', Tags.Items.OBSIDIAN)
                 .key('t', ModTags.Items.INGOTS_TYRIAN_STEEL)
@@ -662,27 +630,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .patternLine("qgq")
                 .patternLine("#g#")
                 .patternLine("#/#")
-                .build(consumer);
-    }
-
-    private void registerCompounding(Consumer<FinishedRecipe> consumer) {
-        CompoundingRecipeBuilder.gemBuilder(ModItems.CUSTOM_GEM, 1)
-                .withCustomMaterial(Const.Materials.DIMERALD)
-                .addIngredient(Tags.Items.GEMS_DIAMOND)
-                .addIngredient(Tags.Items.GEMS_EMERALD)
-                .build(consumer);
-
-        CompoundingRecipeBuilder.metalBuilder(ModItems.CUSTOM_INGOT, 1)
-                .withCustomMaterial(DataResource.material("high_carbon_steel"))
-                .addIngredient(Tags.Items.INGOTS_IRON)
-                .addIngredient(ItemTags.COALS, 3)
-                .build(consumer);
-
-        CompoundingRecipeBuilder.metalBuilder(CraftingItems.TYRIAN_STEEL_INGOT, 4)
-                .addIngredient(ModTags.Items.INGOTS_CRIMSON_STEEL)
-                .addIngredient(ModTags.Items.INGOTS_AZURE_ELECTRUM)
-                .addIngredient(CraftingItems.CRUSHED_SHULKER_SHELL)
-                .addIngredient(Items.NETHERITE_SCRAP)
                 .build(consumer);
     }
 

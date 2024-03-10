@@ -80,10 +80,7 @@ public class ModBlockLootTables extends BlockLoot {
         dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());
 
         dropSelf(ModBlocks.GEAR_SMITHING_TABLE.get());
-        dropSelf(ModBlocks.METAL_ALLOYER.get());
         dropSelf(ModBlocks.METAL_PRESS.get());
-        dropSelf(ModBlocks.RECRYSTALLIZER.get());
-        dropSelf(ModBlocks.REFABRICATOR.get());
         dropSelf(ModBlocks.SALVAGER.get());
         dropSelf(ModBlocks.STARLIGHT_CHARGER.get());
 
