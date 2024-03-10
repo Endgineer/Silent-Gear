@@ -31,4 +31,9 @@ public class TitaniteShardItem extends Item {
             components.add(new TranslatableComponent("tooltip.silentgear.titanite_shard3").withStyle(ChatFormatting.GRAY));
         }
     }
+
+    @Override
+    public boolean isFireResistant() {
+        return true;
+    }
 }

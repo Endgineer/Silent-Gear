@@ -14,6 +14,7 @@ import net.silentchaos512.gear.api.GearApi;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.helper.slimeknights.blockentity.HolderBlockEntity;
 import net.silentchaos512.gear.item.HeatedMetalItem;
+import net.silentchaos512.gear.item.TitaniteShardAwakenedItem;
 import net.silentchaos512.gear.item.TitaniteShardItem;
 import net.silentchaos512.gear.metallurgy.MetallurgyEntry;
 import net.minecraft.nbt.CompoundTag;
@@ -64,7 +65,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             this.hammerItem(player);
         } else if(player.isShiftKeyDown()) {
             this.takeItem(player);
-        } else if(itemstack.getItem() instanceof TitaniteShardItem) {
+        } else if(this.getItem(SLOT).is(ModItems.HEATED_METAL_ITEM.get()) && itemstack.getItem() instanceof TitaniteShardItem) {
             this.foldItem(player, hand);
         } else if(!this.isStackInSlot(SLOT)) {
             /*if(itemstack.is(ModTags.Items.DAEMON_PART_BASE) && !this.isStackInSlot(SLOT_PART_BASE)) {
@@ -73,9 +74,12 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             } else if(itemstack.is(ModTags.Items.DAEMON_PART_MAIN) && !this.isStackInSlot(SLOT_PART_MAIN)) {
                 this.setItem(SLOT_PART_MAIN, itemstack);
                 player.setItemInHand(hand, ItemStack.EMPTY);
-            }*/ if(itemstack.is(ModItems.HEATED_METAL_ITEM.get()) && this.isEmpty()) {
+            }*/ if(itemstack.is(ModItems.HEATED_METAL_ITEM.get())) {
                 this.setItem(SLOT, itemstack);
                 player.setItemInHand(hand, ItemStack.EMPTY);
+            } else if(itemstack.getItem() instanceof TitaniteShardAwakenedItem && !itemstack.hasTag()) {
+                this.setItem(SLOT, new ItemStack(itemstack.getItem()));
+                player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount()-1);
             }
         }
     }
@@ -145,7 +149,23 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             this.setItem(SLOT, item);
 
             level.playSound(null, this.getBlockPos(), SoundEvents.CHICKEN_EGG, SoundSource.PLAYERS, 1.0F, 1.0F);
-        }*/ else {
+        }*/ else if(itemstack.getItem() instanceof TitaniteShardAwakenedItem) {
+            CompoundTag tag = new CompoundTag();
+
+            tag.putInt("CustomModelData", player.level.getMoonPhase()+1);
+            itemstack.setTag(tag);
+
+            boolean success = Math.random() <= Math.max(0, 1 - Math.abs((player.level.getDayTime() % 24000 - 18000) / 5000.0));
+
+            this.setItem(SLOT, success ? itemstack : ItemStack.EMPTY);
+            this.dropItems();
+
+            ((ServerLevel) level).sendParticles(ParticleTypes.CRIT, this.getBlockPos().getX() + 0.5D, this.getBlockPos().getY() + 1.0D, this.getBlockPos().getZ() + 0.5D, 10, 0.05D, 0.05D, 0.05D, 1);
+
+            level.playSound(null, worldPosition, success ? SoundEvents.LIGHTNING_BOLT_THUNDER : SoundEvents.END_PORTAL_FRAME_FILL, SoundSource.AMBIENT, 1.0F, 1.0F);
+            level.playSound(null, worldPosition, SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 0.5f, 2.0f);
+            player.getCooldowns().addCooldown(AllItems.WRENCH.get(), 20);
+        } else {
             level.playSound(null, worldPosition, SoundEvents.ANVIL_PLACE, SoundSource.PLAYERS, 1.0F, 5.0F);
             player.getCooldowns().addCooldown(AllItems.WRENCH.get(), 20);
         }
