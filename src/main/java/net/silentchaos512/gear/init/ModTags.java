@@ -13,7 +13,6 @@ import java.util.List;
 
 public final class ModTags {
     public static final class Blocks {
-        public static final TagKey<Block> FLUFFY_BLOCKS = mod("fluffy_blocks");
         public static final TagKey<Block> NETHERWOOD_LOGS = mod("netherwood_logs");
         public static final TagKey<Block> NETHERWOOD_SOIL = mod("netherwood_soil");
         public static final TagKey<Block> PROSPECTOR_HAMMER_TARGETS = mod("prospector_hammer_targets");
@@ -45,7 +44,6 @@ public final class ModTags {
     }
 
     public static final class Items {
-        public static final TagKey<Item> FLUFFY_BLOCKS = mod("fluffy_blocks");
         public static final TagKey<Item> NETHERWOOD_LOGS = mod("netherwood_logs");
         public static final TagKey<Item> ORES_BORT = forge("ores/bort");
         public static final TagKey<Item> ORES_CRIMSON_IRON = forge("ores/crimson_iron");

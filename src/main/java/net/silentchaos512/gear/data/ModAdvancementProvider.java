@@ -104,8 +104,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .display(CraftingItems.FLAX_FIBER, title("overworld_plants"), description("overworld_plants"), null, FrameType.TASK, true, true, false)
                     .addCriterion("flax_seeds", getItem(ModItems.FLAX_SEEDS))
                     .addCriterion("flax_fibers", getItem(CraftingItems.FLAX_FIBER))
-                    .addCriterion("fluffy_seeds", getItem(ModItems.FLUFFY_SEEDS))
-                    .addCriterion("fluffy_puffs", getItem(CraftingItems.FLUFFY_PUFF))
                     .requirements(RequirementsStrategy.AND)
                     .save(consumer, id("overworld_plants"));
             Advancement kachink1 = Advancement.Builder.advancement()

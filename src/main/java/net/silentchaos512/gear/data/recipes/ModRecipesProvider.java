@@ -31,7 +31,6 @@ import net.silentchaos512.gear.item.gear.GearArmorItem;
 import net.silentchaos512.gear.util.DataResource;
 import net.silentchaos512.lib.data.recipe.ExtendedShapedRecipeBuilder;
 import net.silentchaos512.lib.data.recipe.ExtendedShapelessRecipeBuilder;
-import net.silentchaos512.lib.data.recipe.ExtendedSingleItemRecipeBuilder;
 import net.silentchaos512.lib.data.recipe.LibRecipeProvider;
 import net.silentchaos512.lib.util.NameUtils;
 
@@ -687,81 +686,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK))
                 .save(consumer, SilentGear.getId("netherwood_charcoal_from_block"));
 
-        ShapedRecipeBuilder.shaped(CraftingItems.FLUFFY_FABRIC)
-                .pattern("##")
-                .pattern("##")
-                .define('#', CraftingItems.FLUFFY_PUFF)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(CraftingItems.FLUFFY_PUFF, 4)
-                .requires(CraftingItems.FLUFFY_FABRIC)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer, SilentGear.getId("fluffy_puff_from_fabric"));
-
-        ShapedRecipeBuilder.shaped(ModBlocks.WHITE_FLUFFY_BLOCK)
-                .pattern("##")
-                .pattern("##")
-                .define('#', CraftingItems.FLUFFY_FABRIC)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer, SilentGear.getId("fluffy_block_base"));
-        ShapelessRecipeBuilder.shapeless(CraftingItems.FLUFFY_FABRIC, 4)
-                .requires(ModTags.Items.FLUFFY_BLOCKS)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer, SilentGear.getId("fluffy_fabric_from_block"));
-
-        dyeFluffyBlock(consumer, ModBlocks.WHITE_FLUFFY_BLOCK, Tags.Items.DYES_WHITE);
-        dyeFluffyBlock(consumer, ModBlocks.ORANGE_FLUFFY_BLOCK, Tags.Items.DYES_ORANGE);
-        dyeFluffyBlock(consumer, ModBlocks.MAGENTA_FLUFFY_BLOCK, Tags.Items.DYES_MAGENTA);
-        dyeFluffyBlock(consumer, ModBlocks.LIGHT_BLUE_FLUFFY_BLOCK, Tags.Items.DYES_LIGHT_BLUE);
-        dyeFluffyBlock(consumer, ModBlocks.YELLOW_FLUFFY_BLOCK, Tags.Items.DYES_YELLOW);
-        dyeFluffyBlock(consumer, ModBlocks.LIME_FLUFFY_BLOCK, Tags.Items.DYES_LIME);
-        dyeFluffyBlock(consumer, ModBlocks.PINK_FLUFFY_BLOCK, Tags.Items.DYES_PINK);
-        dyeFluffyBlock(consumer, ModBlocks.GRAY_FLUFFY_BLOCK, Tags.Items.DYES_GRAY);
-        dyeFluffyBlock(consumer, ModBlocks.LIGHT_GRAY_FLUFFY_BLOCK, Tags.Items.DYES_LIGHT_GRAY);
-        dyeFluffyBlock(consumer, ModBlocks.CYAN_FLUFFY_BLOCK, Tags.Items.DYES_CYAN);
-        dyeFluffyBlock(consumer, ModBlocks.PURPLE_FLUFFY_BLOCK, Tags.Items.DYES_PURPLE);
-        dyeFluffyBlock(consumer, ModBlocks.BLUE_FLUFFY_BLOCK, Tags.Items.DYES_BLUE);
-        dyeFluffyBlock(consumer, ModBlocks.BROWN_FLUFFY_BLOCK, Tags.Items.DYES_BROWN);
-        dyeFluffyBlock(consumer, ModBlocks.GREEN_FLUFFY_BLOCK, Tags.Items.DYES_GREEN);
-        dyeFluffyBlock(consumer, ModBlocks.RED_FLUFFY_BLOCK, Tags.Items.DYES_RED);
-        dyeFluffyBlock(consumer, ModBlocks.BLACK_FLUFFY_BLOCK, Tags.Items.DYES_BLACK);
-
-        ShapelessRecipeBuilder.shapeless(ModItems.FLUFFY_SEEDS)
-                .requires(CraftingItems.FLUFFY_PUFF)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(CraftingItems.FLUFFY_FEATHER)
-                .pattern(" ##")
-                .pattern("## ")
-                .pattern("#  ")
-                .define('#', CraftingItems.FLUFFY_PUFF)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer);
-
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(Items.FEATHER)
-                .addIngredient(CraftingItems.FLUFFY_FEATHER)
-                .build(consumer);
-
-        ShapedRecipeBuilder.shaped(CraftingItems.FLUFFY_STRING)
-                .pattern("###")
-                .define('#', CraftingItems.FLUFFY_PUFF)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer);
-
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(Items.STRING)
-                .addIngredient(CraftingItems.FLUFFY_STRING)
-                .build(consumer);
-
-        ShapedRecipeBuilder.shaped(Items.WHITE_WOOL)
-                .pattern("###")
-                .pattern("#~#")
-                .pattern("###")
-                .define('#', CraftingItems.FLUFFY_PUFF)
-                .define('~', Tags.Items.STRING)
-                .unlockedBy("has_item", has(CraftingItems.FLUFFY_PUFF))
-                .save(consumer, SilentGear.getId("fluffy_wool"));
-
         ShapedRecipeBuilder.shaped(CraftingItems.FINE_SILK_CLOTH)
                 .pattern("##")
                 .pattern("##")
@@ -1014,17 +938,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(Tags.Items.STONE)
                 .unlockedBy("has_item", has(ItemTags.PLANKS))
                 .save(consumer);
-    }
-
-    private void dyeFluffyBlock(Consumer<FinishedRecipe> consumer, ItemLike block, TagKey<Item> dye) {
-        shapedBuilder(block, 8)
-                .patternLine("###")
-                .patternLine("#d#")
-                .patternLine("###")
-                .key('#', ModTags.Items.FLUFFY_BLOCKS)
-                .key('d', dye)
-                .addCriterion("has_item", has(ModBlocks.WHITE_FLUFFY_BLOCK))
-                .build(consumer);
     }
 
     private void registerSmithing(Consumer<FinishedRecipe> consumer) {

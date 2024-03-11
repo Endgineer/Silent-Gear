@@ -12,7 +12,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.silentchaos512.gear.SilentGear;
-import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.stats.ItemStat;
 import net.silentchaos512.gear.init.NerfedGear;
 import net.silentchaos512.gear.item.blueprint.BlueprintType;
@@ -60,10 +59,6 @@ public final class Config {
         public static final ForgeConfigSpec.IntValue azureSilverCount;
         public static final ForgeConfigSpec.IntValue bortCount;
         public static final ForgeConfigSpec.IntValue crimsonIronCount;
-        /*public static final ForgeConfigSpec.IntValue wildFlaxTryCount;
-        public static final ForgeConfigSpec.IntValue wildFlaxPatchCount;
-        public static final ForgeConfigSpec.IntValue wildFluffyTryCount;
-        public static final ForgeConfigSpec.IntValue wildFluffyPatchCount;*/
         // Debug
         public static final ForgeConfigSpec.BooleanValue extraPartAndTraitLogging;
         public static final ForgeConfigSpec.BooleanValue statsDebugLogging;
@@ -254,18 +249,6 @@ public final class Config {
                 crimsonIronCount = builder
                         .comment("Veins of crimson iron ore per chunk")
                         .defineInRange("crimsonIron.count", 14, 0, 1000);
-                /*wildFlaxPatchCount = builder
-                        .comment("Number of patches of wild flax to attempt to place per chunk (some biomes only)")
-                        .defineInRange("wildFlax.patchCount", 1, 0, 100);
-                wildFlaxTryCount = builder
-                        .comment("Block place attempts per wild flax cluster")
-                        .defineInRange("wildFlax.tryCount", 16, 0, 1000);
-                wildFluffyPatchCount = builder
-                        .comment("Number of patches of wild fluffy plants to attempt to place per chunk (some biomes only)")
-                        .defineInRange("wildFluffy.patchCount", 1, 0, 100);
-                wildFluffyTryCount = builder
-                        .comment("Block place attempts per wild fluffy plants cluster")
-                        .defineInRange("wildFluffy.tryCount", 16, 0, 1000);*/
                 builder.pop();
             }
 

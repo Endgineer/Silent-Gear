@@ -60,24 +60,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         doorBlock(ModBlocks.NETHERWOOD_DOOR.get(), modLoc("block/netherwood_door_bottom"), modLoc("block/netherwood_door_top"));
         trapdoorBlock(ModBlocks.NETHERWOOD_TRAPDOOR.get(), modLoc("block/netherwood_trapdoor"), true);
 
-        // Fluffy blocks
-        simpleBlock(ModBlocks.WHITE_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.ORANGE_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.MAGENTA_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.LIGHT_BLUE_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.YELLOW_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.LIME_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.PINK_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.GRAY_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.LIGHT_GRAY_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.CYAN_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.PURPLE_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.BLUE_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.BROWN_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.GREEN_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.RED_FLUFFY_BLOCK.get());
-        simpleBlock(ModBlocks.BLACK_FLUFFY_BLOCK.get());
-
         // Oddballs
         simpleBlock(ModBlocks.PHANTOM_LIGHT.get(), models().cubeAll("phantom_light", modLoc("item/blank")));
         simpleBlock(ModBlocks.POTTED_NETHERWOOD_SAPLING.get(), models()
@@ -98,14 +80,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .build();
         });
         simpleBlock(ModBlocks.WILD_FLAX_PLANT.get(), models().crop("wild_flax_plant", modLoc("block/flax_plant3")));
-
-        getVariantBuilder(ModBlocks.FLUFFY_PLANT.get()).forAllStates(state -> {
-            int i = cropAgeToIndex(state.getValue(ModCropBlock.AGE));
-            return ConfiguredModel.builder()
-                    .modelFile(models().crop("fluffy_plant" + i, modLoc("block/fluffy_plant" + i)))
-                    .build();
-        });
-        simpleBlock(ModBlocks.WILD_FLUFFY_PLANT.get(), models().crop("wild_fluffy_plant", modLoc("block/fluffy_plant3")));
     }
 
     public ModelBuilder<BlockModelBuilder> wallTorch(String name, ResourceLocation torch) {

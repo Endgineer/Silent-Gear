@@ -244,8 +244,6 @@ public final class ModItems {
 
     public static final ItemRegistryObject<ItemNameBlockItem> FLAX_SEEDS = register("flax_seeds", () ->
             new SeedItem(ModBlocks.FLAX_PLANT.get(), baseProps()));
-    public static final ItemRegistryObject<ItemNameBlockItem> FLUFFY_SEEDS = register("fluffy_seeds", () ->
-            new SeedItem(ModBlocks.FLUFFY_PLANT.get(), baseProps()));
 
     public static final ItemRegistryObject<Item> NETHER_BANANA = register("nether_banana", () ->
             new Item(baseProps()

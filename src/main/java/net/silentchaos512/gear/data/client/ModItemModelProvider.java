@@ -102,14 +102,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(ModItems.GUIDE_BOOK, itemGenerated);
         builder(ModItems.BLUEPRINT_PACKAGE, itemGenerated);
         builder(ModItems.FLAX_SEEDS, itemGenerated);
-        builder(ModItems.FLUFFY_SEEDS, itemGenerated);
         builder(ModItems.GOLDEN_NETHER_BANANA, itemGenerated);
         builder(ModItems.NETHER_BANANA, itemGenerated);
         builder(ModItems.PEBBLE, itemGenerated);
     }
 
     private void blockItemModel(Block block) {
-        if (block == ModBlocks.FLAX_PLANT.get() || block == ModBlocks.FLUFFY_PLANT.get()) {
+        if (block == ModBlocks.FLAX_PLANT.get()) {
             return;
         }
 

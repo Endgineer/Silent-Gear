@@ -10,10 +10,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.silentchaos512.gear.SilentGear;
-import net.silentchaos512.gear.block.FluffyBlock;
 import net.silentchaos512.gear.init.ModBlocks;
 import net.silentchaos512.gear.init.ModTags;
-import net.silentchaos512.gear.init.Registration;
 import net.silentchaos512.lib.block.IBlockProvider;
 
 import java.util.Arrays;
@@ -71,8 +69,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.TITANITE_ANVIL.get());
 
         // Silent Gear
-        getBuilder(ModTags.Blocks.FLUFFY_BLOCKS)
-                .add(Registration.getBlocks(FluffyBlock.class).toArray(new Block[0]));
         getBuilder(ModTags.Blocks.NETHERWOOD_LOGS)
                 .add(ModBlocks.NETHERWOOD_LOG.get())
                 .add(ModBlocks.STRIPPED_NETHERWOOD_LOG.get())
@@ -115,7 +111,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL);
 
         // Minecraft
-        builder(BlockTags.CROPS, ModBlocks.FLAX_PLANT, ModBlocks.FLUFFY_PLANT);
         builder(BlockTags.LEAVES, ModBlocks.NETHERWOOD_LEAVES);
         getBuilder(BlockTags.LOGS).addTag(ModTags.Blocks.NETHERWOOD_LOGS);
         builder(BlockTags.PLANKS, ModBlocks.NETHERWOOD_PLANKS);

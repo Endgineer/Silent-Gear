@@ -78,10 +78,6 @@ public enum CraftingItems implements ItemLike {
     FLAX_FIBER,
     FLAX_STRING,
     FLAX_FLOWERS,
-    FLUFFY_PUFF,
-    FLUFFY_FABRIC,
-    FLUFFY_STRING,
-    FLUFFY_FEATHER,
     // Rods
     ROUGH_ROD,
     STONE_ROD,

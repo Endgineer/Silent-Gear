@@ -39,30 +39,6 @@
           }
         ]
       }
-    },
-    "fluffy_seeds": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "silentgear:fluffy_seeds"
-            ]
-          }
-        ]
-      }
-    },
-    "fluffy_puffs": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "silentgear:fluffy_puff"
-            ]
-          }
-        ]
-      }
     }
   },
   "requirements": [
@@ -71,12 +47,6 @@
     ],
     [
       "flax_fibers"
-    ],
-    [
-      "fluffy_seeds"
-    ],
-    [
-      "fluffy_puffs"
     ]
   ]
 }

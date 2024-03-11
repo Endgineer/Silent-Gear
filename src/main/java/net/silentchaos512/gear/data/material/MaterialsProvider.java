@@ -30,7 +30,6 @@ import net.silentchaos512.gear.init.ModBlocks;
 import net.silentchaos512.gear.init.ModItems;
 import net.silentchaos512.gear.init.ModTags;
 import net.silentchaos512.gear.item.CraftingItems;
-import net.silentchaos512.gear.item.CustomMaterialItem;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.util.TextUtil;
 import net.silentchaos512.lib.crafting.ingredient.ExclusionIngredient;
@@ -1310,25 +1309,6 @@ public class MaterialsProvider implements DataProvider {
                 .displayBowstring(0x845E37)
                 .displayFragment(PartTextures.CLOTH, 0x845E37)
         );
-        // Fluffy String
-        ret.add(new MaterialBuilder(modId("fluffy_string"), 1, CraftingItems.FLUFFY_STRING)
-                .categories(MaterialCategories.ORGANIC, MaterialCategories.FIBER)
-
-                .stat(PartType.BINDING, ItemStats.DURABILITY, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.BINDING, ItemStats.DURABILITY, -10, StatInstance.Operation.ADD)
-                .stat(PartType.BINDING, ItemStats.ARMOR_DURABILITY, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.BINDING, ItemStats.HARVEST_SPEED, -0.05f, StatInstance.Operation.MUL1)
-                .trait(PartType.BINDING, Const.Traits.FLEXIBLE, 1)
-
-                .stat(PartType.CORD, ItemStats.DURABILITY, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RANGED_DAMAGE, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RANGED_SPEED, -0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RARITY, 7, StatInstance.Operation.ADD)
-
-                .display(PartType.BINDING, PartTextureSet.LOW_CONTRAST, 0xFFFAE5)
-                .displayBowstring(0xFFFAE5)
-                .displayFragment(PartTextures.CLOTH, 0xFFFAE5)
-        );
         // Sinew
         ret.add(new MaterialBuilder(modId("sinew"), 1, CraftingItems.SINEW_FIBER)
                 .categories(MaterialCategories.ORGANIC, MaterialCategories.FIBER)
@@ -1348,7 +1328,6 @@ public class MaterialsProvider implements DataProvider {
         // String
         ExclusionIngredient stringIngredient = ExclusionIngredient.of(Tags.Items.STRING,
                 CraftingItems.FLAX_STRING,
-                CraftingItems.FLUFFY_STRING,
                 CraftingItems.SINEW_FIBER
         );
         ret.add(new MaterialBuilder(modId("string"), 1, stringIngredient)

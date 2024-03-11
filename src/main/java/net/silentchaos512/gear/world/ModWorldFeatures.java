@@ -36,7 +36,6 @@ import net.silentchaos512.gear.util.ModResourceLocation;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID)
 public final class ModWorldFeatures {
@@ -55,8 +54,6 @@ public final class ModWorldFeatures {
         private static final OreConfiguration AZURE_SILVER_ORE_VEINS_CONFIG = new OreConfiguration(END_STONE_RULE_TEST, ModBlocks.AZURE_SILVER_ORE.asBlockState(), 6);
         private static final RandomPatchConfiguration WILD_FLAX_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLAX_PLANT.get())), List.of(), 32);
-        private static final RandomPatchConfiguration WILD_FLUFFY_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLUFFY_PLANT.get())), List.of(), 32);
         public static final TreeConfiguration NETHERWOOD_TREE_CONFIG = new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(ModBlocks.NETHERWOOD_LOG.asBlockState()),
                 new ForkingTrunkPlacer(5, 2, 2),
@@ -70,7 +67,6 @@ public final class ModWorldFeatures {
         public static final Holder<ConfiguredFeature<OreConfiguration, ?>> CRIMSON_IRON_ORE_VEINS = create("crimson_iron_ore_veins", Feature.ORE, CRIMSON_IRON_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<OreConfiguration, ?>> AZURE_SILVER_ORE_VEINS = create("azure_silver_ore_veins", Feature.ORE, AZURE_SILVER_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLAX_PATCHES = create("wild_flax_patches", Feature.FLOWER, WILD_FLAX_PATCHES_CONFIG);
-        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLUFFY_PATCHES = create("wild_fluffy_patches", Feature.FLOWER, WILD_FLUFFY_PATCHES_CONFIG);
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> NETHERWOOD_TREE = create("netherwood_tree", Feature.TREE, NETHERWOOD_TREE_CONFIG);
 
         /*public static final Lazy<ConfiguredFeature<?, ?>> NETHERWOOD_TREES = createLazy("netherwood_trees", () -> Feature.RANDOM_SELECTOR
@@ -89,16 +85,6 @@ public final class ModWorldFeatures {
 
         public static <FC extends FeatureConfiguration> Holder<ConfiguredFeature<FC, ?>> create(String name, Feature<FC> feature, FC featureConfig) {
             return FeatureUtils.register("silentgear:" + name, feature, featureConfig);
-        }
-
-        private static Lazy<ConfiguredFeature<?, ?>> createLazy(String name, Supplier<ConfiguredFeature<?, ?>> supplier) {
-            if (TO_REGISTER.containsKey(name)) {
-                throw new IllegalArgumentException("Configured feature lazy with name '" + name + "' already created");
-            }
-
-            Lazy<ConfiguredFeature<?, ?>> lazy = Lazy.of(supplier);
-            TO_REGISTER.put(name, lazy);
-            return lazy;
         }
 
         private Configured() {}
@@ -122,9 +108,6 @@ public final class ModWorldFeatures {
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(16), VerticalAnchor.absolute(92))));
 
         public static final Holder<PlacedFeature> FLOWER_WILD_FLAX = create("flower_wild_flax", Configured.WILD_FLAX_PATCHES,
-                RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-
-        public static final Holder<PlacedFeature> FLOWER_WILD_FLUFFY = create("flower_wild_fluffy", Configured.WILD_FLUFFY_PATCHES,
                 RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         private static <FC extends FeatureConfiguration> Holder<PlacedFeature> create(String name, Holder<ConfiguredFeature<FC, ?>> configuredFeature, List<PlacementModifier> modifiers) {
@@ -186,20 +169,12 @@ public final class ModWorldFeatures {
             if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
                 addWildFlax(biome);
             }
-            if (biome.getClimate().downfall > 0.4f) {
-                addWildFluffyPlants(biome);
-            }
         }
     }
 
     private static void addWildFlax(BiomeLoadingEvent biome) {
         debugLog("Add wild flax to " + biome.getName());
         biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Placed.FLOWER_WILD_FLAX);
-    }
-
-    private static void addWildFluffyPlants(BiomeLoadingEvent biome) {
-        debugLog("Add wild fluffy plants to " + biome.getName());
-        biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Placed.FLOWER_WILD_FLUFFY);
     }
 
     private static void addNetherwoodTrees(BiomeLoadingEvent biome) {

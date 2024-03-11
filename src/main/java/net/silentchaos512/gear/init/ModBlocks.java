@@ -90,34 +90,6 @@ public final class ModBlocks {
                     .strength(0)
                     .noCollission()
                     .sound(SoundType.CROP)));
-    public static final BlockRegistryObject<ModCropBlock> FLUFFY_PLANT = registerNoItem("fluffy_plant", () ->
-            new ModCropBlock(ModItems.FLUFFY_SEEDS::get, BlockBehaviour.Properties.of(Material.PLANT)
-                    .strength(0)
-                    .noCollission()
-                    .randomTicks()
-                    .sound(SoundType.CROP)));
-    public static final BlockRegistryObject<BushBlock> WILD_FLUFFY_PLANT = registerNoItem("wild_fluffy_plant", () ->
-            new BushBlock(BlockBehaviour.Properties.of(Material.PLANT)
-                    .strength(0)
-                    .noCollission()
-                    .sound(SoundType.CROP)));
-
-    public static final BlockRegistryObject<FluffyBlock> WHITE_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.WHITE);
-    public static final BlockRegistryObject<FluffyBlock> ORANGE_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.ORANGE);
-    public static final BlockRegistryObject<FluffyBlock> MAGENTA_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.MAGENTA);
-    public static final BlockRegistryObject<FluffyBlock> LIGHT_BLUE_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.LIGHT_BLUE);
-    public static final BlockRegistryObject<FluffyBlock> YELLOW_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.YELLOW);
-    public static final BlockRegistryObject<FluffyBlock> LIME_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.LIME);
-    public static final BlockRegistryObject<FluffyBlock> PINK_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.PINK);
-    public static final BlockRegistryObject<FluffyBlock> GRAY_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.GRAY);
-    public static final BlockRegistryObject<FluffyBlock> LIGHT_GRAY_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.LIGHT_GRAY);
-    public static final BlockRegistryObject<FluffyBlock> CYAN_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.CYAN);
-    public static final BlockRegistryObject<FluffyBlock> PURPLE_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.PURPLE);
-    public static final BlockRegistryObject<FluffyBlock> BLUE_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.BLUE);
-    public static final BlockRegistryObject<FluffyBlock> BROWN_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.BROWN);
-    public static final BlockRegistryObject<FluffyBlock> GREEN_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.GREEN);
-    public static final BlockRegistryObject<FluffyBlock> RED_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.RED);
-    public static final BlockRegistryObject<FluffyBlock> BLACK_FLUFFY_BLOCK = registerFluffyBlock(DyeColor.BLACK);
 
     public static final BlockRegistryObject<TorchBlock> STONE_TORCH = register("stone_torch",
             () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
@@ -195,7 +167,6 @@ public final class ModBlocks {
     @OnlyIn(Dist.CLIENT)
     public static void registerRenderTypes(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(FLAX_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(FLUFFY_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_TRAPDOOR.get(), RenderType.cutout());
@@ -203,7 +174,6 @@ public final class ModBlocks {
         ItemBlockRenderTypes.setRenderLayer(STONE_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(WALL_STONE_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(WILD_FLAX_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(WILD_FLUFFY_PLANT.get(), RenderType.cutout());
     }
 
     @SubscribeEvent
@@ -244,10 +214,6 @@ public final class ModBlocks {
         BlockRegistryObject<T> ret = registerNoItem(name, block);
         Registration.ITEMS.register(name, item.apply(ret));
         return ret;
-    }
-
-    private static BlockRegistryObject<FluffyBlock> registerFluffyBlock(DyeColor color) {
-        return register(color.getName() + "_fluffy_block", () -> new FluffyBlock(color));
     }
 
     private static <T extends Block> Supplier<BlockItem> defaultItem(BlockRegistryObject<T> block) {

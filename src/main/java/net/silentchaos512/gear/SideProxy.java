@@ -102,9 +102,7 @@ class SideProxy implements IProxy {
 
     private static void registerCompostables() {
         LibHooks.registerCompostable(0.3f, ModItems.FLAX_SEEDS);
-        LibHooks.registerCompostable(0.3f, ModItems.FLUFFY_SEEDS);
         LibHooks.registerCompostable(0.5f, CraftingItems.FLAX_FIBER);
-        LibHooks.registerCompostable(0.5f, CraftingItems.FLUFFY_PUFF);
     }
 
     private static void registerCapabilities(RegisterCapabilitiesEvent event) {

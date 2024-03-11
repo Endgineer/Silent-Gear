@@ -79,32 +79,10 @@ public class ModBlockLootTables extends BlockLoot {
         add(ModBlocks.PHANTOM_LIGHT.get(), noDrop());
         dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());
 
-        dropSelf(ModBlocks.WHITE_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.ORANGE_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.MAGENTA_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.LIGHT_BLUE_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.YELLOW_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.LIME_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.PINK_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.GRAY_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.LIGHT_GRAY_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.CYAN_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.PURPLE_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.BLUE_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.BROWN_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.GREEN_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.RED_FLUFFY_BLOCK.get());
-        dropSelf(ModBlocks.BLACK_FLUFFY_BLOCK.get());
-
         this.add(ModBlocks.FLAX_PLANT.get(), flaxPlant(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLAX_PLANT.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties()
                         .hasProperty(CropBlock.AGE, 7))));
         dropOther(ModBlocks.WILD_FLAX_PLANT.get(), ModItems.FLAX_SEEDS);
-
-        this.add(ModBlocks.FLUFFY_PLANT.get(), fluffyPlant(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLUFFY_PLANT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties()
-                        .hasProperty(CropBlock.AGE, 7))));
-        dropOther(ModBlocks.WILD_FLUFFY_PLANT.get(), ModItems.FLUFFY_SEEDS);
     }
 
     @Nonnull
@@ -138,19 +116,6 @@ public class ModBlockLootTables extends BlockLoot {
                         .when(builder)
                         .add(LootItem.lootTableItem(CraftingItems.FLAX_FLOWERS)
                                 .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5f, 1))))
-        );
-    }
-
-    private static LootTable.Builder fluffyPlant(LootItemCondition.Builder builder) {
-        return applyExplosionDecay(ModBlocks.FLUFFY_PLANT, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .when(builder)
-                        .add(LootItem.lootTableItem(CraftingItems.FLUFFY_PUFF)
-                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))
-                .withPool(LootPool.lootPool()
-                        .when(builder)
-                        .add(LootItem.lootTableItem(ModItems.FLUFFY_SEEDS)
-                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))
         );
     }
 

@@ -135,7 +135,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         builder(ModTags.Items.TEMPLATE_BOARDS, CraftingItems.TEMPLATE_BOARD);
 
         builder(ModTags.Items.FRUITS, ModItems.NETHER_BANANA);
-        builder(Tags.Items.SEEDS, ModItems.FLAX_SEEDS, ModItems.FLUFFY_SEEDS);
         builder(Tags.Items.STRING, CraftingItems.FLAX_STRING, CraftingItems.SINEW_FIBER);
 
         builder(ModTags.Items.AXES, ModItems.AXE, ModItems.SAW, ModItems.MACHETE, ModItems.MATTOCK, ModItems.PAXEL);
@@ -180,7 +179,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         // Silent Gear
 
-        copy(ModTags.Blocks.FLUFFY_BLOCKS, ModTags.Items.FLUFFY_BLOCKS);
         copy(ModTags.Blocks.NETHERWOOD_LOGS, ModTags.Items.NETHERWOOD_LOGS);
 
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1).addTag(ModTags.Items.DUSTS_BLAZE_GOLD);
