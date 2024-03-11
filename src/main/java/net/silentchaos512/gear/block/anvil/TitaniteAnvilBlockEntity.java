@@ -117,7 +117,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
                 
                 tag.putDouble(HeatedMetalItem.HEAT, heat);
                 tag.putDouble(HeatedMetalItem.EXPERIENCE, experience);
-                tag.putInt("CustomModelData", (int) Math.ceil(4.0 * heat / MetallurgyEntry.get(metal).getReinforce(reinforce).getHeatCapacity()));
+                tag.putInt("CustomModelData", (int) Math.ceil(16.0 * heat / MetallurgyEntry.get(metal).getReinforce(reinforce).getHeatCapacity()));
 
                 itemstack.setTag(tag);
                 this.setItem(SLOT, itemstack);
@@ -274,7 +274,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
                 }
 
                 tag.putDouble(HeatedMetalItem.HEAT, heat);
-                tag.putInt("CustomModelData", (int) Math.ceil(heat/250.0));
+                tag.putInt("CustomModelData", (int) Math.ceil(16.0 * heat / MetallurgyEntry.get(metal).getReinforce(reinforce).getHeatCapacity()));
                 itemstack.setTag(tag);
                 this.setItem(SLOT, itemstack);
             }

@@ -7,6 +7,18 @@
         { "predicate": { "custom_model_data": 1}, "model": "silentgear:item/heated_metal_item/1" },
         { "predicate": { "custom_model_data": 2}, "model": "silentgear:item/heated_metal_item/2" },
         { "predicate": { "custom_model_data": 3}, "model": "silentgear:item/heated_metal_item/3" },
-        { "predicate": { "custom_model_data": 4}, "model": "silentgear:item/heated_metal_item/4" }
+        { "predicate": { "custom_model_data": 4}, "model": "silentgear:item/heated_metal_item/4" },
+        { "predicate": { "custom_model_data": 5}, "model": "silentgear:item/heated_metal_item/5" },
+        { "predicate": { "custom_model_data": 6}, "model": "silentgear:item/heated_metal_item/6" },
+        { "predicate": { "custom_model_data": 7}, "model": "silentgear:item/heated_metal_item/7" },
+        { "predicate": { "custom_model_data": 8}, "model": "silentgear:item/heated_metal_item/8" },
+        { "predicate": { "custom_model_data": 9}, "model": "silentgear:item/heated_metal_item/9" },
+        { "predicate": { "custom_model_data": 10}, "model": "silentgear:item/heated_metal_item/10" },
+        { "predicate": { "custom_model_data": 11}, "model": "silentgear:item/heated_metal_item/11" },
+        { "predicate": { "custom_model_data": 12}, "model": "silentgear:item/heated_metal_item/12" },
+        { "predicate": { "custom_model_data": 13}, "model": "silentgear:item/heated_metal_item/13" },
+        { "predicate": { "custom_model_data": 14}, "model": "silentgear:item/heated_metal_item/14" },
+        { "predicate": { "custom_model_data": 15}, "model": "silentgear:item/heated_metal_item/15" },
+        { "predicate": { "custom_model_data": 16}, "model": "silentgear:item/heated_metal_item/16" }
     ]
 }
