@@ -15,8 +15,6 @@ import net.minecraft.data.HashCache;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -28,8 +26,6 @@ import net.silentchaos512.gear.gear.part.LazyPartData;
 import net.silentchaos512.gear.gear.trait.DurabilityTrait;
 import net.silentchaos512.gear.init.ModBlocks;
 import net.silentchaos512.gear.init.ModItems;
-import net.silentchaos512.gear.init.ModTags;
-import net.silentchaos512.gear.init.Registration;
 import net.silentchaos512.gear.item.CraftingItems;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.util.GearData;
@@ -226,7 +222,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .save(consumer, id("crimson_iron"));
 
             Advancement crimsonSteel = simpleGetItem(consumer, CraftingItems.CRIMSON_STEEL_INGOT, crimsonIron, "crimson_steel");
-            Advancement salvager = simpleGetItem(consumer, ModBlocks.SALVAGER, crimsonIron);
 
             Advancement highDurability = Advancement.Builder.advancement()
                     .parent(blazeGold)
@@ -290,10 +285,6 @@ public class ModAdvancementProvider implements DataProvider {
 
         private static CriterionTriggerInstance getItem(ItemLike... items) {
             return InventoryChangeTrigger.TriggerInstance.hasItems(items);
-        }
-
-        private static CriterionTriggerInstance getItem(TagKey<Item> tag) {
-            return InventoryChangeTrigger.TriggerInstance.hasItems(new ItemPredicate(tag, null, MinMaxBounds.Ints.ANY, MinMaxBounds.Ints.ANY, EnchantmentPredicate.NONE, EnchantmentPredicate.NONE, null, NbtPredicate.ANY));
         }
 
         private static CriterionTriggerInstance genericInt(ResourceLocation id, int value) {

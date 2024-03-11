@@ -3,14 +3,12 @@ package net.silentchaos512.gear.data.client;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.ModCropBlock;
 import net.silentchaos512.gear.init.ModBlocks;
-import net.silentchaos512.lib.block.IBlockProvider;
 import net.silentchaos512.lib.util.NameUtils;
 
 import javax.annotation.Nonnull;
@@ -92,12 +90,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 90)
                         .build());
 
-        // Crafters and Machines
-        simpleBlock(ModBlocks.GEAR_SMITHING_TABLE.get(), getExistingModel("gear_smithing_table"));
-        simpleBlock(ModBlocks.STARLIGHT_CHARGER.get(), getExistingModel("starlight_charger"));
-        orientableMachineBlock(ModBlocks.METAL_PRESS, "metal_press");
-        orientableMachineBlock(ModBlocks.SALVAGER, "salvager");
-
         // Plants
         getVariantBuilder(ModBlocks.FLAX_PLANT.get()).forAllStates(state -> {
             int i = cropAgeToIndex(state.getValue(ModCropBlock.AGE));
@@ -114,23 +106,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .build();
         });
         simpleBlock(ModBlocks.WILD_FLUFFY_PLANT.get(), models().crop("wild_fluffy_plant", modLoc("block/fluffy_plant3")));
-    }
-
-    private ModelFile.ExistingModelFile getExistingModel(String blockName) {
-        return models().getExistingFile(modLoc(blockName));
-    }
-
-    private void orientableMachineBlock(IBlockProvider block, String name) {
-        ModelFile.ExistingModelFile offModel = getExistingModel(name);
-        ModelFile.ExistingModelFile onModel = getExistingModel(name + "_on");
-        getVariantBuilder(block.asBlock()).forAllStates(state -> {
-            Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-            boolean lit = state.getValue(BlockStateProperties.LIT);
-            return ConfiguredModel.builder()
-                    .modelFile(lit ? onModel : offModel)
-                    .rotationY((int) facing.getOpposite().toYRot())
-                    .build();
-        });
     }
 
     public ModelBuilder<BlockModelBuilder> wallTorch(String name, ResourceLocation torch) {

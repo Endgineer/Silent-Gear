@@ -56,12 +56,6 @@ public final class Config {
         private static final Map<ItemStat, ForgeConfigSpec.DoubleValue> statMultipliers = new HashMap<>();
         // Other items
         public static final ForgeConfigSpec.IntValue netherwoodCharcoalBurnTime;
-        // Salvager
-        public static final ForgeConfigSpec.DoubleValue salvagerMinLossRate;
-        public static final ForgeConfigSpec.DoubleValue salvagerMaxLossRate;
-        // Starlight Charger
-        public static final ForgeConfigSpec.IntValue starlightChargerChargeRate;
-        public static final ForgeConfigSpec.IntValue starlightChargerMaxCharge;
         // World
         public static final ForgeConfigSpec.IntValue azureSilverCount;
         public static final ForgeConfigSpec.IntValue bortCount;
@@ -245,32 +239,6 @@ public final class Config {
                     });*/
                     builder.pop();
                 }
-                builder.pop();
-            }
-
-            {
-                builder.comment("Settings for the salvager");
-                builder.push("salvager");
-                salvagerMinLossRate = builder
-                        .comment("Minimum rate of part loss when salvaging items. 0 = no loss, 1 = complete loss.",
-                                "Rate depends on remaining durability.")
-                        .defineInRange("partLossRate.min", 0.0, 0, 1);
-                salvagerMaxLossRate = builder
-                        .comment("Maximum rate of part loss when salvaging items. 0 = no loss, 1 = complete loss.",
-                                "Rate depends on remaining durability.")
-                        .defineInRange("partLossRate.max", 0.5, 0, 1);
-                builder.pop();
-            }
-
-            {
-                builder.comment("Settings for the starlight charger");
-                builder.push("starlightCharger");
-                starlightChargerChargeRate = builder
-                        .comment("The rate at which the starlight charger gathers energy during the night")
-                        .defineInRange("chargeRate", 50, 0, Integer.MAX_VALUE);
-                starlightChargerMaxCharge = builder
-                        .comment("The maximum amount of energy the starlight charger can store")
-                        .defineInRange("maxCharge", 1_000_000, 0, Integer.MAX_VALUE);
                 builder.pop();
             }
 

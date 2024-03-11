@@ -44,7 +44,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(ModTags.Blocks.NETHERWOOD_LOGS)
-                .add(ModBlocks.GEAR_SMITHING_TABLE.get())
                 .add(ModBlocks.NETHERWOOD_PLANKS.get())
                 .add(ModBlocks.NETHERWOOD_SLAB.get())
                 .add(ModBlocks.NETHERWOOD_STAIRS.get())
@@ -67,9 +66,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_CRIMSON_IRON)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_CRIMSON_STEEL)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL)
-                .add(ModBlocks.SALVAGER.get())
-                .add(ModBlocks.STARLIGHT_CHARGER.get())
-                .add(ModBlocks.METAL_PRESS.get())
                 .add(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get())
                 .add(ModBlocks.TITANITE_ANVIL.get());

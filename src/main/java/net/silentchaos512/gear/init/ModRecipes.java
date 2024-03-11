@@ -12,18 +12,11 @@ import net.minecraftforge.registries.RegistryObject;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.crafting.ingredient.*;
 import net.silentchaos512.gear.crafting.recipe.*;
-import net.silentchaos512.gear.crafting.recipe.press.MaterialPressingRecipe;
-import net.silentchaos512.gear.crafting.recipe.press.PressingRecipe;
-import net.silentchaos512.gear.crafting.recipe.salvage.CompoundPartSalvagingRecipe;
-import net.silentchaos512.gear.crafting.recipe.salvage.GearSalvagingRecipe;
-import net.silentchaos512.gear.crafting.recipe.salvage.SalvagingRecipe;
 import net.silentchaos512.gear.crafting.recipe.smithing.CoatingSmithingRecipe;
 import net.silentchaos512.gear.crafting.recipe.smithing.UpgradeSmithingRecipe;
-import net.silentchaos512.gear.gear.material.MaterialInstance;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.crafting.recipe.ExtendedShapedRecipe;
 import net.silentchaos512.lib.crafting.recipe.ExtendedShapelessRecipe;
-import net.silentchaos512.lib.crafting.recipe.ExtendedSingleItemRecipe;
 
 import java.util.function.Supplier;
 
@@ -38,16 +31,6 @@ public final class ModRecipes {
             SGearDamageItemRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> MOD_KIT_REMOVE_PART = register(Const.MOD_KIT_REMOVE_PART, () ->
             new SimpleRecipeSerializer<>(ModKitRemovePartRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> PRESSING = register(Const.PRESSING, () ->
-            ExtendedSingleItemRecipe.Serializer.basic(PressingRecipe.PRESSING_TYPE, PressingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> PRESSING_MATERIAL = register(Const.PRESSING_MATERIAL, () ->
-            ExtendedSingleItemRecipe.Serializer.basic(PressingRecipe.PRESSING_TYPE, MaterialPressingRecipe::new));
-    public static final RegistryObject<RecipeSerializer<?>> SALVAGING = register(Const.SALVAGING,
-            SalvagingRecipe.Serializer::new);
-    public static final RegistryObject<RecipeSerializer<?>> SALVAGING_GEAR = register(Const.SALVAGING_GEAR,
-            GearSalvagingRecipe.Serializer::new);
-    public static final RegistryObject<RecipeSerializer<?>> SALVAGING_COMPOUND_PART = register(Const.SALVAGING_COMPOUND_PART,
-            CompoundPartSalvagingRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> SHAPED_GEAR = register(Const.SHAPED_GEAR_CRAFTING, () ->
             ExtendedShapedRecipe.Serializer.basic(ShapedGearRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> SHAPELESS_GEAR = register(Const.SHAPELESS_GEAR_CRAFTING, () ->
@@ -93,7 +76,5 @@ public final class ModRecipes {
     public static void registerTypes(RegistryEvent.Register<RecipeSerializer<?>> event) {
         // FIXME...
         SilentGear.LOGGER.debug("This is a nasty fix to update to 1.18.2! Please excuse the next few lines of the log file...");
-        SilentGear.LOGGER.debug(PressingRecipe.PRESSING_TYPE);
-        SilentGear.LOGGER.debug(SalvagingRecipe.SALVAGING_TYPE);
     }
 }

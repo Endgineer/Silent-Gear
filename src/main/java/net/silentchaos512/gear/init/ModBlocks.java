@@ -20,12 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.*;
-import net.silentchaos512.gear.block.charger.ChargerTileEntity;
-import net.silentchaos512.gear.block.charger.StarlightChargerBlock;
-import net.silentchaos512.gear.block.press.MetalPressBlock;
-import net.silentchaos512.gear.block.salvager.SalvagerBlock;
 import net.silentchaos512.gear.config.Config;
-import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
 import javax.annotation.Nullable;
@@ -83,25 +78,6 @@ public final class ModBlocks {
             ModBlocks::getStorageBlock);
     public static final BlockRegistryObject<Block> TYRIAN_STEEL_BLOCK = register("tyrian_steel_block",
             ModBlocks::getStorageBlock);
-
-    public static final BlockRegistryObject<Block> GEAR_SMITHING_TABLE = register("gear_smithing_table", () ->
-            new GearSmithingTableBlock(BlockBehaviour.Properties.of(Material.WOOD)
-                    .strength(2.5F)
-                    .sound(SoundType.WOOD)));
-
-    public static final BlockRegistryObject<SalvagerBlock> SALVAGER = register("salvager", () ->
-            new SalvagerBlock(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(5, 30)));
-
-    public static final BlockRegistryObject<StarlightChargerBlock> STARLIGHT_CHARGER = register("starlight_charger", () ->
-            new StarlightChargerBlock(ChargerTileEntity::createStarlightCharger,
-                    BlockBehaviour.Properties.of(Material.METAL)
-                            .strength(5, 30)));
-
-    public static final BlockRegistryObject<MetalPressBlock> METAL_PRESS = register("metal_press", () ->
-            new MetalPressBlock(BlockBehaviour.Properties.of(Material.METAL)
-                    .strength(4, 20)
-                    .sound(SoundType.METAL)));
 
     public static final BlockRegistryObject<ModCropBlock> FLAX_PLANT = registerNoItem("flax_plant", () ->
             new ModCropBlock(ModItems.FLAX_SEEDS::get, BlockBehaviour.Properties.of(Material.PLANT)
@@ -220,13 +196,10 @@ public final class ModBlocks {
     public static void registerRenderTypes(FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(FLAX_PLANT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(FLUFFY_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(METAL_PRESS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_DOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(POTTED_NETHERWOOD_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(SALVAGER.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(STARLIGHT_CHARGER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(STONE_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(WALL_STONE_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(WILD_FLAX_PLANT.get(), RenderType.cutout());

@@ -79,11 +79,6 @@ public class ModBlockLootTables extends BlockLoot {
         add(ModBlocks.PHANTOM_LIGHT.get(), noDrop());
         dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());
 
-        dropSelf(ModBlocks.GEAR_SMITHING_TABLE.get());
-        dropSelf(ModBlocks.METAL_PRESS.get());
-        dropSelf(ModBlocks.SALVAGER.get());
-        dropSelf(ModBlocks.STARLIGHT_CHARGER.get());
-
         dropSelf(ModBlocks.WHITE_FLUFFY_BLOCK.get());
         dropSelf(ModBlocks.ORANGE_FLUFFY_BLOCK.get());
         dropSelf(ModBlocks.MAGENTA_FLUFFY_BLOCK.get());

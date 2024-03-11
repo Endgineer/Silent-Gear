@@ -19,18 +19,15 @@ import net.silentchaos512.gear.api.stats.StatInstance;
 import net.silentchaos512.gear.api.stats.StatModifierMap;
 import net.silentchaos512.gear.api.traits.TraitInstance;
 import net.silentchaos512.gear.api.util.StatGearKey;
-import net.silentchaos512.gear.block.charger.ChargerTileEntity;
 import net.silentchaos512.gear.client.KeyTracker;
 import net.silentchaos512.gear.client.util.TextListBuilder;
 import net.silentchaos512.gear.config.Config;
 import net.silentchaos512.gear.gear.material.MaterialInstance;
 import net.silentchaos512.gear.gear.part.AbstractGearPart;
 import net.silentchaos512.gear.gear.part.PartData;
-import net.silentchaos512.gear.init.ModTags;
 import net.silentchaos512.gear.item.CompoundPartItem;
 import net.silentchaos512.gear.util.TextUtil;
 import net.silentchaos512.lib.event.ClientTicks;
-import net.silentchaos512.lib.util.TagUtils;
 import net.silentchaos512.utils.Color;
 
 import java.util.*;
@@ -66,10 +63,6 @@ public final class TooltipHandler {
 
         ItemStack stack = event.getItemStack();
 
-        if (TagUtils.contains(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS, stack)) {
-            onStarlightChargerCatalystTooltip(event);
-        }
-
         MaterialInstance material = MaterialInstance.from(stack);
         if (material != null) {
             onMaterialTooltip(event, stack, material);
@@ -87,11 +80,6 @@ public final class TooltipHandler {
             List<Component> toolTip = event.getToolTip();
             toolTip.add(Math.min(1, toolTip.size()), new TranslatableComponent("misc.silentgear.poorlyMade").withStyle(ChatFormatting.RED));
         }
-    }
-
-    private static void onStarlightChargerCatalystTooltip(ItemTooltipEvent event) {
-        int tier = ChargerTileEntity.getStarlightChargerCatalystTier(event.getItemStack());
-        event.getToolTip().add(TextUtil.withColor(TextUtil.misc("starlightChargerCataylst", tier), Color.REBECCAPURPLE));
     }
 
     private static void onMaterialTooltip(ItemTooltipEvent event, ItemStack stack, MaterialInstance material) {

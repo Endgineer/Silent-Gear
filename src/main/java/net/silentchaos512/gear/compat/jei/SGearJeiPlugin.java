@@ -17,16 +17,12 @@ import net.minecraft.world.level.block.Blocks;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.ICoreTool;
 import net.silentchaos512.gear.api.material.IMaterialInstance;
-import net.silentchaos512.gear.block.salvager.SalvagerScreen;
-import net.silentchaos512.gear.crafting.recipe.salvage.SalvagingRecipe;
-import net.silentchaos512.gear.init.ModBlocks;
 import net.silentchaos512.gear.init.ModItems;
 import net.silentchaos512.gear.init.ModRecipes;
 import net.silentchaos512.gear.init.Registration;
 import net.silentchaos512.gear.item.CraftingItems;
 import net.silentchaos512.gear.item.CustomMaterialItem;
 import net.silentchaos512.gear.item.FragmentItem;
-import net.silentchaos512.gear.util.Const;
 
 import java.util.Collection;
 import java.util.List;
@@ -48,7 +44,6 @@ public class SGearJeiPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration reg) {
         IGuiHelper guiHelper = reg.getJeiHelpers().getGuiHelper();
         reg.addRecipeCategories(new GearCraftingRecipeCategoryJei(guiHelper));
-        reg.addRecipeCategories(new SalvagingRecipeCategoryJei(guiHelper));
     }
 
     @Override
@@ -59,11 +54,6 @@ public class SGearJeiPlugin implements IModPlugin {
         reg.addRecipes(recipeManager.getRecipes().stream()
                 .filter(SGearJeiPlugin::isGearCraftingRecipe)
                 .collect(Collectors.toList()), GEAR_CRAFTING);
-
-        // Salvaging
-        reg.addRecipes(recipeManager.getRecipes().stream()
-                .filter(r -> r.getType() == SalvagingRecipe.SALVAGING_TYPE)
-                .collect(Collectors.toList()), Const.SALVAGING);
 
         addInfoPage(reg, CraftingItems.RED_CARD_UPGRADE);
         addInfoPage(reg, CraftingItems.SPOON_UPGRADE);
@@ -80,12 +70,6 @@ public class SGearJeiPlugin implements IModPlugin {
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration reg) {
         reg.addRecipeCatalyst(new ItemStack(Blocks.CRAFTING_TABLE), GEAR_CRAFTING);
-        reg.addRecipeCatalyst(new ItemStack(ModBlocks.SALVAGER), Const.SALVAGING);
-    }
-
-    @Override
-    public void registerGuiHandlers(IGuiHandlerRegistration reg) {
-        reg.addRecipeClickArea(SalvagerScreen.class, 30, 30, 28, 23, Const.SALVAGING);
     }
 
     @Override

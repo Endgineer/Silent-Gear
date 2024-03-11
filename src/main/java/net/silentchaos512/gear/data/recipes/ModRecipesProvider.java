@@ -28,7 +28,6 @@ import net.silentchaos512.gear.init.*;
 import net.silentchaos512.gear.item.CraftingItems;
 import net.silentchaos512.gear.item.blueprint.GearBlueprintItem;
 import net.silentchaos512.gear.item.gear.GearArmorItem;
-import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.util.DataResource;
 import net.silentchaos512.lib.data.recipe.ExtendedShapedRecipeBuilder;
 import net.silentchaos512.lib.data.recipe.ExtendedShapelessRecipeBuilder;
@@ -92,10 +91,7 @@ public class ModRecipesProvider extends LibRecipeProvider {
         registerCompoundParts(consumer);
         registerGear(consumer);
         registerModifierKits(consumer);
-        registerMachines(consumer);
-        registerPressing(consumer);
         registerSmithing(consumer);
-        registerSalvaging(consumer);
 
         if (ADD_TEST_RECIPES) {
             registerTestRecipes(consumer);
@@ -612,34 +608,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .save(consumer);
     }
 
-    private void registerMachines(Consumer<FinishedRecipe> consumer) {
-        ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.METAL_PRESS)
-                .key('#', Tags.Items.OBSIDIAN)
-                .key('t', ModTags.Items.INGOTS_TYRIAN_STEEL)
-                .key('/', ModTags.Items.RODS_IRON)
-                .patternLine("#t#")
-                .patternLine("/ /")
-                .patternLine("#t#")
-                .build(consumer);
-
-        ExtendedShapedRecipeBuilder.vanillaBuilder(ModBlocks.STARLIGHT_CHARGER)
-                .key('#', Blocks.POLISHED_BLACKSTONE)
-                .key('/', ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD)
-                .key('q', Tags.Items.STORAGE_BLOCKS_QUARTZ)
-                .key('g', Tags.Items.GLASS_COLORLESS)
-                .patternLine("qgq")
-                .patternLine("#g#")
-                .patternLine("#/#")
-                .build(consumer);
-    }
-
-    private void registerPressing(Consumer<FinishedRecipe> consumer) {
-        ExtendedSingleItemRecipeBuilder.builder(ModRecipes.PRESSING_MATERIAL.get(),
-                        PartMaterialIngredient.of(PartType.MAIN, MaterialCategories.METAL),
-                        ModItems.SHEET_METAL, 2)
-                .build(consumer);
-    }
-
     private void registerCraftingItems(Consumer<FinishedRecipe> consumer) {
         shapelessBuilder(ModItems.GUIDE_BOOK)
                 .addIngredient(Items.BOOK)
@@ -1022,16 +990,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .unlockedBy("has_item", has(ModItems.ROD_BLUEPRINT.get().getItemTag()))
                 .save(consumer, SilentGear.getId("rough_rod2"));
         // S
-        ShapedRecipeBuilder.shaped(ModBlocks.SALVAGER)
-                .define('P', Blocks.PISTON)
-                .define('/', ModTags.Items.INGOTS_CRIMSON_IRON)
-                .define('I', Tags.Items.STORAGE_BLOCKS_IRON)
-                .define('#', Tags.Items.OBSIDIAN)
-                .pattern(" P ")
-                .pattern("/I/")
-                .pattern("/#/")
-                .unlockedBy("has_item", has(ModTags.Items.INGOTS_CRIMSON_IRON))
-                .save(consumer);
         ShapelessRecipeBuilder.shapeless(CraftingItems.SINEW_FIBER, 3)
                 .requires(CraftingItems.DRIED_SINEW)
                 .unlockedBy("has_item", has(CraftingItems.SINEW))
@@ -1076,98 +1034,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
             }
             GearSmithingRecipeBuilder.upgrade(item, PartType.MISC_UPGRADE).build(consumer);
         });
-    }
-
-    private void registerSalvaging(Consumer<FinishedRecipe> consumer) {
-        Registration.getItems(item -> item instanceof ICoreItem).forEach(item ->
-                gearSalvage(consumer, (ICoreItem) item));
-
-        vanillaSalvage(consumer, Items.NETHERITE_SWORD, Items.DIAMOND, 2, 1, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_PICKAXE, Items.DIAMOND, 3, 2, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_SHOVEL, Items.DIAMOND, 1, 2, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_AXE, Items.DIAMOND, 3, 2, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_HOE, Items.DIAMOND, 2, 2, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_HELMET, Items.DIAMOND, 5, 0, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_CHESTPLATE, Items.DIAMOND, 8, 0, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_LEGGINGS, Items.DIAMOND, 7, 0, Items.NETHERITE_INGOT);
-        vanillaSalvage(consumer, Items.NETHERITE_BOOTS, Items.DIAMOND, 4, 0, Items.NETHERITE_INGOT);
-
-        vanillaSalvage(consumer, Items.DIAMOND_SWORD, Items.DIAMOND, 2, 1);
-        vanillaSalvage(consumer, Items.DIAMOND_PICKAXE, Items.DIAMOND, 3, 2);
-        vanillaSalvage(consumer, Items.DIAMOND_SHOVEL, Items.DIAMOND, 1, 2);
-        vanillaSalvage(consumer, Items.DIAMOND_AXE, Items.DIAMOND, 3, 2);
-        vanillaSalvage(consumer, Items.DIAMOND_HOE, Items.DIAMOND, 2, 2);
-        vanillaSalvage(consumer, Items.DIAMOND_HELMET, Items.DIAMOND, 5, 0);
-        vanillaSalvage(consumer, Items.DIAMOND_CHESTPLATE, Items.DIAMOND, 8, 0);
-        vanillaSalvage(consumer, Items.DIAMOND_LEGGINGS, Items.DIAMOND, 7, 0);
-        vanillaSalvage(consumer, Items.DIAMOND_BOOTS, Items.DIAMOND, 4, 0);
-
-        vanillaSalvage(consumer, Items.GOLDEN_SWORD, Items.GOLD_INGOT, 2, 1);
-        vanillaSalvage(consumer, Items.GOLDEN_PICKAXE, Items.GOLD_INGOT, 3, 2);
-        vanillaSalvage(consumer, Items.GOLDEN_SHOVEL, Items.GOLD_INGOT, 1, 2);
-        vanillaSalvage(consumer, Items.GOLDEN_AXE, Items.GOLD_INGOT, 3, 2);
-        vanillaSalvage(consumer, Items.GOLDEN_HOE, Items.GOLD_INGOT, 2, 2);
-        vanillaSalvage(consumer, Items.GOLDEN_HELMET, Items.GOLD_INGOT, 5, 0);
-        vanillaSalvage(consumer, Items.GOLDEN_CHESTPLATE, Items.GOLD_INGOT, 8, 0);
-        vanillaSalvage(consumer, Items.GOLDEN_LEGGINGS, Items.GOLD_INGOT, 7, 0);
-        vanillaSalvage(consumer, Items.GOLDEN_BOOTS, Items.GOLD_INGOT, 4, 0);
-
-        vanillaSalvage(consumer, Items.IRON_SWORD, Items.IRON_INGOT, 2, 1);
-        vanillaSalvage(consumer, Items.IRON_PICKAXE, Items.IRON_INGOT, 3, 2);
-        vanillaSalvage(consumer, Items.IRON_SHOVEL, Items.IRON_INGOT, 1, 2);
-        vanillaSalvage(consumer, Items.IRON_AXE, Items.IRON_INGOT, 3, 2);
-        vanillaSalvage(consumer, Items.IRON_HOE, Items.IRON_INGOT, 2, 2);
-        vanillaSalvage(consumer, Items.IRON_HELMET, Items.IRON_INGOT, 5, 0);
-        vanillaSalvage(consumer, Items.IRON_CHESTPLATE, Items.IRON_INGOT, 8, 0);
-        vanillaSalvage(consumer, Items.IRON_LEGGINGS, Items.IRON_INGOT, 7, 0);
-        vanillaSalvage(consumer, Items.IRON_BOOTS, Items.IRON_INGOT, 4, 0);
-        vanillaSalvage(consumer, Items.SHEARS, Items.IRON_INGOT, 2, 0);
-
-        vanillaSalvage(consumer, Items.LEATHER_HELMET, Items.LEATHER, 5, 0);
-        vanillaSalvage(consumer, Items.LEATHER_CHESTPLATE, Items.LEATHER, 8, 0);
-        vanillaSalvage(consumer, Items.LEATHER_LEGGINGS, Items.LEATHER, 7, 0);
-        vanillaSalvage(consumer, Items.LEATHER_BOOTS, Items.LEATHER, 4, 0);
-        vanillaSalvage(consumer, Items.LEATHER_HORSE_ARMOR, Items.LEATHER, 7, 0);
-
-        vanillaSalvage(consumer, Items.STONE_SWORD, Items.COBBLESTONE, 2, 1);
-        vanillaSalvage(consumer, Items.STONE_PICKAXE, Items.COBBLESTONE, 3, 2);
-        vanillaSalvage(consumer, Items.STONE_SHOVEL, Items.COBBLESTONE, 1, 2);
-        vanillaSalvage(consumer, Items.STONE_AXE, Items.COBBLESTONE, 3, 2);
-        vanillaSalvage(consumer, Items.STONE_HOE, Items.COBBLESTONE, 2, 2);
-
-        vanillaSalvage(consumer, Items.BOW, Items.STRING, 3, 3);
-
-        SalvagingRecipeBuilder.builder(Items.DIAMOND_HORSE_ARMOR)
-                .addResult(Items.DIAMOND, 6)
-                .addResult(Items.LEATHER)
-                .build(consumer, SilentGear.getId("salvaging/diamond_horse_armor"));
-
-        SalvagingRecipeBuilder.builder(Items.GOLDEN_HORSE_ARMOR)
-                .addResult(Items.GOLD_INGOT, 6)
-                .addResult(Items.LEATHER)
-                .build(consumer, SilentGear.getId("salvaging/golden_horse_armor"));
-
-        SalvagingRecipeBuilder.builder(Items.IRON_HORSE_ARMOR)
-                .addResult(Items.IRON_INGOT, 6)
-                .addResult(Items.LEATHER)
-                .build(consumer, SilentGear.getId("salvaging/iron_horse_armor"));
-
-        SalvagingRecipeBuilder.builder(Items.CROSSBOW)
-                .addResult(Items.STICK, 3)
-                .addResult(Items.STRING, 2)
-                .addResult(Items.IRON_INGOT)
-                .addResult(Items.TRIPWIRE_HOOK)
-                .build(consumer, SilentGear.getId("salvaging/crossbow"));
-
-        SalvagingRecipeBuilder.builder(Items.CLOCK)
-                .addResult(Items.GOLD_INGOT, 4)
-                .addResult(Items.REDSTONE)
-                .build(consumer, SilentGear.getId("salvaging/clock"));
-
-        SalvagingRecipeBuilder.builder(Items.COMPASS)
-                .addResult(Items.IRON_INGOT, 4)
-                .addResult(Items.REDSTONE)
-                .build(consumer, SilentGear.getId("salvaging/compass"));
     }
 
     private void special(Consumer<FinishedRecipe> consumer, SimpleRecipeSerializer<?> serializer) {
@@ -1374,27 +1240,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
         }
     }
 
-    private static void gearSalvage(Consumer<FinishedRecipe> consumer, ICoreItem item) {
-        SalvagingRecipeBuilder.gearBuilder(item)
-                .build(consumer, SilentGear.getId("salvaging/gear/" + NameUtils.fromItem(item).getPath()));
-    }
-
-    private static void vanillaSalvage(Consumer<FinishedRecipe> consumer, ItemLike gear, ItemLike main, int mainCount, int rodCount) {
-        vanillaSalvage(consumer, gear, main, mainCount, rodCount, null);
-    }
-
-    private static void vanillaSalvage(Consumer<FinishedRecipe> consumer, ItemLike gear, ItemLike main, int mainCount, int rodCount, @Nullable ItemLike secondary) {
-        SalvagingRecipeBuilder builder = SalvagingRecipeBuilder.builder(gear).addResult(main, mainCount);
-        if (secondary != null) {
-            builder.addResult(secondary);
-        }
-        if (rodCount > 0) {
-            builder.addResult(Items.STICK, rodCount);
-        }
-        ResourceLocation inputId = NameUtils.from(gear.asItem());
-        builder.build(consumer, SilentGear.getId("salvaging/" + inputId.getPath()));
-    }
-
     private static JsonObject buildMaterials(ResourceLocation main, @Nullable ResourceLocation rod) {
         JsonObject json = new JsonObject();
         json.add("main", LazyMaterialInstance.of(main).serialize());
@@ -1460,11 +1305,9 @@ public class ModRecipesProvider extends LibRecipeProvider {
         private ItemLike rawOre;
         private ItemLike rawOreBlock;
         private ItemLike block;
-        private TagKey<Item> blockTag;
         private final ItemLike ingot;
         private final TagKey<Item> ingotTag;
         private ItemLike nugget;
-        private TagKey<Item> nuggetTag;
         private ItemLike dust;
         private TagKey<Item> dustTag;
         private TagKey<Item> chunksTag;
@@ -1473,12 +1316,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
             this.name = name;
             this.ingot = ingot;
             this.ingotTag = ingotTag;
-        }
-
-        public Metals ore(ItemLike item, TagKey<Item> tag) {
-            this.ore = item;
-            this.oreTag = tag;
-            return this;
         }
 
         public Metals ore(ItemLike oreBlockItem, TagKey<Item> oreTag, ItemLike rawOre, ItemLike rawOreBlock) {
@@ -1491,13 +1328,11 @@ public class ModRecipesProvider extends LibRecipeProvider {
 
         public Metals block(ItemLike item, TagKey<Item> tag) {
             this.block = item;
-            this.blockTag = tag;
             return this;
         }
 
         public Metals nugget(ItemLike item, TagKey<Item> tag) {
             this.nugget = item;
-            this.nuggetTag = tag;
             return this;
         }
 
