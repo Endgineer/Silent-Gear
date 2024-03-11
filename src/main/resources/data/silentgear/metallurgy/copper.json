@@ -1,7 +1,7 @@
 {
     "reinforces": [
         {
-            "xp_trip": 114,
+            "xp_trip_ingot": 114,
             "heat_capacity": 1000,
             "malleability_midpoint": 500,
             "folding_range": { "min": 0, "max": 300 },
@@ -11,7 +11,7 @@
             "cooling_slope": 0.00025
         },
         {
-            "xp_trip": 92,
+            "xp_trip_ingot": 92,
             "heat_capacity": 1000,
             "malleability_midpoint": 500,
             "folding_range": { "min": 0, "max": 300 },
@@ -21,7 +21,7 @@
             "cooling_slope": 0.00025
         },
         {
-            "xp_trip": 63,
+            "xp_trip_ingot": 63,
             "heat_capacity": 1000,
             "malleability_midpoint": 500,
             "folding_range": { "min": 0, "max": 300 },
@@ -31,7 +31,7 @@
             "cooling_slope": 0.00025
         },
         {
-            "xp_trip": 40,
+            "xp_trip_ingot": 40,
             "heat_capacity": 1000,
             "malleability_midpoint": 500,
             "folding_range": { "min": 0, "max": 300 },
@@ -41,7 +41,7 @@
             "cooling_slope": 0.00025
         },
         {
-            "xp_trip": 29,
+            "xp_trip_ingot": 29,
             "heat_capacity": 1000,
             "malleability_midpoint": 500,
             "folding_range": { "min": 0, "max": 300 },

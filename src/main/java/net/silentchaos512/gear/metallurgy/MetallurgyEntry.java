@@ -28,7 +28,7 @@ public class MetallurgyEntry {
             JsonObject folding_range = reinforce.getAsJsonObject("folding_range");
             this.reinforces[i] = new Reinforce(
                 i,
-                reinforce.get("xp_trip").getAsInt(),
+                reinforce.get("xp_trip_ingot").getAsInt(),
                 reinforce.get("heat_capacity").getAsInt(),
                 folding_range.get("min").getAsInt(),
                 folding_range.get("max").getAsInt(),
@@ -50,8 +50,8 @@ public class MetallurgyEntry {
     }
 
     public class Reinforce {
-        private int xp_total;
-        private int xp_trip;
+        private int xp_total_ingot;
+        private int xp_trip_ingot;
         private int heat_capacity;
         private int folding_range_min;
         private int folding_range_max;
@@ -68,9 +68,9 @@ public class MetallurgyEntry {
         private double cooling_error_slope;
         private double cooling_error_intercept;
 
-        public Reinforce(int index, int xp_trip, int heat_capacity, int folding_range_min, int folding_range_max, int malleability_midpoint, double xp_gain_min, double xp_gain_max, double malleability_slope, double heat_loss_min, double heat_loss_max, double cooling_slope) {
-            this.xp_total = (int) Math.pow(2, index) * xp_trip;
-            this.xp_trip = xp_trip;
+        public Reinforce(int index, int xp_trip_ingot, int heat_capacity, int folding_range_min, int folding_range_max, int malleability_midpoint, double xp_gain_min, double xp_gain_max, double malleability_slope, double heat_loss_min, double heat_loss_max, double cooling_slope) {
+            this.xp_total_ingot = (int) Math.pow(2, index) * xp_trip_ingot;
+            this.xp_trip_ingot = xp_trip_ingot;
             this.heat_capacity = heat_capacity;
             this.folding_range_min = folding_range_min;
             this.folding_range_max = folding_range_max;
@@ -116,9 +116,9 @@ public class MetallurgyEntry {
 
         public double getHeatLoss(double heat) { return this.coolingNormalized(heat); }
 
-        public int getXPTrip() { return this.xp_trip; }
+        public int getXPTrip(int ingots) { return this.xp_trip_ingot * ingots; }
 
-        public int getXPTotal() { return this.xp_total; }
+        public int getXPTotal(int ingots) { return this.xp_total_ingot * ingots; }
 
         public int getHeatCapacity() { return this.heat_capacity; }
 

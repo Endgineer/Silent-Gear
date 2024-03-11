@@ -185,7 +185,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             int progress = tag.getInt(HeatedMetalItem.PROGRESS);
             double experience = tag.getDouble(HeatedMetalItem.EXPERIENCE);
 
-            if(progress != MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal() && experience == 0 && MetallurgyEntry.get(metal).getReinforce(reinforce).compareFoldingRange(heat) == 0) {
+            if(progress != MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count) && experience == 0 && MetallurgyEntry.get(metal).getReinforce(reinforce).compareFoldingRange(heat) == 0) {
                 Item input = GearApi.getMaterial(new ResourceLocation(SilentGear.MOD_ID+":"+metal)).getDisplayItem(PartType.MAIN, 0).getItem();
                 int remainder = count;
 
@@ -201,7 +201,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
                         }
                     }
                     
-                    tag.putDouble(HeatedMetalItem.EXPERIENCE, MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTrip());
+                    tag.putDouble(HeatedMetalItem.EXPERIENCE, MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTrip(count));
                     itemstack.setTag(tag);
                     this.setItem(SLOT, itemstack);
 

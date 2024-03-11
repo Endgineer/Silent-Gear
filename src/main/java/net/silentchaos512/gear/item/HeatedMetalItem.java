@@ -49,6 +49,7 @@ public class HeatedMetalItem extends Item {
         
         CompoundTag tag = itemstack.getTag();
         String metal = tag.getString(HeatedMetalItem.METAL);
+        int count = tag.getInt(HeatedMetalItem.COUNT);
         int reinforce = tag.getInt(HeatedMetalItem.REINFORCE);
         double heat = tag.getDouble(HeatedMetalItem.HEAT);
         int progress = tag.getInt(HeatedMetalItem.PROGRESS);
@@ -56,7 +57,7 @@ public class HeatedMetalItem extends Item {
 
         tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.progress").append(" ")
             .append(
-                String.valueOf(progress)+"/"+MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal()
+                String.valueOf(progress)+"/"+MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count)
             ).withStyle(ChatFormatting.GRAY));
         tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.heat").append(" ")
             .append(
@@ -71,7 +72,7 @@ public class HeatedMetalItem extends Item {
                 String.valueOf(Math.round(MetallurgyEntry.get(metal).getReinforce(reinforce).getMalleability(heat) * 10000.0) / 100.0)+"%"
             ).withStyle(ChatFormatting.LIGHT_PURPLE));
 
-        if(progress == MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal()) {
+        if(progress == MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count)) {
             tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.hints.quenching").withStyle(ChatFormatting.DARK_GRAY));
         } else if(experience == 0) {
             if(MetallurgyEntry.get(metal).getReinforce(reinforce).compareFoldingRange(heat) > 0) {
@@ -96,13 +97,14 @@ public class HeatedMetalItem extends Item {
 
         CompoundTag tag = itemstack.getTag();
         String metal = tag.getString(HeatedMetalItem.METAL);
+        int count = tag.getInt(HeatedMetalItem.COUNT);
         int reinforce = tag.getInt(HeatedMetalItem.REINFORCE);
         int progress = tag.getInt(HeatedMetalItem.PROGRESS);
         
         final HitResult hitresult = player.pick(2.0D, 0.0F, true);
         BlockPos pos = ((BlockHitResult) hitresult).getBlockPos();
 
-        if(hitresult.getType() == HitResult.Type.BLOCK && level.getBlockState(pos).getBlock() instanceof LayeredCauldronBlock && progress == MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal()) {
+        if(hitresult.getType() == HitResult.Type.BLOCK && level.getBlockState(pos).getBlock() instanceof LayeredCauldronBlock && progress == MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count)) {
             LayeredCauldronBlock.lowerFillLevel(level.getBlockState(pos), level, pos);
 
             ItemStack partstack = ItemStack.of((CompoundTag) tag.get(HeatedMetalItem.PART));
