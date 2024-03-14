@@ -53,15 +53,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-        metals(consumer, 0.5f, new Metals("blaze_gold", CraftingItems.BLAZE_GOLD_INGOT, ModTags.Items.INGOTS_BLAZE_GOLD)
-                .block(ModBlocks.BLAZE_GOLD_BLOCK, ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD)
-                .dust(CraftingItems.BLAZE_GOLD_DUST, ModTags.Items.DUSTS_BLAZE_GOLD)
-                .nugget(CraftingItems.BLAZE_GOLD_NUGGET, ModTags.Items.NUGGETS_BLAZE_GOLD));
-        metals(consumer, 0.75f, new Metals("tyrian_steel", CraftingItems.TYRIAN_STEEL_INGOT, ModTags.Items.INGOTS_TYRIAN_STEEL)
-                .block(ModBlocks.TYRIAN_STEEL_BLOCK, ModTags.Items.STORAGE_BLOCKS_TYRIAN_STEEL)
-                .dust(CraftingItems.TYRIAN_STEEL_DUST, ModTags.Items.DUSTS_TYRIAN_STEEL)
-                .nugget(CraftingItems.TYRIAN_STEEL_NUGGET, ModTags.Items.NUGGETS_TYRIAN_STEEL));
-
         registerSpecialRecipes(consumer);
         registerCraftingItems(consumer);
         registerBlueprints(consumer);
@@ -674,11 +665,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .key('#', CraftingItems.NETHER_STAR_FRAGMENT)
                 .build(consumer, SilentGear.getId("nether_star_from_fragments"));
 
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(CraftingItems.STARMETAL_DUST, 3)
-                .addIngredient(ModTags.Items.DUSTS_BLAZE_GOLD, 1)
-                .addIngredient(CraftingItems.NETHER_STAR_FRAGMENT)
-                .build(consumer);
-
         // TODO: Maybe should organize these better...
         // A
         ShapedRecipeBuilder.shaped(CraftingItems.ADVANCED_UPGRADE_BASE)
@@ -692,16 +678,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .unlockedBy("has_item", has(CraftingItems.UPGRADE_BASE))
                 .save(consumer);
         // B
-        ShapelessRecipeBuilder.shapeless(CraftingItems.BLAZE_GOLD_INGOT)
-                .requires(Tags.Items.INGOTS_GOLD)
-                .requires(Items.BLAZE_POWDER, 4)
-                .unlockedBy("has_item", has(Items.BLAZE_POWDER))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(CraftingItems.BLAZING_DUST, 4)
-                .requires(ModTags.Items.DUSTS_BLAZE_GOLD)
-                .requires(Ingredient.of(Tags.Items.DUSTS_GLOWSTONE), 2)
-                .unlockedBy("has_item", has(ModTags.Items.DUSTS_BLAZE_GOLD))
-                .save(consumer);
         ShapelessRecipeBuilder.shapeless(CraftingItems.BLUEPRINT_PAPER, 4)
                 .requires(Ingredient.of(ModTags.Items.PAPER), 4)
                 .requires(Tags.Items.DYES_BLUE)

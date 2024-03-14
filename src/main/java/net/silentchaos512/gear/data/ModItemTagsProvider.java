@@ -46,37 +46,17 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.ORES_TITANITE, ModTags.Items.ORES_TITANITE);
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
 
-        copy(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD, ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD);
-        copy(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL, ModTags.Items.STORAGE_BLOCKS_TYRIAN_STEEL);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
         builder(ModTags.Items.COAL_GENERATOR_FUELS, ModItems.NETHERWOOD_CHARCOAL, ModBlocks.NETHERWOOD_CHARCOAL_BLOCK);
-
-        builder(ModTags.Items.DUSTS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_DUST);
-        builder(ModTags.Items.DUSTS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_DUST);
-        builder(ModTags.Items.DUSTS_STARMETAL, CraftingItems.STARMETAL_DUST);
-        getBuilder(Tags.Items.DUSTS)
-                .addTag(ModTags.Items.DUSTS_BLAZE_GOLD)
-                .addTag(ModTags.Items.DUSTS_TYRIAN_STEEL)
-                .addTag(ModTags.Items.DUSTS_STARMETAL);
 
         builder(ModTags.Items.GEMS_TITANITE, ModItems.TITANITE_SHARD, ModItems.TITANITE_SHARD_CHARGED, ModItems.TITANITE_SHARD_FROSTY, ModItems.TITANITE_SHARD_SMOLDERING);
         getBuilder(Tags.Items.GEMS)
                 .addTag(ModTags.Items.GEMS_TITANITE);
 
-        builder(ModTags.Items.INGOTS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_INGOT);
-        builder(ModTags.Items.INGOTS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_INGOT);
-        getBuilder(Tags.Items.INGOTS)
-                .addTag(ModTags.Items.INGOTS_BLAZE_GOLD)
-                .addTag(ModTags.Items.INGOTS_TYRIAN_STEEL);
-
-        builder(ModTags.Items.NUGGETS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_NUGGET);
-        builder(ModTags.Items.NUGGETS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_NUGGET);
         builder(ModTags.Items.NUGGETS_DIAMOND, CraftingItems.DIAMOND_SHARD);
         builder(ModTags.Items.NUGGETS_EMERALD, CraftingItems.EMERALD_SHARD);
         getBuilder(Tags.Items.NUGGETS)
-                .addTag(ModTags.Items.NUGGETS_BLAZE_GOLD)
-                .addTag(ModTags.Items.NUGGETS_TYRIAN_STEEL)
                 .addTag(ModTags.Items.NUGGETS_DIAMOND)
                 .addTag(ModTags.Items.NUGGETS_EMERALD);
 
@@ -131,23 +111,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         getBuilder(ItemTags.ARROWS).add(ModItems.ARROW.get());
         builder(ItemTags.PIGLIN_LOVED,
-                ModBlocks.BLAZE_GOLD_BLOCK,
-                ModItems.GOLDEN_NETHER_BANANA,
-                CraftingItems.BLAZE_GOLD_DUST,
-                CraftingItems.BLAZE_GOLD_INGOT);
+                ModItems.GOLDEN_NETHER_BANANA);
 
         builder(ItemTags.CLUSTER_MAX_HARVESTABLES, ModItems.PICKAXE, ModItems.PAXEL, ModItems.PROSPECTOR_HAMMER);
 
         // Silent Gear
 
         copy(ModTags.Blocks.NETHERWOOD_LOGS, ModTags.Items.NETHERWOOD_LOGS);
-
-        getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1).addTag(ModTags.Items.DUSTS_BLAZE_GOLD);
-        getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_3).addTag(ModTags.Items.DUSTS_STARMETAL);
-        getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS)
-                .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1)
-                .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_2)
-                .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_3);
 
         // Blueprints
         Multimap<ResourceLocation, AbstractBlueprintItem> blueprints = MultimapBuilder.linkedHashKeys().arrayListValues().build();

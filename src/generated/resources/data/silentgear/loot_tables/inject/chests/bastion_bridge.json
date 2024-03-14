@@ -8,33 +8,7 @@
         "max": 2.0
       },
       "bonus_rolls": 0.0,
-      "entries": [
-        {
-          "type": "minecraft:empty",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 35,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 5.0,
-                "max": 10.0
-              },
-              "add": false
-            }
-          ],
-          "name": "silentgear:blaze_gold_nugget"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 15,
-          "name": "silentgear:blaze_gold_ingot"
-        }
-      ]
+      "entries": []
     },
     {
       "rolls": {

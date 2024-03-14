@@ -50,11 +50,6 @@ public final class ModBlocks {
 
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 
-    public static final BlockRegistryObject<Block> BLAZE_GOLD_BLOCK = register("blaze_gold_block",
-            ModBlocks::getStorageBlock);
-    public static final BlockRegistryObject<Block> TYRIAN_STEEL_BLOCK = register("tyrian_steel_block",
-            ModBlocks::getStorageBlock);
-
     public static final BlockRegistryObject<ModCropBlock> FLAX_PLANT = registerNoItem("flax_plant", () ->
             new ModCropBlock(ModItems.FLAX_SEEDS::get, BlockBehaviour.Properties.of(Material.PLANT)
                     .strength(0)

@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:nuggets/blaze_gold",
-    "#forge:nuggets/tyrian_steel",
     "#forge:nuggets/diamond",
     "#forge:nuggets/emerald"
   ]

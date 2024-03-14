@@ -153,7 +153,7 @@ public final class MaterialInstance implements IMaterialInstance {
 
 //        getEnchantmentModifiedStats(mods, key);
 
-        // Material modifiers (grades, starcharged, etc.)
+        // Material modifiers (grades, startcharged, etc.)
         for (IMaterialModifier materialModifier : getModifiers()) {
             mods = materialModifier.modifyStats(partType, key, mods);
         }

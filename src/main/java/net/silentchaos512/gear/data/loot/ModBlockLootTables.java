@@ -42,8 +42,6 @@ public class ModBlockLootTables extends BlockLoot {
 
     @Override
     protected void addTables() {
-        dropSelf(ModBlocks.BLAZE_GOLD_BLOCK.get());
-        dropSelf(ModBlocks.TYRIAN_STEEL_BLOCK.get());
         dropSelf(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
         dropSelf(ModBlocks.NETHERWOOD_FENCE.get());
         dropSelf(ModBlocks.NETHERWOOD_FENCE_GATE.get());

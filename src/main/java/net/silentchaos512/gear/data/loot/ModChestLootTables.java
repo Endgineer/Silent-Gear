@@ -20,7 +20,6 @@ public class ModChestLootTables extends ChestLoot {
     @Override
     public void accept(BiConsumer<ResourceLocation, LootTable.Builder> consumer) {
         consumer.accept(LootInjector.Tables.CHESTS_NETHER_BRIDGE, addNetherMetalsAndFlora());
-        consumer.accept(LootInjector.Tables.CHESTS_BASTION_TREASURE, addNetherMetalsWithExtra());
         consumer.accept(LootInjector.Tables.CHESTS_BASTION_OTHER, addNetherFlora(LootTable.lootTable()));
         consumer.accept(LootInjector.Tables.CHESTS_BASTION_BRIDGE, addNetherMetalsAndFlora());
         consumer.accept(LootInjector.Tables.CHESTS_RUINED_PORTAL, addNetherMetalsAndFlora());
@@ -28,38 +27,7 @@ public class ModChestLootTables extends ChestLoot {
 
     private static LootTable.Builder addNetherMetalsAndFlora() {
         LootTable.Builder builder = LootTable.lootTable();
-        addNetherMetals(builder);
         addNetherFlora(builder);
-        return builder;
-    }
-
-    private static LootTable.Builder addNetherMetalsWithExtra() {
-        LootTable.Builder builder = LootTable.lootTable();
-        builder.withPool(LootPool.lootPool()
-                .setRolls(ConstantValue.exactly(1))
-                .setBonusRolls(UniformGenerator.between(0, 1))
-                .add(LootItem.lootTableItem(CraftingItems.BLAZE_GOLD_INGOT)
-                        .setWeight(6)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5)))
-                )
-        );
-        return addNetherMetals(builder);
-    }
-
-    private static LootTable.Builder addNetherMetals(LootTable.Builder builder) {
-        builder.withPool(LootPool.lootPool()
-                .setRolls(UniformGenerator.between(1, 2))
-                .add(EmptyLootItem.emptyItem()
-                        .setWeight(20)
-                )
-                .add(LootItem.lootTableItem(CraftingItems.BLAZE_GOLD_NUGGET)
-                        .setWeight(35)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 10)))
-                )
-                .add(LootItem.lootTableItem(CraftingItems.BLAZE_GOLD_INGOT)
-                        .setWeight(15)
-                )
-        );
         return builder;
     }
 

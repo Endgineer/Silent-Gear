@@ -28,10 +28,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        // Ores and storage blocks
-        simpleBlock(ModBlocks.BLAZE_GOLD_BLOCK.get());
-        simpleBlock(ModBlocks.TYRIAN_STEEL_BLOCK.get());
-
         // Netherwood
         simpleBlock(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
         simpleBlock(ModBlocks.NETHERWOOD_PLANKS.get());

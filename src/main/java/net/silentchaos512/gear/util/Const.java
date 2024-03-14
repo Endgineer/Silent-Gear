@@ -46,7 +46,6 @@ public final class Const {
     private Const() {}
 
     public static final class Materials {
-        public static final DataResource<IMaterial> BLAZE_GOLD = DataResource.material("blaze_gold");
         public static final DataResource<IMaterial> DIMERALD = DataResource.material("dimerald");
         public static final DataResource<IMaterial> EMERALD = DataResource.material("emerald");
         public static final DataResource<IMaterial> EXAMPLE = DataResource.material("example");

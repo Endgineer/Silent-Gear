@@ -47,8 +47,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.NETHERWOOD_LEAVES.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(ModTags.Blocks.ORES_TITANITE)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL)
                 .add(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get())
                 .add(ModBlocks.TITANITE_ANVIL.get());
@@ -71,12 +69,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         builder(ModTags.Blocks.ORES_TITANITE, ModBlocks.DEEPSLATE_TITANITE_ORE);
         getBuilder(Tags.Blocks.ORES)
                 .addTag(ModTags.Blocks.ORES_TITANITE);
-
-        builder(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD, ModBlocks.BLAZE_GOLD_BLOCK);
-        builder(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL, ModBlocks.TYRIAN_STEEL_BLOCK);
-        getBuilder(Tags.Blocks.STORAGE_BLOCKS)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL);
 
         // Minecraft
         builder(BlockTags.LEAVES, ModBlocks.NETHERWOOD_LEAVES);

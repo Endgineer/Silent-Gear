@@ -205,14 +205,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .requirements(RequirementsStrategy.AND)
                     .save(consumer, id("nether_plants"));
 
-            Advancement blazeGold = simpleGetItem(consumer, CraftingItems.BLAZE_GOLD_INGOT, nether, "blaze_gold");
-
-            Advancement highDurability = Advancement.Builder.advancement()
-                    .parent(blazeGold)
-                    .display(ModItems.TIP.get().create(LazyMaterialInstance.of(Const.Materials.EMERALD)), title("high_durability"), description("high_durability"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("durability", genericInt(GearEvents.MAX_DURABILITY, 16_000))
-                    .save(consumer, id("high_durability"));
-
             //endregion
 
             //region The End

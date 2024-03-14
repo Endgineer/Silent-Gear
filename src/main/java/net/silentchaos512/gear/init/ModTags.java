@@ -19,9 +19,6 @@ public final class ModTags {
 
         public static final TagKey<Block> ORES_TITANITE = forge("ores/titanite");
 
-        public static final TagKey<Block> STORAGE_BLOCKS_BLAZE_GOLD = forge("storage_blocks/blaze_gold");
-        public static final TagKey<Block> STORAGE_BLOCKS_TYRIAN_STEEL = forge("storage_blocks/tyrian_steel");
-
         private Blocks() {}
 
         private static TagKey<Block> forge(String path) {
@@ -39,20 +36,8 @@ public final class ModTags {
 
         public static final TagKey<Item> COAL_GENERATOR_FUELS = silentsMechanisms("coal_generator_fuels");
 
-        public static final TagKey<Item> STORAGE_BLOCKS_BLAZE_GOLD = forge("storage_blocks/blaze_gold");
-        public static final TagKey<Item> STORAGE_BLOCKS_TYRIAN_STEEL = forge("storage_blocks/tyrian_steel");
-
-        public static final TagKey<Item> DUSTS_BLAZE_GOLD = forge("dusts/blaze_gold");
-        public static final TagKey<Item> DUSTS_TYRIAN_STEEL = forge("dusts/tyrian_steel");
-        public static final TagKey<Item> DUSTS_STARMETAL = forge("dusts/starmetal");
-
         public static final TagKey<Item> GEMS_TITANITE = forge("gems/titanite");
 
-        public static final TagKey<Item> INGOTS_BLAZE_GOLD = forge("ingots/blaze_gold");
-        public static final TagKey<Item> INGOTS_TYRIAN_STEEL = forge("ingots/tyrian_steel");
-
-        public static final TagKey<Item> NUGGETS_BLAZE_GOLD = forge("nuggets/blaze_gold");
-        public static final TagKey<Item> NUGGETS_TYRIAN_STEEL = forge("nuggets/tyrian_steel");
         public static final TagKey<Item> NUGGETS_DIAMOND = forge("nuggets/diamond");
         public static final TagKey<Item> NUGGETS_EMERALD = forge("nuggets/emerald");
 
@@ -86,12 +71,6 @@ public final class ModTags {
         public static final TagKey<Item> SWORDS = forge("swords");
 
         public static final TagKey<Item> BLUEPRINTS = mod("blueprints");
-
-        public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS = mod("starlight_charger_catalysts");
-        public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS_TIER_1 = mod("starlight_charger_catalysts/tier1");
-        public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS_TIER_2 = mod("starlight_charger_catalysts/tier2");
-        public static final TagKey<Item> STARLIGHT_CHARGER_CATALYSTS_TIER_3 = mod("starlight_charger_catalysts/tier3");
-        public static final List<TagKey<Item>> STARLIGHT_CHARGER_TIERS = ImmutableList.of(STARLIGHT_CHARGER_CATALYSTS_TIER_1, STARLIGHT_CHARGER_CATALYSTS_TIER_2, STARLIGHT_CHARGER_CATALYSTS_TIER_3);
 
         private Items() {}
 
