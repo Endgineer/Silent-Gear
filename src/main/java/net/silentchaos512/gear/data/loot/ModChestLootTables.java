@@ -42,10 +42,6 @@ public class ModChestLootTables extends ChestLoot {
                         .setWeight(6)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 5)))
                 )
-                .add(LootItem.lootTableItem(CraftingItems.CRIMSON_STEEL_DUST)
-                        .setWeight(1)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))
-                )
         );
         return addNetherMetals(builder);
     }
@@ -56,19 +52,12 @@ public class ModChestLootTables extends ChestLoot {
                 .add(EmptyLootItem.emptyItem()
                         .setWeight(20)
                 )
-                .add(LootItem.lootTableItem(CraftingItems.CRIMSON_IRON_INGOT)
-                        .setWeight(35)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 4)))
-                )
                 .add(LootItem.lootTableItem(CraftingItems.BLAZE_GOLD_NUGGET)
                         .setWeight(35)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(5, 10)))
                 )
                 .add(LootItem.lootTableItem(CraftingItems.BLAZE_GOLD_INGOT)
                         .setWeight(15)
-                )
-                .add(LootItem.lootTableItem(CraftingItems.CRIMSON_STEEL_INGOT)
-                        .setWeight(1)
                 )
         );
         return builder;

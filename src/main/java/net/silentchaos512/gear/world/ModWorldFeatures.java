@@ -51,7 +51,6 @@ public final class ModWorldFeatures {
 
         private static final ReplaceBlockConfiguration TITANITE_ORE_VEINS_CONFIG = new ReplaceBlockConfiguration(ImmutableList.of(
                 OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANITE_ORE.get().defaultBlockState())));
-        private static final OreConfiguration CRIMSON_IRON_ORE_VEINS_CONFIG = new OreConfiguration(OreFeatures.NETHER_ORE_REPLACEABLES, ModBlocks.CRIMSON_IRON_ORE.asBlockState(), 8);
         private static final OreConfiguration AZURE_SILVER_ORE_VEINS_CONFIG = new OreConfiguration(END_STONE_RULE_TEST, ModBlocks.AZURE_SILVER_ORE.asBlockState(), 6);
         private static final RandomPatchConfiguration WILD_FLAX_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLAX_PLANT.get())), List.of(), 32);
@@ -65,7 +64,6 @@ public final class ModWorldFeatures {
                 .build();
 
         public static final Holder<ConfiguredFeature<ReplaceBlockConfiguration, ?>> TITANITE_ORE_VEINS = create("titanite_ore_veins", Feature.REPLACE_SINGLE_BLOCK, TITANITE_ORE_VEINS_CONFIG);
-        public static final Holder<ConfiguredFeature<OreConfiguration, ?>> CRIMSON_IRON_ORE_VEINS = create("crimson_iron_ore_veins", Feature.ORE, CRIMSON_IRON_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<OreConfiguration, ?>> AZURE_SILVER_ORE_VEINS = create("azure_silver_ore_veins", Feature.ORE, AZURE_SILVER_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLAX_PATCHES = create("wild_flax_patches", Feature.FLOWER, WILD_FLAX_PATCHES_CONFIG);
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> NETHERWOOD_TREE = create("netherwood_tree", Feature.TREE, NETHERWOOD_TREE_CONFIG);
@@ -95,14 +93,6 @@ public final class ModWorldFeatures {
         public static final Holder<PlacedFeature> ORE_TITANITE = create("ore_titanite", Configured.TITANITE_ORE_VEINS,
                 commonOrePlacement(Config.Common.titaniteCount.get(),
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-ModVariables.ABYSS.SPAN), VerticalAnchor.absolute(0))));
-
-        public static final Holder<PlacedFeature> ORE_CRIMSON_IRON = create("ore_crimson_iron", Configured.CRIMSON_IRON_ORE_VEINS,
-                commonOrePlacement(Config.Common.crimsonIronCount.get(),
-                        PlacementUtils.RANGE_10_10));
-
-        public static final Holder<PlacedFeature> ORE_CRIMSON_IRON_DOUBLE = create("ore_crimson_iron_double", Configured.CRIMSON_IRON_ORE_VEINS,
-                commonOrePlacement(2 * Config.Common.crimsonIronCount.get(),
-                        PlacementUtils.RANGE_10_10));
 
         public static final Holder<PlacedFeature> ORE_AZURE_SILVER = create("ore_azure_silver", Configured.AZURE_SILVER_ORE_VEINS,
                 commonOrePlacement(Config.Common.azureSilverCount.get(),
@@ -161,12 +151,9 @@ public final class ModWorldFeatures {
 
         if (biome.getCategory() == Biome.BiomeCategory.NETHER) {
             addNetherwoodTrees(biome);
-            addCrimsonIronOre(biome);
         } else if (biome.getCategory() == Biome.BiomeCategory.THEEND) {
             addAzureSilverOre(biome);
         } else {
-            addBortOre(biome);
-
             if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
                 addWildFlax(biome);
             }
@@ -180,20 +167,6 @@ public final class ModWorldFeatures {
 
     private static void addNetherwoodTrees(BiomeLoadingEvent biome) {
 //        biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Configured.NETHERWOOD_TREES);
-    }
-
-    private static void addBortOre(BiomeLoadingEvent biome) {
-        biome.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, Placed.ORE_TITANITE);
-    }
-
-    private static void addCrimsonIronOre(BiomeLoadingEvent biome) {
-        if (Biomes.BASALT_DELTAS.location().equals(biome.getName()) || Biomes.SOUL_SAND_VALLEY.location().equals(biome.getName())) {
-            debugLog("Add double crimson iron ores to " + biome.getName());
-            biome.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, Placed.ORE_CRIMSON_IRON_DOUBLE);
-        } else {
-            debugLog("Add crimson iron ores to " + biome.getName());
-            biome.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, Placed.ORE_CRIMSON_IRON);
-        }
     }
 
     private static void addAzureSilverOre(BiomeLoadingEvent biome) {

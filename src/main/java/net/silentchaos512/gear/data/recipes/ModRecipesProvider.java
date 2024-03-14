@@ -57,16 +57,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .block(ModBlocks.BLAZE_GOLD_BLOCK, ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD)
                 .dust(CraftingItems.BLAZE_GOLD_DUST, ModTags.Items.DUSTS_BLAZE_GOLD)
                 .nugget(CraftingItems.BLAZE_GOLD_NUGGET, ModTags.Items.NUGGETS_BLAZE_GOLD));
-        metals(consumer, 1.0f, new Metals("crimson_iron", CraftingItems.CRIMSON_IRON_INGOT, ModTags.Items.INGOTS_CRIMSON_IRON)
-                .block(ModBlocks.CRIMSON_IRON_BLOCK, ModTags.Items.STORAGE_BLOCKS_CRIMSON_IRON)
-                .dust(CraftingItems.CRIMSON_IRON_DUST, ModTags.Items.DUSTS_CRIMSON_IRON)
-                .chunks(ModTags.Items.CHUNKS_CRIMSON_IRON)
-                .ore(ModBlocks.CRIMSON_IRON_ORE, ModTags.Items.ORES_CRIMSON_IRON, CraftingItems.RAW_CRIMSON_IRON, ModBlocks.RAW_CRIMSON_IRON_BLOCK)
-                .nugget(CraftingItems.CRIMSON_IRON_NUGGET, ModTags.Items.NUGGETS_CRIMSON_IRON));
-        metals(consumer, 0.5f, new Metals("crimson_steel", CraftingItems.CRIMSON_STEEL_INGOT, ModTags.Items.INGOTS_CRIMSON_STEEL)
-                .block(ModBlocks.CRIMSON_STEEL_BLOCK, ModTags.Items.STORAGE_BLOCKS_CRIMSON_STEEL)
-                .dust(CraftingItems.CRIMSON_STEEL_DUST, ModTags.Items.DUSTS_CRIMSON_STEEL)
-                .nugget(CraftingItems.CRIMSON_STEEL_NUGGET, ModTags.Items.NUGGETS_CRIMSON_STEEL));
         metals(consumer, 1.5f, new Metals("azure_silver", CraftingItems.AZURE_SILVER_INGOT, ModTags.Items.INGOTS_AZURE_SILVER)
                 .block(ModBlocks.AZURE_SILVER_BLOCK, ModTags.Items.STORAGE_BLOCKS_AZURE_SILVER)
                 .dust(CraftingItems.AZURE_SILVER_DUST, ModTags.Items.DUSTS_AZURE_SILVER)
@@ -662,8 +652,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
 
         shapelessBuilder(CraftingItems.WIDE_PLATE_UPGRADE)
                 .addIngredient(CraftingItems.ADVANCED_UPGRADE_BASE)
-                .addIngredient(ModTags.Items.STORAGE_BLOCKS_CRIMSON_IRON)
-                .addIngredient(ModTags.Items.INGOTS_CRIMSON_STEEL)
                 .addCriterion("has_item", has(CraftingItems.UPGRADE_BASE))
                 .build(consumer);
 
@@ -746,15 +734,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(ModItems.PEBBLE, 9)
                 .unlockedBy("has_pebble", has(ModItems.PEBBLE))
                 .save(consumer, SilentGear.getId("cobblestone_from_pebbles"));
-        ShapedRecipeBuilder.shaped(CraftingItems.CRIMSON_STEEL_INGOT)
-                .define('/', Tags.Items.RODS_BLAZE)
-                .define('#', ModTags.Items.INGOTS_CRIMSON_IRON)
-                .define('C', Items.MAGMA_CREAM)
-                .pattern("/ /")
-                .pattern("#C#")
-                .pattern("# #")
-                .unlockedBy("has_item", has(CraftingItems.CRIMSON_IRON_INGOT))
-                .save(consumer);
         // D
         ShapelessRecipeBuilder.shapeless(CraftingItems.DIAMOND_SHARD, 9)
                 .requires(Tags.Items.GEMS_DIAMOND)

@@ -87,13 +87,7 @@ public class ModAdvancementProvider implements DataProvider {
         @Override
         public void accept(Consumer<Advancement> consumer) {
             ItemStack rootIcon = new ItemStack(ModItems.PICKAXE);
-            GearData.writeConstructionParts(rootIcon, ImmutableList.of(
-                    LazyPartData.of(Const.Parts.PICKAXE_HEAD, ModItems.PICKAXE_HEAD.get(), Const.Materials.CRIMSON_STEEL),
-                    LazyPartData.of(Const.Parts.ROD, ModItems.ROD.get(), Const.Materials.BLAZE_GOLD),
-                    LazyPartData.of(Const.Parts.TIP, ModItems.TIP.get(), Const.Materials.AZURE_ELECTRUM),
-                    LazyPartData.of(Const.Parts.GRIP, ModItems.GRIP.get(), Const.Materials.WOOL_BLACK),
-                    LazyPartData.of(Const.Parts.BINDING, ModItems.BINDING.get(), Const.Materials.STRING)
-            ));
+            
             Advancement root = Advancement.Builder.advancement()
                     .display(rootIcon, title("root"), description("root"), new ResourceLocation("minecraft:textures/gui/advancements/backgrounds/adventure.png"), FrameType.TASK, false, false, false)
                     .addCriterion("get_item", getItem(Items.CRAFTING_TABLE))
@@ -212,14 +206,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .save(consumer, id("nether_plants"));
 
             Advancement blazeGold = simpleGetItem(consumer, CraftingItems.BLAZE_GOLD_INGOT, nether, "blaze_gold");
-            Advancement crimsonIron = Advancement.Builder.advancement()
-                    .parent(nether)
-                    .display(CraftingItems.CRIMSON_IRON_INGOT, title("crimson_iron"), description("crimson_iron"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_ore", getItem(ModBlocks.CRIMSON_IRON_ORE))
-                    .addCriterion("get_ingot", getItem(CraftingItems.CRIMSON_IRON_INGOT))
-                    .save(consumer, id("crimson_iron"));
-
-            Advancement crimsonSteel = simpleGetItem(consumer, CraftingItems.CRIMSON_STEEL_INGOT, crimsonIron, "crimson_steel");
 
             Advancement highDurability = Advancement.Builder.advancement()
                     .parent(blazeGold)

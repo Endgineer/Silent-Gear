@@ -58,7 +58,6 @@ public final class Config {
         // World
         public static final ForgeConfigSpec.IntValue azureSilverCount;
         public static final ForgeConfigSpec.IntValue titaniteCount;
-        public static final ForgeConfigSpec.IntValue crimsonIronCount;
         // Debug
         public static final ForgeConfigSpec.BooleanValue extraPartAndTraitLogging;
         public static final ForgeConfigSpec.BooleanValue statsDebugLogging;
@@ -246,9 +245,6 @@ public final class Config {
                 titaniteCount = builder
                         .comment("Attempts to place individual titanite ore blocks per chunk.")
                         .defineInRange("titanite.count", 6, 0, 1000);
-                crimsonIronCount = builder
-                        .comment("Veins of crimson iron ore per chunk")
-                        .defineInRange("crimsonIron.count", 14, 0, 1000);
                 builder.pop();
             }
 

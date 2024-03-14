@@ -50,20 +50,12 @@ public final class ModBlocks {
 
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 
-    public static final BlockRegistryObject<OreBlock> CRIMSON_IRON_ORE = register("crimson_iron_ore", () ->
-            getOre(SoundType.NETHER_GOLD_ORE));
     public static final BlockRegistryObject<OreBlock> AZURE_SILVER_ORE = register("azure_silver_ore", () ->
             getOre(SoundType.STONE));
 
-    public static final BlockRegistryObject<Block> RAW_CRIMSON_IRON_BLOCK = register("raw_crimson_iron_block", () ->
-            getRawOreBlock(SoundType.NETHER_GOLD_ORE));
     public static final BlockRegistryObject<Block> RAW_AZURE_SILVER_BLOCK = register("raw_azure_silver_block", () ->
             getRawOreBlock(SoundType.STONE));
 
-    public static final BlockRegistryObject<Block> CRIMSON_IRON_BLOCK = register("crimson_iron_block",
-            ModBlocks::getStorageBlock);
-    public static final BlockRegistryObject<Block> CRIMSON_STEEL_BLOCK = register("crimson_steel_block",
-            ModBlocks::getStorageBlock);
     public static final BlockRegistryObject<Block> BLAZE_GOLD_BLOCK = register("blaze_gold_block",
             ModBlocks::getStorageBlock);
     public static final BlockRegistryObject<Block> AZURE_SILVER_BLOCK = register("azure_silver_block",
