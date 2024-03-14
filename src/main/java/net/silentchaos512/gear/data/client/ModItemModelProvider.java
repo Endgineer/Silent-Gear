@@ -45,8 +45,6 @@ public class ModItemModelProvider extends ItemModelProvider {
                 builder(item, itemGenerated, "item/" + item.getName());
         }
 
-        builder(ModItems.NETHERWOOD_CHARCOAL, itemGenerated);
-
         // Crafted materials
         builder(ModItems.SHEET_METAL)
                 .parent(itemGenerated)
@@ -102,8 +100,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(ModItems.GUIDE_BOOK, itemGenerated);
         builder(ModItems.BLUEPRINT_PACKAGE, itemGenerated);
         builder(ModItems.FLAX_SEEDS, itemGenerated);
-        builder(ModItems.GOLDEN_NETHER_BANANA, itemGenerated);
-        builder(ModItems.NETHER_BANANA, itemGenerated);
         builder(ModItems.PEBBLE, itemGenerated);
     }
 
@@ -112,15 +108,7 @@ public class ModItemModelProvider extends ItemModelProvider {
             return;
         }
 
-        if (block == ModBlocks.NETHERWOOD_SAPLING.get())
-            builder(block, getExistingFile(mcLoc("item/generated")), "block/" + NameUtils.from(block).getPath());
-        else if (block == ModBlocks.NETHERWOOD_FENCE.get())
-            withExistingParent("netherwood_fence", modLoc("block/netherwood_fence_inventory"));
-        else if (block == ModBlocks.NETHERWOOD_DOOR.get())
-            builder(block, getExistingFile(mcLoc("item/generated")), "item/netherwood_door");
-        else if (block == ModBlocks.NETHERWOOD_TRAPDOOR.get())
-            withExistingParent("netherwood_trapdoor", modLoc("block/netherwood_trapdoor_bottom"));
-        else if (block.asItem() != Items.AIR) {
+        if (block.asItem() != Items.AIR) {
             String name = NameUtils.from(block).getPath();
             withExistingParent(name, modLoc("block/" + name));
         }

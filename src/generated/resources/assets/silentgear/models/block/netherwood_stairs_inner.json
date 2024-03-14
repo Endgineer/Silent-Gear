@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "side": "silentgear:block/netherwood_planks",
-    "bottom": "silentgear:block/netherwood_planks",
-    "top": "silentgear:block/netherwood_planks"
-  }
-}

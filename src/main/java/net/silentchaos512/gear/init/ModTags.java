@@ -13,8 +13,6 @@ import java.util.List;
 
 public final class ModTags {
     public static final class Blocks {
-        public static final TagKey<Block> NETHERWOOD_LOGS = mod("netherwood_logs");
-        public static final TagKey<Block> NETHERWOOD_SOIL = mod("netherwood_soil");
         public static final TagKey<Block> PROSPECTOR_HAMMER_TARGETS = mod("prospector_hammer_targets");
 
         public static final TagKey<Block> ORES_TITANITE = forge("ores/titanite");
@@ -31,7 +29,6 @@ public final class ModTags {
     }
 
     public static final class Items {
-        public static final TagKey<Item> NETHERWOOD_LOGS = mod("netherwood_logs");
         public static final TagKey<Item> ORES_TITANITE = forge("ores/titanite");
 
         public static final TagKey<Item> COAL_GENERATOR_FUELS = silentsMechanisms("coal_generator_fuels");
@@ -46,7 +43,6 @@ public final class ModTags {
         public static final TagKey<Item> TEMPLATE_BOARDS = mod("template_boards");
 
         public static final TagKey<Item> RODS_IRON = forge("rods/iron");
-        public static final TagKey<Item> RODS_NETHERWOOD = mod("rods/netherwood");
         public static final TagKey<Item> RODS_STONE = forge("rods/stone");
         public static final TagKey<Item> RODS_ROUGH = mod("rods/rough");
 

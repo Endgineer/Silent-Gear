@@ -34,53 +34,12 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ModBlockLootTables extends BlockLoot {
-    private static final float[] DEFAULT_SAPLING_DROP_RATES = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
-    private static final LootItemCondition.Builder SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
-    private static final LootItemCondition.Builder SHEARS = MatchTool.toolMatches(ItemPredicate.Builder.item().of(Tags.Items.SHEARS));
-    private static final LootItemCondition.Builder SILK_TOUCH_OR_SHEARS = SHEARS.or(SILK_TOUCH);
-    private static final LootItemCondition.Builder NOT_SILK_TOUCH_OR_SHEARS = SILK_TOUCH_OR_SHEARS.invert();
-
     @Override
     protected void addTables() {
-        dropSelf(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
-        dropSelf(ModBlocks.NETHERWOOD_FENCE.get());
-        dropSelf(ModBlocks.NETHERWOOD_FENCE_GATE.get());
-        add(ModBlocks.NETHERWOOD_LEAVES.get(), netherwoodLeaves(ModBlocks.NETHERWOOD_SAPLING, CraftingItems.NETHERWOOD_STICK, DEFAULT_SAPLING_DROP_RATES));
-        dropSelf(ModBlocks.NETHERWOOD_LOG.get());
-        dropSelf(ModBlocks.STRIPPED_NETHERWOOD_LOG.get());
-        dropSelf(ModBlocks.NETHERWOOD_WOOD.get());
-        dropSelf(ModBlocks.STRIPPED_NETHERWOOD_WOOD.get());
-        dropSelf(ModBlocks.NETHERWOOD_PLANKS.get());
-        dropSelf(ModBlocks.NETHERWOOD_SAPLING.get());
-        add(ModBlocks.NETHERWOOD_DOOR.get(), block ->
-                createSinglePropConditionTable(block, DoorBlock.HALF, DoubleBlockHalf.LOWER));
-        dropSelf(ModBlocks.NETHERWOOD_TRAPDOOR.get());
-        add(ModBlocks.NETHERWOOD_SLAB.get(), BlockLoot::createSlabItemTable);
-        dropSelf(ModBlocks.NETHERWOOD_STAIRS.get());
-
-        dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());
-
         this.add(ModBlocks.FLAX_PLANT.get(), flaxPlant(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLAX_PLANT.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties()
                         .hasProperty(CropBlock.AGE, 7))));
         dropOther(ModBlocks.WILD_FLAX_PLANT.get(), ModItems.FLAX_SEEDS);
-    }
-
-    @Nonnull
-    private static Function<Block, LootTable.Builder> netherwoodLeaves(ItemLike sapling, ItemLike stick, float... chances) {
-        return (block) -> createSelfDropDispatchTable(block, SILK_TOUCH_OR_SHEARS, applyExplosionCondition(block, LootItem.lootTableItem(sapling))
-                .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, chances)))
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .when(NOT_SILK_TOUCH_OR_SHEARS)
-                        .add(applyExplosionDecay(block, LootItem.lootTableItem(stick)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))))
-                                .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))))
-                .withPool(LootPool.lootPool()
-                        .setRolls(ConstantValue.exactly(1))
-                        .when(NOT_SILK_TOUCH_OR_SHEARS)
-                        .add(applyExplosionCondition(block, LootItem.lootTableItem(ModItems.NETHER_BANANA))
-                                .when(BonusLevelTableCondition.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))));
     }
 
     private static LootTable.Builder flaxPlant(LootItemCondition.Builder builder) {

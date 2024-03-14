@@ -37,28 +37,12 @@
           "item": "minecraft:spruce_planks"
         },
         {
-          "item": "silentgear:netherwood_planks"
-        },
-        {
           "item": "minecraft:crimson_planks"
         },
         {
           "item": "minecraft:warped_planks"
         }
       ]
-    },
-    "subs": {
-      "rod": {
-        "type": "silentlib:exclusion",
-        "value": {
-          "tag": "forge:rods/wooden"
-        },
-        "exclusions": [
-          {
-            "item": "silentgear:netherwood_stick"
-          }
-        ]
-      }
     }
   },
   "name": {

@@ -38,17 +38,6 @@ public class ModChestLootTables extends ChestLoot {
                 .add(EmptyLootItem.emptyItem()
                         .setWeight(10)
                 )
-                .add(LootItem.lootTableItem(ModBlocks.NETHERWOOD_SAPLING)
-                        .setWeight(20)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2)))
-                )
-                .add(LootItem.lootTableItem(ModItems.NETHER_BANANA)
-                        .setWeight(10)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4)))
-                )
-                .add(LootItem.lootTableItem(ModItems.GOLDEN_NETHER_BANANA)
-                        .setWeight(1)
-                )
         );
         return builder;
     }

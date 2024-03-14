@@ -197,14 +197,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .addCriterion("entered_nether", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.NETHER))
                     .save(consumer, id("nether"));
 
-            Advancement netherPlants = Advancement.Builder.advancement()
-                    .parent(nether)
-                    .display(ModItems.NETHER_BANANA, title("nether_plants"), description("nether_plants"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("banana", getItem(ModItems.NETHER_BANANA))
-                    .addCriterion("sapling", getItem(ModBlocks.NETHERWOOD_SAPLING))
-                    .requirements(RequirementsStrategy.AND)
-                    .save(consumer, id("nether_plants"));
-
             //endregion
 
             //region The End

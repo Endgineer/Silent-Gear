@@ -48,8 +48,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
-        builder(ModTags.Items.COAL_GENERATOR_FUELS, ModItems.NETHERWOOD_CHARCOAL, ModBlocks.NETHERWOOD_CHARCOAL_BLOCK);
-
         builder(ModTags.Items.GEMS_TITANITE, ModItems.TITANITE_SHARD, ModItems.TITANITE_SHARD_CHARGED, ModItems.TITANITE_SHARD_FROSTY, ModItems.TITANITE_SHARD_SMOLDERING);
         getBuilder(Tags.Items.GEMS)
                 .addTag(ModTags.Items.GEMS_TITANITE);
@@ -61,13 +59,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(ModTags.Items.NUGGETS_EMERALD);
 
         builder(ModTags.Items.RODS_IRON, CraftingItems.IRON_ROD);
-        builder(ModTags.Items.RODS_NETHERWOOD, CraftingItems.NETHERWOOD_STICK);
         builder(ModTags.Items.RODS_ROUGH, CraftingItems.ROUGH_ROD);
         builder(ModTags.Items.RODS_STONE, CraftingItems.STONE_ROD);
-        builder(Tags.Items.RODS_WOODEN, CraftingItems.NETHERWOOD_STICK);
         getBuilder(Tags.Items.RODS)
                 .addTag(ModTags.Items.RODS_IRON)
-                .addTag(ModTags.Items.RODS_NETHERWOOD)
                 .addTag(ModTags.Items.RODS_ROUGH)
                 .addTag(ModTags.Items.RODS_STONE);
 
@@ -75,7 +70,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         builder(ModTags.Items.BLUEPRINT_PAPER, CraftingItems.BLUEPRINT_PAPER);
         builder(ModTags.Items.TEMPLATE_BOARDS, CraftingItems.TEMPLATE_BOARD);
 
-        builder(ModTags.Items.FRUITS, ModItems.NETHER_BANANA);
         builder(Tags.Items.STRING, CraftingItems.FLAX_STRING, CraftingItems.SINEW_FIBER);
 
         builder(ModTags.Items.AXES, ModItems.AXE, ModItems.SAW, ModItems.MACHETE, ModItems.MATTOCK, ModItems.PAXEL);
@@ -110,14 +104,8 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS);
 
         getBuilder(ItemTags.ARROWS).add(ModItems.ARROW.get());
-        builder(ItemTags.PIGLIN_LOVED,
-                ModItems.GOLDEN_NETHER_BANANA);
 
         builder(ItemTags.CLUSTER_MAX_HARVESTABLES, ModItems.PICKAXE, ModItems.PAXEL, ModItems.PROSPECTOR_HAMMER);
-
-        // Silent Gear
-
-        copy(ModTags.Blocks.NETHERWOOD_LOGS, ModTags.Items.NETHERWOOD_LOGS);
 
         // Blueprints
         Multimap<ResourceLocation, AbstractBlueprintItem> blueprints = MultimapBuilder.linkedHashKeys().arrayListValues().build();

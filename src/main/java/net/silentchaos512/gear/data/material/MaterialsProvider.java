@@ -839,16 +839,11 @@ public class MaterialsProvider implements DataProvider {
                 Items.JUNGLE_PLANKS,
                 Items.OAK_PLANKS,
                 Items.SPRUCE_PLANKS,
-                ModBlocks.NETHERWOOD_PLANKS,
                 Items.CRIMSON_PLANKS,
                 Items.WARPED_PLANKS
         );
-        ExclusionIngredient woodRodSubstitute = ExclusionIngredient.of(Tags.Items.RODS_WOODEN,
-                CraftingItems.NETHERWOOD_STICK
-        );
         ret.add(new MaterialBuilder(Const.Materials.WOOD.getId(), 0, planksIngredient)
                 .categories(MaterialCategories.ORGANIC, MaterialCategories.WOOD)
-                .partSubstitute(PartType.ROD, woodRodSubstitute)
                 .stat(PartType.MAIN, ItemStats.DURABILITY, 59)
                 .stat(PartType.MAIN, ItemStats.ARMOR_DURABILITY, 8)
                 .stat(PartType.MAIN, ItemStats.ENCHANTABILITY, 15)
@@ -903,37 +898,6 @@ public class MaterialsProvider implements DataProvider {
                 .displayFragment(PartTextures.WOOD, 0x6B4909)
         );
 
-        // Netherwood
-        ret.add(new MaterialBuilder(modId("netherwood"), 0, ModBlocks.NETHERWOOD_PLANKS)
-                .categories(MaterialCategories.ORGANIC, MaterialCategories.WOOD)
-                .partSubstitute(PartType.ROD, ModTags.Items.RODS_NETHERWOOD)
-                .stat(PartType.MAIN, ItemStats.DURABILITY, 72)
-                .stat(PartType.MAIN, ItemStats.ARMOR_DURABILITY, 12)
-                .stat(PartType.MAIN, ItemStats.ENCHANTABILITY, 13)
-                .stat(PartType.MAIN, ItemStats.HARVEST_LEVEL, 0)
-                .stat(PartType.MAIN, ItemStats.HARVEST_SPEED, 2)
-                .stat(PartType.MAIN, ItemStats.MELEE_DAMAGE, 0)
-                .stat(PartType.MAIN, ItemStats.MAGIC_DAMAGE, 0)
-                .stat(PartType.MAIN, ItemStats.ATTACK_SPEED, 0.2f)
-                .mainStatsArmor(1, 4, 2, 1, 0, 6) //8
-                .stat(PartType.MAIN, ItemStats.RANGED_DAMAGE, 0)
-                .stat(PartType.MAIN, ItemStats.RANGED_SPEED, 0.0f)
-                .stat(PartType.MAIN, ItemStats.PROJECTILE_SPEED, 1f)
-                .stat(PartType.MAIN, ItemStats.PROJECTILE_ACCURACY, 0.8f)
-                .stat(PartType.MAIN, ItemStats.RARITY, 4)
-                .stat(PartType.MAIN, ItemStats.CHARGEABILITY, 0.7f)
-                .stat(PartType.ROD, ItemStats.DURABILITY, 70, StatInstance.Operation.MAX)
-                .stat(PartType.ROD, ItemStats.DURABILITY, -50, StatInstance.Operation.ADD)
-                .stat(PartType.ROD, ItemStats.HARVEST_SPEED, 1, StatInstance.Operation.ADD)
-                .stat(PartType.ROD, ItemStats.MELEE_DAMAGE, 0.5f, StatInstance.Operation.ADD)
-                .stat(PartType.ROD, ItemStats.RARITY, 3)
-                .trait(PartType.MAIN, Const.Traits.FLEXIBLE, 3)
-                .trait(PartType.MAIN, Const.Traits.JAGGED, 2)
-                .trait(PartType.ROD, Const.Traits.FLEXIBLE, 2)
-                .display(PartType.MAIN, PartTextureSet.LOW_CONTRAST, 0xD83200)
-                .display(PartType.ROD, PartTextureSet.LOW_CONTRAST, 0xD83200)
-                .displayFragment(PartTextures.WOOD, 0xD83200)
-        );
         // Bamboo
         ret.add(new MaterialBuilder(modId("bamboo"), 0, Items.BAMBOO)
                 .categories(MaterialCategories.ORGANIC)

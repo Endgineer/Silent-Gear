@@ -626,22 +626,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addCriterion("has_item", has(CraftingItems.UPGRADE_BASE))
                 .build(consumer);
 
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModTags.Items.NETHERWOOD_LOGS), ModItems.NETHERWOOD_CHARCOAL, 0.15f, 200)
-                .unlockedBy("has_item", has(ModTags.Items.NETHERWOOD_LOGS))
-                .save(consumer);
-
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK)
-                .define('#', ModItems.NETHERWOOD_CHARCOAL)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModItems.NETHERWOOD_CHARCOAL))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(ModItems.NETHERWOOD_CHARCOAL, 9)
-                .requires(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK)
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK))
-                .save(consumer, SilentGear.getId("netherwood_charcoal_from_block"));
-
         ShapedRecipeBuilder.shaped(CraftingItems.FINE_SILK_CLOTH)
                 .pattern("##")
                 .pattern("##")
@@ -720,25 +704,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(CraftingItems.FLAX_FIBER, 2)
                 .unlockedBy("has_item", has(CraftingItems.FLAX_FIBER))
                 .save(consumer);
-        // G
-        ShapedRecipeBuilder.shaped(CraftingItems.GLITTERY_DUST, 8)
-                .define('o', Items.POPPED_CHORUS_FRUIT)
-                .define('/', ModTags.Items.NUGGETS_EMERALD)
-                .define('#', Tags.Items.DUSTS_GLOWSTONE)
-                .define('b', ModItems.NETHER_BANANA)
-                .pattern("o/o")
-                .pattern("#b#")
-                .pattern("o/o")
-                .unlockedBy("has_item", has(ModItems.NETHER_BANANA))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.GOLDEN_NETHER_BANANA)
-                .define('g', Tags.Items.INGOTS_GOLD)
-                .define('b', ModItems.NETHER_BANANA)
-                .pattern("ggg")
-                .pattern("gbg")
-                .pattern("ggg")
-                .unlockedBy("has_item", has(ModItems.NETHER_BANANA))
-                .save(consumer);
         // I
         ShapedRecipeBuilder.shaped(CraftingItems.IRON_ROD, 4)
                 .define('/', Tags.Items.INGOTS_IRON)
@@ -757,74 +722,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
         ShapelessRecipeBuilder.shapeless(CraftingItems.LEATHER_SCRAP, 9)
                 .requires(Items.LEATHER)
                 .unlockedBy("has_item", has(CraftingItems.LEATHER_SCRAP))
-                .save(consumer);
-        // N
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_DOOR, 3)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .pattern("##")
-                .pattern("##")
-                .pattern("##")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_PLANKS))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_TRAPDOOR, 2)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_PLANKS))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_FENCE, 3)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .pattern("#/#")
-                .pattern("#/#")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_PLANKS))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_FENCE_GATE, 1)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .pattern("/#/")
-                .pattern("/#/")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_PLANKS))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(ModBlocks.NETHERWOOD_PLANKS, 4)
-                .requires(ModTags.Items.NETHERWOOD_LOGS)
-                .unlockedBy("has_item", has(ModTags.Items.NETHERWOOD_LOGS))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_WOOD, 3)
-                .define('#', ModBlocks.NETHERWOOD_LOG)
-                .pattern("##")
-                .pattern("##")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_PLANKS)
-                .define('#', ModBlocks.NETHERWOOD_SLAB)
-                .pattern("#")
-                .pattern("#")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
-                .save(consumer, SilentGear.getId("netherwood_planks_from_slabs"));
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_PLANKS, 3)
-                .define('#', ModBlocks.NETHERWOOD_STAIRS)
-                .pattern("##")
-                .pattern("##")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
-                .save(consumer, SilentGear.getId("netherwood_planks_from_stairs"));
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_SLAB, 6)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .pattern("###")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.NETHERWOOD_STAIRS, 4)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .pattern("#  ")
-                .pattern("## ")
-                .pattern("###")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(CraftingItems.NETHERWOOD_STICK, 4)
-                .define('#', ModBlocks.NETHERWOOD_PLANKS)
-                .pattern(" #")
-                .pattern("# ")
-                .unlockedBy("has_item", has(ModBlocks.NETHERWOOD_LOG))
                 .save(consumer);
         // R
         ShapelessRecipeBuilder.shapeless(CraftingItems.RED_CARD_UPGRADE, 4)

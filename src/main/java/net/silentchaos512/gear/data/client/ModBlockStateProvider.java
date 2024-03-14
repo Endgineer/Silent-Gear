@@ -28,28 +28,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        // Netherwood
-        simpleBlock(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
-        simpleBlock(ModBlocks.NETHERWOOD_PLANKS.get());
-        simpleBlock(ModBlocks.NETHERWOOD_LEAVES.get());
-        axisBlock(ModBlocks.NETHERWOOD_LOG.get(), modLoc("block/netherwood_log"), modLoc("block/netherwood_log_top"));
-        axisBlock(ModBlocks.STRIPPED_NETHERWOOD_LOG.get(), modLoc("block/stripped_netherwood_log"), modLoc("block/stripped_netherwood_log_top"));
-        simpleBlock(ModBlocks.NETHERWOOD_WOOD.get(), models().cubeAll("netherwood_wood", modLoc("block/netherwood_log")));
-        simpleBlock(ModBlocks.STRIPPED_NETHERWOOD_WOOD.get(), models().cubeAll("stripped_netherwood_wood", modLoc("block/stripped_netherwood_log")));
-        simpleBlock(ModBlocks.NETHERWOOD_SAPLING.get(), models().cross("netherwood_sapling", modLoc("block/netherwood_sapling")));
-        ResourceLocation planks = modLoc("block/netherwood_planks");
-        slabBlock(ModBlocks.NETHERWOOD_SLAB.get(), planks, planks);
-        stairsBlock(ModBlocks.NETHERWOOD_STAIRS.get(), planks);
-        fenceBlock(ModBlocks.NETHERWOOD_FENCE.get(), planks);
-        fenceGateBlock(ModBlocks.NETHERWOOD_FENCE_GATE.get(), planks);
-        doorBlock(ModBlocks.NETHERWOOD_DOOR.get(), modLoc("block/netherwood_door_bottom"), modLoc("block/netherwood_door_top"));
-        trapdoorBlock(ModBlocks.NETHERWOOD_TRAPDOOR.get(), modLoc("block/netherwood_trapdoor"), true);
-
-        // Oddballs
-        simpleBlock(ModBlocks.POTTED_NETHERWOOD_SAPLING.get(), models()
-                .withExistingParent("potted_netherwood_sapling", "block/flower_pot_cross")
-                .texture("plant", "block/netherwood_sapling"));
-
         // Plants
         getVariantBuilder(ModBlocks.FLAX_PLANT.get()).forAllStates(state -> {
             int i = cropAgeToIndex(state.getValue(ModCropBlock.AGE));

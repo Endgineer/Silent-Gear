@@ -52,8 +52,6 @@ public final class Config {
         public static final ForgeConfigSpec.BooleanValue upgradesInAnvilOnly;
         public static final ForgeConfigSpec.BooleanValue destroySwappedParts;
         private static final Map<ItemStat, ForgeConfigSpec.DoubleValue> statMultipliers = new HashMap<>();
-        // Other items
-        public static final ForgeConfigSpec.IntValue netherwoodCharcoalBurnTime;
         // World
         public static final ForgeConfigSpec.IntValue titaniteCount;
         // Debug
@@ -83,10 +81,6 @@ public final class Config {
                             .define("spawnWithStarterBlueprints", true);
                     builder.pop();
                 }
-
-                netherwoodCharcoalBurnTime = builder
-                        .comment("Burn time of netherwood charcoal, in ticks. Vanilla charcoal is 1600.")
-                        .defineInRange("netherwood_charcoal.burn_time", 2400, 0, Integer.MAX_VALUE);
 
                 builder.pop();
             }

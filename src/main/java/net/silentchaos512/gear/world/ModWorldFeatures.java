@@ -53,32 +53,9 @@ public final class ModWorldFeatures {
                 OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANITE_ORE.get().defaultBlockState())));
         private static final RandomPatchConfiguration WILD_FLAX_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLAX_PLANT.get())), List.of(), 32);
-        public static final TreeConfiguration NETHERWOOD_TREE_CONFIG = new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.NETHERWOOD_LOG.asBlockState()),
-                new ForkingTrunkPlacer(5, 2, 2),
-                BlockStateProvider.simple(ModBlocks.NETHERWOOD_LEAVES.asBlockState()),
-                new AcaciaFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0)),
-                new TwoLayersFeatureSize(1, 0, 2))
-                .ignoreVines()
-                .build();
 
         public static final Holder<ConfiguredFeature<ReplaceBlockConfiguration, ?>> TITANITE_ORE_VEINS = create("titanite_ore_veins", Feature.REPLACE_SINGLE_BLOCK, TITANITE_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLAX_PATCHES = create("wild_flax_patches", Feature.FLOWER, WILD_FLAX_PATCHES_CONFIG);
-        public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> NETHERWOOD_TREE = create("netherwood_tree", Feature.TREE, NETHERWOOD_TREE_CONFIG);
-
-        /*public static final Lazy<ConfiguredFeature<?, ?>> NETHERWOOD_TREES = createLazy("netherwood_trees", () -> Feature.RANDOM_SELECTOR
-                .configured(new RandomFeatureConfiguration(
-                        ImmutableList.of(
-                                NETHERWOOD_TREE_FEATURE.get()
-                                        .configured(NETHERWOOD_TREE_CONFIG.get())
-                                        .weighted(0.8F)
-                        ),
-                        NETHERWOOD_TREE_FEATURE.get()
-                                .configured(NETHERWOOD_TREE_CONFIG.get())
-                ))
-                .decorated(FeatureDecorator.COUNT_MULTILAYER.configured(new CountConfiguration(8)))
-                .range(128)
-                .chance(2));*/
 
         public static <FC extends FeatureConfiguration> Holder<ConfiguredFeature<FC, ?>> create(String name, Feature<FC> feature, FC featureConfig) {
             return FeatureUtils.register("silentgear:" + name, feature, featureConfig);
@@ -120,9 +97,7 @@ public final class ModWorldFeatures {
 
     private ModWorldFeatures() {}
 
-    public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {
-//        event.getRegistry().register(NETHERWOOD_TREE_FEATURE.get().setRegistryName(SilentGear.getId("netherwood_tree")));
-    }
+    public static void registerFeatures(RegistryEvent.Register<Feature<?>> event) {}
 
     private static void registerConfiguredFeatures() {
         if (configuredFeaturesRegistered) return;
@@ -143,22 +118,14 @@ public final class ModWorldFeatures {
         // Need to load these as late as possible, or configs won't be loaded
         registerConfiguredFeatures();
 
-        if (biome.getCategory() == Biome.BiomeCategory.NETHER) {
-            addNetherwoodTrees(biome);
-        } else {
-            if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
-                addWildFlax(biome);
-            }
+        if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
+            addWildFlax(biome);
         }
     }
 
     private static void addWildFlax(BiomeLoadingEvent biome) {
         debugLog("Add wild flax to " + biome.getName());
         biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Placed.FLOWER_WILD_FLAX);
-    }
-
-    private static void addNetherwoodTrees(BiomeLoadingEvent biome) {
-//        biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Configured.NETHERWOOD_TREES);
     }
 
     private static void debugLog(String msg) {

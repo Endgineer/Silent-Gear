@@ -60,7 +60,6 @@ public enum CraftingItems implements ItemLike {
     ROUGH_ROD,
     STONE_ROD,
     IRON_ROD,
-    NETHERWOOD_STICK,
     // Misc Upgrades
     SPOON_UPGRADE,
     ROAD_MAKER_UPGRADE,
