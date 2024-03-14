@@ -288,28 +288,6 @@ public class TraitsProvider implements DataProvider {
                 .withGearTypeCondition(GearType.TOOL)
         );
 
-        // Block placers
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.CRACKLER, 1, Blocks.BASALT, 3)
-                .withGearTypeCondition(GearType.TOOL));
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.FLOATSTONER, 1, Blocks.END_STONE, 3)
-                .withGearTypeCondition(GearType.TOOL));
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.IGNITE, 1, Blocks.FIRE, 1)
-                .sound(SoundEvents.FLINTANDSTEEL_USE, 1f, 1f)
-                .withGearTypeCondition(GearType.TOOL)
-        );
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.RACKER, 1, Blocks.NETHERRACK, 3)
-                .withGearTypeCondition(GearType.TOOL));
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.REFRACTIVE, 1, ModBlocks.PHANTOM_LIGHT.get(), 5)
-                .sound(SoundEvents.AMETHYST_BLOCK_STEP, 0.75f, 0.5f)
-                .withGearTypeCondition(GearType.TOOL)
-        );
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.TERMINUS, 1, Blocks.STONE, 3)
-                .withGearTypeCondition(GearType.TOOL));
-        ret.add(new BlockPlacerTraitBuilder(Const.Traits.VULCAN, 1, Blocks.OBSIDIAN, 20)
-                .cooldown(100)
-                .withGearTypeCondition(GearType.TOOL)
-        );
-
         // Block fillers
         ret.add(new BlockFillerTraitBuilder(Const.Traits.ROAD_MAKER, 1, Blocks.DIRT_PATH, 0.5f)
                 .target(Blocks.GRASS_BLOCK)

@@ -40,7 +40,6 @@ public final class TraitSerializers {
         register(WielderEffectTrait.SERIALIZER);
         register(StatModifierTrait.SERIALIZER);
         register(AttributeTrait.SERIALIZER);
-        register(BlockPlacerTrait.SERIALIZER);
         register(BlockFillerTrait.SERIALIZER);
         register(SynergyTrait.SERIALIZER);
         register(TargetEffectTrait.SERIALIZER);
