@@ -31,7 +31,7 @@ interface IGearRecipe {
                     // If classic mixing is disabled, all materials must be the same
                     if (first == null) {
                         first = mat.get();
-                    } else if (!Config.Common.allowLegacyMaterialMixing.get() && first != mat.get()) {
+                    } else if (first != mat.get()) {
                         return Collections.emptyList();
                     }
 

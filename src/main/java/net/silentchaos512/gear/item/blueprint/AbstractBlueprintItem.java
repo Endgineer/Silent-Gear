@@ -83,13 +83,6 @@ public abstract class AbstractBlueprintItem extends Item implements IBlueprint {
                     tooltip.add(TextUtil.misc("jeiNotInstalled").withStyle(ChatFormatting.DARK_RED));
                 }
             }
-
-            // Legacy material mixing allowed?
-            if (Config.Common.allowLegacyMaterialMixing.get()) {
-                tooltip.add(TextUtil.translate("item", "blueprint.mixing.enabled").withStyle(ChatFormatting.GREEN));
-            } else {
-                tooltip.add(TextUtil.translate("item", "blueprint.mixing.disabled").withStyle(ChatFormatting.RED));
-            }
         }
     }
 }

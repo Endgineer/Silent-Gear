@@ -88,7 +88,7 @@ public class GearCraftingRecipeCategoryJei implements IRecipeCategory<CraftingRe
         List<List<ItemStack>> outputs = ingredients.getOutputs(VanillaTypes.ITEM);
         List<List<ItemStack>> shiftedInputs = new ArrayList<>();
         for (int i = 0; i < inputs.size(); ++i) {
-            shiftedInputs.add(shiftIngredients(inputs.get(i), 5 * i));
+            shiftedInputs.add(inputs.get(i));
         }
 
         Size2i size = getRecipeSize(recipe);
@@ -100,22 +100,6 @@ public class GearCraftingRecipeCategoryJei implements IRecipeCategory<CraftingRe
         }
 
         guiItemStacks.set(0, outputs.get(0));
-    }
-
-    private static List<ItemStack> shiftIngredients(List<ItemStack> list, int amount) {
-        List<ItemStack> ret = new ArrayList<>(list);
-
-        if (ret.isEmpty() || !Config.Common.allowLegacyMaterialMixing.get()) {
-            return ret;
-        }
-
-        for (int i = 0; i < amount; ++i) {
-            ItemStack stack = ret.get(ret.size() - 1);
-            ret.remove(ret.size() - 1);
-            ret.add(0, stack);
-        }
-
-        return ret;
     }
 
     @Override

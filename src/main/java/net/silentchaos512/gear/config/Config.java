@@ -38,7 +38,6 @@ public final class Config {
         public static final ForgeConfigSpec.DoubleValue sinewDropRate;
         static final ForgeConfigSpec.ConfigValue<List<? extends String>> sinewAnimals;
         // Gear
-        public static final ForgeConfigSpec.BooleanValue allowLegacyMaterialMixing;
         public static final ForgeConfigSpec.BooleanValue allowConversionRecipes;
         public static final ForgeConfigSpec.BooleanValue forceRemoveEnchantments;
         public static final ForgeConfigSpec.BooleanValue sendGearBrokenMessage;
@@ -131,11 +130,6 @@ public final class Config {
             {
                 builder.comment("Settings for gear (tools, weapons, and armor)");
                 builder.push("gear");
-
-                allowLegacyMaterialMixing = builder
-                        .comment("Allow parts to be crafted with mixed materials in a crafting grid, like earlier versions.",
-                                "In 1.17, mixing is normally only allowed in compound-crafting blocks.")
-                        .define("allowLegacyMaterialMixing", false);
 
                 allowConversionRecipes = builder
                         .comment("If set to false all conversion recipes (type 'silentgear:conversion') will be disabled",
