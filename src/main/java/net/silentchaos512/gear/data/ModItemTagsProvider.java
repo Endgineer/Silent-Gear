@@ -48,7 +48,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
-        builder(ModTags.Items.GEMS_TITANITE, ModItems.TITANITE_SHARD, ModItems.TITANITE_SHARD_CHARGED, ModItems.TITANITE_SHARD_FROSTY, ModItems.TITANITE_SHARD_SMOLDERING);
+        builder(ModTags.Items.GEMS_TITANITE, ModItems.TITANITE_SHARD);
         getBuilder(Tags.Items.GEMS)
                 .addTag(ModTags.Items.GEMS_TITANITE);
 

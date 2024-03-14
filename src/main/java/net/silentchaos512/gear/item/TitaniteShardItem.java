@@ -27,8 +27,8 @@ public class TitaniteShardItem extends Item {
     public void appendHoverText(ItemStack itemstack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
         if(itemstack == null || itemstack.isEmpty() || !itemstack.hasTag()) {
             components.add(new TranslatableComponent("tooltip.silentgear.titanite_shard1").withStyle(ChatFormatting.DARK_GRAY));
+            components.add(new TranslatableComponent("tooltip.silentgear.titanite_shard3").withStyle(ChatFormatting.DARK_GRAY));
             components.add(new TranslatableComponent("tooltip.silentgear.titanite_shard2").withStyle(ChatFormatting.DARK_GRAY));
-            components.add(new TranslatableComponent("tooltip.silentgear.titanite_shard3").withStyle(ChatFormatting.GRAY));
         }
     }
 

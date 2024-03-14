@@ -1,8 +1,5 @@
 {
   "item.silentgear.titanite_shard": "Titanite Shard",
-  "item.silentgear.titanite_shard_smoldering": "Smoldering Titanite Shard",
-  "item.silentgear.titanite_shard_frosty": "Frosty Titanite Shard",
-  "item.silentgear.titanite_shard_charged": "Charged Titanite Shard",
   "item.silentgear.heated_metal_item": "Heated Metal Item",
   "tooltip.silentgear.metal_stats.unfinished": "Unfinished",
   "tooltip.silentgear.metal_stats.heat": "Heat:",
@@ -17,9 +14,6 @@
   "tooltip.silentgear.titanite_shard1": "Fragments of the world's great deep.",
   "tooltip.silentgear.titanite_shard2": "Capable of reinforcing metal.",
   "tooltip.silentgear.titanite_shard3": "Tough as dragonscale.",
-  "tooltip.silentgear.titanite_shard_awakened1": "Relic revealed by elevating Titanite.",
-  "tooltip.silentgear.titanite_shard_awakened2": "Hides all manner of rituals.",
-  "tooltip.silentgear.titanite_shard_awakened3": "Beckoned by the moon.",
   "block.silentgear.deepslate_titanite_ore": "Deepslate Titanite Ore",
   "block.silentgear.titanite_anvil": "Titanite Anvil",
   "advancements.silentgear.armor.description": "Craft any piece of armor from Silent Gear",
