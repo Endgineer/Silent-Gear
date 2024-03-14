@@ -58,7 +58,6 @@ public class ModBlockLootTables extends BlockLoot {
         add(ModBlocks.NETHERWOOD_SLAB.get(), BlockLoot::createSlabItemTable);
         dropSelf(ModBlocks.NETHERWOOD_STAIRS.get());
 
-        add(ModBlocks.PHANTOM_LIGHT.get(), noDrop());
         dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());
 
         this.add(ModBlocks.FLAX_PLANT.get(), flaxPlant(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLAX_PLANT.get())

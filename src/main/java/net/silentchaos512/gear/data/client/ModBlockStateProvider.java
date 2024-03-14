@@ -46,7 +46,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         trapdoorBlock(ModBlocks.NETHERWOOD_TRAPDOOR.get(), modLoc("block/netherwood_trapdoor"), true);
 
         // Oddballs
-        simpleBlock(ModBlocks.PHANTOM_LIGHT.get(), models().cubeAll("phantom_light", modLoc("item/blank")));
         simpleBlock(ModBlocks.POTTED_NETHERWOOD_SAPLING.get(), models()
                 .withExistingParent("potted_netherwood_sapling", "block/flower_pot_cross")
                 .texture("plant", "block/netherwood_sapling"));

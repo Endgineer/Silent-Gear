@@ -111,8 +111,6 @@ public final class ModBlocks {
 
     public static final BlockRegistryObject<FlowerPotBlock> POTTED_NETHERWOOD_SAPLING = registerNoItem("potted_netherwood_sapling", () ->
             makePottedPlant(NETHERWOOD_SAPLING));
-    public static final BlockRegistryObject<PhantomLight> PHANTOM_LIGHT = register("phantom_light",
-            PhantomLight::new);
 
     private ModBlocks() {}
 
