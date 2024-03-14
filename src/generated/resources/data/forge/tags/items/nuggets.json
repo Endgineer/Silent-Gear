@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "#forge:nuggets/blaze_gold",
-    "#forge:nuggets/azure_silver",
-    "#forge:nuggets/azure_electrum",
     "#forge:nuggets/tyrian_steel",
     "#forge:nuggets/diamond",
     "#forge:nuggets/emerald"

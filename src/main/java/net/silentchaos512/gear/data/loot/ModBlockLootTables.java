@@ -42,12 +42,7 @@ public class ModBlockLootTables extends BlockLoot {
 
     @Override
     protected void addTables() {
-        add(ModBlocks.AZURE_SILVER_ORE.get(),
-                createOreDrop(ModBlocks.AZURE_SILVER_ORE.get(), CraftingItems.RAW_AZURE_SILVER.asItem()));
-        dropSelf(ModBlocks.RAW_AZURE_SILVER_BLOCK.get());
         dropSelf(ModBlocks.BLAZE_GOLD_BLOCK.get());
-        dropSelf(ModBlocks.AZURE_SILVER_BLOCK.get());
-        dropSelf(ModBlocks.AZURE_ELECTRUM_BLOCK.get());
         dropSelf(ModBlocks.TYRIAN_STEEL_BLOCK.get());
         dropSelf(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get());
         dropSelf(ModBlocks.NETHERWOOD_FENCE.get());

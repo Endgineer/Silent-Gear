@@ -57,16 +57,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .block(ModBlocks.BLAZE_GOLD_BLOCK, ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD)
                 .dust(CraftingItems.BLAZE_GOLD_DUST, ModTags.Items.DUSTS_BLAZE_GOLD)
                 .nugget(CraftingItems.BLAZE_GOLD_NUGGET, ModTags.Items.NUGGETS_BLAZE_GOLD));
-        metals(consumer, 1.5f, new Metals("azure_silver", CraftingItems.AZURE_SILVER_INGOT, ModTags.Items.INGOTS_AZURE_SILVER)
-                .block(ModBlocks.AZURE_SILVER_BLOCK, ModTags.Items.STORAGE_BLOCKS_AZURE_SILVER)
-                .dust(CraftingItems.AZURE_SILVER_DUST, ModTags.Items.DUSTS_AZURE_SILVER)
-                .chunks(ModTags.Items.CHUNKS_AZURE_SILVER)
-                .ore(ModBlocks.AZURE_SILVER_ORE, ModTags.Items.ORES_AZURE_SILVER, CraftingItems.RAW_AZURE_SILVER, ModBlocks.RAW_AZURE_SILVER_BLOCK)
-                .nugget(CraftingItems.AZURE_SILVER_NUGGET, ModTags.Items.NUGGETS_AZURE_SILVER));
-        metals(consumer, 0.5f, new Metals("azure_electrum", CraftingItems.AZURE_ELECTRUM_INGOT, ModTags.Items.INGOTS_AZURE_ELECTRUM)
-                .block(ModBlocks.AZURE_ELECTRUM_BLOCK, ModTags.Items.STORAGE_BLOCKS_AZURE_ELECTRUM)
-                .dust(CraftingItems.AZURE_ELECTRUM_DUST, ModTags.Items.DUSTS_AZURE_ELECTRUM)
-                .nugget(CraftingItems.AZURE_ELECTRUM_NUGGET, ModTags.Items.NUGGETS_AZURE_ELECTRUM));
         metals(consumer, 0.75f, new Metals("tyrian_steel", CraftingItems.TYRIAN_STEEL_INGOT, ModTags.Items.INGOTS_TYRIAN_STEEL)
                 .block(ModBlocks.TYRIAN_STEEL_BLOCK, ModTags.Items.STORAGE_BLOCKS_TYRIAN_STEEL)
                 .dust(CraftingItems.TYRIAN_STEEL_DUST, ModTags.Items.DUSTS_TYRIAN_STEEL)
@@ -622,16 +612,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(Items.SHULKER_SHELL)
                 .build(consumer);
 
-        ShapedRecipeBuilder.shaped(CraftingItems.AZURE_ELECTRUM_INGOT)
-                .define('/', Tags.Items.INGOTS_GOLD)
-                .define('#', ModTags.Items.INGOTS_AZURE_SILVER)
-                .define('o', Tags.Items.ENDER_PEARLS)
-                .pattern("/ /")
-                .pattern("#o#")
-                .pattern("# #")
-                .unlockedBy("has_item", has(CraftingItems.AZURE_SILVER_INGOT))
-                .save(consumer);
-
         ShapelessRecipeBuilder.shapeless(Items.BLUE_DYE)
                 .requires(CraftingItems.FLAX_FLOWERS, 4)
                 .unlockedBy("has_item", has(CraftingItems.FLAX_FLOWERS))
@@ -695,8 +675,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .build(consumer, SilentGear.getId("nether_star_from_fragments"));
 
         ExtendedShapelessRecipeBuilder.vanillaBuilder(CraftingItems.STARMETAL_DUST, 3)
-                .addIngredient(ModTags.Items.DUSTS_AZURE_ELECTRUM, 1)
-                .addIngredient(ModTags.Items.DUSTS_AZURE_SILVER, 2)
                 .addIngredient(ModTags.Items.DUSTS_BLAZE_GOLD, 1)
                 .addIngredient(CraftingItems.NETHER_STAR_FRAGMENT)
                 .build(consumer);

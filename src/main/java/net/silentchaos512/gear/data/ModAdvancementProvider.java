@@ -223,27 +223,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .addCriterion("entered_the_end", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.END))
                     .save(consumer, id("the_end"));
 
-            Advancement azureSilver = Advancement.Builder.advancement()
-                    .parent(theEnd)
-                    .display(CraftingItems.AZURE_SILVER_INGOT, title("azure_silver"), description("azure_silver"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_ore", getItem(ModBlocks.AZURE_SILVER_ORE))
-                    .addCriterion("get_ingot", getItem(CraftingItems.AZURE_SILVER_INGOT))
-                    .save(consumer, id("azure_silver"));
-
-            Advancement azureElectrum = Advancement.Builder.advancement()
-                    .parent(azureSilver)
-                    .display(CraftingItems.AZURE_ELECTRUM_INGOT, title("azure_electrum"), description("azure_electrum"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("get_ingot", getItem(CraftingItems.AZURE_ELECTRUM_INGOT))
-                    .save(consumer, id("azure_electrum"));
-
-            ItemStack azureSilverBoots = new ItemStack(ModItems.BOOTS);
-            GearData.writeConstructionParts(azureSilverBoots, Collections.singleton(LazyPartData.of(Const.Parts.ARMOR_BODY, ModItems.BOOT_PLATES.get(), LazyMaterialInstance.of(Const.Materials.AZURE_SILVER))));
-            Advancement moonwalker = Advancement.Builder.advancement()
-                    .parent(azureSilver)
-                    .display(azureSilverBoots, title("moonwalker"), description("moonwalker"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("fall_with_moonwalker_boots", genericInt(GearEvents.FALL_WITH_MOONWALKER, 1))
-                    .save(consumer, id("moonwalker"));
-
             //endregion
         }
 

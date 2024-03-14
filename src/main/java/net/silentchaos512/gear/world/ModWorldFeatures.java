@@ -51,7 +51,6 @@ public final class ModWorldFeatures {
 
         private static final ReplaceBlockConfiguration TITANITE_ORE_VEINS_CONFIG = new ReplaceBlockConfiguration(ImmutableList.of(
                 OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANITE_ORE.get().defaultBlockState())));
-        private static final OreConfiguration AZURE_SILVER_ORE_VEINS_CONFIG = new OreConfiguration(END_STONE_RULE_TEST, ModBlocks.AZURE_SILVER_ORE.asBlockState(), 6);
         private static final RandomPatchConfiguration WILD_FLAX_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                 new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLAX_PLANT.get())), List.of(), 32);
         public static final TreeConfiguration NETHERWOOD_TREE_CONFIG = new TreeConfiguration.TreeConfigurationBuilder(
@@ -64,7 +63,6 @@ public final class ModWorldFeatures {
                 .build();
 
         public static final Holder<ConfiguredFeature<ReplaceBlockConfiguration, ?>> TITANITE_ORE_VEINS = create("titanite_ore_veins", Feature.REPLACE_SINGLE_BLOCK, TITANITE_ORE_VEINS_CONFIG);
-        public static final Holder<ConfiguredFeature<OreConfiguration, ?>> AZURE_SILVER_ORE_VEINS = create("azure_silver_ore_veins", Feature.ORE, AZURE_SILVER_ORE_VEINS_CONFIG);
         public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLAX_PATCHES = create("wild_flax_patches", Feature.FLOWER, WILD_FLAX_PATCHES_CONFIG);
         public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> NETHERWOOD_TREE = create("netherwood_tree", Feature.TREE, NETHERWOOD_TREE_CONFIG);
 
@@ -93,10 +91,6 @@ public final class ModWorldFeatures {
         public static final Holder<PlacedFeature> ORE_TITANITE = create("ore_titanite", Configured.TITANITE_ORE_VEINS,
                 commonOrePlacement(Config.Common.titaniteCount.get(),
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-ModVariables.ABYSS.SPAN), VerticalAnchor.absolute(0))));
-
-        public static final Holder<PlacedFeature> ORE_AZURE_SILVER = create("ore_azure_silver", Configured.AZURE_SILVER_ORE_VEINS,
-                commonOrePlacement(Config.Common.azureSilverCount.get(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(16), VerticalAnchor.absolute(92))));
 
         public static final Holder<PlacedFeature> FLOWER_WILD_FLAX = create("flower_wild_flax", Configured.WILD_FLAX_PATCHES,
                 RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
@@ -151,8 +145,6 @@ public final class ModWorldFeatures {
 
         if (biome.getCategory() == Biome.BiomeCategory.NETHER) {
             addNetherwoodTrees(biome);
-        } else if (biome.getCategory() == Biome.BiomeCategory.THEEND) {
-            addAzureSilverOre(biome);
         } else {
             if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
                 addWildFlax(biome);
@@ -167,11 +159,6 @@ public final class ModWorldFeatures {
 
     private static void addNetherwoodTrees(BiomeLoadingEvent biome) {
 //        biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Configured.NETHERWOOD_TREES);
-    }
-
-    private static void addAzureSilverOre(BiomeLoadingEvent biome) {
-        debugLog("Add azure silver ores to " + biome.getName());
-        biome.getGeneration().addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, Placed.ORE_AZURE_SILVER);
     }
 
     private static void debugLog(String msg) {

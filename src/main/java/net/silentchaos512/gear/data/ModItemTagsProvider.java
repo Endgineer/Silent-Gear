@@ -44,31 +44,19 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     public void addTags() {
         // Forge
         copy(ModTags.Blocks.ORES_TITANITE, ModTags.Items.ORES_TITANITE);
-        copy(ModTags.Blocks.ORES_AZURE_SILVER, ModTags.Items.ORES_AZURE_SILVER);
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
 
         copy(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD, ModTags.Items.STORAGE_BLOCKS_BLAZE_GOLD);
-        copy(ModTags.Blocks.STORAGE_BLOCKS_AZURE_SILVER, ModTags.Items.STORAGE_BLOCKS_AZURE_SILVER);
-        copy(ModTags.Blocks.STORAGE_BLOCKS_AZURE_ELECTRUM, ModTags.Items.STORAGE_BLOCKS_AZURE_ELECTRUM);
         copy(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL, ModTags.Items.STORAGE_BLOCKS_TYRIAN_STEEL);
         copy(Tags.Blocks.STORAGE_BLOCKS, Tags.Items.STORAGE_BLOCKS);
 
-        builder(ModTags.Items.STORAGE_BLOCKS_RAW_AZURE_SILVER, ModBlocks.RAW_AZURE_SILVER_BLOCK);
-
-        builder(ModTags.Items.RAW_MATERIALS_AZURE_SILVER, CraftingItems.RAW_AZURE_SILVER);
-
-        builder(ModTags.Items.CHUNKS_AZURE_SILVER, CraftingItems.RAW_AZURE_SILVER);
         builder(ModTags.Items.COAL_GENERATOR_FUELS, ModItems.NETHERWOOD_CHARCOAL, ModBlocks.NETHERWOOD_CHARCOAL_BLOCK);
 
         builder(ModTags.Items.DUSTS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_DUST);
-        builder(ModTags.Items.DUSTS_AZURE_SILVER, CraftingItems.AZURE_SILVER_DUST);
-        builder(ModTags.Items.DUSTS_AZURE_ELECTRUM, CraftingItems.AZURE_ELECTRUM_DUST);
         builder(ModTags.Items.DUSTS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_DUST);
         builder(ModTags.Items.DUSTS_STARMETAL, CraftingItems.STARMETAL_DUST);
         getBuilder(Tags.Items.DUSTS)
                 .addTag(ModTags.Items.DUSTS_BLAZE_GOLD)
-                .addTag(ModTags.Items.DUSTS_AZURE_SILVER)
-                .addTag(ModTags.Items.DUSTS_AZURE_ELECTRUM)
                 .addTag(ModTags.Items.DUSTS_TYRIAN_STEEL)
                 .addTag(ModTags.Items.DUSTS_STARMETAL);
 
@@ -77,25 +65,17 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(ModTags.Items.GEMS_TITANITE);
 
         builder(ModTags.Items.INGOTS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_INGOT);
-        builder(ModTags.Items.INGOTS_AZURE_SILVER, CraftingItems.AZURE_SILVER_INGOT);
-        builder(ModTags.Items.INGOTS_AZURE_ELECTRUM, CraftingItems.AZURE_ELECTRUM_INGOT);
         builder(ModTags.Items.INGOTS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_INGOT);
         getBuilder(Tags.Items.INGOTS)
                 .addTag(ModTags.Items.INGOTS_BLAZE_GOLD)
-                .addTag(ModTags.Items.INGOTS_AZURE_SILVER)
-                .addTag(ModTags.Items.INGOTS_AZURE_ELECTRUM)
                 .addTag(ModTags.Items.INGOTS_TYRIAN_STEEL);
 
         builder(ModTags.Items.NUGGETS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_NUGGET);
-        builder(ModTags.Items.NUGGETS_AZURE_SILVER, CraftingItems.AZURE_SILVER_NUGGET);
-        builder(ModTags.Items.NUGGETS_AZURE_ELECTRUM, CraftingItems.AZURE_ELECTRUM_NUGGET);
         builder(ModTags.Items.NUGGETS_TYRIAN_STEEL, CraftingItems.TYRIAN_STEEL_NUGGET);
         builder(ModTags.Items.NUGGETS_DIAMOND, CraftingItems.DIAMOND_SHARD);
         builder(ModTags.Items.NUGGETS_EMERALD, CraftingItems.EMERALD_SHARD);
         getBuilder(Tags.Items.NUGGETS)
                 .addTag(ModTags.Items.NUGGETS_BLAZE_GOLD)
-                .addTag(ModTags.Items.NUGGETS_AZURE_SILVER)
-                .addTag(ModTags.Items.NUGGETS_AZURE_ELECTRUM)
                 .addTag(ModTags.Items.NUGGETS_TYRIAN_STEEL)
                 .addTag(ModTags.Items.NUGGETS_DIAMOND)
                 .addTag(ModTags.Items.NUGGETS_EMERALD);
@@ -163,7 +143,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         copy(ModTags.Blocks.NETHERWOOD_LOGS, ModTags.Items.NETHERWOOD_LOGS);
 
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1).addTag(ModTags.Items.DUSTS_BLAZE_GOLD);
-        getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_2).addTag(ModTags.Items.DUSTS_AZURE_SILVER);
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_3).addTag(ModTags.Items.DUSTS_STARMETAL);
         getBuilder(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS)
                 .addTag(ModTags.Items.STARLIGHT_CHARGER_CATALYSTS_TIER_1)

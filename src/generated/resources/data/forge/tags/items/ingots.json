@@ -2,8 +2,6 @@
   "replace": false,
   "values": [
     "#forge:ingots/blaze_gold",
-    "#forge:ingots/azure_silver",
-    "#forge:ingots/azure_electrum",
     "#forge:ingots/tyrian_steel"
   ]
 }

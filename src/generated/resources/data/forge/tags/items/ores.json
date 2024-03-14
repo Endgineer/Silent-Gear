@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/titanite",
-    "#forge:ores/azure_silver"
+    "#forge:ores/titanite"
   ]
 }

@@ -29,14 +29,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     @Override
     public void addTags() {
         // Harvesting
-        tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
-                .addTag(ModTags.Blocks.ORES_AZURE_SILVER);
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .addTag(ModTags.Blocks.ORES_TITANITE)
                 .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get())
                 .add(ModBlocks.TITANITE_ANVIL.get());
-        tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.RAW_AZURE_SILVER_BLOCK.get());
 
         tag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(ModTags.Blocks.NETHERWOOD_LOGS)
@@ -51,10 +47,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.NETHERWOOD_LEAVES.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(ModTags.Blocks.ORES_TITANITE)
-                .addTag(ModTags.Blocks.ORES_AZURE_SILVER)
-                .add(ModBlocks.RAW_AZURE_SILVER_BLOCK.get())
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_AZURE_SILVER)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_AZURE_ELECTRUM)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL)
                 .add(ModBlocks.NETHERWOOD_CHARCOAL_BLOCK.get())
@@ -77,21 +69,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
         // Forge
         builder(ModTags.Blocks.ORES_TITANITE, ModBlocks.DEEPSLATE_TITANITE_ORE);
-        builder(ModTags.Blocks.ORES_AZURE_SILVER, ModBlocks.AZURE_SILVER_ORE);
         getBuilder(Tags.Blocks.ORES)
-                .addTag(ModTags.Blocks.ORES_TITANITE)
-                .addTag(ModTags.Blocks.ORES_AZURE_SILVER);
-
-        builder(ModTags.Blocks.STORAGE_BLOCKS_RAW_AZURE_SILVER, ModBlocks.RAW_AZURE_SILVER_BLOCK);
+                .addTag(ModTags.Blocks.ORES_TITANITE);
 
         builder(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD, ModBlocks.BLAZE_GOLD_BLOCK);
-        builder(ModTags.Blocks.STORAGE_BLOCKS_AZURE_SILVER, ModBlocks.AZURE_SILVER_BLOCK);
-        builder(ModTags.Blocks.STORAGE_BLOCKS_AZURE_ELECTRUM, ModBlocks.AZURE_ELECTRUM_BLOCK);
         builder(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL, ModBlocks.TYRIAN_STEEL_BLOCK);
         getBuilder(Tags.Blocks.STORAGE_BLOCKS)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_BLAZE_GOLD)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_AZURE_SILVER)
-                .addTag(ModTags.Blocks.STORAGE_BLOCKS_AZURE_ELECTRUM)
                 .addTag(ModTags.Blocks.STORAGE_BLOCKS_TYRIAN_STEEL);
 
         // Minecraft
