@@ -854,13 +854,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("#")
                 .unlockedBy("has_item", has(Tags.Items.COBBLESTONE))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(ModBlocks.STONE_TORCH, 4)
-                .define('#', ItemTags.COALS)
-                .define('/', ModTags.Items.RODS_STONE)
-                .pattern("#")
-                .pattern("/")
-                .unlockedBy("has_item", has(ItemTags.COALS))
-                .save(consumer);
         // U
         ShapelessRecipeBuilder.shapeless(CraftingItems.UPGRADE_BASE, 4)
                 .requires(Ingredient.of(ModTags.Items.PAPER), 2)

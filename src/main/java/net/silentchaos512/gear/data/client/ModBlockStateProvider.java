@@ -50,12 +50,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.POTTED_NETHERWOOD_SAPLING.get(), models()
                 .withExistingParent("potted_netherwood_sapling", "block/flower_pot_cross")
                 .texture("plant", "block/netherwood_sapling"));
-        simpleBlock(ModBlocks.STONE_TORCH.get(), models().torch("stone_torch", modLoc("block/stone_torch")));
-        getVariantBuilder(ModBlocks.WALL_STONE_TORCH.get())
-                .forAllStates(state -> ConfiguredModel.builder()
-                        .modelFile(wallTorch("wall_stone_torch", modLoc("block/stone_torch")))
-                        .rotationY((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 90)
-                        .build());
 
         // Plants
         getVariantBuilder(ModBlocks.FLAX_PLANT.get()).forAllStates(state -> {
@@ -65,10 +59,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
                     .build();
         });
         simpleBlock(ModBlocks.WILD_FLAX_PLANT.get(), models().crop("wild_flax_plant", modLoc("block/flax_plant3")));
-    }
-
-    public ModelBuilder<BlockModelBuilder> wallTorch(String name, ResourceLocation torch) {
-        return models().singleTexture(name, mcLoc(BLOCK_FOLDER + "/wall_torch"), "torch", torch);
     }
 
     private static int cropAgeToIndex(int age) {

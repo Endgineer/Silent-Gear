@@ -62,23 +62,6 @@ public final class ModBlocks {
                     .noCollission()
                     .sound(SoundType.CROP)));
 
-    public static final BlockRegistryObject<TorchBlock> STONE_TORCH = register("stone_torch",
-            () -> new TorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
-                    .noCollission()
-                    .strength(0)
-                    .lightLevel(state -> 14)
-                    .sound(SoundType.STONE),
-                    ParticleTypes.FLAME),
-            bro -> getStoneTorchItem());
-    public static final BlockRegistryObject<WallTorchBlock> WALL_STONE_TORCH = registerNoItem("wall_stone_torch", () ->
-            new WallTorchBlock(BlockBehaviour.Properties.of(Material.DECORATION)
-                    .noCollission()
-                    .strength(0)
-                    .lightLevel(state -> 14)
-                    .sound(SoundType.STONE)
-                    .lootFrom(STONE_TORCH::get),
-                    ParticleTypes.FLAME));
-
     public static final BlockRegistryObject<Block> NETHERWOOD_CHARCOAL_BLOCK = register("netherwood_charcoal_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .requiresCorrectToolForDrops()
@@ -142,8 +125,6 @@ public final class ModBlocks {
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETHERWOOD_TRAPDOOR.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(POTTED_NETHERWOOD_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(STONE_TORCH.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(WALL_STONE_TORCH.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(WILD_FLAX_PLANT.get(), RenderType.cutout());
     }
 
@@ -189,10 +170,6 @@ public final class ModBlocks {
 
     private static <T extends Block> Supplier<BlockItem> defaultItem(BlockRegistryObject<T> block) {
         return () -> new BlockItem(block.get(), new Item.Properties().tab(SilentGear.ITEM_GROUP));
-    }
-
-    private static Supplier<BlockItem> getStoneTorchItem() {
-        return () -> new StandingAndWallBlockItem(STONE_TORCH.get(), WALL_STONE_TORCH.get(), new Item.Properties().tab(SilentGear.ITEM_GROUP));
     }
 
     @SuppressWarnings("SameParameterValue")

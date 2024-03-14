@@ -57,7 +57,6 @@ public class ModBlockLootTables extends BlockLoot {
         dropSelf(ModBlocks.NETHERWOOD_TRAPDOOR.get());
         add(ModBlocks.NETHERWOOD_SLAB.get(), BlockLoot::createSlabItemTable);
         dropSelf(ModBlocks.NETHERWOOD_STAIRS.get());
-        dropSelf(ModBlocks.STONE_TORCH.get());
 
         add(ModBlocks.PHANTOM_LIGHT.get(), noDrop());
         dropPottedContents(ModBlocks.POTTED_NETHERWOOD_SAPLING.get());

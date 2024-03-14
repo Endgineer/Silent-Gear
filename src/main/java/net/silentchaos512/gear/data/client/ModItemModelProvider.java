@@ -114,7 +114,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         if (block == ModBlocks.PHANTOM_LIGHT.get())
             builder(block, getExistingFile(mcLoc("item/generated")), "item/phantom_light");
-        else if (block == ModBlocks.NETHERWOOD_SAPLING.get() || block == ModBlocks.STONE_TORCH.get())
+        else if (block == ModBlocks.NETHERWOOD_SAPLING.get())
             builder(block, getExistingFile(mcLoc("item/generated")), "block/" + NameUtils.from(block).getPath());
         else if (block == ModBlocks.NETHERWOOD_FENCE.get())
             withExistingParent("netherwood_fence", modLoc("block/netherwood_fence_inventory"));
