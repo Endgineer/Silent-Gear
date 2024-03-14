@@ -82,12 +82,7 @@
         ]
       }
     ],
-    "tip": [
-      {
-        "name": "silentgear:refractive",
-        "level": 1
-      }
-    ]
+    "tip": []
   },
   "model": {
     "main/all": [

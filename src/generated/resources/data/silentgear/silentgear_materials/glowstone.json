@@ -41,10 +41,6 @@
   "traits": {
     "tip": [
       {
-        "name": "silentgear:refractive",
-        "level": 1
-      },
-      {
         "name": "silentgear:lustrous",
         "level": 4
       }

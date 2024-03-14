@@ -74,12 +74,7 @@
         "level": 3
       }
     ],
-    "tip": [
-      {
-        "name": "silentgear:vulcan",
-        "level": 1
-      }
-    ]
+    "tip": []
   },
   "model": {
     "main/all": [
