@@ -17,14 +17,12 @@ public final class ModTags {
         public static final TagKey<Block> NETHERWOOD_SOIL = mod("netherwood_soil");
         public static final TagKey<Block> PROSPECTOR_HAMMER_TARGETS = mod("prospector_hammer_targets");
 
-        public static final TagKey<Block> ORES_BORT = forge("ores/bort");
         public static final TagKey<Block> ORES_CRIMSON_IRON = forge("ores/crimson_iron");
         public static final TagKey<Block> ORES_AZURE_SILVER = forge("ores/azure_silver");
 
         public static final TagKey<Block> STORAGE_BLOCKS_RAW_CRIMSON_IRON = forge("storage_blocks/raw_crimson_iron");
         public static final TagKey<Block> STORAGE_BLOCKS_RAW_AZURE_SILVER = forge("storage_blocks/raw_azure_silver");
 
-        public static final TagKey<Block> STORAGE_BLOCKS_BORT = forge("storage_blocks/bort");
         public static final TagKey<Block> STORAGE_BLOCKS_BLAZE_GOLD = forge("storage_blocks/blaze_gold");
         public static final TagKey<Block> STORAGE_BLOCKS_CRIMSON_IRON = forge("storage_blocks/crimson_iron");
         public static final TagKey<Block> STORAGE_BLOCKS_CRIMSON_STEEL = forge("storage_blocks/crimson_steel");
@@ -45,7 +43,6 @@ public final class ModTags {
 
     public static final class Items {
         public static final TagKey<Item> NETHERWOOD_LOGS = mod("netherwood_logs");
-        public static final TagKey<Item> ORES_BORT = forge("ores/bort");
         public static final TagKey<Item> ORES_CRIMSON_IRON = forge("ores/crimson_iron");
         public static final TagKey<Item> ORES_AZURE_SILVER = forge("ores/azure_silver");
 
@@ -53,7 +50,6 @@ public final class ModTags {
         public static final TagKey<Item> CHUNKS_AZURE_SILVER = silentsMechanisms("chunks/azure_silver");
         public static final TagKey<Item> COAL_GENERATOR_FUELS = silentsMechanisms("coal_generator_fuels");
 
-        public static final TagKey<Item> STORAGE_BLOCKS_BORT = forge("storage_blocks/bort");
         public static final TagKey<Item> STORAGE_BLOCKS_BLAZE_GOLD = forge("storage_blocks/blaze_gold");
         public static final TagKey<Item> STORAGE_BLOCKS_CRIMSON_IRON = forge("storage_blocks/crimson_iron");
         public static final TagKey<Item> STORAGE_BLOCKS_CRIMSON_STEEL = forge("storage_blocks/crimson_steel");
@@ -74,8 +70,6 @@ public final class ModTags {
         public static final TagKey<Item> DUSTS_AZURE_ELECTRUM = forge("dusts/azure_electrum");
         public static final TagKey<Item> DUSTS_TYRIAN_STEEL = forge("dusts/tyrian_steel");
         public static final TagKey<Item> DUSTS_STARMETAL = forge("dusts/starmetal");
-
-        public static final TagKey<Item> GEMS_BORT = forge("gems/bort");
 
         public static final TagKey<Item> INGOTS_BLAZE_GOLD = forge("ingots/blaze_gold");
         public static final TagKey<Item> INGOTS_CRIMSON_IRON = forge("ingots/crimson_iron");

@@ -42,10 +42,6 @@ public class ModBlockLootTables extends BlockLoot {
 
     @Override
     protected void addTables() {
-        add(ModBlocks.BORT_ORE.get(),
-                createOreDrop(ModBlocks.BORT_ORE.get(), CraftingItems.BORT.asItem()));
-        add(ModBlocks.DEEPSLATE_BORT_ORE.get(),
-                createOreDrop(ModBlocks.DEEPSLATE_BORT_ORE.get(), CraftingItems.BORT.asItem()));
         add(ModBlocks.CRIMSON_IRON_ORE.get(),
                 createOreDrop(ModBlocks.CRIMSON_IRON_ORE.get(), CraftingItems.RAW_CRIMSON_IRON.asItem()));
         add(ModBlocks.AZURE_SILVER_ORE.get(),
@@ -53,7 +49,6 @@ public class ModBlockLootTables extends BlockLoot {
         dropSelf(ModBlocks.RAW_CRIMSON_IRON_BLOCK.get());
         dropSelf(ModBlocks.RAW_AZURE_SILVER_BLOCK.get());
         dropSelf(ModBlocks.BLAZE_GOLD_BLOCK.get());
-        dropSelf(ModBlocks.BORT_BLOCK.get());
         dropSelf(ModBlocks.CRIMSON_IRON_BLOCK.get());
         dropSelf(ModBlocks.CRIMSON_STEEL_BLOCK.get());
         dropSelf(ModBlocks.AZURE_SILVER_BLOCK.get());
