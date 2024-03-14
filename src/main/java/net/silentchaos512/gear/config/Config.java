@@ -57,6 +57,7 @@ public final class Config {
         public static final ForgeConfigSpec.IntValue netherwoodCharcoalBurnTime;
         // World
         public static final ForgeConfigSpec.IntValue azureSilverCount;
+        public static final ForgeConfigSpec.IntValue titaniteCount;
         public static final ForgeConfigSpec.IntValue crimsonIronCount;
         // Debug
         public static final ForgeConfigSpec.BooleanValue extraPartAndTraitLogging;
@@ -242,6 +243,9 @@ public final class Config {
                 azureSilverCount = builder
                         .comment("Veins of azure silver ore per chunk")
                         .defineInRange("azureSilver.count", 8, 0, 1000);
+                titaniteCount = builder
+                        .comment("Attempts to place individual titanite ore blocks per chunk.")
+                        .defineInRange("titanite.count", 6, 0, 1000);
                 crimsonIronCount = builder
                         .comment("Veins of crimson iron ore per chunk")
                         .defineInRange("crimsonIron.count", 14, 0, 1000);

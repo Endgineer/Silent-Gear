@@ -17,6 +17,7 @@ public final class ModTags {
         public static final TagKey<Block> NETHERWOOD_SOIL = mod("netherwood_soil");
         public static final TagKey<Block> PROSPECTOR_HAMMER_TARGETS = mod("prospector_hammer_targets");
 
+        public static final TagKey<Block> ORES_TITANITE = forge("ores/titanite");
         public static final TagKey<Block> ORES_CRIMSON_IRON = forge("ores/crimson_iron");
         public static final TagKey<Block> ORES_AZURE_SILVER = forge("ores/azure_silver");
 
@@ -43,6 +44,7 @@ public final class ModTags {
 
     public static final class Items {
         public static final TagKey<Item> NETHERWOOD_LOGS = mod("netherwood_logs");
+        public static final TagKey<Item> ORES_TITANITE = forge("ores/titanite");
         public static final TagKey<Item> ORES_CRIMSON_IRON = forge("ores/crimson_iron");
         public static final TagKey<Item> ORES_AZURE_SILVER = forge("ores/azure_silver");
 
@@ -70,6 +72,8 @@ public final class ModTags {
         public static final TagKey<Item> DUSTS_AZURE_ELECTRUM = forge("dusts/azure_electrum");
         public static final TagKey<Item> DUSTS_TYRIAN_STEEL = forge("dusts/tyrian_steel");
         public static final TagKey<Item> DUSTS_STARMETAL = forge("dusts/starmetal");
+
+        public static final TagKey<Item> GEMS_TITANITE = forge("gems/titanite");
 
         public static final TagKey<Item> INGOTS_BLAZE_GOLD = forge("ingots/blaze_gold");
         public static final TagKey<Item> INGOTS_CRIMSON_IRON = forge("ingots/crimson_iron");

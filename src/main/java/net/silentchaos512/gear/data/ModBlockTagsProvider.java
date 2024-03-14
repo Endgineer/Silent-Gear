@@ -32,6 +32,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .addTag(ModTags.Blocks.ORES_AZURE_SILVER);
         tag(BlockTags.NEEDS_IRON_TOOL)
+                .addTag(ModTags.Blocks.ORES_TITANITE)
                 .addTag(ModTags.Blocks.ORES_CRIMSON_IRON)
                 .add(ModBlocks.DEEPSLATE_TITANITE_ORE.get())
                 .add(ModBlocks.TITANITE_ANVIL.get());
@@ -51,6 +52,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_HOE)
                 .add(ModBlocks.NETHERWOOD_LEAVES.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(ModTags.Blocks.ORES_TITANITE)
                 .addTag(ModTags.Blocks.ORES_CRIMSON_IRON)
                 .addTag(ModTags.Blocks.ORES_AZURE_SILVER)
                 .add(ModBlocks.RAW_CRIMSON_IRON_BLOCK.get())
@@ -80,9 +82,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .addTag(Tags.Blocks.ORES);
 
         // Forge
+        builder(ModTags.Blocks.ORES_TITANITE, ModBlocks.DEEPSLATE_TITANITE_ORE);
         builder(ModTags.Blocks.ORES_CRIMSON_IRON, ModBlocks.CRIMSON_IRON_ORE);
         builder(ModTags.Blocks.ORES_AZURE_SILVER, ModBlocks.AZURE_SILVER_ORE);
         getBuilder(Tags.Blocks.ORES)
+                .addTag(ModTags.Blocks.ORES_TITANITE)
                 .addTag(ModTags.Blocks.ORES_CRIMSON_IRON)
                 .addTag(ModTags.Blocks.ORES_AZURE_SILVER);
 

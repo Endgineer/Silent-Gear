@@ -43,6 +43,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     @Override
     public void addTags() {
         // Forge
+        copy(ModTags.Blocks.ORES_TITANITE, ModTags.Items.ORES_TITANITE);
         copy(ModTags.Blocks.ORES_CRIMSON_IRON, ModTags.Items.ORES_CRIMSON_IRON);
         copy(ModTags.Blocks.ORES_AZURE_SILVER, ModTags.Items.ORES_AZURE_SILVER);
         copy(Tags.Blocks.ORES, Tags.Items.ORES);
@@ -81,7 +82,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
                 .addTag(ModTags.Items.DUSTS_TYRIAN_STEEL)
                 .addTag(ModTags.Items.DUSTS_STARMETAL);
 
-        getBuilder(Tags.Items.GEMS);
+        builder(ModTags.Items.GEMS_TITANITE, ModItems.TITANITE_SHARD, ModItems.TITANITE_SHARD_CHARGED, ModItems.TITANITE_SHARD_FROSTY, ModItems.TITANITE_SHARD_SMOLDERING);
+        getBuilder(Tags.Items.GEMS)
+                .addTag(ModTags.Items.GEMS_TITANITE);
 
         builder(ModTags.Items.INGOTS_BLAZE_GOLD, CraftingItems.BLAZE_GOLD_INGOT);
         builder(ModTags.Items.INGOTS_CRIMSON_IRON, CraftingItems.CRIMSON_IRON_INGOT);

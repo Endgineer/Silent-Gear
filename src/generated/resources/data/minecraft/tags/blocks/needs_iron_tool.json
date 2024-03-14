@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#forge:ores/crimson_iron",
-    "silentgear:deepslate_titanite_ore",
+    "#forge:ores/titanite",
 	  "silentgear:titanite_anvil"
   ]
 }
