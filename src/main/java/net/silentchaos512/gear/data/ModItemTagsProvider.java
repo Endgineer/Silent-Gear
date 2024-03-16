@@ -70,8 +70,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         builder(ModTags.Items.BLUEPRINT_PAPER, CraftingItems.BLUEPRINT_PAPER);
         builder(ModTags.Items.TEMPLATE_BOARDS, CraftingItems.TEMPLATE_BOARD);
 
-        builder(Tags.Items.STRING, CraftingItems.FLAX_STRING, CraftingItems.SINEW_FIBER);
-
         builder(ModTags.Items.AXES, ModItems.AXE, ModItems.SAW, ModItems.MACHETE, ModItems.MATTOCK, ModItems.PAXEL);
         builder(ModTags.Items.BOOTS, ModItems.BOOTS);
         builder(ModTags.Items.BOWS, ModItems.BOW);

@@ -37,7 +37,6 @@ public class GearVillages {
         public static void registerTrades(VillagerTradesEvent event) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
             if (GEAR_SMITH.equals(event.getType().getRegistryName())) {
-                trades.get(1).add(new BuyingItemTrade(CraftingItems.FLAX_FLOWERS, 24, 16, 2));
                 trades.get(1).add(new SellingItemTrade(CraftingItems.BLUEPRINT_PAPER, 1, 12, 12, 2));
 
                 trades.get(2).add(new SellingItemTrade(ModItems.EXCAVATOR_BLUEPRINT, 7, 1, 2, 12));

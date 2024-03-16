@@ -51,11 +51,8 @@ public final class ModWorldFeatures {
 
         private static final ReplaceBlockConfiguration TITANITE_ORE_VEINS_CONFIG = new ReplaceBlockConfiguration(ImmutableList.of(
                 OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANITE_ORE.get().defaultBlockState())));
-        private static final RandomPatchConfiguration WILD_FLAX_PATCHES_CONFIG = FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
-                new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.WILD_FLAX_PLANT.get())), List.of(), 32);
 
         public static final Holder<ConfiguredFeature<ReplaceBlockConfiguration, ?>> TITANITE_ORE_VEINS = create("titanite_ore_veins", Feature.REPLACE_SINGLE_BLOCK, TITANITE_ORE_VEINS_CONFIG);
-        public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> WILD_FLAX_PATCHES = create("wild_flax_patches", Feature.FLOWER, WILD_FLAX_PATCHES_CONFIG);
 
         public static <FC extends FeatureConfiguration> Holder<ConfiguredFeature<FC, ?>> create(String name, Feature<FC> feature, FC featureConfig) {
             return FeatureUtils.register("silentgear:" + name, feature, featureConfig);
@@ -68,9 +65,6 @@ public final class ModWorldFeatures {
         public static final Holder<PlacedFeature> ORE_TITANITE = create("ore_titanite", Configured.TITANITE_ORE_VEINS,
                 commonOrePlacement(Config.Common.titaniteCount.get(),
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-ModVariables.ABYSS.SPAN), VerticalAnchor.absolute(0))));
-
-        public static final Holder<PlacedFeature> FLOWER_WILD_FLAX = create("flower_wild_flax", Configured.WILD_FLAX_PATCHES,
-                RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
         private static <FC extends FeatureConfiguration> Holder<PlacedFeature> create(String name, Holder<ConfiguredFeature<FC, ?>> configuredFeature, List<PlacementModifier> modifiers) {
             return PlacementUtils.register("silentgear:" + name, configuredFeature, modifiers);
@@ -117,15 +111,6 @@ public final class ModWorldFeatures {
     public static void addFeaturesToBiomes(BiomeLoadingEvent biome) {
         // Need to load these as late as possible, or configs won't be loaded
         registerConfiguredFeatures();
-
-        if (biome.getCategory() == Biome.BiomeCategory.EXTREME_HILLS || biome.getCategory() == Biome.BiomeCategory.PLAINS) {
-            addWildFlax(biome);
-        }
-    }
-
-    private static void addWildFlax(BiomeLoadingEvent biome) {
-        debugLog("Add wild flax to " + biome.getName());
-        biome.getGeneration().addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, Placed.FLOWER_WILD_FLAX);
     }
 
     private static void debugLog(String msg) {

@@ -238,9 +238,6 @@ public final class ModItems {
 
     public static final ItemRegistryObject<Item> PEBBLE = register("pebble", () -> new SlingshotAmmoItem(baseProps()));
 
-    public static final ItemRegistryObject<ItemNameBlockItem> FLAX_SEEDS = register("flax_seeds", () ->
-            new SeedItem(ModBlocks.FLAX_PLANT.get(), baseProps()));
-
     public static final ItemRegistryObject<GearSwordItem> SWORD = register("sword", () -> new GearSwordItem(GearType.SWORD));
     public static final ItemRegistryObject<GearSwordItem> KATANA = register("katana", () -> new GearSwordItem(GearType.KATANA));
     public static final ItemRegistryObject<GearMacheteItem> MACHETE = register("machete", () -> new GearMacheteItem(GearType.MACHETE));

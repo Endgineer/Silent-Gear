@@ -603,11 +603,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(Items.SHULKER_SHELL)
                 .build(consumer);
 
-        ShapelessRecipeBuilder.shapeless(Items.BLUE_DYE)
-                .requires(CraftingItems.FLAX_FLOWERS, 4)
-                .unlockedBy("has_item", has(CraftingItems.FLAX_FLOWERS))
-                .save(consumer, SilentGear.getId("blue_dye_from_flax_flowers"));
-
         ShapelessRecipeBuilder.shapeless(CraftingItems.ROAD_MAKER_UPGRADE)
                 .requires(CraftingItems.ADVANCED_UPGRADE_BASE)
                 .requires(Items.IRON_SHOVEL)
@@ -699,11 +694,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("###")
                 .unlockedBy("has_item", has(Tags.Items.GEMS_EMERALD))
                 .save(consumer, SilentGear.getId("emerald_from_shards"));
-        // F
-        ShapelessRecipeBuilder.shapeless(CraftingItems.FLAX_STRING)
-                .requires(CraftingItems.FLAX_FIBER, 2)
-                .unlockedBy("has_item", has(CraftingItems.FLAX_FIBER))
-                .save(consumer);
         // I
         ShapedRecipeBuilder.shaped(CraftingItems.IRON_ROD, 4)
                 .define('/', Tags.Items.INGOTS_IRON)

@@ -1032,25 +1032,6 @@ public class MaterialsProvider implements DataProvider {
                 .displayBowstring(0xCCFFFF)
                 .displayFragment(PartTextures.CLOTH, 0xCCFFFF)
         );
-        // Flax
-        ret.add(new MaterialBuilder(modId("flax"), 1, CraftingItems.FLAX_STRING)
-                .categories(MaterialCategories.ORGANIC, MaterialCategories.FIBER)
-
-                .stat(PartType.BINDING, ItemStats.DURABILITY, -0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.BINDING, ItemStats.DURABILITY, 10, StatInstance.Operation.ADD)
-                .stat(PartType.BINDING, ItemStats.ARMOR_DURABILITY, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.BINDING, ItemStats.HARVEST_SPEED, 0.05f, StatInstance.Operation.MUL1)
-                .trait(PartType.BINDING, Const.Traits.FLEXIBLE, 1)
-
-                .stat(PartType.CORD, ItemStats.DURABILITY, 0.05f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RANGED_DAMAGE, -0.1f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RANGED_SPEED, 0.2f, StatInstance.Operation.MUL1)
-                .stat(PartType.CORD, ItemStats.RARITY, 6, StatInstance.Operation.ADD)
-
-                .display(PartType.BINDING, PartTextureSet.LOW_CONTRAST, 0xB3804B)
-                .displayBowstring(0x845E37)
-                .displayFragment(PartTextures.CLOTH, 0x845E37)
-        );
         // Sinew
         ret.add(new MaterialBuilder(modId("sinew"), 1, CraftingItems.SINEW_FIBER)
                 .categories(MaterialCategories.ORGANIC, MaterialCategories.FIBER)
@@ -1069,7 +1050,6 @@ public class MaterialsProvider implements DataProvider {
         );
         // String
         ExclusionIngredient stringIngredient = ExclusionIngredient.of(Tags.Items.STRING,
-                CraftingItems.FLAX_STRING,
                 CraftingItems.SINEW_FIBER
         );
         ret.add(new MaterialBuilder(modId("string"), 1, stringIngredient)

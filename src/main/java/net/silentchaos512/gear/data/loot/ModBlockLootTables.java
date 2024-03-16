@@ -35,31 +35,6 @@ import java.util.stream.Collectors;
 
 public class ModBlockLootTables extends BlockLoot {
     @Override
-    protected void addTables() {
-        this.add(ModBlocks.FLAX_PLANT.get(), flaxPlant(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.FLAX_PLANT.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties()
-                        .hasProperty(CropBlock.AGE, 7))));
-        dropOther(ModBlocks.WILD_FLAX_PLANT.get(), ModItems.FLAX_SEEDS);
-    }
-
-    private static LootTable.Builder flaxPlant(LootItemCondition.Builder builder) {
-        return applyExplosionDecay(ModBlocks.FLAX_PLANT, LootTable.lootTable()
-                .withPool(LootPool.lootPool()
-                        .when(builder)
-                        .add(LootItem.lootTableItem(CraftingItems.FLAX_FIBER)
-                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))
-                .withPool(LootPool.lootPool()
-                        .when(builder)
-                        .add(LootItem.lootTableItem(ModItems.FLAX_SEEDS)
-                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5714286F, 3))))
-                .withPool(LootPool.lootPool()
-                        .when(builder)
-                        .add(LootItem.lootTableItem(CraftingItems.FLAX_FLOWERS)
-                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(Enchantments.BLOCK_FORTUNE, 0.5f, 1))))
-        );
-    }
-
-    @Override
     protected Iterable<Block> getKnownBlocks() {
         return ForgeRegistries.BLOCKS.getValues().stream()
                 .filter(block -> SilentGear.MOD_ID.equals(block.getRegistryName().getNamespace()))

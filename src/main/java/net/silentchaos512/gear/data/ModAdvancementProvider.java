@@ -93,13 +93,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .addCriterion("get_item", getItem(Items.CRAFTING_TABLE))
                     .save(consumer, id("root"));
 
-            Advancement overworldPlants = Advancement.Builder.advancement()
-                    .parent(root)
-                    .display(CraftingItems.FLAX_FIBER, title("overworld_plants"), description("overworld_plants"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("flax_seeds", getItem(ModItems.FLAX_SEEDS))
-                    .addCriterion("flax_fibers", getItem(CraftingItems.FLAX_FIBER))
-                    .requirements(RequirementsStrategy.AND)
-                    .save(consumer, id("overworld_plants"));
             Advancement kachink1 = Advancement.Builder.advancement()
                     .parent(root)
                     .display(Items.IRON_NUGGET, title("kachink1"), description("kachink1"), null, FrameType.TASK, true, true, false)

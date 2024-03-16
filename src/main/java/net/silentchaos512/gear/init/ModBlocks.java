@@ -50,26 +50,12 @@ public final class ModBlocks {
 
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 
-    public static final BlockRegistryObject<ModCropBlock> FLAX_PLANT = registerNoItem("flax_plant", () ->
-            new ModCropBlock(ModItems.FLAX_SEEDS::get, BlockBehaviour.Properties.of(Material.PLANT)
-                    .strength(0)
-                    .noCollission()
-                    .randomTicks()
-                    .sound(SoundType.CROP)));
-    public static final BlockRegistryObject<BushBlock> WILD_FLAX_PLANT = registerNoItem("wild_flax_plant", () ->
-            new BushBlock(BlockBehaviour.Properties.of(Material.PLANT)
-                    .strength(0)
-                    .noCollission()
-                    .sound(SoundType.CROP)));
-
     private ModBlocks() {}
 
     static void register() {}
 
     @OnlyIn(Dist.CLIENT)
     public static void registerRenderTypes(FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(FLAX_PLANT.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(WILD_FLAX_PLANT.get(), RenderType.cutout());
     }
 
     private static <T extends Block> BlockRegistryObject<T> registerNoItem(String name, Supplier<T> block) {

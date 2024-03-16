@@ -19,9 +19,6 @@
       },
       "exclusions": [
         {
-          "item": "silentgear:flax_string"
-        },
-        {
           "item": "silentgear:sinew_fiber"
         }
       ]

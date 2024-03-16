@@ -28,24 +28,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        // Plants
-        getVariantBuilder(ModBlocks.FLAX_PLANT.get()).forAllStates(state -> {
-            int i = cropAgeToIndex(state.getValue(ModCropBlock.AGE));
-            return ConfiguredModel.builder()
-                    .modelFile(models().crop("flax_plant" + i, modLoc("block/flax_plant" + i)))
-                    .build();
-        });
-        simpleBlock(ModBlocks.WILD_FLAX_PLANT.get(), models().crop("wild_flax_plant", modLoc("block/flax_plant3")));
-    }
-
-    private static int cropAgeToIndex(int age) {
-        if (age > 6)
-            return 3;
-        if (age > 3)
-            return 2;
-        if (age > 1)
-            return 1;
-        return 0;
     }
 
     @Override

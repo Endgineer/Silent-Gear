@@ -91,18 +91,11 @@ class SideProxy implements IProxy {
             return Collections.emptyList();
         });
 
-        registerCompostables();
-
         NerfedGear.init();
 
         event.enqueueWork(GearVillages::init);
 
         Greetings.addMessage(SideProxy::detectDataLoadingFailure);
-    }
-
-    private static void registerCompostables() {
-        LibHooks.registerCompostable(0.3f, ModItems.FLAX_SEEDS);
-        LibHooks.registerCompostable(0.5f, CraftingItems.FLAX_FIBER);
     }
 
     private static void registerCapabilities(RegisterCapabilitiesEvent event) {
