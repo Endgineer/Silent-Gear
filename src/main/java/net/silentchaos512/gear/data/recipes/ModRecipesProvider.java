@@ -576,12 +576,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
     }
 
     private void registerCraftingItems(Consumer<FinishedRecipe> consumer) {
-        shapelessBuilder(ModItems.GUIDE_BOOK)
-                .addIngredient(Items.BOOK)
-                .addIngredient(ModTags.Items.TEMPLATE_BOARDS)
-                .addCriterion("has_template_board", has(ModTags.Items.TEMPLATE_BOARDS))
-                .build(consumer);
-
         damageGear(CraftingItems.GLOWING_DUST, 4, 4)
                 .addIngredient(ModTags.Items.HAMMERS)
                 .addIngredient(Tags.Items.DUSTS_GLOWSTONE, 2)

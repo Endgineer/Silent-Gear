@@ -97,7 +97,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(ModItems.MOD_KIT, itemGenerated);
 
         // Misc
-        builder(ModItems.GUIDE_BOOK, itemGenerated);
         builder(ModItems.BLUEPRINT_PACKAGE, itemGenerated);
         builder(ModItems.PEBBLE, itemGenerated);
     }

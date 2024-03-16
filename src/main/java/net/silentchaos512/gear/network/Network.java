@@ -113,11 +113,11 @@ public final class Network {
         //         .decoder(CompounderUpdatePacket::decode)
         //         .consumer(CompounderUpdatePacket::handle)
         //         .add();
-        channel.messageBuilder(OpenGuideBookPacket.class, 15, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder((pkt, buf) -> {})
-                .decoder(buf -> new OpenGuideBookPacket())
-                .consumer(OpenGuideBookPacket::handle)
-                .add();
+        // channel.messageBuilder(OpenGuideBookPacket.class, 15, NetworkDirection.PLAY_TO_CLIENT)
+        //         .encoder((pkt, buf) -> {})
+        //         .decoder(buf -> new OpenGuideBookPacket())
+        //         .consumer(OpenGuideBookPacket::handle)
+        //         .add();
         channel.messageBuilder(RecalculateStatsPacket.class, 16, NetworkDirection.PLAY_TO_SERVER)
                 .decoder(RecalculateStatsPacket::decode)
                 .encoder(RecalculateStatsPacket::encode)
