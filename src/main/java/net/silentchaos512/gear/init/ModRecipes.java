@@ -29,8 +29,6 @@ public final class ModRecipes {
             ConversionRecipe.Serializer::new);
     public static final RegistryObject<RecipeSerializer<?>> DAMAGE_ITEM = register(Const.DAMAGE_ITEM,
             SGearDamageItemRecipe.Serializer::new);
-    public static final RegistryObject<RecipeSerializer<?>> MOD_KIT_REMOVE_PART = register(Const.MOD_KIT_REMOVE_PART, () ->
-            new SimpleRecipeSerializer<>(ModKitRemovePartRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> SHAPED_GEAR = register(Const.SHAPED_GEAR_CRAFTING, () ->
             ExtendedShapedRecipe.Serializer.basic(ShapedGearRecipe::new));
     public static final RegistryObject<RecipeSerializer<?>> SHAPELESS_GEAR = register(Const.SHAPELESS_GEAR_CRAFTING, () ->

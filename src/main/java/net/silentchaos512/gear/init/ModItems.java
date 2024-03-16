@@ -33,9 +33,6 @@ public final class ModItems {
     public static final ItemRegistryObject<BlueprintPackageItem> BLUEPRINT_PACKAGE = register("blueprint_package", () ->
             new BlueprintPackageItem(SilentGear.getId("starter_blueprints")));
 
-    public static final ItemRegistryObject<Item> MOD_KIT = register("mod_kit", () ->
-            new ModKitItem(unstackableProps().rarity(Rarity.UNCOMMON)));
-
     //region Blueprints and templates
     public static final ItemRegistryObject<BlueprintBookItem> BLUEPRINT_BOOK = register("blueprint_book", () ->
             new BlueprintBookItem(unstackableProps().rarity(Rarity.UNCOMMON)));

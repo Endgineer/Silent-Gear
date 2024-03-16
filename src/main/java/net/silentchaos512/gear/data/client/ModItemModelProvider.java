@@ -94,8 +94,6 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .texture("layer0", "item/" + (item.isSingleUse() ? "template" : "blueprint"))
                 .texture("layer1", "item/blueprint_" + item.getGearType().getName()));
 
-        builder(ModItems.MOD_KIT, itemGenerated);
-
         // Misc
         builder(ModItems.BLUEPRINT_PACKAGE, itemGenerated);
         builder(ModItems.PEBBLE, itemGenerated);

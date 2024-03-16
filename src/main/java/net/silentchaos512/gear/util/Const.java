@@ -23,7 +23,6 @@ public final class Const {
     public static final ResourceLocation COMPOUND_PART = modId("compound_part");
     public static final ResourceLocation DAMAGE_ITEM = modId("damage_item");
     public static final ResourceLocation GRADING = modId("grading");
-    public static final ResourceLocation MOD_KIT_REMOVE_PART = modId("mod_kit_remove_part");
     public static final ResourceLocation PRESSING = modId("pressing");
     public static final ResourceLocation PRESSING_MATERIAL = modId("pressing/material");
     public static final ResourceLocation SALVAGING = modId("salvaging");

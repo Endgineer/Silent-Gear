@@ -58,7 +58,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
         registerBlueprints(consumer);
         registerCompoundParts(consumer);
         registerGear(consumer);
-        registerModifierKits(consumer);
         registerSmithing(consumer);
 
         if (ADD_TEST_RECIPES) {
@@ -80,7 +79,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
     private void registerSpecialRecipes(Consumer<FinishedRecipe> consumer) {
         special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.SWAP_GEAR_PART.get());
         special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.COMBINE_FRAGMENTS.get());
-        special(consumer, (SimpleRecipeSerializer<?>) ModRecipes.MOD_KIT_REMOVE_PART.get());
     }
 
     private void registerBlueprints(Consumer<FinishedRecipe> consumer) {
@@ -562,17 +560,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
         armorConversion(consumer, ModItems.CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.GOLDEN_CHESTPLATE, Items.IRON_CHESTPLATE, Items.LEATHER_CHESTPLATE);
         armorConversion(consumer, ModItems.LEGGINGS, Items.DIAMOND_LEGGINGS, Items.GOLDEN_LEGGINGS, Items.IRON_LEGGINGS, Items.LEATHER_LEGGINGS);
         armorConversion(consumer, ModItems.BOOTS, Items.DIAMOND_BOOTS, Items.GOLDEN_BOOTS, Items.IRON_BOOTS, Items.LEATHER_BOOTS);
-    }
-
-    private void registerModifierKits(Consumer<FinishedRecipe> consumer) {
-        ShapedRecipeBuilder.shaped(ModItems.MOD_KIT)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .define('o', Tags.Items.INGOTS_IRON)
-                .pattern("##o")
-                .pattern("##/")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
     }
 
     private void registerCraftingItems(Consumer<FinishedRecipe> consumer) {
