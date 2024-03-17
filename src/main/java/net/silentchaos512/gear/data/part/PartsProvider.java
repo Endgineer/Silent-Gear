@@ -91,11 +91,6 @@ public class PartsProvider implements DataProvider {
                 .display(GearType.HAMMER, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("wide_plate"), Color.VALUE_WHITE))
                 .display(GearType.EXCAVATOR, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("wide_plate"), Color.VALUE_WHITE))
         );
-        ret.add(upgradePart("misc/red_card", CraftingItems.RED_CARD_UPGRADE)
-                .upgradeGearTypes(GearTypeMatcher.ALL)
-                .stat(ItemStats.RARITY, -5, StatInstance.Operation.ADD)
-                .trait(Const.Traits.RED_CARD, 1)
-        );
 
         return ret;
     }

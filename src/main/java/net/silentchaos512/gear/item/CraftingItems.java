@@ -60,8 +60,7 @@ public enum CraftingItems implements ItemLike {
     // Misc Upgrades
     SPOON_UPGRADE,
     ROAD_MAKER_UPGRADE,
-    WIDE_PLATE_UPGRADE,
-    RED_CARD_UPGRADE;
+    WIDE_PLATE_UPGRADE;
 
     @SuppressWarnings("NonFinalFieldInEnum")
     private RegistryObject<ItemInternal> item = null;

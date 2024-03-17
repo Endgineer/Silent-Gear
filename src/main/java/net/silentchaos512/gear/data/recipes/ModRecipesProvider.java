@@ -695,11 +695,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .unlockedBy("has_item", has(CraftingItems.LEATHER_SCRAP))
                 .save(consumer);
         // R
-        ShapelessRecipeBuilder.shapeless(CraftingItems.RED_CARD_UPGRADE, 4)
-                .requires(CraftingItems.UPGRADE_BASE)
-                .requires(Tags.Items.DYES_RED)
-                .unlockedBy("has_item", has(CraftingItems.UPGRADE_BASE))
-                .save(consumer);
         ShapedRecipeBuilder.shaped(CraftingItems.ROUGH_ROD, 2)
                 .define('/', Tags.Items.RODS_WOODEN)
                 .pattern(" /")

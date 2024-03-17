@@ -65,7 +65,6 @@ public final class Const {
         public static final DataResource<IGearPart> GRIP = DataResource.part("grip");
         public static final DataResource<IGearPart> MISC_SPOON = DataResource.part("misc/spoon");
         public static final DataResource<IGearPart> PICKAXE_HEAD = DataResource.part("pickaxe_head");
-        public static final DataResource<IGearPart> RED_CARD = DataResource.part("misc/red_card");
         public static final DataResource<IGearPart> ROD = DataResource.part("rod");
         public static final DataResource<IGearPart> TIP = DataResource.part("tip");
 
@@ -122,7 +121,6 @@ public final class Const {
         public static final DataResource<ITrait> ORGANIC = DataResource.trait("organic");
         public static final DataResource<ITrait> RACKER = DataResource.trait("racker");
         public static final DataResource<ITrait> REACH = DataResource.trait("reach");
-        public static final DataResource<ITrait> RED_CARD = DataResource.trait("red_card");
         public static final DataResource<ITrait> REFRACTIVE = DataResource.trait("refractive");
         public static final DataResource<ITrait> RENEW = DataResource.trait("renew");
         public static final DataResource<ITrait> ROAD_MAKER = DataResource.trait("road_maker");

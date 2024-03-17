@@ -55,7 +55,6 @@ public class SGearJeiPlugin implements IModPlugin {
                 .filter(SGearJeiPlugin::isGearCraftingRecipe)
                 .collect(Collectors.toList()), GEAR_CRAFTING);
 
-        addInfoPage(reg, CraftingItems.RED_CARD_UPGRADE);
         addInfoPage(reg, CraftingItems.SPOON_UPGRADE);
         for (Item item : Registration.getItems(item -> item instanceof ICoreTool)) {
             addInfoPage(reg, item);
