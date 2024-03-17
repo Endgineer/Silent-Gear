@@ -353,11 +353,8 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .save(consumer);
 
         ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.BLUEPRINT_BOOK)
-                .addIngredient(Items.BOOK)
-                .addIngredient(ItemTags.WOOL)
-                .addIngredient(Tags.Items.INGOTS_GOLD)
-                .addIngredient(ModTags.Items.TEMPLATE_BOARDS, 3)
-                .addCriterion("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
+                .addIngredient(ModTags.Items.BLUEPRINT_PAPER, 3)
+                .addIngredient(Items.LEATHER)
                 .build(consumer);
     }
 

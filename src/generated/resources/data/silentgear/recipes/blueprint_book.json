@@ -2,22 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:book"
+      "item": "silentgear:blueprint_paper"
     },
     {
-      "tag": "minecraft:wool"
+      "tag": "silentgear:blueprint_paper"
     },
     {
-      "tag": "forge:ingots/gold"
+      "tag": "silentgear:blueprint_paper"
     },
     {
-      "tag": "silentgear:template_boards"
-    },
-    {
-      "tag": "silentgear:template_boards"
-    },
-    {
-      "tag": "silentgear:template_boards"
+      "item": "minecraft:leather"
     }
   ],
   "result": {
