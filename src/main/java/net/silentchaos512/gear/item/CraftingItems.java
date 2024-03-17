@@ -43,9 +43,6 @@ public enum CraftingItems implements ItemLike {
     DIAMOND_SHARD,
     EMERALD_SHARD,
     NETHER_STAR_FRAGMENT,
-    GLOWING_DUST,
-    BLAZING_DUST,
-    GLITTERY_DUST,
     CRUSHED_SHULKER_SHELL,
     LEATHER_SCRAP,
     SINEW,
@@ -91,10 +88,5 @@ public enum CraftingItems implements ItemLike {
                 tooltip.add(new TranslatableComponent(descKey).withStyle(ChatFormatting.ITALIC));
             }
         }
-
-        /*@Override
-        public boolean isBeaconPayment(ItemStack stack) {
-            return this.isIn(Tags.Items.INGOTS) || this == GLITTERY_DUST.asItem();
-        }*/
     }
 }

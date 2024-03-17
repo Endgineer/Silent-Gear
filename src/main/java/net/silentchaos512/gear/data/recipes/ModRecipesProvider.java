@@ -563,12 +563,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
     }
 
     private void registerCraftingItems(Consumer<FinishedRecipe> consumer) {
-        damageGear(CraftingItems.GLOWING_DUST, 4, 4)
-                .addIngredient(ModTags.Items.HAMMERS)
-                .addIngredient(Tags.Items.DUSTS_GLOWSTONE, 2)
-                .addIngredient(Tags.Items.GEMS_QUARTZ)
-                .build(consumer);
-
         damageGear(ModItems.PEBBLE, 9, 1)
                 .addIngredient(ModTags.Items.HAMMERS)
                 .addIngredient(Tags.Items.COBBLESTONE)
