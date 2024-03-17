@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:ring_blueprint",
-    "silentgear:ring_template"
+    "silentgear:ring_blueprint"
   ]
 }

@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:crossbow_blueprint",
-    "silentgear:crossbow_template"
+    "silentgear:crossbow_blueprint"
   ]
 }

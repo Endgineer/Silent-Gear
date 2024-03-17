@@ -43,9 +43,7 @@ public abstract class AbstractBlueprintItem extends Item implements IBlueprint {
     }
 
     boolean isDisabled() {
-        BlueprintType config = Config.Common.blueprintTypes.get();
-        return this.singleUse && !config.allowTemplate()
-                || !this.singleUse && !config.allowBlueprint();
+        return false;
     }
 
     @Override
@@ -57,7 +55,7 @@ public abstract class AbstractBlueprintItem extends Item implements IBlueprint {
 
     @Override
     public Component getName(ItemStack stack) {
-        String key = "item.silentgear." + (this.singleUse ? "template" : "blueprint");
+        String key = "item.silentgear.blueprint";
         return new TranslatableComponent(key, this.getCraftedName(stack));
     }
 

@@ -82,34 +82,33 @@ public class ModRecipesProvider extends LibRecipeProvider {
     }
 
     private void registerBlueprints(Consumer<FinishedRecipe> consumer) {
-        toolBlueprint(consumer, "sword", ModItems.SWORD_BLUEPRINT, ModItems.SWORD_TEMPLATE, "#", "#", "/");
-        toolBlueprint(consumer, "katana", ModItems.KATANA_BLUEPRINT, ModItems.KATANA_TEMPLATE, "##", "# ", "/ ");
-        toolBlueprint(consumer, "machete", ModItems.MACHETE_BLUEPRINT, ModItems.MACHETE_TEMPLATE, "  #", " ##", "/  ");
-        toolBlueprint(consumer, "spear", ModItems.SPEAR_BLUEPRINT, ModItems.SPEAR_TEMPLATE, "#  ", " / ", "  /");
-        toolBlueprint(consumer, "knife", ModItems.KNIFE_BLUEPRINT, ModItems.KNIFE_TEMPLATE, " #", "/ ");
-        toolBlueprint(consumer, "dagger", ModItems.DAGGER_BLUEPRINT, ModItems.DAGGER_TEMPLATE, "#", "/");
-        toolBlueprint(consumer, "pickaxe", ModItems.PICKAXE_BLUEPRINT, ModItems.PICKAXE_TEMPLATE, "###", " / ", " / ");
-        toolBlueprint(consumer, "shovel", ModItems.SHOVEL_BLUEPRINT, ModItems.SHOVEL_TEMPLATE, "#", "/", "/");
-        toolBlueprint(consumer, "axe", ModItems.AXE_BLUEPRINT, ModItems.AXE_TEMPLATE, "##", "#/", " /");
-        toolBlueprint(consumer, "paxel", ModItems.PAXEL_BLUEPRINT, ModItems.PAXEL_TEMPLATE, "###", "#/#", " /#");
-        toolBlueprint(consumer, "hammer", ModItems.HAMMER_BLUEPRINT, ModItems.HAMMER_TEMPLATE, "###", "###", " / ");
-        toolBlueprint(consumer, "excavator", ModItems.EXCAVATOR_BLUEPRINT, ModItems.EXCAVATOR_TEMPLATE, "# #", "###", " / ");
-        toolBlueprint(consumer, "saw", ModItems.SAW_BLUEPRINT, ModItems.SAW_TEMPLATE, "###", "##/", "  /");
-        toolBlueprint(consumer, "mattock", ModItems.MATTOCK_BLUEPRINT, ModItems.MATTOCK_TEMPLATE, "## ", "#/#", " / ");
-        toolBlueprint(consumer, "prospector_hammer", ModItems.PROSPECTOR_HAMMER_BLUEPRINT, ModItems.PROSPECTOR_HAMMER_TEMPLATE,
-                Ingredient.of(Tags.Items.INGOTS_IRON), "##", " /", " @");
-        toolBlueprint(consumer, "sickle", ModItems.SICKLE_BLUEPRINT, ModItems.SICKLE_TEMPLATE, " #", "##", "/ ");
-        toolBlueprint(consumer, "shears", ModItems.SHEARS_BLUEPRINT, ModItems.SHEARS_TEMPLATE, " #", "#/");
-        toolBlueprint(consumer, "fishing_rod", ModItems.FISHING_ROD_BLUEPRINT, ModItems.FISHING_ROD_TEMPLATE, "  /", " /#", "/ #");
-        toolBlueprint(consumer, "bow", ModItems.BOW_BLUEPRINT, ModItems.BOW_TEMPLATE, " #/", "# /", " #/");
-        toolBlueprint(consumer, "crossbow", ModItems.CROSSBOW_BLUEPRINT, ModItems.CROSSBOW_TEMPLATE, "/#/", "###", " / ");
-        toolBlueprint(consumer, "slingshot", ModItems.SLINGSHOT_BLUEPRINT, ModItems.SLINGSHOT_TEMPLATE, "# #", " / ", " / ");
-        toolBlueprint(consumer, "shield", ModItems.SHIELD_BLUEPRINT, ModItems.SHIELD_TEMPLATE, "# #", "///", " # ");
-        toolBlueprint(consumer, "arrow", ModItems.ARROW_BLUEPRINT, ModItems.ARROW_TEMPLATE, Ingredient.of(Tags.Items.FEATHERS), "#", "/", "@");
-        armorBlueprint(consumer, "helmet", ModItems.HELMET_BLUEPRINT, ModItems.HELMET_TEMPLATE, "###", "# #");
-        armorBlueprint(consumer, "chestplate", ModItems.CHESTPLATE_BLUEPRINT, ModItems.CHESTPLATE_TEMPLATE, "# #", "###", "###");
-        armorBlueprint(consumer, "leggings", ModItems.LEGGINGS_BLUEPRINT, ModItems.LEGGINGS_TEMPLATE, "###", "# #", "# #");
-        armorBlueprint(consumer, "boots", ModItems.BOOTS_BLUEPRINT, ModItems.BOOTS_TEMPLATE, "# #", "# #");
+        toolBlueprint(consumer, "sword", ModItems.SWORD_BLUEPRINT, "#", "#", "/");
+        toolBlueprint(consumer, "katana", ModItems.KATANA_BLUEPRINT, "##", "# ", "/ ");
+        toolBlueprint(consumer, "machete", ModItems.MACHETE_BLUEPRINT, "  #", " ##", "/  ");
+        toolBlueprint(consumer, "spear", ModItems.SPEAR_BLUEPRINT, "#  ", " / ", "  /");
+        toolBlueprint(consumer, "knife", ModItems.KNIFE_BLUEPRINT, " #", "/ ");
+        toolBlueprint(consumer, "dagger", ModItems.DAGGER_BLUEPRINT, "#", "/");
+        toolBlueprint(consumer, "pickaxe", ModItems.PICKAXE_BLUEPRINT, "###", " / ", " / ");
+        toolBlueprint(consumer, "shovel", ModItems.SHOVEL_BLUEPRINT, "#", "/", "/");
+        toolBlueprint(consumer, "axe", ModItems.AXE_BLUEPRINT, "##", "#/", " /");
+        toolBlueprint(consumer, "paxel", ModItems.PAXEL_BLUEPRINT, "###", "#/#", " /#");
+        toolBlueprint(consumer, "hammer", ModItems.HAMMER_BLUEPRINT, "###", "###", " / ");
+        toolBlueprint(consumer, "excavator", ModItems.EXCAVATOR_BLUEPRINT, "# #", "###", " / ");
+        toolBlueprint(consumer, "saw", ModItems.SAW_BLUEPRINT, "###", "##/", "  /");
+        toolBlueprint(consumer, "mattock", ModItems.MATTOCK_BLUEPRINT, "## ", "#/#", " / ");
+        toolBlueprint(consumer, "prospector_hammer", ModItems.PROSPECTOR_HAMMER_BLUEPRINT, Ingredient.of(Tags.Items.INGOTS_IRON), "##", " /", " @");
+        toolBlueprint(consumer, "sickle", ModItems.SICKLE_BLUEPRINT, " #", "##", "/ ");
+        toolBlueprint(consumer, "shears", ModItems.SHEARS_BLUEPRINT, " #", "#/");
+        toolBlueprint(consumer, "fishing_rod", ModItems.FISHING_ROD_BLUEPRINT, "  /", " /#", "/ #");
+        toolBlueprint(consumer, "bow", ModItems.BOW_BLUEPRINT, " #/", "# /", " #/");
+        toolBlueprint(consumer, "crossbow", ModItems.CROSSBOW_BLUEPRINT, "/#/", "###", " / ");
+        toolBlueprint(consumer, "slingshot", ModItems.SLINGSHOT_BLUEPRINT, "# #", " / ", " / ");
+        toolBlueprint(consumer, "shield", ModItems.SHIELD_BLUEPRINT, "# #", "///", " # ");
+        toolBlueprint(consumer, "arrow", ModItems.ARROW_BLUEPRINT, Ingredient.of(Tags.Items.FEATHERS), "#", "/", "@");
+        armorBlueprint(consumer, "helmet", ModItems.HELMET_BLUEPRINT, "###", "# #");
+        armorBlueprint(consumer, "chestplate", ModItems.CHESTPLATE_BLUEPRINT, "# #", "###", "###");
+        armorBlueprint(consumer, "leggings", ModItems.LEGGINGS_BLUEPRINT, "###", "# #", "# #");
+        armorBlueprint(consumer, "boots", ModItems.BOOTS_BLUEPRINT, "# #", "# #");
 
         shapedBuilder(ModItems.TRIDENT_BLUEPRINT)
                 .key('#', ModTags.Items.BLUEPRINT_PAPER)
@@ -129,16 +128,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("p#p")
                 .pattern("p p")
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.ELYTRA_TEMPLATE)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.INGOTS_NETHERITE)
-                .define('e', Items.ELYTRA)
-                .define('p', Items.PHANTOM_MEMBRANE)
-                .pattern("/e/")
-                .pattern("p#p")
-                .pattern("p p")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
                 .save(consumer);
 
         // Curio blueprints
@@ -160,15 +149,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("/# ")
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .save(consumer, SilentGear.getId("ring_blueprint_alt"));
-        ShapedRecipeBuilder.shaped(ModItems.RING_TEMPLATE)
-                .group("silentgear:blueprints/ring")
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', PartMaterialIngredient.of(PartType.MAIN, GearType.CURIO, MaterialCategories.METAL))
-                .pattern(" #/")
-                .pattern("# #")
-                .pattern("/# ")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.BRACELET_BLUEPRINT)
                 .group("silentgear:blueprints/bracelet")
@@ -188,15 +168,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("/#/")
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .save(consumer, SilentGear.getId("bracelet_blueprint_alt"));
-        ShapedRecipeBuilder.shaped(ModItems.BRACELET_TEMPLATE)
-                .group("silentgear:blueprints/bracelet")
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', PartMaterialIngredient.of(PartType.MAIN, GearType.CURIO, MaterialCategories.METAL))
-                .pattern("###")
-                .pattern("# #")
-                .pattern("/#/")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         // Part blueprints
         ShapedRecipeBuilder.shaped(ModItems.JEWELER_TOOLS)
@@ -223,12 +194,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(Tags.Items.STRING)
                 .addCriterion("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .build(consumer, SilentGear.getId("binding_blueprint_alt"));
-        ShapelessRecipeBuilder.shapeless(ModItems.BINDING_TEMPLATE)
-                .group("silentgear:blueprints/binding")
-                .requires(Ingredient.of(ModTags.Items.TEMPLATE_BOARDS), 1)
-                .requires(PartMaterialIngredient.of(PartType.BINDING, GearType.TOOL), 2)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.CORD_BLUEPRINT)
                 .group("silentgear:blueprints/cord")
@@ -248,27 +213,12 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("#/")
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .save(consumer, SilentGear.getId("cord_blueprint_alt"));
-        ShapedRecipeBuilder.shaped(ModItems.CORD_TEMPLATE)
-                .group("silentgear:blueprints/cord")
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', PartMaterialIngredient.of(PartType.CORD, GearType.TOOL))
-                .pattern("#/")
-                .pattern("#/")
-                .pattern("#/")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(ModItems.FLETCHING_BLUEPRINT)
                 .group("silentgear:blueprints/fletching")
                 .requires(Ingredient.of(ModTags.Items.BLUEPRINT_PAPER), 2)
                 .requires(Tags.Items.FEATHERS)
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(ModItems.FLETCHING_TEMPLATE)
-                .group("silentgear:blueprints/fletching")
-                .requires(Ingredient.of(ModTags.Items.TEMPLATE_BOARDS), 2)
-                .requires(Tags.Items.FEATHERS)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
                 .save(consumer);
 
         ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.GRIP_BLUEPRINT)
@@ -283,12 +233,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(ItemTags.WOOL)
                 .addCriterion("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .build(consumer, SilentGear.getId("grip_blueprint_alt"));
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.GRIP_TEMPLATE)
-                .setGroup("silentgear:blueprints/grip")
-                .addIngredient(ModTags.Items.TEMPLATE_BOARDS, 2)
-                .addIngredient(PartMaterialIngredient.of(PartType.GRIP, GearType.TOOL))
-                .addCriterion("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .build(consumer);
 
         ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.LINING_BLUEPRINT)
                 .setGroup("silentgear:blueprints/lining")
@@ -296,13 +240,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(ItemTags.WOOL, 2)
                 .addIngredient(Tags.Items.STRING, 2)
                 .addCriterion("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
-                .build(consumer);
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.LINING_TEMPLATE)
-                .setGroup("silentgear:blueprints/lining")
-                .addIngredient(ModTags.Items.TEMPLATE_BOARDS, 3)
-                .addIngredient(ItemTags.WOOL, 2)
-                .addIngredient(Tags.Items.STRING, 2)
-                .addCriterion("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
                 .build(consumer);
 
         ShapedRecipeBuilder.shaped(ModItems.ROD_BLUEPRINT)
@@ -313,14 +250,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .pattern("#/")
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .save(consumer);
-        ShapedRecipeBuilder.shaped(ModItems.ROD_TEMPLATE)
-                .group("silentgear:blueprints/rod")
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .pattern("#/")
-                .pattern("#/")
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(ModItems.TIP_BLUEPRINT)
                 .group("silentgear:blueprints/tip")
@@ -329,13 +258,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(Tags.Items.STONE)
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
                 .save(consumer);
-        ShapelessRecipeBuilder.shapeless(ModItems.TIP_TEMPLATE)
-                .group("silentgear:blueprints/tip")
-                .requires(Ingredient.of(ModTags.Items.TEMPLATE_BOARDS), 2)
-                .requires(ModTags.Items.PAPER)
-                .requires(Tags.Items.STONE)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
-                .save(consumer);
 
         ShapelessRecipeBuilder.shapeless(ModItems.COATING_BLUEPRINT)
                 .group("silentgear:blueprints/coating")
@@ -343,13 +265,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(Tags.Items.GEMS_DIAMOND)
                 .requires(Tags.Items.GEMS_EMERALD)
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER))
-                .save(consumer);
-        ShapelessRecipeBuilder.shapeless(ModItems.COATING_TEMPLATE)
-                .group("silentgear:blueprints/coating")
-                .requires(Ingredient.of(ModTags.Items.TEMPLATE_BOARDS), 4)
-                .requires(Tags.Items.GEMS_DIAMOND)
-                .requires(Tags.Items.GEMS_EMERALD)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS))
                 .save(consumer);
 
         ExtendedShapelessRecipeBuilder.vanillaBuilder(ModItems.BLUEPRINT_BOOK)
@@ -565,11 +480,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(Tags.Items.COBBLESTONE)
                 .build(consumer);
 
-        damageGear(CraftingItems.TEMPLATE_BOARD, 6, 1)
-                .addIngredient(ModTags.Items.KNIVES)
-                .addIngredient(ItemTags.LOGS)
-                .build(consumer);
-
         ShapedRecipeBuilder.shaped(CraftingItems.FINE_SILK_CLOTH)
                 .pattern("##")
                 .pattern("##")
@@ -758,38 +668,29 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .build(consumer, SilentGear.getId("gear/" + name + "quick"));
     }
 
-    private void toolBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, ItemLike template, String... pattern) {
-        toolBlueprint(consumer, group, blueprint, template, Ingredient.EMPTY, pattern);
+    private void toolBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, String... pattern) {
+        toolBlueprint(consumer, group, blueprint, Ingredient.EMPTY, pattern);
     }
 
-    private void toolBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, ItemLike template, Ingredient extra, String... pattern) {
+    private void toolBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, Ingredient extra, String... pattern) {
         ShapedRecipeBuilder builderBlueprint = ShapedRecipeBuilder.shaped(blueprint)
                 .group("silentgear:blueprints/" + group)
                 .define('#', ModTags.Items.BLUEPRINT_PAPER)
                 .define('/', Tags.Items.RODS_WOODEN)
                 .unlockedBy("has_item", has(ModTags.Items.BLUEPRINT_PAPER));
-
-        ShapedRecipeBuilder builderTemplate = ShapedRecipeBuilder.shaped(template)
-                .group("silentgear:blueprints/" + group)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .define('/', Tags.Items.RODS_WOODEN)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS));
 
         if (extra != Ingredient.EMPTY) {
             builderBlueprint.define('@', extra);
-            builderTemplate.define('@', extra);
         }
 
         for (String line : pattern) {
             builderBlueprint.pattern(line);
-            builderTemplate.pattern(line);
         }
 
         builderBlueprint.save(consumer);
-        builderTemplate.save(consumer);
     }
 
-    private void armorBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, ItemLike template, String... pattern) {
+    private void armorBlueprint(Consumer<FinishedRecipe> consumer, String group, ItemLike blueprint, String... pattern) {
         ShapedRecipeBuilder builderBlueprint = ShapedRecipeBuilder.shaped(blueprint)
                 .group("silentgear:blueprints/" + group)
                 .define('#', ModTags.Items.BLUEPRINT_PAPER)
@@ -798,15 +699,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
             builderBlueprint.pattern(line);
         }
         builderBlueprint.save(consumer);
-
-        ShapedRecipeBuilder builderTemplate = ShapedRecipeBuilder.shaped(template)
-                .group("silentgear:blueprints/" + group)
-                .define('#', ModTags.Items.TEMPLATE_BOARDS)
-                .unlockedBy("has_item", has(ModTags.Items.TEMPLATE_BOARDS));
-        for (String line : pattern) {
-            builderTemplate.pattern(line);
-        }
-        builderTemplate.save(consumer);
     }
 
     private static final Map<Tier, ResourceLocation> TOOL_MATERIALS = ImmutableMap.<Tier, ResourceLocation>builder()

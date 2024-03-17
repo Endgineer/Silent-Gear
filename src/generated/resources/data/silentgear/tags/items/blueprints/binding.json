@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:binding_blueprint",
-    "silentgear:binding_template"
+    "silentgear:binding_blueprint"
   ]
 }

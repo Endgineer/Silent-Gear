@@ -37,7 +37,6 @@ import java.util.Locale;
 
 public enum CraftingItems implements ItemLike {
     BLUEPRINT_PAPER,
-    TEMPLATE_BOARD,
     UPGRADE_BASE,
     SINEW,
     DRIED_SINEW,

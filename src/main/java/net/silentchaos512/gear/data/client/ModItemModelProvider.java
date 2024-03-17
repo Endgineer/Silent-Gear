@@ -80,18 +80,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         builder(ModItems.JEWELER_TOOLS, itemGenerated, "item/jeweler_tools");
 
-        // Blueprints and templates
+        // Blueprints
         Registration.getItems(PartBlueprintItem.class).forEach(item -> {
             if (item.hasStandardModel()) {
                 builder(item)
                         .parent(itemGenerated)
-                        .texture("layer0", "item/" + (item.isSingleUse() ? "template" : "blueprint"))
+                        .texture("layer0", "item/blueprint")
                         .texture("layer1", "item/blueprint_" + item.getPartType().getName().getPath());
             }
         });
         Registration.getItems(GearBlueprintItem.class).forEach(item -> builder(item)
                 .parent(itemGenerated)
-                .texture("layer0", "item/" + (item.isSingleUse() ? "template" : "blueprint"))
+                .texture("layer0", "item/blueprint")
                 .texture("layer1", "item/blueprint_" + item.getGearType().getName()));
 
         // Misc

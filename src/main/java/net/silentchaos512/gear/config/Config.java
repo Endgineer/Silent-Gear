@@ -14,7 +14,6 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.stats.ItemStat;
 import net.silentchaos512.gear.init.NerfedGear;
-import net.silentchaos512.gear.item.blueprint.BlueprintType;
 import net.silentchaos512.gear.util.GearHelper;
 import net.silentchaos512.gear.util.IAoeTool;
 
@@ -27,7 +26,6 @@ public final class Config {
     public static final class Common {
         static final ForgeConfigSpec spec;
         // Blueprints
-        public static final ForgeConfigSpec.EnumValue<BlueprintType> blueprintTypes;
         public static final ForgeConfigSpec.BooleanValue spawnWithStarterBlueprints;
         // Nerfed gear
         public static final ForgeConfigSpec.BooleanValue nerfedItemsEnabled;
@@ -69,11 +67,8 @@ public final class Config {
                 builder.push("item");
 
                 {
-                    builder.comment("Blueprint and template settings");
+                    builder.comment("Blueprint settings");
                     builder.push("blueprint");
-                    blueprintTypes = builder
-                            .comment("Allowed blueprint types. Valid values are: BOTH, BLUEPRINT, and TEMPLATE")
-                            .defineEnum("typesAllowed", BlueprintType.BOTH);
                     spawnWithStarterBlueprints = builder
                             .comment("When joining a new world, should players be given a blueprint package?",
                                     "The blueprint package gives some blueprints when used (right-click).",

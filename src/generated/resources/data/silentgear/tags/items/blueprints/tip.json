@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:tip_blueprint",
-    "silentgear:tip_template"
+    "silentgear:tip_blueprint"
   ]
 }

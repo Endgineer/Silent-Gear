@@ -1,5 +1,5 @@
 {
-  "parent": "silentgear:template_board",
+  "parent": "silentgear:survival_tool",
   "display": {
     "icon": {
       "item": "silentgear:blueprint_paper"

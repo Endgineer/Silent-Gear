@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:sickle_blueprint",
-    "silentgear:sickle_template"
+    "silentgear:sickle_blueprint"
   ]
 }

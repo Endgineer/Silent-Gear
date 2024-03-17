@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:slingshot_blueprint",
-    "silentgear:slingshot_template"
+    "silentgear:slingshot_blueprint"
   ]
 }

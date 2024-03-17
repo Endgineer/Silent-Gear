@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:excavator_blueprint",
-    "silentgear:excavator_template"
+    "silentgear:excavator_blueprint"
   ]
 }

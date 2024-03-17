@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:cord_blueprint",
-    "silentgear:cord_template"
+    "silentgear:cord_blueprint"
   ]
 }

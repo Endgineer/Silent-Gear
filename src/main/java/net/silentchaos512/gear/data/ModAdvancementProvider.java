@@ -111,10 +111,9 @@ public class ModAdvancementProvider implements DataProvider {
                     .addCriterion("dagger", getItem(ModItems.DAGGER))
                     .requirements(RequirementsStrategy.OR)
                     .save(consumer, id("survival_tool"));
-            Advancement templateBoard = simpleGetItem(consumer, CraftingItems.TEMPLATE_BOARD, survivalTool);
 
-            Advancement blueprintPaper = simpleGetItem(consumer, CraftingItems.BLUEPRINT_PAPER, templateBoard);
-            Advancement upgradeBase = simpleGetItem(consumer, CraftingItems.UPGRADE_BASE, templateBoard);
+            Advancement blueprintPaper = simpleGetItem(consumer, CraftingItems.BLUEPRINT_PAPER, survivalTool);
+            Advancement upgradeBase = simpleGetItem(consumer, CraftingItems.UPGRADE_BASE, survivalTool);
 
             Advancement blueprintBook = simpleGetItem(consumer, ModItems.BLUEPRINT_BOOK, blueprintPaper);
 

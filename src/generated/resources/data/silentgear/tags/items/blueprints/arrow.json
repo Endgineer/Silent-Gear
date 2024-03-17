@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:arrow_blueprint",
-    "silentgear:arrow_template"
+    "silentgear:arrow_blueprint"
   ]
 }

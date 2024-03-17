@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "silentgear:rod_blueprint",
-    "silentgear:rod_template"
+    "silentgear:rod_blueprint"
   ]
 }
