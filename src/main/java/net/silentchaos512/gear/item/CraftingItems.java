@@ -39,7 +39,6 @@ public enum CraftingItems implements ItemLike {
     BLUEPRINT_PAPER,
     TEMPLATE_BOARD,
     UPGRADE_BASE,
-    ADVANCED_UPGRADE_BASE,
     DIAMOND_SHARD,
     EMERALD_SHARD,
     NETHER_STAR_FRAGMENT,

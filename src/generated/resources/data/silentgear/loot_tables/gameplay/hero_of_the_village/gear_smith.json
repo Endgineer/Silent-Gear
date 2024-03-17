@@ -28,10 +28,6 @@
         {
           "type": "minecraft:item",
           "name": "silentgear:tip_blueprint"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "silentgear:advanced_upgrade_base"
         }
       ]
     }

@@ -29,8 +29,7 @@ public class ModEntityLootTables extends EntityLoot {
                 ModItems.HAMMER_BLUEPRINT,
                 ModItems.PAXEL_BLUEPRINT,
                 ModItems.PROSPECTOR_HAMMER_BLUEPRINT,
-                ModItems.TIP_BLUEPRINT,
-                CraftingItems.ADVANCED_UPGRADE_BASE
+                ModItems.TIP_BLUEPRINT
         );
     }
 

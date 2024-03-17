@@ -597,17 +597,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .build(consumer, SilentGear.getId("nether_star_from_fragments"));
 
         // TODO: Maybe should organize these better...
-        // A
-        ShapedRecipeBuilder.shaped(CraftingItems.ADVANCED_UPGRADE_BASE)
-                .define('/', ModTags.Items.NUGGETS_DIAMOND)
-                .define('D', Tags.Items.DYES_BLUE)
-                .define('U', CraftingItems.UPGRADE_BASE)
-                .define('G', Tags.Items.NUGGETS_GOLD)
-                .pattern("///")
-                .pattern("DUD")
-                .pattern("GGG")
-                .unlockedBy("has_item", has(CraftingItems.UPGRADE_BASE))
-                .save(consumer);
         // B
         ShapelessRecipeBuilder.shapeless(CraftingItems.BLUEPRINT_PAPER, 4)
                 .requires(Ingredient.of(ModTags.Items.PAPER), 4)
