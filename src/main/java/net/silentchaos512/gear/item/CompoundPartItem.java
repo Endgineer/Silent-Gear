@@ -154,7 +154,8 @@ public class CompoundPartItem extends Item {
         PartData part = PartData.from(stack);
         MaterialInstance material = getPrimaryMaterial(stack);
         if (part != null && material != null) {
-            TranslatableComponent nameText = new TranslatableComponent(this.getDescriptionId() + ".nameProper", material.getDisplayName(partType, ItemStack.EMPTY));
+            int grade = part.getType() == PartType.MAIN ? MainPartItem.getMaterials(part.getItem()).get(0).getGrade().ordinal() : 0;
+            TranslatableComponent nameText = (TranslatableComponent) new TranslatableComponent(this.getDescriptionId() + ".nameProper", material.getDisplayName(partType, ItemStack.EMPTY)).append(grade > 0 ? " +" + grade : "");
             int nameColor = Color.blend(part.getColor(ItemStack.EMPTY), Color.VALUE_WHITE, 0.25f) & 0xFFFFFF;
             return TextUtil.withColor(nameText, nameColor);
         }
