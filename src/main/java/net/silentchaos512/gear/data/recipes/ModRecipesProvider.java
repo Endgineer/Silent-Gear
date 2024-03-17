@@ -585,17 +585,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .unlockedBy("has_item", has(CraftingItems.FINE_SILK))
                 .save(consumer);
 
-        ExtendedShapelessRecipeBuilder.vanillaBuilder(CraftingItems.NETHER_STAR_FRAGMENT, 9)
-                .addIngredient(Items.NETHER_STAR)
-                .build(consumer);
-
-        ExtendedShapedRecipeBuilder.vanillaBuilder(Items.NETHER_STAR)
-                .patternLine("###")
-                .patternLine("###")
-                .patternLine("###")
-                .key('#', CraftingItems.NETHER_STAR_FRAGMENT)
-                .build(consumer, SilentGear.getId("nether_star_from_fragments"));
-
         // TODO: Maybe should organize these better...
         // B
         ShapelessRecipeBuilder.shapeless(CraftingItems.BLUEPRINT_PAPER, 4)
@@ -608,51 +597,15 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .requires(ModItems.PEBBLE, 9)
                 .unlockedBy("has_pebble", has(ModItems.PEBBLE))
                 .save(consumer, SilentGear.getId("cobblestone_from_pebbles"));
-        // D
-        ShapelessRecipeBuilder.shapeless(CraftingItems.DIAMOND_SHARD, 9)
-                .requires(Tags.Items.GEMS_DIAMOND)
-                .unlockedBy("has_item", has(Tags.Items.GEMS_DIAMOND))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(Items.DIAMOND)
-                .define('#', ModTags.Items.NUGGETS_DIAMOND)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(Tags.Items.GEMS_DIAMOND))
-                .save(consumer, SilentGear.getId("diamond_from_shards"));
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(CraftingItems.SINEW), CraftingItems.DRIED_SINEW, 0.35f, 200)
                 .unlockedBy("has_item", has(CraftingItems.SINEW))
                 .save(consumer);
-        // E
-        ShapelessRecipeBuilder.shapeless(CraftingItems.EMERALD_SHARD, 9)
-                .requires(Tags.Items.GEMS_EMERALD)
-                .unlockedBy("has_item", has(Tags.Items.GEMS_EMERALD))
-                .save(consumer);
-        ShapedRecipeBuilder.shaped(Items.EMERALD)
-                .define('#', ModTags.Items.NUGGETS_EMERALD)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(Tags.Items.GEMS_EMERALD))
-                .save(consumer, SilentGear.getId("emerald_from_shards"));
         // I
         ShapedRecipeBuilder.shaped(CraftingItems.IRON_ROD, 4)
                 .define('/', Tags.Items.INGOTS_IRON)
                 .pattern("/")
                 .pattern("/")
                 .unlockedBy("has_item", has(Items.IRON_INGOT))
-                .save(consumer);
-        // L
-        ShapedRecipeBuilder.shaped(Items.LEATHER)
-                .define('#', CraftingItems.LEATHER_SCRAP)
-                .pattern("###")
-                .pattern("###")
-                .pattern("###")
-                .unlockedBy("has_item", has(CraftingItems.LEATHER_SCRAP))
-                .save(consumer, SilentGear.getId("leather_from_scraps"));
-        ShapelessRecipeBuilder.shapeless(CraftingItems.LEATHER_SCRAP, 9)
-                .requires(Items.LEATHER)
-                .unlockedBy("has_item", has(CraftingItems.LEATHER_SCRAP))
                 .save(consumer);
         // R
         ShapedRecipeBuilder.shaped(CraftingItems.ROUGH_ROD, 2)

@@ -98,11 +98,6 @@ public class ModAdvancementProvider implements DataProvider {
                     .display(Items.IRON_NUGGET, title("kachink1"), description("kachink1"), null, FrameType.TASK, true, true, false)
                     .addCriterion("kachink", genericInt(GearHelper.DAMAGE_FACTOR_CHANGE, 1))
                     .save(consumer, id("kachink1"));
-            Advancement kachink2 = Advancement.Builder.advancement()
-                    .parent(kachink1)
-                    .display(CraftingItems.DIAMOND_SHARD, title("kachink2"), description("kachink2"), null, FrameType.TASK, true, true, false)
-                    .addCriterion("kachink", genericInt(DurabilityTrait.TRIGGER_BRITTLE, 1))
-                    .save(consumer, id("kachink2"));
 
             Advancement crudeTool = Advancement.Builder.advancement()
                     .parent(root)

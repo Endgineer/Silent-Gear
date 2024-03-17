@@ -52,8 +52,6 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         getBuilder(Tags.Items.GEMS)
                 .addTag(ModTags.Items.GEMS_TITANITE);
 
-        builder(ModTags.Items.NUGGETS_DIAMOND, CraftingItems.DIAMOND_SHARD);
-        builder(ModTags.Items.NUGGETS_EMERALD, CraftingItems.EMERALD_SHARD);
         getBuilder(Tags.Items.NUGGETS)
                 .addTag(ModTags.Items.NUGGETS_DIAMOND)
                 .addTag(ModTags.Items.NUGGETS_EMERALD);
