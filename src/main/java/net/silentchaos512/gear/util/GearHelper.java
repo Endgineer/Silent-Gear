@@ -44,6 +44,7 @@ import net.silentchaos512.gear.api.item.GearType;
 import net.silentchaos512.gear.api.item.ICoreItem;
 import net.silentchaos512.gear.api.item.ICoreTool;
 import net.silentchaos512.gear.api.part.IPartData;
+import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.part.PartDataList;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.api.stats.ItemStat;
@@ -328,7 +329,7 @@ public final class GearHelper {
     }
 
     private static boolean canBreakPermanently(ItemStack stack) {
-        return Config.Common.gearBreaksPermanently.get();
+        return Config.Common.gearBreaksPermanently.get() || MaterialGrade.isGradeNotMaxOnGearItemstack(stack);
     }
 
     public static boolean isBroken(ItemStack stack) {

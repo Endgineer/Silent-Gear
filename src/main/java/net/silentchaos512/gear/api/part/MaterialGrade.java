@@ -7,10 +7,10 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.silentchaos512.gear.config.Config;
-import net.silentchaos512.utils.EnumUtils;
-
-import javax.annotation.Nonnegative;
+import net.silentchaos512.gear.api.material.MaterialList;
+import net.silentchaos512.gear.gear.part.PartData;
+import net.silentchaos512.gear.item.MainPartItem;
+import net.silentchaos512.gear.util.GearData;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
@@ -41,6 +41,22 @@ public enum MaterialGrade {
 
     public MaterialGrade next() {
         return values()[(this.ordinal() + 1) % values().length];
+    }
+
+    public static MaterialGrade getGradeFromGearItemstack(ItemStack stack) {
+        PartData mainPart = GearData.getConstructionParts(stack).getPrimaryMain();
+
+        if (mainPart != null) {
+            MaterialList materials = MainPartItem.getMaterials(mainPart.getItem());
+            return materials.get(0).getGrade();
+        }
+
+        return null;
+    }
+
+    public static boolean isGradeNotMaxOnGearItemstack(ItemStack stack) {
+        MaterialGrade grade = getGradeFromGearItemstack(stack);
+        return grade == null || grade.isNotMax();
     }
 
     public static MaterialGrade fromStack(ItemStack stack) {
