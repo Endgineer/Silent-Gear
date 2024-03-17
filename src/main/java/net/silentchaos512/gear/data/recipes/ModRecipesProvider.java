@@ -573,11 +573,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(ItemTags.LOGS)
                 .build(consumer);
 
-        damageGear(CraftingItems.CRUSHED_SHULKER_SHELL, 1, 10)
-                .addIngredient(ModTags.Items.HAMMERS)
-                .addIngredient(Items.SHULKER_SHELL)
-                .build(consumer);
-
         ShapedRecipeBuilder.shaped(CraftingItems.FINE_SILK_CLOTH)
                 .pattern("##")
                 .pattern("##")

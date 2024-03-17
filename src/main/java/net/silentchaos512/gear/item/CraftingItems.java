@@ -43,7 +43,6 @@ public enum CraftingItems implements ItemLike {
     DIAMOND_SHARD,
     EMERALD_SHARD,
     NETHER_STAR_FRAGMENT,
-    CRUSHED_SHULKER_SHELL,
     LEATHER_SCRAP,
     SINEW,
     DRIED_SINEW,
