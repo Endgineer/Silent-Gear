@@ -584,24 +584,6 @@ public class ModRecipesProvider extends LibRecipeProvider {
                 .addIngredient(Items.SHULKER_SHELL)
                 .build(consumer);
 
-        ShapelessRecipeBuilder.shapeless(CraftingItems.ROAD_MAKER_UPGRADE)
-                .requires(CraftingItems.ADVANCED_UPGRADE_BASE)
-                .requires(Items.IRON_SHOVEL)
-                .requires(Tags.Items.DYES_ORANGE)
-                .unlockedBy("has_item", has(CraftingItems.UPGRADE_BASE))
-                .save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(CraftingItems.SPOON_UPGRADE)
-                .requires(CraftingItems.ADVANCED_UPGRADE_BASE)
-                .requires(Items.DIAMOND_SHOVEL)
-                .unlockedBy("has_item", has(CraftingItems.UPGRADE_BASE))
-                .save(consumer);
-
-        shapelessBuilder(CraftingItems.WIDE_PLATE_UPGRADE)
-                .addIngredient(CraftingItems.ADVANCED_UPGRADE_BASE)
-                .addCriterion("has_item", has(CraftingItems.UPGRADE_BASE))
-                .build(consumer);
-
         ShapedRecipeBuilder.shaped(CraftingItems.FINE_SILK_CLOTH)
                 .pattern("##")
                 .pattern("##")

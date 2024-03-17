@@ -32,14 +32,6 @@
         {
           "type": "minecraft:item",
           "name": "silentgear:advanced_upgrade_base"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "silentgear:road_maker_upgrade"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "silentgear:spoon_upgrade"
         }
       ]
     }

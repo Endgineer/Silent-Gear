@@ -56,11 +56,7 @@ public enum CraftingItems implements ItemLike {
     // Rods
     ROUGH_ROD,
     STONE_ROD,
-    IRON_ROD,
-    // Misc Upgrades
-    SPOON_UPGRADE,
-    ROAD_MAKER_UPGRADE,
-    WIDE_PLATE_UPGRADE;
+    IRON_ROD;
 
     @SuppressWarnings("NonFinalFieldInEnum")
     private RegistryObject<ItemInternal> item = null;

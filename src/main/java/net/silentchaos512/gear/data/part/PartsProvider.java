@@ -69,29 +69,6 @@ public class PartsProvider implements DataProvider {
             ret.add(addHeadStats(builder));
         });
 
-        ret.add(upgradePart("misc/spoon", CraftingItems.SPOON_UPGRADE)
-                .upgradeGearTypes(GearType.PICKAXE.getMatcher(false))
-                .stat(ItemStats.DURABILITY, 0.2f, StatInstance.Operation.MUL1)
-                .stat(ItemStats.RARITY, 10, StatInstance.Operation.ADD)
-                .trait(Const.Traits.SPOON, 1)
-                .display(GearType.PICKAXE, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("spoon"), Color.VALUE_WHITE))
-        );
-        ret.add(upgradePart("misc/road_maker", CraftingItems.ROAD_MAKER_UPGRADE)
-                .upgradeGearTypes(GearType.EXCAVATOR.getMatcher(false))
-                .stat(ItemStats.DURABILITY, 0.1f, StatInstance.Operation.MUL1)
-                .stat(ItemStats.RARITY, 10, StatInstance.Operation.ADD)
-                .trait(Const.Traits.ROAD_MAKER, 1)
-                .display(GearType.EXCAVATOR, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("road_maker"), Color.VALUE_WHITE))
-        );
-        ret.add(upgradePart("misc/wide_plate", CraftingItems.WIDE_PLATE_UPGRADE)
-                .upgradeGearTypes(new GearTypeMatcher(false, GearType.HAMMER, GearType.EXCAVATOR))
-                .stat(ItemStats.DURABILITY, 0.1f, StatInstance.Operation.MUL1)
-                .stat(ItemStats.RARITY, 10, StatInstance.Operation.ADD)
-                .trait(Const.Traits.WIDEN, 1)
-                .display(GearType.HAMMER, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("wide_plate"), Color.VALUE_WHITE))
-                .display(GearType.EXCAVATOR, PartType.MISC_UPGRADE, new MaterialLayer(SilentGear.getId("wide_plate"), Color.VALUE_WHITE))
-        );
-
         return ret;
     }
 
