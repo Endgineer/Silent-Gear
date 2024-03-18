@@ -30,7 +30,7 @@
         "mul2": 3.85
       },
       "harvest_speed": {
-        "mul2": 0.125
+        "mul2": 0.25
       },
       "harvest_level": {
         "max": 5.0
@@ -49,9 +49,6 @@
       },
       "knockback_resistance": {
         "add": 4.0
-      },
-      "enchantability": {
-        "add": 20.0
       }
     }
   },
