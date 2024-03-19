@@ -1,0 +1,66 @@
+{
+  "type": "silentgear:standard",
+  "simple": true,
+  "availability": {
+    "tier": 5,
+    "categories": [
+      "organic",
+      "gem"
+    ],
+    "visible": true,
+    "gear_blacklist": [],
+    "can_salvage": true
+  },
+  "crafting_items": {
+    "main": {
+      "item": "iceandfire:dragonscales_green"
+    }
+  },
+  "name": {
+    "translate": "material.silentgear.dragonscales_green"
+  },
+  "stats": {
+    "lining": {
+      "armor_durability": {
+        "add": 495.0
+      },
+      "armor_toughness": {
+        "add": 8.0
+      },
+      "knockback_resistance": {
+        "add": 2.0
+      },
+      "magic_armor": {
+        "add": 6.5
+      }
+    }
+  },
+  "traits": {
+    "lining": [
+      {
+        "name": "silentgear:flexible",
+        "level": 3
+      }
+    ]
+  },
+  "model": {
+    "main/all": [
+      {
+        "texture": "silentgear:main_generic_lc",
+        "color": "#5C643A"
+      }
+    ],
+    "main/fragment": [
+      {
+        "texture": "silentgear:metal",
+        "color": "#5C643A"
+      }
+    ],
+    "lining/part": [
+      {
+        "texture": "silentgear:lining_cloth",
+        "color": "#5C643A"
+      }
+    ]
+  }
+}

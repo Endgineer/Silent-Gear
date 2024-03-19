@@ -1,0 +1,74 @@
+{
+  "type": "silentgear:standard",
+  "simple": true,
+  "availability": {
+    "tier": 5,
+    "categories": [
+      "organic"
+    ],
+    "visible": true,
+    "gear_blacklist": [],
+    "can_salvage": true
+  },
+  "crafting_items": {
+    "main": {
+      "item": "iceandfire:dragonbone"
+    }
+  },
+  "name": {
+    "translate": "material.silentgear.dragonbone"
+  },
+  "stats": {
+    "rod": {
+      "durability": {
+        "mul2": 0.2
+      },
+      "melee_damage": {
+        "mul2": 0.2
+      },
+      "magic_damage": {
+        "mul2": 0.2
+      },
+      "ranged_damage": {
+        "mul2": 0.2
+      },
+      "harvest_speed": {
+        "mul2": 0.2
+      }
+    }
+  },
+  "traits": {
+    "rod": [
+      {
+        "name": "silentgear:flexible",
+        "level": 2
+      }
+    ]
+  },
+  "model": {
+    "main/all": [
+      {
+        "texture": "silentgear:main_generic_lc",
+        "color": "#B0AB96"
+      }
+    ],
+    "main/fragment": [
+      {
+        "texture": "silentgear:metal",
+        "color": "#B0AB96"
+      }
+    ],
+    "rod/all": [
+      {
+        "texture": "silentgear:rod_generic_lc",
+        "color": "#B0AB96"
+      }
+    ],
+    "rod/part": [
+      {
+        "texture": "silentgear:rod",
+        "color": "#B0AB96"
+      }
+    ]
+  }
+}
