@@ -238,9 +238,9 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             Fluid fluid = fluidstack.getFluid();
             
             if(fluid.isSame(Fluids.LAVA) && fluidstack.getAmount() > 0) {
-                heat_difference = Math.min(Math.min(fluidstack.getAmount(), MetallurgyEntry.get(metal).getReinforce(reinforce).getHeatCapacity() - (int) heat), 100);
+                heat_difference = Math.min(Math.min(fluidstack.getAmount(), MetallurgyEntry.get(metal).getReinforce(reinforce).getHeatCapacity() - (int) heat), 10);
             } else if(fluid.isSame(Fluids.WATER) && fluidstack.getAmount() > 0) {
-                heat_difference = -Math.min(Math.min(fluidstack.getAmount(), (int) Math.ceil(heat)), 100);
+                heat_difference = -Math.min(Math.min(fluidstack.getAmount(), (int) Math.ceil(heat)), 10);
             }
 
             if(action == FluidAction.EXECUTE) {
