@@ -137,8 +137,8 @@ public class HeatedMetalItem extends Item {
 
         ItemStack partstack = ItemStack.of((CompoundTag) tag.get(HeatedMetalItem.PART));
         
-        return new TextComponent(partstack.getDisplayName().getString().substring(1, partstack.getDisplayName().getString().length()-1)).append(" ")
-            .append("+"+reinforce).append(" (")
+        return new TextComponent(partstack.getDisplayName().getString().replaceAll("\\[|\\]|\s\\+[0-9]+", ""))
+            .append(" +"+reinforce).append(" (")
             .append(new TranslatableComponent("tooltip.silentgear.metal_stats.unfinished")).append(")");
     }
 }
