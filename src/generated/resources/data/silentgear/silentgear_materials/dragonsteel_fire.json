@@ -42,7 +42,7 @@
         "mul2": 7.0
       },
       "ranged_damage": {
-        "mul2": 7.0
+        "mul2": 3.5
       },
       "armor_toughness": {
         "add": 16.0
