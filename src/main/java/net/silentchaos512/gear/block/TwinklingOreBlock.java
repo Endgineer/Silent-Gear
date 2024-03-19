@@ -30,12 +30,12 @@ public class TwinklingOreBlock extends Block {
 
     public TwinklingOreBlock(BlockBehaviour.Properties properties) {
         this(properties, UniformInt.of(0, 0));
-        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(0)));
+        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(15)));
     }
 
     public TwinklingOreBlock(BlockBehaviour.Properties properties, UniformInt dist) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(0)));
+        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(15)));
         this.xpRange = dist;
     }
 
@@ -50,7 +50,7 @@ public class TwinklingOreBlock extends Block {
     }
 
     public boolean isRandomlyTicking(BlockState state) {
-        return ModList.get().isLoaded("curseoftheabyss");
+        return false;
     }
 
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random rng) {
