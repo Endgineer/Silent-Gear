@@ -76,9 +76,6 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             }*/ if(itemstack.is(ModItems.HEATED_METAL_ITEM.get())) {
                 this.setItem(SLOT, itemstack);
                 player.setItemInHand(hand, ItemStack.EMPTY);
-            } else if(itemstack.getItem() instanceof TitaniteShardItem && !itemstack.hasTag()) {
-                this.setItem(SLOT, new ItemStack(itemstack.getItem()));
-                player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount()-1);
             }
         }
     }
@@ -148,23 +145,7 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             this.setItem(SLOT, item);
 
             level.playSound(null, this.getBlockPos(), SoundEvents.CHICKEN_EGG, SoundSource.PLAYERS, 1.0F, 1.0F);
-        }*/ else if(itemstack.getItem() instanceof TitaniteShardItem) {
-            CompoundTag tag = new CompoundTag();
-
-            tag.putInt("CustomModelData", player.level.getMoonPhase()+1);
-            itemstack.setTag(tag);
-
-            boolean success = Math.random() <= Math.max(0, 1 - Math.abs((player.level.getDayTime() % 24000 - 18000) / 5000.0));
-
-            this.setItem(SLOT, success ? itemstack : ItemStack.EMPTY);
-            this.dropItems();
-
-            ((ServerLevel) level).sendParticles(ParticleTypes.CRIT, this.getBlockPos().getX() + 0.5D, this.getBlockPos().getY() + 1.0D, this.getBlockPos().getZ() + 0.5D, 10, 0.05D, 0.05D, 0.05D, 1);
-
-            level.playSound(null, worldPosition, success ? SoundEvents.LIGHTNING_BOLT_THUNDER : SoundEvents.END_PORTAL_FRAME_FILL, SoundSource.AMBIENT, 1.0F, 1.0F);
-            level.playSound(null, worldPosition, SoundEvents.ITEM_BREAK, SoundSource.PLAYERS, 0.5f, 2.0f);
-            player.getCooldowns().addCooldown(AllItems.WRENCH.get(), 20);
-        } else {
+        }*/ else {
             level.playSound(null, worldPosition, SoundEvents.ANVIL_PLACE, SoundSource.PLAYERS, 1.0F, 5.0F);
             player.getCooldowns().addCooldown(AllItems.WRENCH.get(), 20);
         }
