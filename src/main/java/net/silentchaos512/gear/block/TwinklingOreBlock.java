@@ -30,12 +30,12 @@ public class TwinklingOreBlock extends Block {
 
     public TwinklingOreBlock(BlockBehaviour.Properties properties) {
         this(properties, UniformInt.of(0, 0));
-        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(15)));
+        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(9)));
     }
 
     public TwinklingOreBlock(BlockBehaviour.Properties properties, UniformInt dist) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(15)));
+        this.registerDefaultState(this.defaultBlockState().setValue(TwinklingOreBlock.CHARGE, Integer.valueOf(9)));
         this.xpRange = dist;
     }
 
