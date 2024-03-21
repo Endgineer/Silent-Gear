@@ -1,0 +1,19 @@
+{
+    "type": "create:crushing",
+    "ingredients": [
+        {
+            "item": "silentgear:deepslate_bathus_ore"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:bathus_raw",
+            "count": 1
+        },
+        {
+            "item": "create:experience_nugget",
+            "chance": 0.75
+        }
+    ],
+    "processingTime": 450
+}

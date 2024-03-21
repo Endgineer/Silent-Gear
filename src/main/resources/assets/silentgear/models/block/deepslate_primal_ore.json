@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "silentgear:block/daemonmetals/deepslate_primal_ore"
+    }
+}

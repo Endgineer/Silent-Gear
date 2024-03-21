@@ -2,6 +2,17 @@
   "replace": false,
   "values": [
     "silentgear:deepslate_titanite_ore",
-	  "silentgear:titanite_anvil"
+	  "silentgear:titanite_anvil",
+    "silentgear:deepslate_novite_ore",
+    "silentgear:deepslate_bathus_ore",
+    "silentgear:deepslate_marmaros_ore",
+    "silentgear:deepslate_kratonite_ore",
+    "silentgear:deepslate_fractite_ore",
+    "silentgear:deepslate_zephyrium_ore",
+    "silentgear:deepslate_argonite_ore",
+    "silentgear:deepslate_katagon_ore",
+    "silentgear:deepslate_gorgonite_ore",
+    "silentgear:deepslate_promethium_ore",
+    "silentgear:deepslate_primal_ore"
   ]
 }

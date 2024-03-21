@@ -1,6 +1,5 @@
 package net.silentchaos512.gear.init;
 
-import net.silentchaos512.gear.block.TitaniteAnvilBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.particles.ParticleTypes;
@@ -20,6 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.*;
+import net.silentchaos512.gear.block.AbyssOreBlock;
 import net.silentchaos512.gear.config.Config;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
@@ -47,6 +47,28 @@ public final class ModBlocks {
     public static final BlockRegistryObject<TitaniteAnvilBlock> TITANITE_ANVIL = register("titanite_anvil", () -> new TitaniteAnvilBlock(
         BlockBehaviour.Properties.copy(AllBlocks.RAILWAY_CASING.get()).noOcclusion()
     ));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_NOVITE_ORE = register("deepslate_novite_ore", () -> new AbyssOreBlock(5));
+    
+    public static final BlockRegistryObject<Block> DEEPSLATE_BATHUS_ORE = register("deepslate_bathus_ore", () -> new AbyssOreBlock(10));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_MARMAROS_ORE = register("deepslate_marmaros_ore", () -> new AbyssOreBlock(11));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_KRATONITE_ORE = register("deepslate_kratonite_ore", () -> new AbyssOreBlock(12));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_FRACTITE_ORE = register("deepslate_fractite_ore", () -> new AbyssOreBlock(13));
+    
+    public static final BlockRegistryObject<Block> DEEPSLATE_ZEPHYRIUM_ORE = register("deepslate_zephyrium_ore", () -> new AbyssOreBlock(14));
+    
+    public static final BlockRegistryObject<Block> DEEPSLATE_ARGONITE_ORE = register("deepslate_argonite_ore", () -> new AbyssOreBlock(15));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_KATAGON_ORE = register("deepslate_katagon_ore", () -> new AbyssOreBlock(16));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_GORGONITE_ORE = register("deepslate_gorgonite_ore", () -> new AbyssOreBlock(17));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_PROMETHIUM_ORE = register("deepslate_promethium_ore", () -> new AbyssOreBlock(18));
+    
+    public static final BlockRegistryObject<Block> DEEPSLATE_PRIMAL_ORE = register("deepslate_primal_ore", () -> new AbyssOreBlock(19));
 
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 

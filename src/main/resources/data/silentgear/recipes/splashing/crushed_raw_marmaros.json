@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:marmaros_raw"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_marmaros"
+        }
+    ]
+}

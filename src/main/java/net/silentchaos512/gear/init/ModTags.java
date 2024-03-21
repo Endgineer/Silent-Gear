@@ -17,6 +17,18 @@ public final class ModTags {
 
         public static final TagKey<Block> ORES_TITANITE = forge("ores/titanite");
 
+        public static final TagKey<Block> NEEDS_NOVITE_TOOL = mod("needs_novite_tool");
+        public static final TagKey<Block> NEEDS_BATHUS_TOOL = mod("needs_bathus_tool");
+        public static final TagKey<Block> NEEDS_MARMAROS_TOOL = mod("needs_marmaros_tool");
+        public static final TagKey<Block> NEEDS_KRATONITE_TOOL = mod("needs_kratonite_tool");
+        public static final TagKey<Block> NEEDS_FRACTITE_TOOL = mod("needs_fractite_tool");
+        public static final TagKey<Block> NEEDS_ZEPHYRIUM_TOOL = mod("needs_zephyrium_tool");
+        public static final TagKey<Block> NEEDS_ARGONITE_TOOL = mod("needs_argonite_tool");
+        public static final TagKey<Block> NEEDS_KATAGON_TOOL = mod("needs_katagon_tool");
+        public static final TagKey<Block> NEEDS_GORGONITE_TOOL = mod("needs_gorgonite_tool");
+        public static final TagKey<Block> NEEDS_PROMETHIUM_TOOL = mod("needs_promethium_tool");
+        public static final TagKey<Block> NEEDS_PRIMAL_TOOL = mod("needs_primal_tool");
+
         private Blocks() {}
 
         private static TagKey<Block> forge(String path) {

@@ -30,6 +30,42 @@ public final class ModItems {
 
     public static final ItemRegistryObject<HeatedMetalItem> HEATED_METAL_ITEM = register("heated_metal_item", () -> new HeatedMetalItem());
 
+    public static final ItemRegistryObject<Item> NOVITE_INGOT = register("novite_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> BATHUS_INGOT = register("bathus_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> MARMAROS_INGOT = register("marmaros_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> KRATONITE_INGOT = register("kratonite_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> FRACTITE_INGOT = register("fractite_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ZEPHYRIUM_INGOT = register("zephyrium_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ARGONITE_INGOT = register("argonite_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> KATAGON_INGOT = register("katagon_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> GORGONITE_INGOT = register("gorgonite_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> PROMETHIUM_INGOT = register("promethium_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> PRIMAL_INGOT = register("primal_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+
+    public static final ItemRegistryObject<Item> NOVITE_RAW = register("novite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> BATHUS_RAW = register("bathus_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> MARMAROS_RAW = register("marmaros_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> KRATONITE_RAW = register("kratonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> FRACTITE_RAW = register("fractite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ZEPHYRIUM_RAW = register("zephyrium_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ARGONITE_RAW = register("argonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> KATAGON_RAW = register("katagon_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> GORGONITE_RAW = register("gorgonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> PROMETHIUM_RAW = register("promethium_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> PRIMAL_RAW = register("primal_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_NOVITE = register("crushed_raw_novite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_BATHUS = register("crushed_raw_bathus", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_MARMAROS = register("crushed_raw_marmaros", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_KRATONITE = register("crushed_raw_kratonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_FRACTITE = register("crushed_raw_fractite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_ZEPHYRIUM = register("crushed_raw_zephyrium", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_ARGONITE = register("crushed_raw_argonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_KATAGON = register("crushed_raw_katagon", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_GORGONITE = register("crushed_raw_gorgonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_PROMETHIUM = register("crushed_raw_promethium", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CRUSHED_RAW_PRIMAL = register("crushed_raw_primal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+
     public static final ItemRegistryObject<BlueprintPackageItem> BLUEPRINT_PACKAGE = register("blueprint_package", () ->
             new BlueprintPackageItem(SilentGear.getId("starter_blueprints")));
 

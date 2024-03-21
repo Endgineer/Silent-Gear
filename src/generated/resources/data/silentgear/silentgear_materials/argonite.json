@@ -1,0 +1,71 @@
+{
+  "type": "silentgear:standard",
+  "simple": true,
+  "availability": {
+    "tier": 16,
+    "categories": [
+      "metal"
+    ],
+    "visible": true,
+    "gear_blacklist": [],
+    "can_salvage": true
+  },
+  "crafting_items": {
+    "main": {
+      "item": "silentgear:argonite_ingot"
+    }
+  },
+  "name": {
+    "translate": "material.silentgear.argonite"
+  },
+  "stats": {
+    "main": {
+      "durability": 1561.0,
+      "armor_durability": 33.0,
+      "enchantability": 10.0,
+      "harvest_level": 16.0,
+      "harvest_speed": 8.0,
+      "melee_damage": 3.0,
+      "magic_damage": 1.0,
+      "attack_speed": 0.0,
+      "armor": 20.0,
+      "armor/helmet": 3.0,
+      "armor/chestplate": 8.0,
+      "armor/leggings": 6.0,
+      "armor/boots": 3.0,
+      "armor_toughness": 8.0,
+      "magic_armor": 4.0,
+      "ranged_damage": 2.0,
+      "ranged_speed": -0.2,
+      "projectile_speed": 0.9,
+      "projectile_accuracy": 1.1,
+      "rarity": 70.0,
+      "chargeability": 0.8
+    }
+  },
+  "traits": {
+    "main": [
+      {
+        "name": "silentgear:malleable",
+        "level": 3
+      }
+    ]
+  },
+  "model": {
+    "main/all": [
+      {
+        "texture": "silentgear:main_generic_hc",
+        "color": "#4F64FF"
+      },
+      {
+        "texture": "silentgear:_highlight"
+      }
+    ],
+    "main/fragment": [
+      {
+        "texture": "silentgear:metal",
+        "color": "#4F64FF"
+      }
+    ]
+  }
+}

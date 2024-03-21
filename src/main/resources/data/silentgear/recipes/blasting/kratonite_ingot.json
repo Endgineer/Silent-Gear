@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "silentgear:crushed_raw_kratonite"
+    },
+    "result": "silentgear:kratonite_ingot",
+    "experience": 0.1,
+    "cookingtime": 400
+}

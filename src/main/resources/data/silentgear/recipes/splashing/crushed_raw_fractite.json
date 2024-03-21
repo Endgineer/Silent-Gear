@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:fractite_raw"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_fractite"
+        }
+    ]
+}
