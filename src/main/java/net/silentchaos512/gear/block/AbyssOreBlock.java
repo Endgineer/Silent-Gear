@@ -1,8 +1,15 @@
 package net.silentchaos512.gear.block;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.OreBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -14,6 +21,7 @@ import net.silentchaos512.gear.api.GearApi;
 import net.silentchaos512.gear.api.stats.ItemStats;
 import net.silentchaos512.gear.item.gear.GearPickaxeItem;
 import net.silentchaos512.gear.util.GearData;
+import net.silentchaos512.gear.util.TextUtil;
 
 public class AbyssOreBlock extends OreBlock {
     float requiredHarvestLevel;
@@ -21,6 +29,12 @@ public class AbyssOreBlock extends OreBlock {
     public AbyssOreBlock(float requiredHarvestLevel) {
         super(Properties.of(Material.STONE).requiresCorrectToolForDrops().color(MaterialColor.DEEPSLATE).strength(4.5F, 1200.0F).sound(SoundType.DEEPSLATE));
         this.requiredHarvestLevel = requiredHarvestLevel;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+        tooltip.add(TextUtil.misc("harvestLevel", requiredHarvestLevel, TextUtil.misc("harvestLevel." + requiredHarvestLevel)));
+        tooltip.add(new TranslatableComponent("misc.silentgear.harvestLevelCaveat"));
     }
 
     @Override
