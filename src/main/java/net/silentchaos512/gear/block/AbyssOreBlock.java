@@ -16,12 +16,14 @@ import net.silentchaos512.gear.item.gear.GearPickaxeItem;
 import net.silentchaos512.gear.util.GearData;
 
 public class AbyssOreBlock extends OreBlock {
-    float requiredHarvestLevel;
+    private float requiredHarvestLevel;
 
     public AbyssOreBlock(float requiredHarvestLevel) {
         super(Properties.of(Material.STONE).requiresCorrectToolForDrops().color(MaterialColor.DEEPSLATE).strength(4.5F, 1200.0F).sound(SoundType.DEEPSLATE));
         this.requiredHarvestLevel = requiredHarvestLevel;
     }
+
+    public int getRequiredHarvestLevel() { return (int) this.requiredHarvestLevel; }
 
     @Override
     public boolean canHarvestBlock(BlockState state, BlockGetter level, BlockPos pos, Player player) {
