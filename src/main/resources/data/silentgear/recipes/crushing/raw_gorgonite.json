@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_primal_ore"
+            "item": "silentgear:deepslate_gorgonite_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:primal_raw",
+            "item": "silentgear:raw_gorgonite",
             "count": 1
         },
         {

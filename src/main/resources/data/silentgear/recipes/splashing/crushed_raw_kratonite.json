@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:kratonite_raw"
+            "item": "silentgear:raw_kratonite"
         }
     ],
     "results": [

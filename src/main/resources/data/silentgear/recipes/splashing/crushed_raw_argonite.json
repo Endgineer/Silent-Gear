@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:argonite_raw"
+            "item": "silentgear:raw_argonite"
         }
     ],
     "results": [

@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:marmaros_raw"
+            "item": "silentgear:raw_marmaros"
         }
     ],
     "results": [

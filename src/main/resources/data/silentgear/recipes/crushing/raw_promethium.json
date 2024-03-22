@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_argonite_ore"
+            "item": "silentgear:deepslate_promethium_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:argonite_raw",
+            "item": "silentgear:raw_promethium",
             "count": 1
         },
         {

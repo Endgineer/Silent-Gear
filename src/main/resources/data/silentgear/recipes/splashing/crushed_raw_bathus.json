@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:bathus_raw"
+            "item": "silentgear:raw_bathus"
         }
     ],
     "results": [

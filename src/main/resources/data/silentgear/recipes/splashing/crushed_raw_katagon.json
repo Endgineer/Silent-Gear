@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:katagon_raw"
+            "item": "silentgear:raw_katagon"
         }
     ],
     "results": [

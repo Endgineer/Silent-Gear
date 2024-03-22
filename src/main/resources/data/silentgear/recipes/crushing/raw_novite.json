@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_katagon_ore"
+            "item": "silentgear:deepslate_novite_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:katagon_raw",
+            "item": "silentgear:raw_novite",
             "count": 1
         },
         {

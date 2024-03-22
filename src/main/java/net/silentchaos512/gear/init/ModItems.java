@@ -42,17 +42,17 @@ public final class ModItems {
     public static final ItemRegistryObject<Item> PROMETHIUM_INGOT = register("promethium_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
     public static final ItemRegistryObject<Item> PRIMAL_INGOT = register("primal_ingot", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
 
-    public static final ItemRegistryObject<Item> NOVITE_RAW = register("novite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> BATHUS_RAW = register("bathus_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> MARMAROS_RAW = register("marmaros_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> KRATONITE_RAW = register("kratonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> FRACTITE_RAW = register("fractite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> ZEPHYRIUM_RAW = register("zephyrium_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> ARGONITE_RAW = register("argonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> KATAGON_RAW = register("katagon_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> GORGONITE_RAW = register("gorgonite_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> PROMETHIUM_RAW = register("promethium_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
-    public static final ItemRegistryObject<Item> PRIMAL_RAW = register("primal_raw", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_NOVITE = register("raw_novite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_BATHUS = register("raw_bathus", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_MARMAROS = register("raw_marmaros", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_KRATONITE = register("raw_kratonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_FRACTITE = register("raw_fractite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_ZEPHYRIUM = register("raw_zephyrium", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_ARGONITE = register("raw_argonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_KATAGON = register("raw_katagon", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_GORGONITE = register("raw_gorgonite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_PROMETHIUM = register("raw_promethium", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RAW_PRIMAL = register("raw_primal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
 
     public static final ItemRegistryObject<Item> CRUSHED_RAW_NOVITE = register("crushed_raw_novite", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
     public static final ItemRegistryObject<Item> CRUSHED_RAW_BATHUS = register("crushed_raw_bathus", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));

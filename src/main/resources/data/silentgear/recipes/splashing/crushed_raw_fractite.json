@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:fractite_raw"
+            "item": "silentgear:raw_fractite"
         }
     ],
     "results": [

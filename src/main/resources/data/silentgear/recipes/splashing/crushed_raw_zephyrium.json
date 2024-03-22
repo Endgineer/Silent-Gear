@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:zephyrium_raw"
+            "item": "silentgear:raw_zephyrium"
         }
     ],
     "results": [

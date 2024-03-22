@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_novite_ore"
+            "item": "silentgear:deepslate_fractite_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:novite_raw",
+            "item": "silentgear:raw_fractite",
             "count": 1
         },
         {

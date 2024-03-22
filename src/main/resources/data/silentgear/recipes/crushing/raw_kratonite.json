@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_zephyrium_ore"
+            "item": "silentgear:deepslate_kratonite_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:zephyrium_raw",
+            "item": "silentgear:raw_kratonite",
             "count": 1
         },
         {

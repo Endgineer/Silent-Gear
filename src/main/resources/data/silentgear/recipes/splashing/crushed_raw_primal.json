@@ -2,7 +2,7 @@
     "type": "create:splashing",
     "ingredients": [
         {
-            "item": "silentgear:primal_raw"
+            "item": "silentgear:raw_primal"
         }
     ],
     "results": [

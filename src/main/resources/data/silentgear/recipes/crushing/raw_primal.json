@@ -2,12 +2,12 @@
     "type": "create:crushing",
     "ingredients": [
         {
-            "item": "silentgear:deepslate_kratonite_ore"
+            "item": "silentgear:deepslate_primal_ore"
         }
     ],
     "results": [
         {
-            "item": "silentgear:kratonite_raw",
+            "item": "silentgear:raw_primal",
             "count": 1
         },
         {
