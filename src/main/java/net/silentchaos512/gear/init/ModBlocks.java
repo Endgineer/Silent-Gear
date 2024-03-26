@@ -70,8 +70,6 @@ public final class ModBlocks {
     
     public static final BlockRegistryObject<Block> DEEPSLATE_PRIMAL_ORE = register("deepslate_primal_ore", () -> new AbyssOreBlock(19));
 
-    private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
-
     private ModBlocks() {}
 
     static void register() {}
