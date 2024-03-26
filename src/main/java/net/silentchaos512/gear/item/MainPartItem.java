@@ -23,6 +23,7 @@ import net.silentchaos512.gear.api.material.MaterialList;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.api.util.StatGearKey;
 import net.silentchaos512.gear.gear.part.PartData;
+import net.silentchaos512.gear.metallurgy.MetallurgyEntry;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -80,9 +81,11 @@ public class MainPartItem extends CompoundPartItem {
         final HitResult hitresult = player.pick(2.0D, 0.0F, true);
         BlockPos pos = ((BlockHitResult) hitresult).getBlockPos();
 
-        if(hitresult.getType() == HitResult.Type.BLOCK && player.level.getFluidState(pos).getType() == Fluids.LAVA && materials.get(0).getGrade().isNotMax()) {
+        String metal = materials.get(0).getId().getPath();
+
+        if(hitresult.getType() == HitResult.Type.BLOCK && player.level.getFluidState(pos).getType() == Fluids.LAVA && MetallurgyEntry.get(metal) != null && materials.get(0).getGrade().isNotMax()) {
             CompoundTag tag = new CompoundTag();
-            tag.putString(HeatedMetalItem.METAL, materials.get(0).getId().getPath());
+            tag.putString(HeatedMetalItem.METAL, metal);
             tag.putInt(HeatedMetalItem.COUNT, materials.size());
             tag.putInt(HeatedMetalItem.REINFORCE, materials.get(0).getGrade().next().ordinal());
             tag.putDouble(HeatedMetalItem.HEAT, 0);
