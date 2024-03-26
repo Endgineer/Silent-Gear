@@ -1,0 +1,23 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_mortite"
+		},
+		{
+			"item": "silentgear:necronium_ingot"
+		},
+		{
+			"item": "silentgear:drakolite_dust"
+		},
+		{
+			"item": "silentgear:phasmatite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:barrow_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

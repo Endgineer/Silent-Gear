@@ -1,0 +1,23 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_astralarium"
+		},
+		{
+			"item": "silentgear:elderune_ingot"
+		},
+		{
+			"item": "silentgear:white_ingot"
+		},
+		{
+			"item": "silentgear:aedrite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:kosm_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

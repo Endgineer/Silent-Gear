@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_necrite"
+		},
+		{
+			"item": "silentgear:phasmatite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:necronium_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

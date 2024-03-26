@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_adamantite"
+		},
+		{
+			"item": "silentgear:luminite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:adamant_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

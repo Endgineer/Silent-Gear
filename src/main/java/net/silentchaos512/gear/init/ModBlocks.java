@@ -47,17 +47,35 @@ public final class ModBlocks {
         BlockBehaviour.Properties.copy(AllBlocks.RAILWAY_CASING.get()).noOcclusion()
     ));
 
+    public static final BlockRegistryObject<Block> DEEPSLATE_LUMINITE_ORE = register("deepslate_luminite_ore", () -> new AbyssOreBlock(14));
+    public static final BlockRegistryObject<Block> DEEPSLATE_DRAKOLITE_ORE = register("deepslate_drakolite_ore", () -> new AbyssOreBlock(18));
+    public static final BlockRegistryObject<Block> DEEPSLATE_PHASMATITE_ORE = register("deepslate_phasmatite_ore", () -> new AbyssOreBlock(20));
+    public static final BlockRegistryObject<Block> DEEPSLATE_AEDRITE_ORE = register("deepslate_aedrite_ore", () -> new AbyssOreBlock(24));
+    public static final BlockRegistryObject<Block> DEEPSLATE_DAEDRITE_ORE = register("deepslate_daedrite_ore", () -> new AbyssOreBlock(24));
+
+    public static final BlockRegistryObject<Block> DEEPSLATE_BLACK_ORE = register("deepslate_black_ore", () -> new AbyssOreBlock(10));
+    public static final BlockRegistryObject<Block> DEEPSLATE_WHITE_ORE = register("deepslate_white_ore", () -> new AbyssOreBlock(10));
+    public static final BlockRegistryObject<Block> DEEPSLATE_MITHRIL_ORE = register("deepslate_mithril_ore", () -> new AbyssOreBlock(12));
+    public static final BlockRegistryObject<Block> DEEPSLATE_ADAMANTITE_ORE = register("deepslate_adamantite_ore", () -> new AbyssOreBlock(14));
+    public static final BlockRegistryObject<Block> DEEPSLATE_RUNITE_ORE = register("deepslate_runite_ore", () -> new AbyssOreBlock(16));
+    public static final BlockRegistryObject<Block> DEEPSLATE_ORICHALCITE_ORE = register("deepslate_orichalcite_ore", () -> new AbyssOreBlock(18));
+    public static final BlockRegistryObject<Block> DEEPSLATE_NECRITE_ORE = register("deepslate_necrite_ore", () -> new AbyssOreBlock(20));
+    public static final BlockRegistryObject<Block> DEEPSLATE_BANITE_ORE = register("deepslate_banite_ore", () -> new AbyssOreBlock(22));
+    public static final BlockRegistryObject<Block> DEEPSLATE_MORTITE_ORE = register("deepslate_mortite_ore", () -> new AbyssOreBlock(26));
+    public static final BlockRegistryObject<Block> DEEPSLATE_DELDRIMITE_ORE = register("deepslate_deldrimite_ore", () -> new AbyssOreBlock(28));
+    public static final BlockRegistryObject<Block> DEEPSLATE_ASTRALARIUM_ORE = register("deepslate_astralarium_ore", () -> new AbyssOreBlock(30));
+
     public static final BlockRegistryObject<Block> DEEPSLATE_NOVITE_ORE = register("deepslate_novite_ore", () -> new AbyssOreBlock(5));
-    public static final BlockRegistryObject<Block> DEEPSLATE_BATHUS_ORE = register("deepslate_bathus_ore", () -> new AbyssOreBlock(10));
-    public static final BlockRegistryObject<Block> DEEPSLATE_MARMAROS_ORE = register("deepslate_marmaros_ore", () -> new AbyssOreBlock(11));
-    public static final BlockRegistryObject<Block> DEEPSLATE_KRATONITE_ORE = register("deepslate_kratonite_ore", () -> new AbyssOreBlock(12));
-    public static final BlockRegistryObject<Block> DEEPSLATE_FRACTITE_ORE = register("deepslate_fractite_ore", () -> new AbyssOreBlock(13));
-    public static final BlockRegistryObject<Block> DEEPSLATE_ZEPHYRIUM_ORE = register("deepslate_zephyrium_ore", () -> new AbyssOreBlock(14));
-    public static final BlockRegistryObject<Block> DEEPSLATE_ARGONITE_ORE = register("deepslate_argonite_ore", () -> new AbyssOreBlock(15));
-    public static final BlockRegistryObject<Block> DEEPSLATE_KATAGON_ORE = register("deepslate_katagon_ore", () -> new AbyssOreBlock(16));
-    public static final BlockRegistryObject<Block> DEEPSLATE_GORGONITE_ORE = register("deepslate_gorgonite_ore", () -> new AbyssOreBlock(17));
-    public static final BlockRegistryObject<Block> DEEPSLATE_PROMETHIUM_ORE = register("deepslate_promethium_ore", () -> new AbyssOreBlock(18));
-    public static final BlockRegistryObject<Block> DEEPSLATE_PRIMAL_ORE = register("deepslate_primal_ore", () -> new AbyssOreBlock(19));
+    public static final BlockRegistryObject<Block> DEEPSLATE_BATHUS_ORE = register("deepslate_bathus_ore", () -> new AbyssOreBlock(11));
+    public static final BlockRegistryObject<Block> DEEPSLATE_MARMAROS_ORE = register("deepslate_marmaros_ore", () -> new AbyssOreBlock(13));
+    public static final BlockRegistryObject<Block> DEEPSLATE_KRATONITE_ORE = register("deepslate_kratonite_ore", () -> new AbyssOreBlock(15));
+    public static final BlockRegistryObject<Block> DEEPSLATE_FRACTITE_ORE = register("deepslate_fractite_ore", () -> new AbyssOreBlock(17));
+    public static final BlockRegistryObject<Block> DEEPSLATE_ZEPHYRIUM_ORE = register("deepslate_zephyrium_ore", () -> new AbyssOreBlock(19));
+    public static final BlockRegistryObject<Block> DEEPSLATE_ARGONITE_ORE = register("deepslate_argonite_ore", () -> new AbyssOreBlock(21));
+    public static final BlockRegistryObject<Block> DEEPSLATE_KATAGON_ORE = register("deepslate_katagon_ore", () -> new AbyssOreBlock(23));
+    public static final BlockRegistryObject<Block> DEEPSLATE_GORGONITE_ORE = register("deepslate_gorgonite_ore", () -> new AbyssOreBlock(25));
+    public static final BlockRegistryObject<Block> DEEPSLATE_PROMETHIUM_ORE = register("deepslate_promethium_ore", () -> new AbyssOreBlock(27));
+    public static final BlockRegistryObject<Block> DEEPSLATE_PRIMAL_ORE = register("deepslate_primal_ore", () -> new AbyssOreBlock(29));
 
     public static final BlockRegistryObject<Block> SALVENETTLE = register("salvenettle", () -> new AbyssFlowerBlock());
     public static final BlockRegistryObject<Block> WILDERCRESS = register("wildercress", () -> new AbyssFlowerBlock());

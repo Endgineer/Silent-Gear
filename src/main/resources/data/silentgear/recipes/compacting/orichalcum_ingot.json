@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_orichalcite"
+		},
+		{
+			"item": "silentgear:drakolite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:orichalcum_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

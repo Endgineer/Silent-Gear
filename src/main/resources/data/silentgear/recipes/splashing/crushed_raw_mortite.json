@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:raw_mortite"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_mortite"
+        }
+    ]
+}

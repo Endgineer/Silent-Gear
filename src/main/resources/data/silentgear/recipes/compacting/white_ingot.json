@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_white"
+		},
+		{
+			"item": "minecraft:coal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:white_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:raw_adamantite"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_adamantite"
+        }
+    ]
+}

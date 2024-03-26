@@ -1,0 +1,23 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_deldrimite"
+		},
+		{
+			"item": "silentgear:mithril_ingot"
+		},
+		{
+			"item": "silentgear:black_ingot"
+		},
+		{
+			"item": "silentgear:daedrite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:daemonic_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

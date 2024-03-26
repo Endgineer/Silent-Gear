@@ -2,7 +2,7 @@
   "type": "silentgear:standard",
   "simple": true,
   "availability": {
-    "tier": 12,
+    "tier": 14,
     "categories": [
       "metal"
     ],
@@ -23,7 +23,7 @@
       "durability": 1561.0,
       "armor_durability": 33.0,
       "enchantability": 10.0,
-      "harvest_level": 12.0,
+      "harvest_level": 14.0,
       "harvest_speed": 8.0,
       "melee_damage": 3.0,
       "magic_damage": 1.0,

@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_runite"
+		},
+		{
+			"item": "silentgear:luminite_dust"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:rune_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

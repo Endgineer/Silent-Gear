@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:raw_black"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_black"
+        }
+    ]
+}

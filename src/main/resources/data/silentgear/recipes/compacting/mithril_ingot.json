@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_mithril"
+		},
+		{
+			"item": "minecraft:coal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:mithril_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

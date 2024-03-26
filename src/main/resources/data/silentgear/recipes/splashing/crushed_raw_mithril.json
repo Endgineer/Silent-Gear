@@ -1,0 +1,13 @@
+{
+    "type": "create:splashing",
+    "ingredients": [
+        {
+            "item": "silentgear:raw_mithril"
+        }
+    ],
+    "results": [
+        {
+            "item": "silentgear:crushed_raw_mithril"
+        }
+    ]
+}
