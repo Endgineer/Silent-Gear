@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_argonite"
+		},
+		{
+			"item": "silentgear:soulbell_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:argonite_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

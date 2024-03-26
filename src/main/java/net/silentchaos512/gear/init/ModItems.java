@@ -66,6 +66,18 @@ public final class ModItems {
     public static final ItemRegistryObject<Item> CRUSHED_RAW_PROMETHIUM = register("crushed_raw_promethium", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
     public static final ItemRegistryObject<Item> CRUSHED_RAW_PRIMAL = register("crushed_raw_primal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
 
+    public static final ItemRegistryObject<Item> SALVENETTLE_CRYSTAL = register("salvenettle_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> WILDERCRESS_CRYSTAL = register("wildercress_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> BLIGHTLEAF_CRYSTAL = register("blightleaf_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ROSEBLOOD_CRYSTAL = register("roseblood_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> BRYLL_CRYSTAL = register("bryll_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> DUSKWEED_CRYSTAL = register("duskweed_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> SOULBELL_CRYSTAL = register("soulbell_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> ECTOGRASS_CRYSTAL = register("ectograss_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> RUNELEAF_CRYSTAL = register("runeleaf_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> SPIRITBLOOM_CRYSTAL = register("spiritbloom_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+    public static final ItemRegistryObject<Item> CELESTIALBLOSSOM_CRYSTAL = register("celestialblossom_crystal", () -> new Item(new Item.Properties().tab(SilentGear.ITEM_GROUP)));
+
     public static final ItemRegistryObject<BlueprintPackageItem> BLUEPRINT_PACKAGE = register("blueprint_package", () ->
             new BlueprintPackageItem(SilentGear.getId("starter_blueprints")));
 

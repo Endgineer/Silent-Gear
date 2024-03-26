@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_novite"
+		},
+		{
+			"item": "silentgear:salvenettle_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:novite_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

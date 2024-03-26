@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_primal"
+		},
+		{
+			"item": "silentgear:celestialblossom_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:primal_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

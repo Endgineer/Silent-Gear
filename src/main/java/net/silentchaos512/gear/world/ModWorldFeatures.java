@@ -9,6 +9,7 @@ import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -38,6 +39,7 @@ import net.silentchaos512.gear.util.ModResourceLocation;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID)
 public final class ModWorldFeatures {
@@ -100,6 +102,27 @@ public final class ModWorldFeatures {
 
         Configured.TO_REGISTER.forEach((name, cf) -> registerConfiguredFeature(name, cf.get()));
     }
+    
+    public static void generatePlants(final BiomeLoadingEvent event) {
+        ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
+        Set<net.minecraftforge.common.BiomeDictionary.Type> types = net.minecraftforge.common.BiomeDictionary.getTypes(key);
+
+        if(types.contains(net.minecraftforge.common.BiomeDictionary.Type.OVERWORLD)) {
+            List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(ModPlacedFeatures.SALVENETTLE_PLACED);
+            base.add(ModPlacedFeatures.WILDERCRESS_PLACED);
+            base.add(ModPlacedFeatures.BLIGHTLEAF_PLACED);
+            base.add(ModPlacedFeatures.ROSEBLOOD_PLACED);
+            base.add(ModPlacedFeatures.BRYLL_PLACED);
+            base.add(ModPlacedFeatures.DUSKWEED_PLACED);
+            base.add(ModPlacedFeatures.SOULBELL_PLACED);
+            base.add(ModPlacedFeatures.ECTOGRASS_PLACED);
+            base.add(ModPlacedFeatures.RUNELEAF_PLACED);
+            base.add(ModPlacedFeatures.SPIRITBLOOM_PLACED);
+            base.add(ModPlacedFeatures.CELESTIALBLOSSOM_PLACED);
+        }
+    }
 
     private static void registerConfiguredFeature(String name, ConfiguredFeature<?, ?> configuredFeature) {
         ModResourceLocation id = SilentGear.getId(name);
@@ -111,6 +134,7 @@ public final class ModWorldFeatures {
     public static void addFeaturesToBiomes(BiomeLoadingEvent biome) {
         // Need to load these as late as possible, or configs won't be loaded
         registerConfiguredFeatures();
+        generatePlants(biome);
     }
 
     private static void debugLog(String msg) {

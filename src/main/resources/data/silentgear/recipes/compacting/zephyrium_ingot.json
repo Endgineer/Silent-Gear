@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_zephyrium"
+		},
+		{
+			"item": "silentgear:duskweed_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:zephyrium_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

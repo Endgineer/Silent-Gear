@@ -199,7 +199,20 @@ class SideProxy implements IProxy {
             ModBlocks.registerRenderTypes(event);
             ModContainers.registerScreens(event);
             ModItemModelProperties.register(event);
+
 			ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANITE_ANVIL.get(), RenderType.translucent());
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SALVENETTLE.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.WILDERCRESS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLIGHTLEAF.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSEBLOOD.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.BRYLL.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.DUSKWEED.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SOULBELL.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ECTOGRASS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.RUNELEAF.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.SPIRITBLOOM.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.CELESTIALBLOSSOM.get(), RenderType.cutout());
         }
 
         private static void postSetup(FMLLoadCompleteEvent event) {

@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_bathus"
+		},
+		{
+			"item": "silentgear:wildercress_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:bathus_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_gorgonite"
+		},
+		{
+			"item": "silentgear:runeleaf_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:gorgonite_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

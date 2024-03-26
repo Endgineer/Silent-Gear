@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_promethium"
+		},
+		{
+			"item": "silentgear:spiritbloom_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:promethium_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

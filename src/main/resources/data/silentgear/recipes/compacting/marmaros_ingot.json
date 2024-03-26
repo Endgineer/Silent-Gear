@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_marmaros"
+		},
+		{
+			"item": "silentgear:blightleaf_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:marmaros_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

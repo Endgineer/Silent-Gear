@@ -19,7 +19,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.block.*;
-import net.silentchaos512.gear.block.AbyssOreBlock;
 import net.silentchaos512.gear.config.Config;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
@@ -69,6 +68,28 @@ public final class ModBlocks {
     public static final BlockRegistryObject<Block> DEEPSLATE_PROMETHIUM_ORE = register("deepslate_promethium_ore", () -> new AbyssOreBlock(18));
     
     public static final BlockRegistryObject<Block> DEEPSLATE_PRIMAL_ORE = register("deepslate_primal_ore", () -> new AbyssOreBlock(19));
+
+    public static final BlockRegistryObject<Block> SALVENETTLE = register("salvenettle", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> WILDERCRESS = register("wildercress", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> BLIGHTLEAF = register("blightleaf", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> ROSEBLOOD = register("roseblood", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> BRYLL = register("bryll", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> DUSKWEED = register("duskweed", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> SOULBELL = register("soulbell", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> ECTOGRASS = register("ectograss", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> RUNELEAF = register("runeleaf", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> SPIRITBLOOM = register("spiritbloom", () -> new AbyssFlowerBlock());
+
+    public static final BlockRegistryObject<Block> CELESTIALBLOSSOM = register("celestialblossom", () -> new AbyssFlowerBlock());
 
     private ModBlocks() {}
 

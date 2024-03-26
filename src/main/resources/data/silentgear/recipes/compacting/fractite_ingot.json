@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_fractite"
+		},
+		{
+			"item": "silentgear:bryll_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:fractite_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

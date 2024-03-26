@@ -1,0 +1,17 @@
+{
+	"type": "create:compacting",
+	"ingredients": [
+		{
+			"item": "silentgear:crushed_raw_kratonite"
+		},
+		{
+			"item": "silentgear:roseblood_crystal"
+		}
+	],
+	"results": [
+		{
+			"item": "silentgear:kratonite_ingot"
+		}
+	],
+	"heatRequirement": "superheated"
+}

@@ -52,6 +52,8 @@ public final class Config {
         private static final Map<ItemStat, ForgeConfigSpec.DoubleValue> statMultipliers = new HashMap<>();
         // World
         public static final ForgeConfigSpec.IntValue titaniteCount;
+        public static final ForgeConfigSpec.IntValue daemonPlantCount;
+        public static final ForgeConfigSpec.IntValue daemonPlantTries;
         // Debug
         public static final ForgeConfigSpec.BooleanValue extraPartAndTraitLogging;
         public static final ForgeConfigSpec.BooleanValue statsDebugLogging;
@@ -224,6 +226,12 @@ public final class Config {
                 titaniteCount = builder
                         .comment("Attempts to place individual titanite ore blocks per chunk.")
                         .defineInRange("titanite.count", 6, 0, 1000);
+                daemonPlantCount = builder
+                        .comment("Attempts to place individual daemon plants per chunk.")
+                        .defineInRange("daemonPlant.count", 16, 0, 1000);
+                daemonPlantTries = builder
+                        .comment("Number of generation tries to be made around a generation point.")
+                        .defineInRange("daemonPlant.count", 128, 0, 65535);
                 builder.pop();
             }
 
