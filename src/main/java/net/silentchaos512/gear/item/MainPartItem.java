@@ -20,6 +20,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.GearType;
 import net.silentchaos512.gear.api.material.MaterialList;
+import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.api.util.StatGearKey;
 import net.silentchaos512.gear.gear.part.PartData;
@@ -82,12 +83,13 @@ public class MainPartItem extends CompoundPartItem {
         BlockPos pos = ((BlockHitResult) hitresult).getBlockPos();
 
         String metal = materials.get(0).getId().getPath();
+        MaterialGrade grade = materials.get(0).getGrade();
 
-        if(hitresult.getType() == HitResult.Type.BLOCK && player.level.getFluidState(pos).getType() == Fluids.LAVA && MetallurgyEntry.get(metal) != null && materials.get(0).getGrade().isNotMax()) {
+        if(hitresult.getType() == HitResult.Type.BLOCK && player.level.getFluidState(pos).getType() == Fluids.LAVA && MetallurgyEntry.get(metal) != null && grade.isNotMax()) {
             CompoundTag tag = new CompoundTag();
             tag.putString(HeatedMetalItem.METAL, metal);
             tag.putInt(HeatedMetalItem.COUNT, materials.size());
-            tag.putInt(HeatedMetalItem.REINFORCE, materials.get(0).getGrade().next().ordinal());
+            tag.putInt(HeatedMetalItem.REINFORCE, grade.next().ordinal());
             tag.putDouble(HeatedMetalItem.HEAT, 0);
             tag.putInt(HeatedMetalItem.PROGRESS, 0);
             tag.putDouble(HeatedMetalItem.EXPERIENCE, 0);
