@@ -34,10 +34,10 @@
       "armor/leggings": 6.0,
       "armor/boots": 3.0,
       "armor_toughness": 8.0,
-      "magic_armor": 4.0,
+      "magic_armor": 6.0,
       "ranged_damage": 2.0,
-      "ranged_speed": -0.2,
-      "projectile_speed": 0.9,
+      "ranged_speed": 0.1,
+      "projectile_speed": 1.0,
       "projectile_accuracy": 1.1,
       "rarity": 70.0,
       "chargeability": 0.8
