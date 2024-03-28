@@ -1,51 +1,51 @@
 {
     "reinforces": [
         {
-            "xp_trip_ingot": 210,
+            "xp_trip_ingot": 511,
             "heat_capacity": 1370,
             "malleability_midpoint": 1000,
             "folding_range": { "min": 400, "max": 700 },
-            "xp_gain": { "min": 1, "max": 51.1 },
+            "xp_gain": { "min": 73.0, "max": 77.5 },
             "malleability_slope": 0.01,
             "heat_loss": { "min": 20, "max": 20},
             "cooling_slope": 0.01
         },
         {
-            "xp_trip_ingot": 140,
+            "xp_trip_ingot": 256,
             "heat_capacity": 1370,
             "malleability_midpoint": 1000,
             "folding_range": { "min": 400, "max": 700 },
-            "xp_gain": { "min": 1, "max": 34.1 },
+            "xp_gain": { "min": 36.5, "max": 38.75 },
             "malleability_slope": 0.01,
             "heat_loss": { "min": 20, "max": 20},
             "cooling_slope": 0.01
         },
         {
-            "xp_trip_ingot": 103,
+            "xp_trip_ingot": 128,
             "heat_capacity": 1370,
             "malleability_midpoint": 1000,
             "folding_range": { "min": 400, "max": 700 },
-            "xp_gain": { "min": 1, "max": 25.1 },
+            "xp_gain": { "min": 18.25, "max": 19.375 },
             "malleability_slope": 0.01,
             "heat_loss": { "min": 20, "max": 20},
             "cooling_slope": 0.01
         },
         {
-            "xp_trip_ingot": 65,
+            "xp_trip_ingot": 64,
             "heat_capacity": 1370,
             "malleability_midpoint": 1000,
             "folding_range": { "min": 400, "max": 700 },
-            "xp_gain": { "min": 1, "max": 15.8 },
+            "xp_gain": { "min": 9.125, "max": 9.6875 },
             "malleability_slope": 0.01,
             "heat_loss": { "min": 20, "max": 20},
             "cooling_slope": 0.01
         },
         {
-            "xp_trip_ingot": 47,
+            "xp_trip_ingot": 32,
             "heat_capacity": 1370,
             "malleability_midpoint": 1000,
             "folding_range": { "min": 400, "max": 700 },
-            "xp_gain": { "min": 1, "max": 11.4 },
+            "xp_gain": { "min": 4.5625, "max": 4.84375 },
             "malleability_slope": 0.01,
             "heat_loss": { "min": 20, "max": 20},
             "cooling_slope": 0.01
