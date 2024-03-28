@@ -22,16 +22,25 @@
   "stats": {
     "lining": {
       "armor_durability": {
-        "add": 495.0
+        "add": 36.0
       },
       "armor_toughness": {
         "add": 8.0
       },
-      "knockback_resistance": {
-        "add": 2.0
-      },
       "magic_armor": {
         "add": 6.5
+      },
+      "armor/helmet": {
+        "add": 5.0
+      },
+      "armor/chestplate": {
+        "add": 9.0
+      },
+      "armor/leggings": {
+        "add": 7.0
+      },
+      "armor/boots": {
+        "add": 5.0
       }
     }
   },

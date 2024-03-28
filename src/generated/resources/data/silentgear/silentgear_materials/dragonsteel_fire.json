@@ -23,32 +23,67 @@
   },
   "stats": {
     "coating": {
-      "durability": {
-        "mul2": 4.125
-      },
-      "armor_durability": {
-        "mul2": 3.85
-      },
+      "durability": [
+        {
+          "mul2": 0.3
+        },
+        {
+          "add": 5971.0
+        }
+      ],
+      "armor_durability": [
+        {
+          "mul2": 0.121212125
+        },
+        {
+          "add": 123.0
+        }
+      ],
       "harvest_speed": {
         "mul2": 0.25
       },
       "harvest_level": {
         "max": 5.0
       },
-      "melee_damage": {
-        "mul2": 7.0
-      },
+      "melee_damage": [
+        {
+          "mul2": 0.33333334
+        },
+        {
+          "add": 17.0
+        }
+      ],
       "magic_damage": {
-        "mul2": 7.0
+        "mul2": 0.33333334
       },
-      "ranged_damage": {
-        "mul2": 3.0
+      "ranged_damage": [
+        {
+          "mul2": 0.33333334
+        },
+        {
+          "add": 1.33333334
+        }
+      ],
+      "armor/helmet": {
+        "add": 4.0
+      },
+      "armor/chestplate": {
+        "add": 4.0
+      },
+      "armor/leggings": {
+        "add": 3.0
+      },
+      "armor/boots": {
+        "add": 3.0
       },
       "armor_toughness": {
         "add": 16.0
       },
       "knockback_resistance": {
-        "add": 4.0
+        "add": 1.0
+      },
+      "enchantability": {
+        "add": 5.0
       }
     }
   },
