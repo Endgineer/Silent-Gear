@@ -231,7 +231,7 @@ public final class Config {
                         .defineInRange("daemonPlant.count", 16, 0, 1000);
                 daemonPlantTries = builder
                         .comment("Number of generation tries to be made around a generation point.")
-                        .defineInRange("daemonPlant.count", 128, 0, 65535);
+                        .defineInRange("daemonPlant.tries", 128, 0, 65535);
                 builder.pop();
             }
 
