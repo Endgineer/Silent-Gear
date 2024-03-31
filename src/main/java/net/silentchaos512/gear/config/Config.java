@@ -52,8 +52,8 @@ public final class Config {
         private static final Map<ItemStat, ForgeConfigSpec.DoubleValue> statMultipliers = new HashMap<>();
         // World
         public static final ForgeConfigSpec.IntValue titaniteCount;
-        public static final ForgeConfigSpec.IntValue daemonPlantCount;
-        public static final ForgeConfigSpec.IntValue daemonPlantTries;
+        public static final ForgeConfigSpec.IntValue daemonPlantPatchCount;
+        public static final ForgeConfigSpec.DoubleValue daemonPlantChance;
         // Debug
         public static final ForgeConfigSpec.BooleanValue extraPartAndTraitLogging;
         public static final ForgeConfigSpec.BooleanValue statsDebugLogging;
@@ -226,12 +226,12 @@ public final class Config {
                 titaniteCount = builder
                         .comment("Attempts to place individual titanite ore blocks per chunk.")
                         .defineInRange("titanite.count", 6, 0, 1000);
-                daemonPlantCount = builder
-                        .comment("Attempts to place individual daemon plants per chunk.")
-                        .defineInRange("daemonPlant.count", 16, 0, 1000);
-                daemonPlantTries = builder
-                        .comment("Number of generation tries to be made around a generation point.")
-                        .defineInRange("daemonPlant.tries", 128, 0, 65535);
+                daemonPlantPatchCount = builder
+                        .comment("The reciprocal of this number is the chance for a plant patch to generate per chunk.")
+                        .defineInRange("daemonPlantPatch.count", 20, 0, 1000);
+                daemonPlantChance = builder
+                        .comment("Chance to generate a single plant in its patch.")
+                        .defineInRange("daemonPlant.chance", 0.25, 0, 1.0);
                 builder.pop();
             }
 

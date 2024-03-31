@@ -110,17 +110,17 @@ public final class ModWorldFeatures {
         if(types.contains(net.minecraftforge.common.BiomeDictionary.Type.OVERWORLD)) {
             List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
-            base.add(ModPlacedFeatures.SALVENETTLE_PLACED);
-            base.add(ModPlacedFeatures.WILDERCRESS_PLACED);
-            base.add(ModPlacedFeatures.BLIGHTLEAF_PLACED);
-            base.add(ModPlacedFeatures.ROSEBLOOD_PLACED);
-            base.add(ModPlacedFeatures.BRYLL_PLACED);
-            base.add(ModPlacedFeatures.DUSKWEED_PLACED);
-            base.add(ModPlacedFeatures.SOULBELL_PLACED);
-            base.add(ModPlacedFeatures.ECTOGRASS_PLACED);
-            base.add(ModPlacedFeatures.RUNELEAF_PLACED);
-            base.add(ModPlacedFeatures.SPIRITBLOOM_PLACED);
-            base.add(ModPlacedFeatures.CELESTIALBLOSSOM_PLACED);
+            base.add(ModPlacedFeatures.SALVENETTLE_PATCH_PLACED);
+            base.add(ModPlacedFeatures.WILDERCRESS_PATCH_PLACED);
+            base.add(ModPlacedFeatures.BLIGHTLEAF_PATCH_PLACED);
+            base.add(ModPlacedFeatures.ROSEBLOOD_PATCH_PLACED);
+            base.add(ModPlacedFeatures.BRYLL_PATCH_PLACED);
+            base.add(ModPlacedFeatures.DUSKWEED_PATCH_PLACED);
+            base.add(ModPlacedFeatures.SOULBELL_PATCH_PLACED);
+            base.add(ModPlacedFeatures.ECTOGRASS_PATCH_PLACED);
+            base.add(ModPlacedFeatures.RUNELEAF_PATCH_PLACED);
+            base.add(ModPlacedFeatures.SPIRITBLOOM_PATCH_PLACED);
+            base.add(ModPlacedFeatures.CELESTIALBLOSSOM_PATCH_PLACED);
         }
     }
 

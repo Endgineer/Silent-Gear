@@ -48,7 +48,7 @@ authors="SilentChaos512"
     side="BOTH"
 [[dependencies.silentgear]]
     modId="curseoftheabyss"
-    mandatory=false
+    mandatory=true
     versionRange="[1.0.0,)"
     ordering="AFTER"
     side="BOTH"
