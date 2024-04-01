@@ -51,7 +51,6 @@ public final class Config {
         public static final ForgeConfigSpec.BooleanValue destroySwappedParts;
         private static final Map<ItemStat, ForgeConfigSpec.DoubleValue> statMultipliers = new HashMap<>();
         // World
-        public static final ForgeConfigSpec.IntValue titaniteCount;
         public static final ForgeConfigSpec.IntValue daemonPlantPatchCount;
         public static final ForgeConfigSpec.DoubleValue daemonPlantChance;
         // Debug
@@ -223,9 +222,6 @@ public final class Config {
             {
                 builder.comment("World generation options (REQUIRES GAME RESTART)");
                 builder.push("world");
-                titaniteCount = builder
-                        .comment("Attempts to place individual titanite ore blocks per chunk.")
-                        .defineInRange("titanite.count", 6, 0, 1000);
                 daemonPlantPatchCount = builder
                         .comment("The reciprocal of this number is the chance for a plant patch to generate per chunk.")
                         .defineInRange("daemonPlantPatch.count", 20, 0, 1000);

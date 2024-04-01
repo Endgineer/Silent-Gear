@@ -51,11 +51,6 @@ public final class ModWorldFeatures {
     public static final class Configured {
         static final Map<String, Lazy<ConfiguredFeature<?, ?>>> TO_REGISTER = new LinkedHashMap<>();
 
-        private static final ReplaceBlockConfiguration TITANITE_ORE_VEINS_CONFIG = new ReplaceBlockConfiguration(ImmutableList.of(
-                OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, ModBlocks.DEEPSLATE_TITANITE_ORE.get().defaultBlockState())));
-
-        public static final Holder<ConfiguredFeature<ReplaceBlockConfiguration, ?>> TITANITE_ORE_VEINS = create("titanite_ore_veins", Feature.REPLACE_SINGLE_BLOCK, TITANITE_ORE_VEINS_CONFIG);
-
         public static <FC extends FeatureConfiguration> Holder<ConfiguredFeature<FC, ?>> create(String name, Feature<FC> feature, FC featureConfig) {
             return FeatureUtils.register("silentgear:" + name, feature, featureConfig);
         }
@@ -64,10 +59,6 @@ public final class ModWorldFeatures {
     }
 
     public static final class Placed {
-        public static final Holder<PlacedFeature> ORE_TITANITE = create("ore_titanite", Configured.TITANITE_ORE_VEINS,
-                commonOrePlacement(Config.Common.titaniteCount.get(),
-                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-ModVariables.ABYSS.SPAN), VerticalAnchor.absolute(0))));
-
         private static <FC extends FeatureConfiguration> Holder<PlacedFeature> create(String name, Holder<ConfiguredFeature<FC, ?>> configuredFeature, List<PlacementModifier> modifiers) {
             return PlacementUtils.register("silentgear:" + name, configuredFeature, modifiers);
         }
