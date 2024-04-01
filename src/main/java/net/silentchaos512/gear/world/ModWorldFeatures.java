@@ -107,7 +107,7 @@ public final class ModWorldFeatures {
         ResourceKey<Biome> key = ResourceKey.create(Registry.BIOME_REGISTRY, event.getName());
         Set<net.minecraftforge.common.BiomeDictionary.Type> types = net.minecraftforge.common.BiomeDictionary.getTypes(key);
 
-        if(types.contains(net.minecraftforge.common.BiomeDictionary.Type.OVERWORLD)) {
+        if(/*types.contains(net.minecraftforge.common.BiomeDictionary.Type.OVERWORLD)*/true) {
             List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(ModPlacedFeatures.SALVENETTLE_PATCH_PLACED);
