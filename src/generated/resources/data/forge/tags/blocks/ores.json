@@ -1,6 +1,33 @@
 {
   "replace": false,
   "values": [
-    "#forge:ores/titanite"
+    "#forge:ores/titanite",
+    "#forge:ores/novite",
+    "#forge:ores/bathus",
+    "#forge:ores/marmaros",
+    "#forge:ores/kratonite",
+    "#forge:ores/fractite",
+    "#forge:ores/zephyrium",
+    "#forge:ores/argonite",
+    "#forge:ores/katagon",
+    "#forge:ores/gorgonite",
+    "#forge:ores/promethium",
+    "#forge:ores/primal",
+    "#forge:ores/black",
+    "#forge:ores/white",
+    "#forge:ores/mithril",
+    "#forge:ores/adamantite",
+    "#forge:ores/runite",
+    "#forge:ores/orichalcite",
+    "#forge:ores/necrite",
+    "#forge:ores/banite",
+    "#forge:ores/mortite",
+    "#forge:ores/deldrimite",
+    "#forge:ores/astralarium",
+    "#forge:ores/luminite",
+    "#forge:ores/drakolite",
+    "#forge:ores/phasmatite",
+    "#forge:ores/daedrite",
+    "#forge:ores/aedrite"
   ]
 }

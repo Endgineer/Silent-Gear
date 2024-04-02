@@ -13,6 +13,22 @@
     "silentgear:deepslate_katagon_ore",
     "silentgear:deepslate_gorgonite_ore",
     "silentgear:deepslate_promethium_ore",
-    "silentgear:deepslate_primal_ore"
+    "silentgear:deepslate_primal_ore",
+    "silentgear:deepslate_black_ore",
+    "silentgear:deepslate_white_ore",
+    "silentgear:deepslate_mithril_ore",
+    "silentgear:deepslate_adamantite_ore",
+    "silentgear:deepslate_runite_ore",
+    "silentgear:deepslate_orichalcite_ore",
+    "silentgear:deepslate_necrite_ore",
+    "silentgear:deepslate_banite_ore",
+    "silentgear:deepslate_mortite_ore",
+    "silentgear:deepslate_deldrimite_ore",
+    "silentgear:deepslate_astralarium_ore",
+    "silentgear:deepslate_luminite_ore",
+    "silentgear:deepslate_drakolite_ore",
+    "silentgear:deepslate_phasmatite_ore",
+    "silentgear:deepslate_daedrite_ore",
+    "silentgear:deepslate_aedrite_ore"
   ]
 }
