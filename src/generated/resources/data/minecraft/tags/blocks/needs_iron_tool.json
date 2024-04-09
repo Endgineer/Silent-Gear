@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "#forge:ores/titanite",
+    "silentgear:titanite_anvil",
     "#forge:ores/bort",
     "#forge:ores/crimson_iron"
   ]

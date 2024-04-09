@@ -9,19 +9,23 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 import net.silentchaos512.gear.config.Config;
 import net.silentchaos512.utils.EnumUtils;
+import net.silentchaos512.gear.api.material.MaterialList;
+import net.silentchaos512.gear.gear.part.PartData;
+import net.silentchaos512.gear.item.MainPartItem;
+import net.silentchaos512.gear.util.GearData;
 
 import javax.annotation.Nonnegative;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
 public enum MaterialGrade {
-    NONE(0), E(1), D(2), C(3), B(4), A(5), S(10), SS(15), SSS(25), MAX(30);
+    NONE(0.0f), E(2.5f), D(5.0f), C(7.5f), B(10.0f), A(12.5f);
 
     private static final String NBT_KEY = "SGear_Grade";
 
-    public final int bonusPercent;
+    public final float bonusPercent;
 
-    MaterialGrade(int bonusPercent) {
+    MaterialGrade(float bonusPercent) {
         this.bonusPercent = bonusPercent;
     }
 
@@ -33,6 +37,30 @@ public enum MaterialGrade {
      */
     public static MaterialGrade getMax() {
         return values()[values().length - 1];
+    }
+
+    public boolean isNotMax() {
+        return this.ordinal() < values().length - 1;
+    }
+
+    public MaterialGrade next() {
+        return values()[(this.ordinal() + 1) % values().length];
+    }
+
+    public static MaterialGrade getGradeFromGearItemstack(ItemStack stack) {
+        PartData mainPart = GearData.getConstructionParts(stack).getPrimaryMain();
+
+        if (mainPart != null) {
+            MaterialList materials = MainPartItem.getMaterials(mainPart.getItem());
+            return materials.get(0).getGrade();
+        }
+
+        return null;
+    }
+
+    public static boolean isGradeNotMaxOnGearItemstack(ItemStack stack) {
+        MaterialGrade grade = getGradeFromGearItemstack(stack);
+        return grade == null || grade.isNotMax();
     }
 
     public static MaterialGrade fromStack(ItemStack stack) {

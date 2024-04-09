@@ -15,6 +15,7 @@ import net.silentchaos512.gear.SilentGear;
 import net.silentchaos512.gear.api.item.GearType;
 import net.silentchaos512.gear.api.material.IMaterialInstance;
 import net.silentchaos512.gear.api.material.MaterialList;
+import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.client.util.ColorUtils;
 import net.silentchaos512.gear.client.util.TextListBuilder;
@@ -32,6 +33,7 @@ import net.silentchaos512.utils.Color;
 import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
+import java.util.Properties;
 
 public class CompoundPartItem extends Item {
     private static final String NBT_CRAFTED_COUNT = "CraftedCount";
@@ -85,6 +87,10 @@ public class CompoundPartItem extends Item {
 
     public ItemStack create(MaterialList materials) {
         return create(materials, -1);
+    }
+
+    public ItemStack createOne(Collection<? extends IMaterialInstance> materials) {
+        return create(MaterialList.of(materials), 1);
     }
 
     public ItemStack create(MaterialList materials, int craftedCount) {
@@ -149,7 +155,8 @@ public class CompoundPartItem extends Item {
         PartData part = PartData.from(stack);
         MaterialInstance material = getPrimaryMaterial(stack);
         if (part != null && material != null) {
-            TranslatableComponent nameText = new TranslatableComponent(this.getDescriptionId() + ".nameProper", material.getDisplayName(partType, ItemStack.EMPTY));
+            int grade = part.getType() == PartType.MAIN ? MainPartItem.getMaterials(part.getItem()).get(0).getGrade().ordinal() : 0;
+            TranslatableComponent nameText = (TranslatableComponent) new TranslatableComponent(this.getDescriptionId() + ".nameProper", material.getDisplayName(partType, ItemStack.EMPTY)).append(grade > 0 ? " +" + grade : "");
             int nameColor = Color.blend(part.getColor(ItemStack.EMPTY), Color.VALUE_WHITE, 0.25f) & 0xFFFFFF;
             return TextUtil.withColor(nameText, nameColor);
         }

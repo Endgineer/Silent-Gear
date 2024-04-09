@@ -31,6 +31,9 @@ import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.lib.registry.BlockRegistryObject;
 
 import javax.annotation.Nullable;
+
+import com.simibubi.create.AllBlocks;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -39,6 +42,12 @@ import java.util.function.Supplier;
 
 @Mod.EventBusSubscriber(modid = SilentGear.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModBlocks {
+    public static final BlockRegistryObject<Block> DEEPSLATE_TITANITE_ORE = register("deepslate_titanite_ore", () -> new TitaniteOreBlock());
+
+    public static final BlockRegistryObject<TitaniteAnvilBlock> TITANITE_ANVIL = register("titanite_anvil", () -> new TitaniteAnvilBlock(
+        BlockBehaviour.Properties.copy(AllBlocks.RAILWAY_CASING.get()).noOcclusion()
+    ));
+
     private static final Map<Block, Block> STRIPPED_WOOD = new HashMap<>();
 
     public static final BlockRegistryObject<OreBlock> BORT_ORE = register("bort_ore", () ->

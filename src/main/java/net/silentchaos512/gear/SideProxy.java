@@ -1,6 +1,8 @@
 package net.silentchaos512.gear;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.MinecraftServer;
@@ -46,6 +48,7 @@ import net.silentchaos512.gear.gear.part.PartManager;
 import net.silentchaos512.gear.gear.trait.TraitManager;
 import net.silentchaos512.gear.init.*;
 import net.silentchaos512.gear.item.CraftingItems;
+import net.silentchaos512.gear.metallurgy.MetallurgyManager;
 import net.silentchaos512.gear.network.Network;
 import net.silentchaos512.gear.util.Const;
 import net.silentchaos512.gear.world.ModWorldFeatures;
@@ -127,6 +130,8 @@ class SideProxy implements IProxy {
         if (ModList.get().isLoaded("gamestages")) {
             event.addListener(GameStagesCompat.INSTANCE);
         }
+
+        event.addListener(new MetallurgyManager());
     }
 
     private static void serverStarted(ServerStartedEvent event) {
@@ -210,6 +215,8 @@ class SideProxy implements IProxy {
             ModBlockEntities.registerRenderers(event);
             ModContainers.registerScreens(event);
             ModItemModelProperties.register(event);
+
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANITE_ANVIL.get(), RenderType.translucent());
         }
 
         private static void postSetup(FMLLoadCompleteEvent event) {

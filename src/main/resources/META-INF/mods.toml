@@ -34,3 +34,9 @@ authors="SilentChaos512"
     versionRange="[6.2,7)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.silentgear]]
+    modId="create"
+    mandatory=true
+    versionRange="[0.5.1.c,)"
+    ordering="AFTER"
+    side="BOTH"

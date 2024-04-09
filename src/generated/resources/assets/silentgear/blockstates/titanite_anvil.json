@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "silentgear:block/titanite_anvil", "y": 90 },
+        "facing=east": { "model": "silentgear:block/titanite_anvil", "y": 180 },
+        "facing=south": { "model": "silentgear:block/titanite_anvil", "y": 270 },
+        "facing=west": { "model": "silentgear:block/titanite_anvil" }
+    }
+}

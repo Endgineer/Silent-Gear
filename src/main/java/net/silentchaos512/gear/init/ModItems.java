@@ -29,6 +29,10 @@ public final class ModItems {
     public static final ItemRegistryObject<GuideBookItem> GUIDE_BOOK = register("guide_book", () ->
             new GuideBookItem(unstackableProps()));
 
+    public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD = register("titanite_shard", () -> new TitaniteShardItem());
+
+    public static final ItemRegistryObject<HeatedMetalItem> HEATED_METAL_ITEM = register("heated_metal_item", () -> new HeatedMetalItem());
+
     public static final ItemRegistryObject<BlueprintPackageItem> BLUEPRINT_PACKAGE = register("blueprint_package", () ->
             new BlueprintPackageItem(SilentGear.getId("starter_blueprints")));
 

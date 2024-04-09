@@ -44,6 +44,7 @@ import net.silentchaos512.gear.api.item.GearType;
 import net.silentchaos512.gear.api.item.ICoreItem;
 import net.silentchaos512.gear.api.item.ICoreTool;
 import net.silentchaos512.gear.api.part.IPartData;
+import net.silentchaos512.gear.api.part.MaterialGrade;
 import net.silentchaos512.gear.api.part.PartDataList;
 import net.silentchaos512.gear.api.part.PartType;
 import net.silentchaos512.gear.api.stats.ItemStat;
@@ -55,6 +56,7 @@ import net.silentchaos512.gear.crafting.ingredient.IGearIngredient;
 import net.silentchaos512.gear.gear.material.MaterialInstance;
 import net.silentchaos512.gear.gear.part.PartData;
 import net.silentchaos512.gear.gear.part.PartManager;
+import net.silentchaos512.gear.item.MainPartItem;
 import net.silentchaos512.lib.advancements.LibTriggers;
 
 import javax.annotation.Nullable;
@@ -716,11 +718,13 @@ public final class GearHelper {
         PartData part = GearData.getPrimaryPart(gear);
         if (part == null) return new TranslatableComponent(gear.getDescriptionId());
 
+        int grade = MainPartItem.getMaterials(part.getItem()).get(0).getGrade().ordinal();
+
         Component partName = part.getMaterialName(gear);
         if (TimedEvents.isAprilFools()) {
             partName = partName.copy().append(new TextComponent(" & Knuckles"));
         }
-        Component gearName = new TranslatableComponent(gear.getDescriptionId() + ".nameProper", partName);
+        Component gearName = new TranslatableComponent(gear.getDescriptionId() + ".nameProper", partName).append(grade > 0 ? " +" + grade : "");
         Component result = gearName;
 
         if (gear.getItem() instanceof ICoreTool) {
