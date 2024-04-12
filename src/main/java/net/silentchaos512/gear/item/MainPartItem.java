@@ -96,6 +96,8 @@ public class MainPartItem extends CompoundPartItem {
             tag.putInt("CustomModelData", 0);
             tag.put(HeatedMetalItem.PART, itemstack.save(new CompoundTag()));
 
+            tag.putString(HeatedMetalItem.WITCH_FACTORS, "§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|§8|");
+
             ItemStack result = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(SilentGear.MOD_ID+":heated_metal_item")));
             result.setTag(tag);
             player.setItemInHand(hand, result);

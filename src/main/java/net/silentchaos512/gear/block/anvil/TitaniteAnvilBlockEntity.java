@@ -129,11 +129,14 @@ public class TitaniteAnvilBlockEntity extends HolderBlockEntity implements IHave
             int progress = tag.getInt(HeatedMetalItem.PROGRESS);
             double experience = tag.getDouble(HeatedMetalItem.EXPERIENCE);
 
+            String witch_factors = tag.getString(HeatedMetalItem.WITCH_FACTORS);
+
             if(progress != MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count) && experience == 0 && MetallurgyEntry.get(metal).getReinforce(reinforce).compareFoldingRange(heat) == 0) {
                 Item input = GearApi.getMaterial(new ResourceLocation(SilentGear.MOD_ID+":"+metal)).getDisplayItem(PartType.MAIN, 0).getItem();
                 int remainder = count;
 
                 if(player.getInventory().countItem(input) >= remainder) {
+                    tag.putString(HeatedMetalItem.WITCH_FACTORS, witch_factors.replaceFirst("8", ((TitaniteShardItem) player.getItemInHand(hand).getItem()).getWitchFactor()));
                     player.getItemInHand(hand).setCount(player.getItemInHand(hand).getCount()-1);
 
                     for(int i = 0; remainder > 0; i++) {

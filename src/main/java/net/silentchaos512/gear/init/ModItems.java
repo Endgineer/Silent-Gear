@@ -18,6 +18,7 @@ import net.silentchaos512.gear.item.blueprint.GearBlueprintItem;
 import net.silentchaos512.gear.item.blueprint.PartBlueprintItem;
 import net.silentchaos512.gear.item.blueprint.book.BlueprintBookItem;
 import net.silentchaos512.gear.item.gear.*;
+import net.silentchaos512.gear.item.titanites.*;
 import net.silentchaos512.lib.registry.ItemRegistryObject;
 import net.silentchaos512.lib.util.TimeUtils;
 
@@ -30,6 +31,14 @@ public final class ModItems {
             new GuideBookItem(unstackableProps()));
 
     public static final ItemRegistryObject<TitaniteShardItem> TITANITE_SHARD = register("titanite_shard", () -> new TitaniteShardItem());
+
+    public static final ItemRegistryObject<TitaniteShardItem> ALPHA_TITANITE_SHARD = register("alpha_titanite_shard", () -> new AlphaTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> BETA_TITANITE_SHARD = register("beta_titanite_shard", () -> new BetaTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> GAMMA_TITANITE_SHARD = register("gamma_titanite_shard", () -> new GammaTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> DELTA_TITANITE_SHARD = register("delta_titanite_shard", () -> new DeltaTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> EPSILON_TITANITE_SHARD = register("epsilon_titanite_shard", () -> new EpsilonTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> ZETA_TITANITE_SHARD = register("zeta_titanite_shard", () -> new ZetaTitaniteShardItem());
+    public static final ItemRegistryObject<TitaniteShardItem> ETA_TITANITE_SHARD = register("eta_titanite_shard", () -> new EtaTitaniteShardItem());
 
     public static final ItemRegistryObject<HeatedMetalItem> HEATED_METAL_ITEM = register("heated_metal_item", () -> new HeatedMetalItem());
 

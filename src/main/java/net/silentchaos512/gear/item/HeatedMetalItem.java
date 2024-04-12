@@ -34,6 +34,8 @@ public class HeatedMetalItem extends Item {
     public static final String EXPERIENCE = SilentGear.MOD_ID+".experience";
     public static final String PART = SilentGear.MOD_ID+".part";
 
+    public static final String WITCH_FACTORS = SilentGear.MOD_ID+".witch_factors";
+
     public HeatedMetalItem() {
         super(new Item.Properties().stacksTo(1).tab(null));
     }
@@ -55,6 +57,8 @@ public class HeatedMetalItem extends Item {
         int progress = tag.getInt(HeatedMetalItem.PROGRESS);
         double experience = tag.getDouble(HeatedMetalItem.EXPERIENCE);
 
+        String witch_factors = tag.getString(HeatedMetalItem.WITCH_FACTORS);
+
         tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.progress").append(" ")
             .append(
                 String.valueOf(progress)+"/"+MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count)
@@ -71,6 +75,9 @@ public class HeatedMetalItem extends Item {
             .append(
                 String.valueOf(Math.round(MetallurgyEntry.get(metal).getReinforce(reinforce).getMalleability(heat) * 10000.0) / 100.0)+"%"
             ).withStyle(ChatFormatting.LIGHT_PURPLE));
+
+        tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.witch_factors").append(" ")
+            .append(witch_factors.replaceAll("r", "8")).withStyle(ChatFormatting.GRAY));
 
         if(progress == MetallurgyEntry.get(metal).getReinforce(reinforce).getXPTotal(count)) {
             tooltip.add(new TranslatableComponent("tooltip.silentgear.metal_stats.hints.quenching").withStyle(ChatFormatting.DARK_GRAY));
